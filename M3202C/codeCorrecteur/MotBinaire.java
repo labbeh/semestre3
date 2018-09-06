@@ -22,12 +22,21 @@ public class MotBinaire
 	// METHODES STATIC
 	public static MotBinaire addition(MotBinaire a, MotBinaire b)
 	{
-		return null;
+		int nb1 = Integer.parseInt(a.toString(), 2);
+		int nb2 = Integer.parseInt(b.toString(), 2);
+
+		int somme = nb1 + nb2;
+
+		return new MotBinaire(Integer.toBinaryString(somme));
 	}
 
 	public static MotBinaire[] genererMots(int n)
 	{
-		return null;
+		MotBinaire[] tabMots = new MotBinaire[n];
+
+		for(int cpt=0; cpt<n; cpt++)
+			tabMots[cpt] = MotBinaire.fabrique(Integer.toBinaryString(cpt));
+		return tabMots;
 	}
 
 	// ATTRIBUTS
@@ -185,5 +194,16 @@ public class MotBinaire
 		MotBinaire sousMot1 = mot1.sousMot(1, 5);
 		System.out.println();
 		System.out.println("Sous mot de l'intervalle [1, 5[ du mot 1: " +sousMot1);
+
+		System.out.println();
+		System.out.println("Addition de " +mot1+ " + " +mot2+ ": " +MotBinaire.addition(mot1, mot2));
+
+		MotBinaire[] tabMots = MotBinaire.genererMots(5);
+		System.out.println();
+		System.out.println("5 premiers mots de 0 à 5: ");
+
+		for(int cpt=0; cpt<tabMots.length; cpt++)
+			System.out.println(tabMots[cpt]);
+
 	}
 }
