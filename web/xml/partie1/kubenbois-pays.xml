@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<kubenbois>
+
+   <pays>
+   
+   	<nom>France</nom>
+   	<agence>
+   		<nom>Labbe</nom>
+   		<ville>lh</ville>
+   	</agence>
+   	
+   	<agence>
+   		<nom>fdfd</nom>
+   		<ville>fsdfsd</ville>
+   	</agence>
+   	
+   </pays>
+
+</kubenbois>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<kubenbois>
+
+   <agence>
+      <responsable>
+      	<nom>Hautine</nom>
+      	<prenom>Guy</prenom>
+      </responsable>
+      
+      <ville>Nantes</ville>
+      <pays>France</pays>
+   </agence>
+
+   <agence>
+      <responsable>
+      	<nom>Assin</nom>
+      	<prenom>Marc</prenom>
+      </responsable>
+      
+      <ville>Clermont-Ferrand</ville>
+      <pays>France</pays>
+   </agence>
+
+   <agence>
+      <responsable>
+      	<nom>Menvussa</nom>
+      	<prenom>Gérard</prenom>
+      </responsable>
+      
+      <ville pays="Belgique">Bruxelles</ville>
+   </agence>
+
+</kubenbois>
