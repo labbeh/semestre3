@@ -105,7 +105,7 @@ public class MotBinaire
 	// MODIFICATEURS
 	public void set(int i, int bit)
 	{
-		// déclenchera une exception java en cas de d'indice invalide
+		// déclenchera une exception ArrayIndexOutOfBoundsException en cas de d'indice invalide
 		this.mot[i] = bit;
 	}
 
