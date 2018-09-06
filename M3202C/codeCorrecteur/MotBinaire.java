@@ -89,6 +89,7 @@ public class MotBinaire
 	}
 
 	// METHODES JAVA
+	@Override
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder();
@@ -97,5 +98,22 @@ public class MotBinaire
 			sb.append(Integer.toString(this.mot[cpt]));
 
 		return sb.toString();
+	}
+
+	@Override
+	public boolean equals(Object autre)
+	{
+		if(autre instanceof MotBinaire)
+		{
+			MotBinaire autreMot = (MotBinaire)autre;
+			
+			if(this.poids == autreMot.poids && this.mot.length == autreMot.mot.length)
+			{
+				for(int cpt=0; cpt<this.mot.length; cpt++)
+					if(this.mot[cpt] != autreMot.mot[cpt]) return false;
+			}
+			return true;
+		}
+		return false;
 	}
 }
