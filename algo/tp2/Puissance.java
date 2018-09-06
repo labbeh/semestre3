@@ -1,6 +1,6 @@
 public class Puissance
 {
-	public double puissance(double val, int exp)
+	public static double puissance(double val, int exp)
 	{
 		if(exp == 0) return 1;
 		if(exp == 1) return val;
@@ -12,13 +12,18 @@ public class Puissance
 		return pow;
 	}
 
-	public double puissanceRec(double val, int exp)
+	public static double puissanceRec(double val, int exp)
 	{
 		if(exp == 0) return 1;
 		if(exp == 1) return val;
 
 		
 
-		return pow;
+		return val * puissanceRec(val, exp-1);
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println(puissanceRec(2, 4));
 	}
 }
