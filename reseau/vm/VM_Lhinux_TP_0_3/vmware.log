@@ -1,0 +1,354 @@
+Jan 29 20:44:09: vmx| Log for VMware Player pid=2248 version=1.0.1 build=build-19317 option=Release
+Jan 29 20:44:09: vmx| Command line: "C:\Program Files\VMware\VMware Player\bin\vmware-vmx.exe" "-@" "pipe=\\.\pipe\vmxf3788426ee07c2e0; vm=f3788426ee07c2e0" "F:\VM_Lhinux_TP_0_2\lhinux_TP_0_2_2DD.vmx"
+Jan 29 20:44:09: vmx| UI Connecting to pipe '\\.\pipe\vmxf3788426ee07c2e0' with user '(null)'
+Jan 29 20:44:09: vmx| CPU #0 TSC = 27120662233018
+Jan 29 20:44:09: vmx| TSC delta 0
+Jan 29 20:44:09: vmx| VMMon_GetkHzEstimate: Calculated 1596000 kHz
+Jan 29 20:44:09: vmx| pcpu #0 CPUID numEntries=2 GenuntelineI
+Jan 29 20:44:09: vmx| pcpu #0 CPUID version=0x6d8 id1.edx=0xafe9fbff id1.ecx=0x180 id1.ebx=0x816
+Jan 29 20:44:09: vmx| pcpu #0 CPUID id80.eax=80000008 id81.edx=0x0 id81.ecx=0x0
+Jan 29 20:44:09: vmx| CPUID id1.edx: 0xafe9fbff id1.ecx: 0x180 id81.edx: 0 id81.ecx: 0
+Jan 29 20:44:09: vmx| CPUID id88.ecx: 0 id88.edx: 0
+Jan 29 20:44:09: vmx| ACL_InitCapabilities: here 1 (bug 63252)
+Jan 29 20:44:09: vmx| changing directory to F:\VM_Lhinux_TP_0_2\.
+Jan 29 20:44:09: vmx| Config file: F:\VM_Lhinux_TP_0_2\lhinux_TP_0_2_2DD.vmx
+Jan 29 20:44:10: vmx| VMXVmdbCbVmVmxExecState: Exec state change requested to state poweredOn without reset
+Jan 29 20:44:10: vmx| TOOLS delaying state change request to state 3
+Jan 29 20:44:10: vmx| PowerOn
+Jan 29 20:44:10: vmx| HOST Windows version 5.1, build 2600, platform 2, "Service Pack 2"
+Jan 29 20:44:10: vmx| DICT --- USER PREFERENCES
+Jan 29 20:44:10: vmx| DICT pref.vmplayer.fullscreen.autohide = TRUE
+Jan 29 20:44:10: vmx| DICT    pref.autoFitFullScreen = fitHostToGuest
+Jan 29 20:44:10: vmx| DICT     pref.view.navBar.type = favorites
+Jan 29 20:44:10: vmx| DICT     pref.mruDest0.present = FALSE
+Jan 29 20:44:10: vmx| DICT  pref.mruDest0.destString = 
+Jan 29 20:44:10: vmx| DICT        pref.mruDest0.user = 
+Jan 29 20:44:10: vmx| DICT     pref.mruDest1.present = FALSE
+Jan 29 20:44:10: vmx| DICT  pref.mruDest1.destString = 
+Jan 29 20:44:10: vmx| DICT        pref.mruDest1.user = 
+Jan 29 20:44:10: vmx| DICT     pref.mruDest2.present = FALSE
+Jan 29 20:44:10: vmx| DICT  pref.mruDest2.destString = 
+Jan 29 20:44:10: vmx| DICT        pref.mruDest2.user = 
+Jan 29 20:44:10: vmx| DICT     pref.mruDest3.present = FALSE
+Jan 29 20:44:10: vmx| DICT  pref.mruDest3.destString = 
+Jan 29 20:44:10: vmx| DICT        pref.mruDest3.user = 
+Jan 29 20:44:10: vmx| DICT     pref.mruDest4.present = FALSE
+Jan 29 20:44:10: vmx| DICT  pref.mruDest4.destString = 
+Jan 29 20:44:10: vmx| DICT        pref.mruDest4.user = 
+Jan 29 20:44:10: vmx| DICT     pref.mruDest5.present = FALSE
+Jan 29 20:44:10: vmx| DICT  pref.mruDest5.destString = 
+Jan 29 20:44:10: vmx| DICT        pref.mruDest5.user = 
+Jan 29 20:44:10: vmx| DICT     pref.mruDest6.present = FALSE
+Jan 29 20:44:10: vmx| DICT  pref.mruDest6.destString = 
+Jan 29 20:44:10: vmx| DICT        pref.mruDest6.user = 
+Jan 29 20:44:10: vmx| DICT     pref.mruDest7.present = FALSE
+Jan 29 20:44:10: vmx| DICT  pref.mruDest7.destString = 
+Jan 29 20:44:10: vmx| DICT        pref.mruDest7.user = 
+Jan 29 20:44:10: vmx| DICT       webUpdate.checkLast = 1170099188
+Jan 29 20:44:10: vmx| DICT webUpdate.lastCheck.status = done_updates
+Jan 29 20:44:10: vmx| DICT pref.vmplayer.confirmOnExit = TRUE
+Jan 29 20:44:10: vmx| DICT pref.vmplayer.exit.vmAction = poweroff
+Jan 29 20:44:10: vmx| DICT --- USER DEFAULTS
+Jan 29 20:44:10: vmx| DICT --- HOST DEFAULTS
+Jan 29 20:44:10: vmx| DICT        vmplayer.searchbar = FALSE
+Jan 29 20:44:10: vmx| DICT --- SITE DEFAULTS
+Jan 29 20:44:10: vmx| DICT        vmplayer.searchbar = FALSE
+Jan 29 20:44:10: vmx| DICT --- COMMAND LINE
+Jan 29 20:44:10: vmx| DICT             gui.available = TRUE
+Jan 29 20:44:10: vmx| DICT --- CONFIGURATION
+Jan 29 20:44:10: vmx| DICT            config.version = 8
+Jan 29 20:44:10: vmx| DICT         virtualHW.version = 4
+Jan 29 20:44:10: vmx| DICT                   memsize = 64
+Jan 29 20:44:10: vmx| DICT     MemAllowAutoScaleDown = FALSE
+Jan 29 20:44:10: vmx| DICT               displayName = lhinux-TP-v0.2
+Jan 29 20:44:10: vmx| DICT                   guestOS = otherlinux
+Jan 29 20:44:10: vmx| DICT                     nvram = lhinux_TP_0.2.nvram
+Jan 29 20:44:10: vmx| DICT            ide0:0.present = TRUE
+Jan 29 20:44:10: vmx| DICT           ide0:0.fileName = lhinux_TP_DD1.vmdk
+Jan 29 20:44:10: vmx| DICT               ide0:0.redo = 
+Jan 29 20:44:10: vmx| DICT            ide0:1.present = TRUE
+Jan 29 20:44:10: vmx| DICT           ide0:1.fileName = lhinux_TP_DD2.vmdk
+Jan 29 20:44:10: vmx| DICT               ide0:1.redo = 
+Jan 29 20:44:10: vmx| DICT            ide1:0.present = TRUE
+Jan 29 20:44:10: vmx| DICT           ide1:0.fileName = lhinux_TP_0_2.iso
+Jan 29 20:44:10: vmx| DICT         ide1:0.deviceType = cdrom-image
+Jan 29 20:44:10: vmx| DICT         ide1:0.autodetect = TRUE
+Jan 29 20:44:10: vmx| DICT             scsi0.present = TRUE
+Jan 29 20:44:10: vmx| DICT           floppy0.present = FALSE
+Jan 29 20:44:10: vmx| DICT               usb.present = FALSE
+Jan 29 20:44:10: vmx| DICT             sound.present = FALSE
+Jan 29 20:44:10: vmx| DICT          sound.virtualDev = es1371
+Jan 29 20:44:10: vmx| DICT            sound.fileName = -1
+Jan 29 20:44:10: vmx| DICT          sound.autodetect = TRUE
+Jan 29 20:44:10: vmx| DICT         ethernet0.present = TRUE
+Jan 29 20:44:10: vmx| DICT     ethernet0.addressType = generated
+Jan 29 20:44:10: vmx| DICT ethernet0.generatedAddress = 00:0c:29:0c:ec:7a
+Jan 29 20:44:10: vmx| DICT ethernet0.generatedAddressOffset = 0
+Jan 29 20:44:10: vmx| DICT  ethernet0.connectionType = nat
+Jan 29 20:44:10: vmx| DICT             uuid.location = 56 4d 36 4f 88 64 04 76-8e 8a 69 59 ae 0c ec 7a
+Jan 29 20:44:10: vmx| DICT                 uuid.bios = 56 4d 36 4f 88 64 04 76-8e 8a 69 59 ae 0c ec 7a
+Jan 29 20:44:10: vmx| DICT               uuid.action = create
+Jan 29 20:44:10: vmx| DICT       tools.remindInstall = TRUE
+Jan 29 20:44:10: vmx| DICT --- USER DEFAULTS
+Jan 29 20:44:10: vmx| DICT --- HOST DEFAULTS
+Jan 29 20:44:10: vmx| DICT        vmplayer.searchbar = FALSE
+Jan 29 20:44:10: vmx| DICT --- SITE DEFAULTS
+Jan 29 20:44:10: vmx| DICT        vmplayer.searchbar = FALSE
+Jan 29 20:44:10: vmx| DICT --- GLOBAL SETTINGS
+Jan 29 20:44:10: vmx| WSSCAN: reserved mem (in MB) min=32 max=888 recommended=888
+Jan 29 20:44:10: vmx|         hostMem=1016 maxAllowedAll=4096 maxAllowedVM=3600
+Jan 29 20:44:10: vmx|         totOverhead=16
+Jan 29 20:44:10: vmx| WSSCAN: used rec mem (in MB) 888
+Jan 29 20:44:10: vmx| WSSCAN: Overhead 22769 paged 5150 nonpaged 4096 maxFBSize
+Jan 29 20:44:10: vmx| WSSCAN 1 2 150615 179148 227328 150615 50 0
+Jan 29 20:44:10: vmx| LICENSE: Running in restricted mode
+Jan 29 20:44:10: vmx| STATDECLGROUP stats Root "" null
+Jan 29 20:44:10: vmx| Host CPUID features: version 0x6d8 id1.edx 0xafe9fbff id1.ecx 0x180 id81.edx 0x0 id81.ecx 0x0
+Jan 29 20:44:10: vmx| CPU.cpuFeatures = 0x871fe02
+Jan 29 20:44:10: vmx| CPUID after masking: version 0x6d8 id1.edx 0xfe9fbff id1.ecx 0x0 id81.edx 0x800 id81.ecx 0x0 id88.ecx 0x0
+Jan 29 20:44:10: vmx| CPU.cpuFeatures = 0x871fe02
+Jan 29 20:44:10: vmx| APIC: Local APIC at 0xfee00000
+Jan 29 20:44:10: vmx| KHZEstimate 1596000
+Jan 29 20:44:10: vmx| MHZEstimate 1596
+Jan 29 20:44:10: vmx| NumVCPUs 1
+Jan 29 20:44:10: vmx| UUID: location-UUID is 56 4d 4d 83 ab b8 be 47-ba 01 b8 b1 fb 9c dc 1d
+Jan 29 20:44:10: vmx| UUID: canonical path is f:\vm_lhinux_tp_0_2\lhinux_tp_0_2_2dd.vmx
+Jan 29 20:44:10: vmx| UUID: location-UUID is 56 4d d7 7f de d6 e8 33-23 d9 0d 00 41 88 42 9f
+Jan 29 20:44:10: vmx| UUID: Writing uuid.bios 56 4d d7 7f de d6 e8 33-23 d9 0d 00 41 88 42 9f
+Jan 29 20:44:10: vmx| UUID: Writing uuid.location 56 4d d7 7f de d6 e8 33-23 d9 0d 00 41 88 42 9f
+Jan 29 20:44:10: vmx| MM: Using partialmap, 16384 pages AC 0 CE 1 TM 0 DOHU 0
+Jan 29 20:44:10: vmx| UUID: canonical path is f:\vm_lhinux_tp_0_2\lhinux_tp_0_2_2dd.vmx
+Jan 29 20:44:10: vmx| UUID: location-UUID is 56 4d d7 7f de d6 e8 33-23 d9 0d 00 41 88 42 9f
+Jan 29 20:44:10: vmx| MM: using fileName F:\VM_Lhinux_TP_0_2\564dd77f-ded6-e833-23d9-0d004188429f.vmem for paging
+Jan 29 20:44:10: vmx| Msg_Reset:
+Jan 29 20:44:10: vmx| ----------------------------------------
+Jan 29 20:44:10: vmx| Opened paging file F:\VM_Lhinux_TP_0_2\564dd77f-ded6-e833-23d9-0d004188429f.vmem
+Jan 29 20:44:10: vmx| Mapped mainmem as pageable
+Jan 29 20:44:10: vmx| MStat: Creating Stat vm.uptime
+Jan 29 20:44:10: vmx| DISK: OPEN ide0:0 'F:\VM_Lhinux_TP_0_2\lhinux_TP_DD1.vmdk' persistent R[(null)]
+Jan 29 20:44:10: vmx| DISKLIB-DSCPTR: Opened [0]: "lhinux_TP_DD1.vmdk" (0xa)
+Jan 29 20:44:10: vmx| DISKLIB-LINK  : Opened 'F:\VM_Lhinux_TP_0_2\lhinux_TP_DD1.vmdk' (0xa): monolithicSparse, 4194304 sectors / 2048 Mb.
+Jan 29 20:44:10: vmx| DISKLIB-LIB   : Opened "F:\VM_Lhinux_TP_0_2\lhinux_TP_DD1.vmdk" (flags 0xa).
+Jan 29 20:44:10: vmx| DISK: OPEN 'F:\VM_Lhinux_TP_0_2\lhinux_TP_DD1.vmdk' Geo (4161/16/63) BIOS Geo (0/0/0) freeSpace=1771Mb
+Jan 29 20:44:10: vmx| DISK: OPEN ide0:1 'F:\VM_Lhinux_TP_0_2\lhinux_TP_DD2.vmdk' persistent R[(null)]
+Jan 29 20:44:10: vmx| DISKLIB-DSCPTR: Opened [0]: "lhinux_TP_DD2.vmdk" (0xa)
+Jan 29 20:44:10: vmx| DISKLIB-LINK  : Opened 'F:\VM_Lhinux_TP_0_2\lhinux_TP_DD2.vmdk' (0xa): monolithicSparse, 4194304 sectors / 2048 Mb.
+Jan 29 20:44:10: vmx| DISKLIB-LIB   : Opened "F:\VM_Lhinux_TP_0_2\lhinux_TP_DD2.vmdk" (flags 0xa).
+Jan 29 20:44:10: vmx| DISK: OPEN 'F:\VM_Lhinux_TP_0_2\lhinux_TP_DD2.vmdk' Geo (4161/16/63) BIOS Geo (0/0/0) freeSpace=1771Mb
+Jan 29 20:44:10: vmx| TimeTracker host to guest rate conversion 27121511646473 @ 1596000000Hz -> 27121511646473 @ 1596000000Hz
+Jan 29 20:44:10: vmx| TimeTracker host to guest rate conversion ((x * 2147483648) >> 31) + 0
+Jan 29 20:44:10: vmx| SCSI0: UNTAGGED commands will be converted to ORDER tags.
+Jan 29 20:44:10: vmx| MStat: Creating Stat vm.heartbeat
+Jan 29 20:44:10: vmx| DISKUTIL: ide0:1 : toolsVersion = 0
+Jan 29 20:44:10: vmx| DISKUTIL: ide0:0 : toolsVersion = 0
+Jan 29 20:44:10: vmx| DISKUTIL: Offline toolsVersion = 0
+Jan 29 20:44:10: vmx| Msg_Hint: msg.tools.toolsReminder (shown)
+Jan 29 20:44:10: vmx| TOOLS INSTALL initializing state to IDLE on power on.
+Jan 29 20:44:10: vmx| VLANCE: send cluster threshold is 80, size = 2 recalcInterval is 2 ticks
+Jan 29 20:44:10: vmx| Ethernet0 MAC Address: 00:0c:29:88:42:9f
+Jan 29 20:44:10: vmx| VMXNET: send cluster threshold is 80, size = 2 recalcInterval is 2 ticks, dontClusterSize is 128
+Jan 29 20:44:10: vmx| E1000: checksum cycles/kB: C=988 asm=694
+Jan 29 20:44:10: vmx| VirtualProtect MapProtectMem(0x11070000,0x1000) returns 0x1e7
+Jan 29 20:44:10: vmx| Can't read-only monitor pages from 0x11070000 to 0x11071000
+Jan 29 20:44:10: vmx| VirtualProtect MapProtectMem(0x11072000,0x0) returns 0x57
+Jan 29 20:44:10: vmx| Can't read-only monitor pages from 0x11072000 to 0x11072000
+Jan 29 20:44:10: vmx| TOOLS received request in VMX to set option 'enableDnD' -> '1'
+Jan 29 20:44:10: vmx| VMX_PowerOn: ModuleTable_PowerOn = 1
+Jan 29 20:44:10: mks| Async MKS thread is alive
+Jan 29 20:44:11: vmx| DnD rpc already set to 1
+Jan 29 20:44:11: vcpu-0| APIC: version = 0x14, max LVT = 5
+Jan 29 20:44:11: vcpu-0| APIC: LDR = 0x1000000, DFR = 0xffffffff
+Jan 29 20:44:11: vcpu-0| PShare: enabled 1, scanRate 32, checkRate 16
+Jan 29 20:44:11: vcpu-0| guestCpuFeatures = 0x871fe02
+Jan 29 20:44:11: vcpu-0| Init modules.
+Jan 29 20:44:11: vcpu-0| DISKUTIL: ide0:0 : capacity=4194304
+Jan 29 20:44:11: vcpu-0| DISKUTIL: ide0:1 : capacity=4194304
+Jan 29 20:44:11: mks| Connecting to window system.
+Jan 29 20:44:11: mks| Ignoring update request in VGA_Expose (mode change pending).
+Jan 29 20:44:11: mks| Ignoring update request in VGA_Expose (mode change pending).
+Jan 29 20:44:11: vcpu-0| CPU reset: hard
+Jan 29 20:44:11: vmx| VNET: Notification enabled for Ethernet0
+Jan 29 20:44:11: mks| Ignoring update request in VGA_Expose (mode change pending).
+Jan 29 20:44:11: vcpu-0| sz=3112928
+Jan 29 20:44:11: vcpu-0| vmm32 initialized: Releasebuild-19317. cflags: 0x08000002.01c41000.00000150
+Jan 29 20:44:12: vcpu-0| SVGA: Registering MemSpace at 0xf0000000(0x0) and 0xec000000(0x0)
+Jan 29 20:44:12: vcpu-0| PCI OPROM: Asked to map the VBIOS OPROM at 0xfe800000 (size 32768 bytes)
+Jan 29 20:44:12: vcpu-0| PCI OPROM: Asked to unmap the VBIOS OPROM
+Jan 29 20:44:12: vcpu-0| SVGA: Unregistering MemSpace at 0xf0000000(0xf0000000) and 0xec000000(0xec000000)
+Jan 29 20:44:12: vcpu-0| PCI OPROM: Asked to map the SBIOS OPROM at 0xfe800000 (size 16384 bytes)
+Jan 29 20:44:12: vcpu-0| PCI OPROM: Asked to unmap the SBIOS OPROM
+Jan 29 20:44:12: vcpu-0| PCI OPROM: Asked to map the VLANCE OPROM at 0xfe800000 (size 65536 bytes)
+Jan 29 20:44:12: vcpu-0| PCI OPROM: Asked to unmap the VLANCE OPROM
+Jan 29 20:44:12: vcpu-0| SVGA: Registering MemSpace at 0xf0000000(0xf0000000) and 0xec000000(0xec000000)
+Jan 29 20:44:12: vcpu-0| PCI OPROM: Asked to map the VBIOS OPROM at 0xfe800000 (size 32768 bytes)
+Jan 29 20:44:12: vcpu-0| PCI OPROM: Asked to unmap the VBIOS OPROM
+Jan 29 20:44:12: vcpu-0| SVGA: Unregistering MemSpace at 0xf0000000(0xf0000000) and 0xec000000(0xec000000)
+Jan 29 20:44:12: vcpu-0| SVGA: Registering IOSpace at 0x1400 (0x0)
+Jan 29 20:44:12: vcpu-0| SVGA: Registering MemSpace at 0xf0000000(0xf0000000) and 0xec000000(0xec000000)
+Jan 29 20:44:13: mks| Ignoring update request in VGA_Expose (mode change pending).
+Jan 29 20:44:13: mks| Ignoring update request in VGA_Expose (mode change pending).
+Jan 29 20:44:13: mks| Ignoring update request in VGA_Expose (mode change pending).
+Jan 29 20:44:17: vcpu-0| PCI OPROM: Asked to map the SBIOS OPROM at 0xfe800000 (size 16384 bytes)
+Jan 29 20:44:17: vcpu-0| PCI OPROM: Asked to unmap the SBIOS OPROM
+Jan 29 20:44:17: vcpu-0| PCI OPROM: Asked to map the VLANCE OPROM at 0xfe800000 (size 65536 bytes)
+Jan 29 20:44:17: vcpu-0| PCI OPROM: Asked to map the VLANCE OPROM at 0xfe800000 (size 65536 bytes)
+Jan 29 20:44:17: vcpu-0| PCI OPROM: Asked to unmap the VLANCE OPROM
+Jan 29 20:44:17: vcpu-0| VIDE: Curr CHS info cyls: 4161 heads: 16 sects: 63 lba_cap: 4194304
+Jan 29 20:44:17: vcpu-0| VIDE: Curr CHS info cyls: 4161 heads: 16 sects: 63 lba_cap: 4194304
+Jan 29 20:44:19: vmx| PTSC slow TSC 0.4999
+Jan 29 20:44:19: vmx| PTSC TSC 27128651371152 - 27124660141518, 1596 MHz
+Jan 29 20:44:19: vmx| PTSC PC  99072330659 - 99054427416, 3579 kHz
+Jan 29 20:44:19: vmx| PTSC using fake TSC
+Jan 29 20:44:19: vmx| PTSC 99072331823 @ 3579545Hz -> 27128651630643 @ 1596000000Hz
+Jan 29 20:44:19: vmx| PTSC ((x * 3740201161) >> 23) + -17044404317061
+Jan 29 20:44:20: vcpu-0| BIOS-UUID is 56 4d d7 7f de d6 e8 33-23 d9 0d 00 41 88 42 9f
+Jan 29 20:44:21: vcpu-0| DISKUTIL: ide0:1 : toolsVersion = 0
+Jan 29 20:44:21: vcpu-0| DISKUTIL: ide0:0 : toolsVersion = 0
+Jan 29 20:44:21: vcpu-0| DISKUTIL: Offline toolsVersion = 0
+Jan 29 20:44:27: mks| Ignoring update request in VGA_Expose (mode change pending).
+Jan 29 20:44:41: vcpu-0| Unknown int 10h func 0x0000
+Jan 29 20:44:41: vcpu-0| Unknown int 10h func 0x0000
+Jan 29 20:44:44: vcpu-0| SVGA: Unregistering IOSpace at 0x1400 (0x1400)
+Jan 29 20:44:44: vcpu-0| SVGA: Registering IOSpace at 0xfff0 (0x0)
+Jan 29 20:44:44: vcpu-0| SVGA: Unregistering IOSpace at 0xfff0 (0xfff0)
+Jan 29 20:44:44: vcpu-0| SVGA: Registering IOSpace at 0x1400 (0x0)
+Jan 29 20:44:53: vcpu-0| VIDE: Curr CHS info cyls: 4161 heads: 16 sects: 63 lba_cap: 4194304
+Jan 29 20:44:53: vcpu-0| VIDE: Curr CHS info cyls: 4161 heads: 16 sects: 63 lba_cap: 4194304
+Jan 29 20:44:53: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:44:53: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:44:53: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:44:53: vcpu-0| SCSI0: RESET BUS
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:05: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:05: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:05: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:05: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:05: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:05: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:05: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:05: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:05: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:05: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:06: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:06: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 32
+Jan 29 20:45:08: vcpu-0| VIDE: (0x170) Rep INSW ATAPI Unknown Cmd 0x51 Data len 2
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 40
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 32
+Jan 29 20:45:08: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:47:20: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:47:20: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:47:20: vcpu-0| CDROM: Emulate GET CONFIGURATION RT 0 start feature 0
+Jan 29 20:47:20: vcpu-0| PIIX4: PM Soft Off.  Good-bye.
+Jan 29 20:47:20: vmx| Stopping VCPU threads...
+Jan 29 20:47:20: mks| Detaching from window system.
+Jan 29 20:47:20: mks| Async MKS thread is exiting
+Jan 29 20:47:20: vmx| TOOLS received request in VMX to set option 'enableDnD' -> '0'
+Jan 29 20:47:20: vmx| TOOLS received request in VMX to set option 'enableDnD' -> '0'
+Jan 29 20:47:20: vmx| MKS local poweroff
+Jan 29 20:47:20: vmx| Lock before MKS lock created.  Early poweroff?
+Jan 29 20:47:20: vmx| Unlock before MKS lock created.  Early poweroff?
+Jan 29 20:47:20: vmx| ide0:1: numIOs = 30 numMergedIOs = 0 numSplitIOs = 0 ( 0.0%)
+Jan 29 20:47:20: vmx| ide0:0: numIOs = 397 numMergedIOs = 20 numSplitIOs = 9 (31.0%)
+Jan 29 20:47:20: vmx| AIOWIN32: asyncOps=704 syncOps=20 bufSize=164Kb delayed=0 fixed=156 sgOp=495 sgOn=1
+Jan 29 20:47:21: vmx| vmdbPipe_Streams: Couldn't read
+Jan 29 20:47:21: vmx| VMX idle exit
+Jan 29 20:47:21: vmx| Flushing VMX VMDB connections
+Jan 29 20:47:21: vmx| IPC_exit: disconnecting all threads
+Jan 29 20:47:21: vmx| VMX exit.
+Jan 29 20:47:21: vmx| AIOMGR-S : stat o=6 r=14 w=0 i=0 br=52224 bw=0

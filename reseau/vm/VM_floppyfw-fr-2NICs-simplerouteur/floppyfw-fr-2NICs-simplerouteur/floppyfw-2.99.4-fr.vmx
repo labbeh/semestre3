@@ -1,0 +1,47 @@
+config.version = "8"
+virtualHW.version = "3"
+
+MemAllowAutoScaleDown = "FALSE"
+MemTrimRate = "-1"
+
+uuid.location = "56 4d ae 1d 84 13 d6 dd-4a ff 2d 43 17 0d 96 47"
+uuid.bios = "56 4d ae 1d 84 13 d6 dd-4a ff 2d 43 17 0d 96 47"
+
+uuid.action = "create"
+checkpoint.vmState = ""
+
+guestOS = "linux"
+memsize = "16"
+
+ethernet0.present = "TRUE"
+ethernet0.connectionType = "nat"
+ethernet0.addressType = "generated"
+ethernet0.generatedAddress = "00:0c:29:0d:96:47"
+ethernet0.generatedAddressOffset = "0"
+
+ethernet1.present = "TRUE"
+ethernet1.connectionType = "nat"
+ethernet1.addressType = "generated"
+ethernet1.generatedAddress = "00:0c:29:0d:96:51"
+ethernet1.generatedAddressOffset = "10"
+
+usb.present = "FALSE"
+
+sound.present = "FALSE"
+
+scsi0.present = "FALSE"
+
+floppy0.present = "TRUE"
+floppy0.fileType = "file"
+floppy0.fileName = "floppyfw-2.99.4-fr-2NICs-simplerouteur.img"
+floppy0.startConnected = "TRUE"
+
+ide0:0.present = "FALSE"
+
+ide0:1.present = "FALSE"
+
+ide1:0.present = "FALSE"
+
+ide1:1.present = "FALSE"
+
+tools.remindInstall = "TRUE"

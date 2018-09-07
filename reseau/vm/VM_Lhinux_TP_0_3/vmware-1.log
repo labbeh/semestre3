@@ -1,0 +1,200 @@
+Jan 29 20:32:14: vmx| Log for VMware Player pid=3764 version=1.0.1 build=build-19317 option=Release
+Jan 29 20:32:14: vmx| Command line: "C:\Program Files\VMware\VMware Player\bin\vmware-vmx.exe" "-@" "pipe=\\.\pipe\vmxb543d6cbea042c8e; vm=b543d6cbea042c8e" "F:\VM_Lhinux_TP_0_2\lhinux_TP_0_2.vmx"
+Jan 29 20:32:14: vmx| UI Connecting to pipe '\\.\pipe\vmxb543d6cbea042c8e' with user '(null)'
+Jan 29 20:32:14: vmx| CPU #0 TSC = 26457760939559
+Jan 29 20:32:14: vmx| TSC delta 0
+Jan 29 20:32:14: vmx| VMMon_GetkHzEstimate: Calculated 1596000 kHz
+Jan 29 20:32:14: vmx| pcpu #0 CPUID numEntries=2 GenuntelineI
+Jan 29 20:32:14: vmx| pcpu #0 CPUID version=0x6d8 id1.edx=0xafe9fbff id1.ecx=0x180 id1.ebx=0x816
+Jan 29 20:32:14: vmx| pcpu #0 CPUID id80.eax=80000008 id81.edx=0x0 id81.ecx=0x0
+Jan 29 20:32:14: vmx| CPUID id1.edx: 0xafe9fbff id1.ecx: 0x180 id81.edx: 0 id81.ecx: 0
+Jan 29 20:32:14: vmx| CPUID id88.ecx: 0 id88.edx: 0
+Jan 29 20:32:14: vmx| ACL_InitCapabilities: here 1 (bug 63252)
+Jan 29 20:32:14: vmx| changing directory to F:\VM_Lhinux_TP_0_2\.
+Jan 29 20:32:14: vmx| Config file: F:\VM_Lhinux_TP_0_2\lhinux_TP_0_2.vmx
+Jan 29 20:32:14: vmx| VMXVmdbCbVmVmxExecState: Exec state change requested to state poweredOn without reset
+Jan 29 20:32:14: vmx| TOOLS delaying state change request to state 3
+Jan 29 20:32:14: vmx| PowerOn
+Jan 29 20:32:14: vmx| HOST Windows version 5.1, build 2600, platform 2, "Service Pack 2"
+Jan 29 20:32:14: vmx| DICT --- USER PREFERENCES
+Jan 29 20:32:14: vmx| DICT pref.vmplayer.fullscreen.autohide = TRUE
+Jan 29 20:32:14: vmx| DICT    pref.autoFitFullScreen = fitHostToGuest
+Jan 29 20:32:14: vmx| DICT     pref.view.navBar.type = favorites
+Jan 29 20:32:14: vmx| DICT     pref.mruDest0.present = FALSE
+Jan 29 20:32:14: vmx| DICT  pref.mruDest0.destString = 
+Jan 29 20:32:14: vmx| DICT        pref.mruDest0.user = 
+Jan 29 20:32:14: vmx| DICT     pref.mruDest1.present = FALSE
+Jan 29 20:32:14: vmx| DICT  pref.mruDest1.destString = 
+Jan 29 20:32:14: vmx| DICT        pref.mruDest1.user = 
+Jan 29 20:32:14: vmx| DICT     pref.mruDest2.present = FALSE
+Jan 29 20:32:14: vmx| DICT  pref.mruDest2.destString = 
+Jan 29 20:32:14: vmx| DICT        pref.mruDest2.user = 
+Jan 29 20:32:14: vmx| DICT     pref.mruDest3.present = FALSE
+Jan 29 20:32:14: vmx| DICT  pref.mruDest3.destString = 
+Jan 29 20:32:14: vmx| DICT        pref.mruDest3.user = 
+Jan 29 20:32:14: vmx| DICT     pref.mruDest4.present = FALSE
+Jan 29 20:32:14: vmx| DICT  pref.mruDest4.destString = 
+Jan 29 20:32:14: vmx| DICT        pref.mruDest4.user = 
+Jan 29 20:32:14: vmx| DICT     pref.mruDest5.present = FALSE
+Jan 29 20:32:14: vmx| DICT  pref.mruDest5.destString = 
+Jan 29 20:32:14: vmx| DICT        pref.mruDest5.user = 
+Jan 29 20:32:14: vmx| DICT     pref.mruDest6.present = FALSE
+Jan 29 20:32:14: vmx| DICT  pref.mruDest6.destString = 
+Jan 29 20:32:14: vmx| DICT        pref.mruDest6.user = 
+Jan 29 20:32:14: vmx| DICT     pref.mruDest7.present = FALSE
+Jan 29 20:32:14: vmx| DICT  pref.mruDest7.destString = 
+Jan 29 20:32:14: vmx| DICT        pref.mruDest7.user = 
+Jan 29 20:32:14: vmx| DICT       webUpdate.checkLast = 1170098920
+Jan 29 20:32:14: vmx| DICT webUpdate.lastCheck.status = done_updates
+Jan 29 20:32:14: vmx| DICT pref.vmplayer.confirmOnExit = TRUE
+Jan 29 20:32:14: vmx| DICT pref.vmplayer.exit.vmAction = poweroff
+Jan 29 20:32:14: vmx| DICT --- USER DEFAULTS
+Jan 29 20:32:14: vmx| DICT --- HOST DEFAULTS
+Jan 29 20:32:14: vmx| DICT        vmplayer.searchbar = FALSE
+Jan 29 20:32:14: vmx| DICT --- SITE DEFAULTS
+Jan 29 20:32:14: vmx| DICT        vmplayer.searchbar = FALSE
+Jan 29 20:32:14: vmx| DICT --- COMMAND LINE
+Jan 29 20:32:14: vmx| DICT             gui.available = TRUE
+Jan 29 20:32:14: vmx| DICT --- CONFIGURATION
+Jan 29 20:32:14: vmx| DICT            config.version = 8
+Jan 29 20:32:14: vmx| DICT         virtualHW.version = 4
+Jan 29 20:32:14: vmx| DICT                   memsize = 64
+Jan 29 20:32:14: vmx| DICT     MemAllowAutoScaleDown = FALSE
+Jan 29 20:32:14: vmx| DICT               displayName = lhinux-TP-v0.2
+Jan 29 20:32:14: vmx| DICT                   guestOS = otherlinux
+Jan 29 20:32:14: vmx| DICT                     nvram = lhinux_TP_0.2.nvram
+Jan 29 20:32:14: vmx| DICT            ide0:0.present = TRUE
+Jan 29 20:32:14: vmx| DICT           ide0:0.fileName = lhinux_TP.vmdk
+Jan 29 20:32:14: vmx| DICT               ide0:0.redo = 
+Jan 29 20:32:14: vmx| DICT            ide1:0.present = TRUE
+Jan 29 20:32:14: vmx| DICT           ide1:0.fileName = lhinux_TP_0_2.iso
+Jan 29 20:32:14: vmx| DICT         ide1:0.deviceType = cdrom-image
+Jan 29 20:32:14: vmx| DICT         ide1:0.autodetect = TRUE
+Jan 29 20:32:14: vmx| DICT             scsi0.present = TRUE
+Jan 29 20:32:14: vmx| DICT           floppy0.present = FALSE
+Jan 29 20:32:14: vmx| DICT               usb.present = FALSE
+Jan 29 20:32:14: vmx| DICT             sound.present = FALSE
+Jan 29 20:32:14: vmx| DICT          sound.virtualDev = es1371
+Jan 29 20:32:14: vmx| DICT            sound.fileName = -1
+Jan 29 20:32:14: vmx| DICT          sound.autodetect = TRUE
+Jan 29 20:32:14: vmx| DICT         ethernet0.present = TRUE
+Jan 29 20:32:14: vmx| DICT     ethernet0.addressType = generated
+Jan 29 20:32:14: vmx| DICT ethernet0.generatedAddress = 00:0c:29:0c:ec:7a
+Jan 29 20:32:14: vmx| DICT ethernet0.generatedAddressOffset = 0
+Jan 29 20:32:14: vmx| DICT  ethernet0.connectionType = nat
+Jan 29 20:32:14: vmx| DICT             uuid.location = 56 4d 36 4f 88 64 04 76-8e 8a 69 59 ae 0c ec 7a
+Jan 29 20:32:14: vmx| DICT                 uuid.bios = 56 4d 36 4f 88 64 04 76-8e 8a 69 59 ae 0c ec 7a
+Jan 29 20:32:14: vmx| DICT               uuid.action = create
+Jan 29 20:32:14: vmx| DICT       tools.remindInstall = TRUE
+Jan 29 20:32:14: vmx| DICT --- USER DEFAULTS
+Jan 29 20:32:14: vmx| DICT --- HOST DEFAULTS
+Jan 29 20:32:14: vmx| DICT        vmplayer.searchbar = FALSE
+Jan 29 20:32:14: vmx| DICT --- SITE DEFAULTS
+Jan 29 20:32:14: vmx| DICT        vmplayer.searchbar = FALSE
+Jan 29 20:32:14: vmx| DICT --- GLOBAL SETTINGS
+Jan 29 20:32:14: vmx| WSSCAN: reserved mem (in MB) min=32 max=888 recommended=888
+Jan 29 20:32:14: vmx|         hostMem=1016 maxAllowedAll=4096 maxAllowedVM=3600
+Jan 29 20:32:14: vmx|         totOverhead=16
+Jan 29 20:32:14: vmx| WSSCAN: used rec mem (in MB) 888
+Jan 29 20:32:14: vmx| WSSCAN: Overhead 22769 paged 5150 nonpaged 4096 maxFBSize
+Jan 29 20:32:14: vmx| WSSCAN 1 2 150511 179103 227328 150511 50 0
+Jan 29 20:32:14: vmx| LICENSE: Running in restricted mode
+Jan 29 20:32:14: vmx| STATDECLGROUP stats Root "" null
+Jan 29 20:32:14: vmx| Host CPUID features: version 0x6d8 id1.edx 0xafe9fbff id1.ecx 0x180 id81.edx 0x0 id81.ecx 0x0
+Jan 29 20:32:14: vmx| CPU.cpuFeatures = 0x871fe02
+Jan 29 20:32:14: vmx| CPUID after masking: version 0x6d8 id1.edx 0xfe9fbff id1.ecx 0x0 id81.edx 0x800 id81.ecx 0x0 id88.ecx 0x0
+Jan 29 20:32:14: vmx| CPU.cpuFeatures = 0x871fe02
+Jan 29 20:32:14: vmx| APIC: Local APIC at 0xfee00000
+Jan 29 20:32:14: vmx| KHZEstimate 1596000
+Jan 29 20:32:14: vmx| MHZEstimate 1596
+Jan 29 20:32:14: vmx| NumVCPUs 1
+Jan 29 20:32:14: vmx| UUID: location-UUID is 56 4d 7b b9 c0 d9 8a ca-b9 74 9a 26 dc a0 be 2a
+Jan 29 20:32:14: vmx| UUID: canonical path is f:\vm_lhinux_tp_0_2\lhinux_tp_0_2.vmx
+Jan 29 20:32:14: vmx| UUID: location-UUID is 56 4d 36 4f 88 64 04 76-8e 8a 69 59 ae 0c ec 7a
+Jan 29 20:32:14: vmx| MM: Using partialmap, 16384 pages AC 0 CE 1 TM 0 DOHU 0
+Jan 29 20:32:14: vmx| UUID: canonical path is f:\vm_lhinux_tp_0_2\lhinux_tp_0_2.vmx
+Jan 29 20:32:14: vmx| UUID: location-UUID is 56 4d 36 4f 88 64 04 76-8e 8a 69 59 ae 0c ec 7a
+Jan 29 20:32:14: vmx| MM: using fileName F:\VM_Lhinux_TP_0_2\564d364f-8864-0476-8e8a-6959ae0cec7a.vmem for paging
+Jan 29 20:32:14: vmx| Msg_Reset:
+Jan 29 20:32:14: vmx| ----------------------------------------
+Jan 29 20:32:14: vmx| Opened paging file F:\VM_Lhinux_TP_0_2\564d364f-8864-0476-8e8a-6959ae0cec7a.vmem
+Jan 29 20:32:14: vmx| Mapped mainmem as pageable
+Jan 29 20:32:14: vmx| MStat: Creating Stat vm.uptime
+Jan 29 20:32:14: vmx| DISK: OPEN ide0:0 'F:\VM_Lhinux_TP_0_2\lhinux_TP.vmdk' persistent R[(null)]
+Jan 29 20:32:14: vmx| DISKLIB-DSCPTR: Opened [0]: "lhinux_TP.vmdk" (0xa)
+Jan 29 20:32:14: vmx| DISKLIB-LINK  : Opened 'F:\VM_Lhinux_TP_0_2\lhinux_TP.vmdk' (0xa): monolithicSparse, 4194304 sectors / 2048 Mb.
+Jan 29 20:32:14: vmx| DISKLIB-LIB   : Opened "F:\VM_Lhinux_TP_0_2\lhinux_TP.vmdk" (flags 0xa).
+Jan 29 20:32:14: vmx| DISK: OPEN 'F:\VM_Lhinux_TP_0_2\lhinux_TP.vmdk' Geo (4161/16/63) BIOS Geo (0/0/0) freeSpace=1772Mb
+Jan 29 20:32:14: vmx| TimeTracker host to guest rate conversion 26458279810361 @ 1596000000Hz -> 26458279810361 @ 1596000000Hz
+Jan 29 20:32:14: vmx| TimeTracker host to guest rate conversion ((x * 2147483648) >> 31) + 0
+Jan 29 20:32:14: vmx| SCSI0: UNTAGGED commands will be converted to ORDER tags.
+Jan 29 20:32:14: vmx| MStat: Creating Stat vm.heartbeat
+Jan 29 20:32:14: vmx| DISKUTIL: ide0:0 : toolsVersion = 0
+Jan 29 20:32:14: vmx| DISKUTIL: Offline toolsVersion = 0
+Jan 29 20:32:14: vmx| Msg_Hint: msg.tools.toolsReminder (shown)
+Jan 29 20:32:14: vmx| TOOLS INSTALL initializing state to IDLE on power on.
+Jan 29 20:32:14: vmx| VLANCE: send cluster threshold is 80, size = 2 recalcInterval is 2 ticks
+Jan 29 20:32:14: vmx| Ethernet0 MAC Address: 00:0c:29:0c:ec:7a
+Jan 29 20:32:14: vmx| VMXNET: send cluster threshold is 80, size = 2 recalcInterval is 2 ticks, dontClusterSize is 128
+Jan 29 20:32:14: vmx| E1000: checksum cycles/kB: C=991 asm=693
+Jan 29 20:32:14: vmx| VirtualProtect MapProtectMem(0x11070000,0x1000) returns 0x1e7
+Jan 29 20:32:14: vmx| Can't read-only monitor pages from 0x11070000 to 0x11071000
+Jan 29 20:32:14: vmx| VirtualProtect MapProtectMem(0x11072000,0x0) returns 0x57
+Jan 29 20:32:14: vmx| Can't read-only monitor pages from 0x11072000 to 0x11072000
+Jan 29 20:32:14: vmx| TOOLS received request in VMX to set option 'enableDnD' -> '1'
+Jan 29 20:32:14: vmx| VMX_PowerOn: ModuleTable_PowerOn = 1
+Jan 29 20:32:14: mks| Async MKS thread is alive
+Jan 29 20:32:14: vmx| DnD rpc already set to 1
+Jan 29 20:32:14: vcpu-0| APIC: version = 0x14, max LVT = 5
+Jan 29 20:32:14: vcpu-0| APIC: LDR = 0x1000000, DFR = 0xffffffff
+Jan 29 20:32:14: vcpu-0| PShare: enabled 1, scanRate 32, checkRate 16
+Jan 29 20:32:14: vcpu-0| guestCpuFeatures = 0x871fe02
+Jan 29 20:32:14: vcpu-0| Init modules.
+Jan 29 20:32:14: vcpu-0| DISKUTIL: ide0:0 : capacity=4194304
+Jan 29 20:32:14: vcpu-0| CPU reset: hard
+Jan 29 20:32:14: vmx| VNET: Notification enabled for Ethernet0
+Jan 29 20:32:14: mks| Connecting to window system.
+Jan 29 20:32:14: mks| Ignoring update request in VGA_Expose (mode change pending).
+Jan 29 20:32:14: mks| Ignoring update request in VGA_Expose (mode change pending).
+Jan 29 20:32:14: vcpu-0| sz=3112928
+Jan 29 20:32:14: vcpu-0| vmm32 initialized: Releasebuild-19317. cflags: 0x08000002.01c41000.00000150
+Jan 29 20:32:15: vcpu-0| SVGA: Registering MemSpace at 0xf0000000(0x0) and 0xec000000(0x0)
+Jan 29 20:32:15: vcpu-0| PCI OPROM: Asked to map the VBIOS OPROM at 0xfe800000 (size 32768 bytes)
+Jan 29 20:32:15: vcpu-0| PCI OPROM: Asked to unmap the VBIOS OPROM
+Jan 29 20:32:15: vcpu-0| SVGA: Unregistering MemSpace at 0xf0000000(0xf0000000) and 0xec000000(0xec000000)
+Jan 29 20:32:15: vcpu-0| PCI OPROM: Asked to map the SBIOS OPROM at 0xfe800000 (size 16384 bytes)
+Jan 29 20:32:15: vcpu-0| PCI OPROM: Asked to unmap the SBIOS OPROM
+Jan 29 20:32:15: vcpu-0| PCI OPROM: Asked to map the VLANCE OPROM at 0xfe800000 (size 65536 bytes)
+Jan 29 20:32:15: vcpu-0| PCI OPROM: Asked to unmap the VLANCE OPROM
+Jan 29 20:32:15: vcpu-0| SVGA: Registering MemSpace at 0xf0000000(0xf0000000) and 0xec000000(0xec000000)
+Jan 29 20:32:15: vcpu-0| PCI OPROM: Asked to map the VBIOS OPROM at 0xfe800000 (size 32768 bytes)
+Jan 29 20:32:15: vcpu-0| PCI OPROM: Asked to unmap the VBIOS OPROM
+Jan 29 20:32:15: vcpu-0| SVGA: Unregistering MemSpace at 0xf0000000(0xf0000000) and 0xec000000(0xec000000)
+Jan 29 20:32:15: vcpu-0| SVGA: Registering IOSpace at 0x1400 (0x0)
+Jan 29 20:32:15: vcpu-0| SVGA: Registering MemSpace at 0xf0000000(0xf0000000) and 0xec000000(0xec000000)
+Jan 29 20:32:16: vcpu-0| PCI OPROM: Asked to map the SBIOS OPROM at 0xfe800000 (size 16384 bytes)
+Jan 29 20:32:16: vcpu-0| PCI OPROM: Asked to unmap the SBIOS OPROM
+Jan 29 20:32:16: vcpu-0| PCI OPROM: Asked to map the VLANCE OPROM at 0xfe800000 (size 65536 bytes)
+Jan 29 20:32:16: vcpu-0| PCI OPROM: Asked to map the VLANCE OPROM at 0xfe800000 (size 65536 bytes)
+Jan 29 20:32:16: vcpu-0| PCI OPROM: Asked to unmap the VLANCE OPROM
+Jan 29 20:32:16: vcpu-0| VIDE: Curr CHS info cyls: 4161 heads: 16 sects: 63 lba_cap: 4194304
+Jan 29 20:32:17: vcpu-0| BIOS-UUID is 56 4d 36 4f 88 64 04 76-8e 8a 69 59 ae 0c ec 7a
+Jan 29 20:32:17: vcpu-0| DISKUTIL: ide0:0 : toolsVersion = 0
+Jan 29 20:32:17: vcpu-0| DISKUTIL: Offline toolsVersion = 0
+Jan 29 20:32:19: vmx| VMXVmdbCbVmVmxExecState: Exec state change requested to state poweredOff without reset
+Jan 29 20:32:19: vmx| Stopping VCPU threads...
+Jan 29 20:32:19: mks| Detaching from window system.
+Jan 29 20:32:19: mks| Async MKS thread is exiting
+Jan 29 20:32:19: vmx| TOOLS received request in VMX to set option 'enableDnD' -> '0'
+Jan 29 20:32:19: vmx| TOOLS received request in VMX to set option 'enableDnD' -> '0'
+Jan 29 20:32:19: vmx| MKS local poweroff
+Jan 29 20:32:19: vmx| Lock before MKS lock created.  Early poweroff?
+Jan 29 20:32:19: vmx| Unlock before MKS lock created.  Early poweroff?
+Jan 29 20:32:19: vmx| ide0:0: numIOs = 0 numMergedIOs = 0 numSplitIOs = 0 ( 0.0%)
+Jan 29 20:32:19: vmx| AIOWIN32: asyncOps=2 syncOps=10 bufSize=4Kb delayed=0 fixed=6 sgOp=4 sgOn=1
+Jan 29 20:32:19: vmx| vmdbPipe_Streams: Couldn't read
+Jan 29 20:32:19: vmx| VMX idle exit
+Jan 29 20:32:19: vmx| Flushing VMX VMDB connections
+Jan 29 20:32:19: vmx| IPC_exit: disconnecting all threads
+Jan 29 20:32:19: vmx| VMX exit.
+Jan 29 20:32:19: vmx| AIOMGR-S : stat o=3 r=7 w=0 i=0 br=26112 bw=0

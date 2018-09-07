@@ -1,0 +1,22 @@
+
+07/04/08	v0.3 : ajout des droits wx a tous les utilisateurs (sinon leur absence
+		peut poser des problemes car tous ces fichiers appartiennent officiellement
+		a l'utilisateur colin, et les etudiants doivent pouvoir les modifier dans
+		les TP (partitionnement, modification des fichiers inittab, etc.) )
+
+25/01/07	ajout d'un second disque dur IDE de 2Go non formaté, en /dev/hdb -> OK
+
+23/01/07	Ajout de rc.keymap (executable) sur le CD dans /rootcopy/etc/rc.d -> OK
+		Ajout d'un module Lynx sur le CD dans /modules -> OK
+		Ajout d'un module vi (version nex/nvi) sur le CD dans /modules -> OK
+
+		Ajout de issue sur le CD dans /rootcopy/etc -> OK
+
+		Ajout d'un pseudo fichier slaxsave.dat (256 Mo) dans /mnt/hda1 -> OK
+
+21/01/07	Récupération d'un ISO Slax-frodo-5.1.8.
+		Création d'une simulation avec 64 Mo de RAM et un Disque dur IDE de 2 Go.
+		Partitionnement du disque dur en une partition de 2 Go (/dev/hda1).
+		Formattage de la partition en ext2 -> OK.
+
+	
