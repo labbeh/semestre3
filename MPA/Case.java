@@ -23,7 +23,8 @@ public class Case
 	/* ACCESSEURS */
 
 	/**
-	*	@param: position du voisin N O S ou E
+	*	@param : position du voisin N O S ou E
+	*	@return: retourne le voisin à la position donnée, retourne null en cas de paramètre invalide
 	*/
 	public Case getVoisin(char pos)
 	{
@@ -34,6 +35,7 @@ public class Case
 			case 'S': return this.voisins[2];
 			case 'E': return this.voisins[3];
 		}
+		return null;
 	}
 
 	/* MODIFICATEURS */
