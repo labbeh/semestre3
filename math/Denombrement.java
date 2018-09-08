@@ -2,11 +2,12 @@ public class Denombrement
 {
 	public static int factorielle(int n)
 	{
-		int iRet = n;
+		if(n == 0 ) return  1; //fonctionne aussi
+		//if(n <  0 ) return -1; // code erreur
+		if(n<2) return 1;
 
-		if(n > 0) factorielle(n*(n-1));
-
-		return n;
+		//int fact = n*n-1;
+		return n*factorielle(n-1);
 	}
 
 	public static int cnkFacorielle(int n, int k)
