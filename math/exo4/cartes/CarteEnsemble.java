@@ -1,5 +1,12 @@
 import java.util.ArrayList;
 
+/**
+* @author 	   : Hugo Labbé, groupe D2
+* @version	   : 1.1
+* @date	  	   : 2018-09-09
+* @description : Exercice 4 à rendre
+*/
+
 public class CarteEnsemble
 {
 	private ArrayList<Carte> ensCarte;
@@ -16,7 +23,7 @@ public class CarteEnsemble
 	* @constructor: créé un ensemble de 32 cartes (n=32) peut importe le nombre passé en paramètre
 	* 				il ne sert qu'à différencier les constructeurs
 	*/
-	public CarteEnsemble(int n )
+	public CarteEnsemble(int n)
 	{
 		// le 32 en paramètre ne fige pas la taille de la liste mais permet de lui attribuer une taille
 		// de base
@@ -27,7 +34,9 @@ public class CarteEnsemble
 				 this.ensCarte.add(new Carte(couleur,valeur));
 	}
 
+	/***********************************/
 	/* ACTIONS SUR L'ENSEMBLE DE CARTE */
+	/***********************************/
 
 	/**
 	* @param: ajoute à l'ensemble la carte passée en paramètre
@@ -55,14 +64,26 @@ public class CarteEnsemble
 	*/
 	public void ajouter(CarteEnsemble ensCarte)
 	{
-		
+		if(ensCarte == null || ensCarte.getNombre() == 0) return;
+
+		for(int cpt=0; cpt<ensCarte.getNombre(); cpt++)
+			this.ensCarte.add(ensCarte.get(cpt));
 	}
 
+	/**************/
 	/* ACCESSEURS */
+	/**************/
+
 	/**
 	* @return: retourne le nombre de Carte présentes dans l'ensemble
 	*/
 	public int getNombre(){ return this.ensCarte.size(); }
+
+	/**
+	* @param : indice dans l'ensemble
+	* @return: retourne la carte de l'ensemble à l'indice passé en paramètre
+	*/
+	private Carte get(int i){ return this.ensCarte.get(i); }
 
 	/**
 	* @return: tire avec remise une carte de l'ensemble
@@ -83,25 +104,109 @@ public class CarteEnsemble
 		if(this.ensCarte.size() == 0) return null;
 
 		int indiceTirage = (int)(Math.random() * (this.ensCarte.size() - 1));
-
-		Carte carteRet = this.ensCarte.get(indiceTirage);
-		this.ensCarte.remove(indiceTirage);
-
-		return carteRet;
+		return this.ensCarte.remove(indiceTirage);
 	}
 
 	/**
+	* @param : Carte à comparer
 	* @return: retourne vrai si la carte passée en paramètre fait partie de l'ensemble
 	*/
 	public boolean contient(Carte carte)
 	{
+		if(carte == null) return false;
+
 		for(Carte carteComp: this.ensCarte)
 			if(carteComp.equals(carte)) return true;
 
 		return false;
 	}
 
+	/**
+	* @param : CarteEnseigne soit l'enseigne d'une carte
+	* @return: retourne vrai si au moins une carte de l'ensemble à l'enseigne en paramètre,
+	*		   comparaison sur les adresses mémoires
+	*/
+	public boolean contient(CarteEnseigne enseigne)
+	{
+		if(enseigne == null) return false;
+
+		for(Carte carteComp: this.ensCarte)
+			if(carteComp.getEnseigne() == enseigne) return true;
+
+		return false;
+	}
+
+	/**
+	* @param : CarteValeur soit la valeur d'une carte
+	* @return: retourne vrai si au moins une carte de l'ensemble à la valeur en paramètre,
+	*		   comparaison sur les adresses mémoires
+	*/
+	public boolean contient(CarteValeur valeur)
+	{
+		if(valeur == null) return false;
+
+		for(Carte carteComp: this.ensCarte)
+			if(carteComp.getValeur() == valeur) return true;
+
+		return false;
+	}
+
+	/**
+	* @param : nombre d'éléments de la liste retournée
+	* @return: retourne une k-liste en fonction du nombre en paramètre,
+	*		   retourne null en cas d'ensemble vide de paramètre invalide
+	*/
+	public Carte[] donnerKListe(int k)
+	{
+		if(this.ensCarte.size() == 0) return null;
+
+		Carte[] tabRet = new Carte[k];
+
+		for(int cpt=0; cpt<k; cpt++)
+			tabRet[cpt] = this.tirerAvecRemise();
+
+		return tabRet;
+	}
+
+	/**
+	* @param : nombre d'éléments de la liste retournée
+	* @return: retourne un k-arrangement en fonction du nombre en paramètre,
+	*		   retourne null en cas d'ensemble vide ou de paramètre invalide
+	*/
+	public Carte[] donnerKArrangement(int k)
+	{
+		if(this.ensCarte.size() == 0		) return null;
+		if(k < 1 || k > this.ensCarte.size()) return null;
+
+		Carte[] tabRet = new Carte[k];
+
+		for(int cpt=0; cpt<k; cpt++)
+			tabRet[cpt] = this.ensCarte.get(cpt);
+
+		return tabRet;
+	}
+
+	/**
+	* @param : nombre d'éléments de la liste retournée
+	* @return: retourne une k-combinaison en fonction du nombre en paramètre,
+	*		   retourne null en cas d'ensemble vide ou de paramètre invalide
+	*/
+	public Carte[] donnerKCombinaison(int k)
+	{
+		if(this.ensCarte.size() == 0		) return null;
+		if(k < 1 || k > this.ensCarte.size()) return null;
+
+		Carte[] tabRet = new Carte[k];
+
+		for(int cpt=0; cpt<k; cpt++)
+			tabRet[cpt] = this.tirerSansRemise();
+
+		return tabRet;
+	}
+
+	/*****************/
 	/* METHODES JAVA */
+	/*****************/
 	/**
 	* @return: retourne le toString de chaque Carte par ligne
 	*/
@@ -114,11 +219,5 @@ public class CarteEnsemble
 			sb.append(carte.toString() +"\n");
 
 		return sb.toString();
-	}
-
-	public static void main(String[] args)
-	{
-		CarteEnsemble ce = new CarteEnsemble(32);
-		System.out.println(ce);
 	}
 }
