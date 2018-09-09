@@ -7,6 +7,7 @@ import java.util.ArrayList;
 * @description : Exercice 4 à rendre
 */
 
+// pas de tabulation: 4
 public class CarteEnsemble
 {
 	private ArrayList<Carte> ensCarte;
