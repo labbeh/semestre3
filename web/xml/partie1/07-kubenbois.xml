@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE kubenbois SYSTEM "kub7.dtd">
+
+<kubenbois>
+
+	<!-- - - - - - - - -->
+	<!--    France     -->
+	<!-- - - - - - - - -->
+	
+	<pays nom="France">
+	
+		<agence ville="Nantes">
+			<responsable>
+				<nom>Hautine</nom>
+				<prenom>Guy</prenom>
+			</responsable>
+		</agence>
+
+		<agence ville="Clermont-Ferrand">
+			<responsable>
+				<nom>Assin</nom>
+				<prenom>Marc</prenom>
+			</responsable>
+		</agence>
+
+	</pays>
+	
+	
+	<!-- - - - - - - - -->
+	<!--   Belgique    -->
+	<!-- - - - - - - - -->
+	
+	<pays nom="Belgique">
+	
+		<agence ville="Bruxelles">
+
+			<responsable>
+				<nom>Menvussa</nom>
+				<prenom>Gérard</prenom>
+			</responsable>
+			
+		</agence>
+		
+	</pays>
+
+</kubenbois>
+

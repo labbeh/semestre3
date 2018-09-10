@@ -1,0 +1,8 @@
+<!ELEMENT kubenbois (pays*)>
+<!ELEMENT pays (agence+)>
+<!ATTLIST pays nom CDATA #REQUIRED>
+<!ELEMENT agence (responsable)>
+<!ATTLIST agence ville CDATA #REQUIRED>
+<!ELEMENT responsable (nom,prenom)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>

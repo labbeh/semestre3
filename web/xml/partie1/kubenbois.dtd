@@ -1,0 +1,12 @@
+<!ELEMENT kubenbois (pays*)>
+   <!ELEMENT pays (nom_pays,agence+)>
+   
+      <!ELEMENT nom_pays (#PCDATA) >
+      <!ELEMENT agence (responsable,ville)>
+      
+         <!ELEMENT responsable (nom,prenom)>
+         
+            <!ELEMENT nom (#PCDATA)>
+            <!ELEMENT prenom (#PCDATA)>
+            
+         <!ELEMENT ville (#PCDATA)>
