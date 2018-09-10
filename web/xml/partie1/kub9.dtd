@@ -3,6 +3,6 @@
 <!ATTLIST pays nom CDATA #REQUIRED>
 <!ELEMENT agence (responsable)>
 <!ATTLIST agence ville CDATA #REQUIRED>
-<!ELEMENT responsable ((nom,prenom?) | (prenom?, nom))>
+<!ELEMENT responsable ((nom,prenom?) | (prenom, nom))>
 <!ELEMENT nom (#PCDATA)>
 <!ELEMENT prenom (#PCDATA)>
