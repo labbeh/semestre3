@@ -1,6 +1,11 @@
 public class MotBinaire
 {
 	// FACTORY
+
+	/**
+	* @param : tableau d'entier contenant les bits du mot binaire
+	* @return: objet MotBinaire si le tableau de int est correct, null sinon
+	*/
 	public static MotBinaire fabrique(int[] mot)
 	{
 		for(int cpt=0; cpt<mot.length; cpt++)
@@ -10,6 +15,10 @@ public class MotBinaire
 		return new MotBinaire(mot);
 	}
 
+	/**
+	* @param : Chaine de caractère contenant les bits du mot binaire
+	* @return: objet MotBinaire si la chaine est correct, null sinon
+	*/
 	public static MotBinaire fabrique(String mot)
 	{
 		for(int cpt=0; cpt<mot.length(); cpt++)
@@ -66,7 +75,8 @@ public class MotBinaire
 	// CONSTRUCTEUR PAR RECOPIE
 	public MotBinaire(MotBinaire autreMot)
 	{
-		this.mot = autreMot.mot;
+		this.mot   = autreMot.mot  ;
+		this.poids = autreMot.poids;
 	}
 
 	// ACCESSEURS
