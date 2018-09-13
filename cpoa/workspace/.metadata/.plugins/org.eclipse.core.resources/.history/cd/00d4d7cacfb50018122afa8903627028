@@ -1,0 +1,34 @@
+package irb;
+
+public class PlsClassementIRB
+{
+	private ClassementIRB irb2007;
+	private ClassementIRB irb2008;
+	private ClassementIRB irb2009;
+	private ClassementIRB irb2010;
+	private ClassementIRB irb2011;
+
+	public PlsClassementIRB()
+	{
+		this.irb2007 = new ClassementIRB("i2007.txt");
+		this.irb2008 = new ClassementIRB("i2008.txt");
+		this.irb2009 = new ClassementIRB("i2009.txt");
+		this.irb2010 = new ClassementIRB("i2010.txt");
+		this.irb2011 = new ClassementIRB("i2011.txt");
+	}
+	
+	public HashSet <Pays> nAppartientPas(ClassementIRB an1, ClassementIRB an2)
+	{
+		
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		PlsClassementIRB pls = new PlsClassementIRB();
+
+	}
+
+}

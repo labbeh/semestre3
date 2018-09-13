@@ -1,0 +1,14 @@
+package irb;
+
+public class TestIRB {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		ClassementIRB cl1 = new ClassementIRB("test1.txt");
+
+	}
+
+}

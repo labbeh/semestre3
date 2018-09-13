@@ -1,7 +1,4 @@
-DOCK_PERSPECTIVE_BAR=left
-ENABLE_MIN_MAX=false
-VIEW_TAB_POSITION=1024
 defaultPerspectiveId=org.eclipse.jdt.ui.JavaPerspective
 eclipse.preferences.version=1
-presentationFactoryId=org.eclipse.ui.internal.r21presentationFactory
+presentationFactoryId=org.eclipse.ui.presentations.default
 showIntro=false
