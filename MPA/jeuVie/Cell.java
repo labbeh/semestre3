@@ -3,6 +3,7 @@ package gameOfLife;
 import java.util.Set;
 import java.util.HashSet;
 
+import utilitaires.Clavier;
 
 // une cellule aura un état de vie et des cellules voisines
 /**
@@ -40,6 +41,7 @@ class Cell
 	* @param: true = vivant, false = mort
 	*/
 	void setAlive(boolean isAlive){ this.isAlive = isAlive; }
+	void addNeighbours(Cell neighbours){ this.neighbours.add(neighbours); }
 
 	void nextStep()
 	{
@@ -50,5 +52,18 @@ class Cell
 
 		if 	   ((counter < 2) || (counter > 3)) this.isAlive = false;
 		else if(counter == 3) 					this.isAlive = true ;
+	}
+
+	public static void main(String[] args)
+	{
+		Cell cell = new Cell();
+
+		cell.addNeighbours(new Cell());
+		cell.addNeighbours(new Cell());
+		cell.addNeighbours(new Cell());
+		cell.addNeighbours(new Cell());
+		cell.addNeighbours(new Cell());
+		cell.addNeighbours(new Cell());
+		cell.addNeighbours(new Cell());
 	}
 }
