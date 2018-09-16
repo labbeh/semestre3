@@ -1,0 +1,3 @@
+<!ELEMENT kubenbois (editeur*)>
+<!ELEMENT editeur (nom, nationnalite, jeu*)>
+<!ELEMENT jeu (titre, annee, age_mini, nb_joueur_min, nb_joueur_max, duree)>
