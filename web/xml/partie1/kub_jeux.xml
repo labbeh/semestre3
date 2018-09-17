@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE kubenbois SYSTEM "kub_jeux.dtd">
+
+<kubenbois>
+	<jeu>
+		<titre></titre>
+		<editeur>
+			<nom></nom>
+			<nationnalite></nationnalite>
+		</editeur>
+	</jeu>
+	
+	<jeu>
+		<titre></titre>
+		<editeur>
+			<nom></nom>
+			<nationnalite></nationnalite>
+		</editeur>
+	</jeu>
+	
+	<jeu>
+		<titre></titre>
+		<editeur>
+			<nom></nom>
+			<nationnalite></nationnalite>
+		</editeur>
+	</jeu>
+</kubenbois>

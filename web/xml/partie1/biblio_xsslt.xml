@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE BIBLIO SYSTEM "biblio.dtd">
+<?xml-stylesheet type="text/xsl" href="biblio.xsl"?>
+
+<BIBLIO>
+
+	<LIVRE>
+		<TITRE>L'assommoir</TITRE>
+		<AUTEUR>
+				<NOM>Zola</NOM>
+		<PRENOM>&#201;mile</PRENOM>
+		</AUTEUR>
+	</LIVRE>
+	
+	<LIVRE>
+		<TITRE>Germinal</TITRE>
+		<AUTEUR>
+			<NOM>Zola</NOM>
+			<PRENOM>&#201;mile</PRENOM>
+		</AUTEUR>
+	</LIVRE>
+	
+</BIBLIO>

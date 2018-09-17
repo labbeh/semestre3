@@ -1,0 +1,4 @@
+<!ELEMENT responsable EMPTY>
+<!ATTLIST responsable nom 	 CDATA #REQUIRED 
+					  prenom CDATA #IMPLIED>
+

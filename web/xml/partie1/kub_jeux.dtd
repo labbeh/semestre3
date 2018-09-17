@@ -1,3 +1,9 @@
 <!ELEMENT kubenbois (editeur*)>
-<!ELEMENT editeur (nom, nationnalite, jeu*)>
-<!ELEMENT jeu (titre, annee, age_mini, nb_joueur_min, nb_joueur_max, duree)>
+<!ELEMENT editeur (nom, nationnalite, jeu+)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT nationnalite (#PCDATA)>
+<!ELEMENT jeu (titre, annee, age_mini, nb_joueur, duree)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT nb_joueur EMPTY>
+<!ATTLIST nb_joueur min CDATA #REQUIRED
+					max CDATA #REQUIRED>

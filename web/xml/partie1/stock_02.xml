@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE kubenbois SYSTEM "kub_jeux.dtd">
+
+<auteur nom="" prenom="" date_naiss="" nationnalite="">
+	<jeu>
+		<titre></titre>
+		<annee></annee>
+		...
+		<duree></duree>
+	</jeu>
+</auteur>
