@@ -1,0 +1,26 @@
+package math;
+
+public class Addition
+{
+	public Addition() {
+		super();
+	}
+
+	public long calculer(Long a,Long b){
+		return a.longValue()+b.longValue();
+	}
+		
+	public Character lireSymbole(){
+		return '-';
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+}
