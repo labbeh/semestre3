@@ -6,46 +6,59 @@ public abstract class CodeCorrecteurDetecteur
 	*/
 
 	// ATTRIBUTS
-	private int nbBitsCode;
-	private int nbBitsInfo;
+	private int n;
+	private int k;
 
 	/**
 	* @constructor: prend en paramètre le nombre de bits de mots de code et le nombre de bits d'info du MotBinaire
 	*/
-	public CodeCorrecteurDetecteur(int nbBitsCode, int nbBitsInfo)
+	public CodeCorrecteurDetecteur(int n, int k)
 	{
-		this.nbBitsCode = nbBitsCode;
-		this.nbBitsInfo = nbBitsInfo;
+		this.n = n;
+		this.k = k;
 	}
 
-	public MotBinaire encoder(String 	 message ) { return MotBinaire.fabrique(message); }
-	public String 	  decoder(MotBinaire bits	 ) { return bits.toString()				; }
+	public MotBinaire encoder(String 	 message )
+	{
+		String sRet = new String();
+
+		for(int cpt=0; cpt<message.length(); cpt++) sRet += encoder(message.charAt(cpt));
+
+		return MotBinaire.fabrique(sRet);
+	}
+
+	public String encoder(char c)
+	{
+		return String.format("8%s", Integer.toBinaryString(c).replace(' ', '0'));
+	}
+
+	public String 	  decoder(MotBinaire bits	 )
+	{
+		String sRet = new String();
+
+		for(int cpt=0; cpt<=bits.nbBits()-8; cpt+=8)
+			sRet += (char)Integer.parseInt(bits.sousMot(cpt, cpt+8).toString(), 2);
+
+		return sRet;
+	}
 
 	public MotBinaire transmettre(MotBinaire bits, int n)
 	{
-		StringBuilder mot = new StringBuilder();
+		MotBinaire ret = new MotBinaire(bits);
 
-		for(int cpt=0; cpt<bits.nbBits(); cpt++)
-		{
-			mot.append(bits.get(cpt));
-			if(cpt % n == 0) mot.append((int)(Math.random() * 2));
-		}
-		
-		return MotBinaire.fabrique(mot.toString());
+		for(int cpt=0; cpt<ret.nbBits(); cpt++)
+			if(Math.random()*n<1) ret.set(cpt, (ret.get(cpt) == 0 ? 1 : 0));
+		return ret;
 	}
 
 	public MotBinaire desecuriser(MotBinaire bits)
 	{
-		int[] motRet  = new int[this.nbBitsCode];
-		int cptTabMot = 0;
+		String sRet = new String();
 
-		for(int cpt=0; cpt<bits.nbBits(); cpt++)
-		{
-			if(cpt % (this.nbBitsCode-this.nbBitsInfo) != 0)
-				motRet[cptTabMot++] = bits.get(cpt);
-		}
+		for(int cpt=0; cpt<bits.nbBits(); cpt+=this.n)
+			sRet += bits.sousMot(cpt, cpt+this.k);
 
-		return MotBinaire.fabrique(motRet);
+		return MotBinaire.fabrique(sRet);
 	}
 
 	public abstract MotBinaire securiser(MotBinaire bits);
