@@ -1,0 +1,22 @@
+Gateway: quand il y a étoile : pas de routeur sinon adresse du routeur
+Gateway = routeur, dois passer par...
+Genmask = netmask
+Flags: rappel de gateway
+
+Tel réseau, accès direct, est ce qu'il y a des masques, on passera par cette interface
+Destination  Gateway		Genmask			Iface
+
+
+loopback: carte virtuelle: 127.0.0.1: même s'il n'y a pas de réseau mais qu'on à besoin de réseau
+pour faire des tests, cette carte permet de simuler, routeur * car accessible directement, sur interface lo
+
+Alias: 
+	-loopback = 127.0.0.1, rare que ça sois différent, rare qu'il y ai plusieurs loopack
+	-default  = 0.0.0.0
+Dans la table de routage on met les réseaux au fur et à mesure qu'on les apprends, les spéciaux sont écrits dedans
+et pour le reste on passe pas default, donc default = reste du monde (internet entre autre)
+
+Chaque ligne une à une jusqu'à ce qu'un résultat positif soit envoyer
+
+Le masque 0.0.0.0 est un masque spécial qui annule tout, celui-ci fonctionnera toujours en cas de non fonctionnement
+du reste
