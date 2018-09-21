@@ -1,0 +1,7 @@
+uml = méta-language: l'uml se définit par lui même
+
+agrégation: x ne peut pas exister sans y
+pour être une composition: 1) doit être une agrégation 
+						   2) unicité(si une cellule est composante d'une grille elle est dépendante d'une et une seule grille)
+						   3) dépendance d'existance (si je détruit la grille, je dois détruire les cellule)
+pour le travail en trinome: le bonus n'est la que pour information

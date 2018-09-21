@@ -14,6 +14,7 @@ import utilitaires.Clavier;
 class Cell
 {
 	private boolean isAlive; /** true = alive, false = dead */
+	private boolean nextStep; // valeur tampon, prochain état de la cellule courante
 
 	private Set<Cell> neighbours;
 
@@ -23,7 +24,9 @@ class Cell
 	*/
 	Cell()
 	{
-		this.isAlive 	= false			 ;
+		this.isAlive 	= false;
+		this.nextStep 	= false;
+
 		this.neighbours = new HashSet<>();
 	}
 
@@ -41,17 +44,32 @@ class Cell
 	* @param: true = vivant, false = mort
 	*/
 	void setAlive(boolean isAlive){ this.isAlive = isAlive; }
-	void addNeighbours(Cell neighbours){ this.neighbours.add(neighbours); }
+
+	/**
+	* Ajoute un voisin à la cellule courante, ne fait rien si paramètre null
+	* @param: voisin de type Cell
+	*/
+	void addNeighbours(Cell neighbours)
+	{
+		// de 3 à 8 voisins
+		if(neighbours != null) this.neighbours.add(neighbours);
+	}
 
 	void nextStep()
 	{
-		int counter = 0;
+		int counter   = 0;
+		this.nextStep = this.isAlive;
 
 		for(Cell cell: this.neighbours)
 			if(cell.isAlive()) counter++;
 
-		if 	   ((counter < 2) || (counter > 3)) this.isAlive = false;
-		else if(counter == 3) 					this.isAlive = true ;
+		if 	   ((counter < 2) || (counter > 3)) this.nextStep = false;
+		else if(counter == 3) 					this.nextStep = true ;
+	}
+
+	void update()
+	{
+		this.isAlive = this.nextStep;
 	}
 
 	public static void main(String[] args)
