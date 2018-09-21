@@ -20,3 +20,15 @@ Chaque ligne une à une jusqu'à ce qu'un résultat positif soit envoyer
 
 Le masque 0.0.0.0 est un masque spécial qui annule tout, celui-ci fonctionnera toujours en cas de non fonctionnement
 du reste
+
+Exercice page 9:
+
+on fait adresse ET_BINAIRE masque
+
+Adresse cible: 10.100.100.100  : accès direct via eth0 sans passer par un routeur (ligne 1)
+Adresse cible: 192.168.0.100   : accès via le routeur 10.0.0.1 sur eth0		  (ligne 2)
+Adresse cible: 192.168.100.100 : accès sur default via routeur 192.168.1.1 sur eth1,
+aucun autre réseau de la liste ne correspond au masque 			  (ligne 4)
+
+Adresse cible: 198.168.100.100: accès sur default
+L'adresse 0.0.0.0 avec netmask 0.0.0.0 fonctionne toujours car
