@@ -1,0 +1,119 @@
+<?xml version = "1.0" encoding="UTF-8" standalone="no" ?>
+
+<!DOCTYPE stock [
+<!ELEMENT stock (auteur+)>
+   <!ELEMENT auteur (jeu+)>
+      <!ATTLIST auteur nom         CDATA #REQUIRED
+                       prenom      CDATA #REQUIRED
+                       prenom      CDATA #IMPLIED 
+                       dte_naiss   CDATA #IMPLIED
+                       nationalite CDATA #IMPLIED >
+
+      <!ELEMENT jeu (titre,annee, editeur+, nb_joueur, age, duree)>
+         <!ELEMENT titre       (#PCDATA)>
+         <!ELEMENT annee       (#PCDATA)>
+         <!ELEMENT editeur     (#PCDATA)>
+         <!ELEMENT nb_joueur    EMPTY   >
+         <!ELEMENT age          EMPTY   >
+         <!ELEMENT duree        EMPTY   >
+
+         <!ATTLIST nb_joueur mini   CDATA #REQUIRED
+                             maxi   CDATA #REQUIRED >
+
+         <!ATTLIST age       mini   CDATA #REQUIRED >
+
+         <!ATTLIST duree     minute CDATA #REQUIRED >
+]>
+
+<stock>
+  <auteur nom="Rosenberg" prenom="Uwe" dte_naiss="27/03/1970" nationalite="Allemagne">
+      <jeu>
+        <titre>La route du verre</titre>
+        <annee>2013</annee>
+
+        <editeur>Filosofia</editeur>
+
+        <nb_joueur mini="1" maxi="4" />
+        <age mini="12" />
+        <duree minute="60" />
+      </jeu>
+  </auteur>
+
+  <auteur nom="Bauza" prenom="Antoine" dte_naiss="25/08/1978" nationalite="France">
+      <jeu>
+        <titre>7 Wonders Duel</titre>
+        <annee>2010</annee>
+        <editeur>Repro production</editeur>
+        <nb_joueur mini="2" maxi="2" />
+        <age mini="10" />
+        <duree minute="30" />
+      </jeu>
+  </auteur>
+
+  <auteur nom="R. Moon" prenom="Alan" dte_naiss="18/11/1951" nationalite="Angleterre">
+      <jeu>
+        <titre>Les Aventuriers du Rail</titre>
+        <annee>2004</annee>
+        <editeur>Days of Wonder</editeur>
+        <nb_joueur mini="2" maxi="8" />
+        <age mini="8" />
+        <duree minute="45" />
+      </jeu>
+  </auteur>
+
+  <auteur nom="Keyaerts" prenom="Philippe"  nationalite="Belgique">
+      <jeu>
+        <titre>Small World</titre>
+        <annee>2009</annee>
+        <editeur>Days of Wonder</editeur>
+        <nb_joueur mini="2" maxi="5" />
+        <age mini="8" />
+        <duree minute="75" />
+      </jeu>
+  </auteur>
+
+  <auteur nom="Faidutti" prenom="Bruno" dte_naiss="23/10/1961" nationalite="France">
+      <jeu>
+        <titre>Citadelles : Troisième édition</titre>
+        <annee>2010</annee>
+        <editeur>Edge</editeur>
+        <nb_joueur mini="2" maxi="8" />
+        <age mini="10" />
+        <duree minute="60" />
+      </jeu>
+  </auteur>
+
+  <auteur nom="Cathala" prenom="Bruno" dte_naiss="22/11/1963" nationalite="France">
+      <jeu>
+        <titre>Kingdomino</titre>
+        <annee>2016</annee>
+        <editeur>Blue Orange</editeur>
+        <nb_joueur mini="2" maxi="4" />
+        <age mini="8" />
+        <duree minute="15" />
+      </jeu>
+  </auteur>
+
+  <auteur nom="Pfister" prenom="Alexander" dte_naiss="18/10/1971" nationalite="Autriche">
+      <jeu>
+        <titre>Great Western</titre>
+        <annee>2016</annee>
+        <editeur>EggertSpiele</editeur>
+        <nb_joueur mini="2" maxi="4" />
+        <age mini="12" />
+        <duree minute="120" />
+      </jeu>
+  </auteur>
+
+  <auteur nom="Brand" prenom="Inka" dte_naiss="19/03/1977" nationalite="Allemagne">
+      <jeu>
+        <titre>Descendance</titre>
+        <annee>2012</annee>
+        <editeur>Gigamic</editeur>
+        <nb_joueur mini="2" maxi="4" />
+        <age mini="12" />
+        <duree minute="75" />
+      </jeu>
+  </auteur>
+
+</stock>

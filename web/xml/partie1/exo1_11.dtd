@@ -1,0 +1,22 @@
+<!ELEMENT stock (auteur+)>
+   <!ELEMENT auteur (jeu+)>
+      <!ATTLIST auteur nom         CDATA #REQUIRED
+                       prenom      CDATA #IMPLIED
+                       prenom      CDATA #REQUIRED
+                       dte_naiss   CDATA #IMPLIED
+                       nationalite CDATA #IMPLIED >
+
+      <!ELEMENT jeu (titre,annee, editeur+, nb_joueur, age, duree)>
+         <!ELEMENT titre       (#PCDATA)>
+         <!ELEMENT annee       (#PCDATA)>
+         <!ELEMENT editeur     (#PCDATA)>
+         <!ELEMENT nb_joueur    EMPTY   >
+         <!ELEMENT age          EMPTY   >
+         <!ELEMENT duree        EMPTY   >
+
+         <!ATTLIST nb_joueur mini   CDATA #REQUIRED
+                             maxi   CDATA #REQUIRED >
+
+         <!ATTLIST age       mini   CDATA #REQUIRED >
+
+         <!ATTLIST duree     minute CDATA #REQUIRED > 
