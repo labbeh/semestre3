@@ -5,7 +5,6 @@
    <!ELEMENT auteur (jeu+)>
       <!ATTLIST auteur nom         CDATA #REQUIRED
                        prenom      CDATA #REQUIRED
-                       prenom      CDATA #IMPLIED 
                        dte_naiss   CDATA #IMPLIED
                        nationalite CDATA #IMPLIED >
 
@@ -24,6 +23,8 @@
 
          <!ATTLIST duree     minute CDATA #REQUIRED >
 ]>
+
+<?xml-stylesheet type="text/xsl" href="15-stock.xsl" ?>
 
 <stock>
   <auteur nom="Rosenberg" prenom="Uwe" dte_naiss="27/03/1970" nationalite="Allemagne">
@@ -47,6 +48,15 @@
         <nb_joueur mini="2" maxi="2" />
         <age mini="10" />
         <duree minute="30" />
+      </jeu>
+
+      <jeu>
+        <titre>Jeu Random</titre>
+        <annee>2000</annee>
+        <editeur>Repro production</editeur>
+        <nb_joueur mini="2" maxi="2" />
+        <age mini="10" />
+        <duree minute="38" />
       </jeu>
   </auteur>
 
