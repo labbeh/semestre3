@@ -21,7 +21,7 @@ int main()
 {
 	char * tab = "test 1";
 	
-	printf("%s", construireChaineInverse(tab));
+	printf("%s\n", construireChaineInverse(tab));
 	return 0;
 }
 
