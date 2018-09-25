@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="20" version="2.0">
+<workbench progressCount="22" version="2.0">
 <workbenchAdvisor/>
 <window height="776" maximized="true" width="1018" x="330" y="123">
 <fastViewData fastViewLocation="1024"/>
@@ -20,7 +20,7 @@
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="238" y="36"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -35,29 +35,51 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pays.java" partName="Pays.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2/src/irb/Pays.java" title="Pays.java" tooltip="tp2/src/irb/Pays.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2/src/irb/Pays.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdditionTest.java" partName="AdditionTest.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/calculatrice/tests/math/AdditionTest.java" title="AdditionTest.java" tooltip="calculatrice/tests/math/AdditionTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/calculatrice/tests/math/AdditionTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="66" selectionOffset="488" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClassementIRB.java" partName="ClassementIRB.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2/src/irb/ClassementIRB.java" title="ClassementIRB.java" tooltip="tp2/src/irb/ClassementIRB.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2/src/irb/ClassementIRB.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1034" selectionTopPixel="704"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SoustractionTest.java" partName="SoustractionTest.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/calculatrice/tests/math/SoustractionTest.java" title="SoustractionTest.java" tooltip="calculatrice/tests/math/SoustractionTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/calculatrice/tests/math/SoustractionTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="452" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PlsClassementIRB.java" partName="PlsClassementIRB.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2/src/irb/PlsClassementIRB.java" title="PlsClassementIRB.java" tooltip="tp2/src/irb/PlsClassementIRB.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2/src/irb/PlsClassementIRB.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AllTests.java" partName="AllTests.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/calculatrice/tests/math/AllTests.java" title="AllTests.java" tooltip="calculatrice/tests/math/AllTests.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/calculatrice/tests/math/AllTests.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="235" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Addition.java" partName="Addition.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/test2/src/Addition.java" title="Addition.java" tooltip="test2/src/Addition.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/test2/src/Addition.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="169" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Calculatrice.java" partName="Calculatrice.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/calculatrice/src/math/Calculatrice.java" title="Calculatrice.java" tooltip="calculatrice/src/math/Calculatrice.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/calculatrice/src/math/Calculatrice.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="172" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClassementIRB.java" partName="ClassementIRB.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2Suite/src/irb/ClassementIRB.java" title="ClassementIRB.java" tooltip="tp2Suite/src/irb/ClassementIRB.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2Suite/src/irb/ClassementIRB.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2768" selectionTopPixel="1067"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PlsClassementIRB.java" partName="PlsClassementIRB.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2Suite/src/irb/PlsClassementIRB.java" title="PlsClassementIRB.java" tooltip="tp2Suite/src/irb/PlsClassementIRB.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2Suite/src/irb/PlsClassementIRB.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1918" selectionTopPixel="542"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pays.java" partName="Pays.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2Suite/src/irb/Pays.java" title="Pays.java" tooltip="tp2Suite/src/irb/Pays.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2Suite/src/irb/Pays.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2409" selectionTopPixel="269"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClassementIRBTest.java" partName="ClassementIRBTest.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2Suite/tests/irb/ClassementIRBTest.java" title="ClassementIRBTest.java" tooltip="tp2Suite/tests/irb/ClassementIRBTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2Suite/tests/irb/ClassementIRBTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="412" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
-<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
+<viewState/>
+</view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
 <customFilters userDefinedPatternsEnabled="false">
@@ -92,8 +114,9 @@
 <expanded>
 <category IMemento.internal.id="Errors"/>
 <category IMemento.internal.id="Warnings (5 items)"/>
+<category IMemento.internal.id="Warnings"/>
 </expanded>
-<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="825" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="948" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -104,7 +127,9 @@
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
-<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration">
+<viewState/>
+</view>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
@@ -120,11 +145,14 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
 </view>
+<view id="org.eclipse.jdt.junit.ResultView" partName="JUnit">
+<viewState failuresOnly="false" layout="1" orientation="2" ratio="500" scroll="false" time="true"/>
+</view>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -239,6 +267,7 @@
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.jdt.junit.ResultView"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
@@ -250,12 +279,13 @@
 <info folder="true" part="left">
 <folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="JUnit"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
-<page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -266,8 +296,8 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.19696176" ratioLeft="376" ratioRight="1533" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.75" ratioLeft="651" ratioRight="217" relationship="4" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.17757988" ratioLeft="339" ratioRight="1570" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.70404625" ratioLeft="609" ratioRight="256" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
@@ -284,7 +314,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="right" ratio="0.7496513" ratioLeft="1075" ratioRight="359" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="right" ratio="0.8741573" ratioLeft="778" ratioRight="112" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
@@ -301,171 +331,161 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2/src/irb/ClassementIRB.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2/src/irb/PlsClassementIRB.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/tp2/donnees/i2010.txt"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/tp2/donnees/i2011.txt"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2/src/irb/ClassementIRB.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2/src/rappel/RappelFichier.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2/src/rappel/RappelHS.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2Suite/src/irb/PlsClassementIRB.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2Suite/src/irb/ClassementIRB.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2Suite/src/irb/PlsClassementIRB.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2Suite/src/irb/Pays.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2/src/irb/Pays.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/calculatrice/src/Addition.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/calculatrice/src/math/Addition.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/test2/src/Addition.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2Suite/tests/irb/ClassementIRBTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/calculatrice/tests/math/AdditionTest.java"/>
 </editors>
 <item historyLabel="ClassementIRB.java" index="0">
-<position info="not_deleted" x="1224" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="1042" y="0"/>
+<position info="not_deleted" x="2672" y="0"/>
 </item>
 <item historyLabel="ClassementIRB.java" index="0">
-<position info="not_deleted" x="1190" y="0"/>
+<position info="not_deleted" x="2674" y="11"/>
+</item>
+<item historyLabel="Pays.java" index="2">
+<position info="not_deleted" x="2409" y="0"/>
 </item>
 <item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="1042" y="0"/>
+<position info="not_deleted" x="1886" y="0"/>
 </item>
 <item historyLabel="ClassementIRB.java" index="0">
-<position info="not_deleted" x="1190" y="0"/>
+<position info="not_deleted" x="2674" y="11"/>
+</item>
+<item historyLabel="ClassementIRB.java" index="0">
+<position info="not_deleted" x="1398" y="0"/>
 </item>
 <item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="635" y="53"/>
+<position info="not_deleted" x="1886" y="0"/>
+</item>
+<item historyLabel="ClassementIRB.java" index="0">
+<position info="not_deleted" x="1398" y="0"/>
 </item>
 <item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="1042" y="0"/>
+<position info="not_deleted" x="1886" y="0"/>
 </item>
-<item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="562" y="7"/>
+<item historyLabel="ClassementIRB.java" index="0">
+<position info="not_deleted" x="1346" y="0"/>
 </item>
-<item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="951" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="859" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="851" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="1022" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="894" y="0"/>
-</item>
-<item historyLabel="i2010.txt" index="2">
-<position info="not_deleted" x="930" y="3"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="894" y="0"/>
-</item>
-<item historyLabel="i2011.txt" index="3">
-<position info="not_deleted" x="646" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="951" y="0"/>
-</item>
-<item historyLabel="ClassementIRB.java" index="4">
-<position info="not_deleted" x="1190" y="0"/>
-</item>
-<item historyLabel="RappelFichier.java" index="5">
-<position info="not_deleted" x="389" y="52"/>
-</item>
-<item historyLabel="RappelHS.java" index="6">
-<position info="not_deleted" x="547" y="0"/>
-</item>
-<item historyLabel="RappelFichier.java" index="5">
-<position info="not_deleted" x="389" y="52"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="1622" y="0"/>
-</item>
-<item historyLabel="ClassementIRB.java" index="4">
-<position info="not_deleted" x="1269" y="54"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="1622" y="0"/>
-</item>
-<item historyLabel="ClassementIRB.java" index="4">
-<position info="not_deleted" x="1269" y="54"/>
-</item>
-<item historyLabel="RappelFichier.java" index="5">
-<position info="not_deleted" x="389" y="52"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ClassementIRB.java" index="8">
-<position info="not_deleted" x="337" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="9">
-<position info="not_deleted" x="594" y="0"/>
-</item>
-<item historyLabel="ClassementIRB.java" index="8">
-<position info="not_deleted" x="337" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="9">
-<position info="not_deleted" x="618" y="0"/>
-</item>
-<item historyLabel="ClassementIRB.java" index="8">
-<position info="not_deleted" x="337" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="9">
-<position info="not_deleted" x="618" y="0"/>
-</item>
-<item historyLabel="ClassementIRB.java" index="8">
-<position info="not_deleted" x="337" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="9">
-<position info="not_deleted" x="618" y="0"/>
-</item>
-<item historyLabel="ClassementIRB.java" index="8">
-<position info="not_deleted" x="763" y="0"/>
-</item>
-<item historyLabel="Pays.java" index="10">
-<position info="not_deleted" x="111" y="0"/>
-</item>
-<item historyLabel="ClassementIRB.java" index="8">
-<position info="not_deleted" x="763" y="0"/>
-</item>
-<item historyLabel="Pays.java" index="11">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ClassementIRB.java" index="4">
+<item historyLabel="ClassementIRBTest.java" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="PlsClassementIRB.java" index="1">
-<position info="not_deleted" x="0" y="0"/>
+<position info="not_deleted" x="1886" y="0"/>
 </item>
-<item historyLabel="ClassementIRB.java" index="4">
-<position info="not_deleted" x="1034" y="0"/>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="154" y="0"/>
 </item>
-<item historyLabel="Addition.java" index="12">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="AdditionTest.java" index="4">
+<position info="not_deleted" x="554" y="0"/>
 </item>
-<item historyLabel="ClassementIRB.java" index="4">
-<position info="not_deleted" x="1034" y="0"/>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="154" y="0"/>
 </item>
-<item historyLabel="Addition.java" index="13">
-<position info="not_deleted" x="182" y="0"/>
+<item historyLabel="PlsClassementIRB.java" index="1">
+<position info="not_deleted" x="552" y="63"/>
 </item>
-<item historyLabel="Addition.java" index="14">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="310" y="0"/>
 </item>
-<item historyLabel="Addition.java" index="13">
-<position info="not_deleted" x="15" y="281"/>
+<item historyLabel="PlsClassementIRB.java" index="1">
+<position info="not_deleted" x="552" y="63"/>
 </item>
-<item historyLabel="Addition.java" index="14">
-<position info="not_deleted" x="151" y="0"/>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="302" y="0"/>
 </item>
-<item historyLabel="ClassementIRB.java" index="4">
-<position info="not_deleted" x="1034" y="0"/>
+<item historyLabel="AdditionTest.java" index="4">
+<position info="not_deleted" x="554" y="0"/>
 </item>
-<item active="true" historyLabel="Addition.java" index="14">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="302" y="0"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="496" y="0"/>
+</item>
+<item historyLabel="AdditionTest.java" index="4">
+<position info="not_deleted" x="488" y="66"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="496" y="0"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="494" y="0"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="494" y="0"/>
+</item>
+<item historyLabel="PlsClassementIRB.java" index="1">
+<position info="not_deleted" x="552" y="63"/>
+</item>
+<item historyLabel="ClassementIRB.java" index="0">
+<position info="not_deleted" x="1346" y="0"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="494" y="0"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="434" y="10"/>
+</item>
+<item historyLabel="Pays.java" index="2">
+<position info="not_deleted" x="2409" y="0"/>
+</item>
+<item historyLabel="PlsClassementIRB.java" index="1">
+<position info="not_deleted" x="552" y="63"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="310" y="0"/>
+</item>
+<item historyLabel="ClassementIRB.java" index="0">
+<position info="not_deleted" x="2728" y="51"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="452" y="0"/>
+</item>
+<item historyLabel="Pays.java" index="2">
+<position info="not_deleted" x="2409" y="0"/>
+</item>
+<item historyLabel="PlsClassementIRB.java" index="1">
+<position info="not_deleted" x="552" y="63"/>
+</item>
+<item historyLabel="PlsClassementIRB.java" index="1">
+<position info="not_deleted" x="1963" y="0"/>
+</item>
+<item historyLabel="ClassementIRB.java" index="0">
+<position info="not_deleted" x="2768" y="0"/>
+</item>
+<item historyLabel="PlsClassementIRB.java" index="1">
+<position info="not_deleted" x="1918" y="0"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="494" y="0"/>
+</item>
+<item historyLabel="ClassementIRB.java" index="0">
+<position info="not_deleted" x="2768" y="0"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="494" y="0"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="716" y="0"/>
+</item>
+<item historyLabel="Pays.java" index="2">
+<position info="not_deleted" x="2409" y="0"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="543" y="0"/>
+</item>
+<item historyLabel="Pays.java" index="2">
+<position info="not_deleted" x="2409" y="0"/>
+</item>
+<item historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="695" y="0"/>
+</item>
+<item historyLabel="Pays.java" index="2">
+<position info="not_deleted" x="2409" y="0"/>
+</item>
+<item active="true" historyLabel="ClassementIRBTest.java" index="3">
+<position info="not_deleted" x="695" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -484,20 +504,8 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Addition.java" tooltip="test2/src/Addition.java">
-<persistable path="/test2/src/Addition.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Addition.java" tooltip="calculatrice/src/math/Addition.java">
-<persistable path="/calculatrice/src/math/Addition.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PlsClassementIRB.java" tooltip="tp2/src/irb/PlsClassementIRB.java">
-<persistable path="/tp2/src/irb/PlsClassementIRB.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClassementIRB.java" tooltip="tp2/src/irb/ClassementIRB.java">
-<persistable path="/tp2/src/irb/ClassementIRB.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pays.java" tooltip="tp2/src/irb/Pays.java">
-<persistable path="/tp2/src/irb/Pays.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClassementIRBTest.java" tooltip="tp2Suite/tests/irb/ClassementIRBTest.java">
+<persistable path="/tp2Suite/tests/irb/ClassementIRBTest.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pays.java" tooltip="tp2Suite/src/irb/Pays.java">
 <persistable path="/tp2Suite/src/irb/Pays.java"/>
@@ -508,17 +516,17 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClassementIRB.java" tooltip="tp2Suite/src/irb/ClassementIRB.java">
 <persistable path="/tp2Suite/src/irb/ClassementIRB.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="i2011.txt" tooltip="tp2/donnees/i2011.txt">
-<persistable path="/tp2/donnees/i2011.txt"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Calculatrice.java" tooltip="calculatrice/src/math/Calculatrice.java">
+<persistable path="/calculatrice/src/math/Calculatrice.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="i2010.txt" tooltip="tp2/donnees/i2010.txt">
-<persistable path="/tp2/donnees/i2010.txt"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AllTests.java" tooltip="calculatrice/tests/math/AllTests.java">
+<persistable path="/calculatrice/tests/math/AllTests.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Reader.class" tooltip="java.io.Reader">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=tp2/\/usr\/lib\/jvm\/java-8-openjdk-amd64\/jre\/lib\/rt.jar&lt;java.io(Reader.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SoustractionTest.java" tooltip="calculatrice/tests/math/SoustractionTest.java">
+<persistable path="/calculatrice/tests/math/SoustractionTest.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="i2007.txt" tooltip="tp2/donnees/i2007.txt">
-<persistable path="/tp2/donnees/i2007.txt"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdditionTest.java" tooltip="calculatrice/tests/math/AdditionTest.java">
+<persistable path="/calculatrice/tests/math/AdditionTest.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="test1.txt" tooltip="tp2/donnees/test1.txt">
 <persistable path="/tp2/donnees/test1.txt"/>
@@ -526,8 +534,20 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestIRB.java" tooltip="tp2/src/irb/TestIRB.java">
 <persistable path="/tp2/src/irb/TestIRB.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RappelHS.java" tooltip="tp2/src/rappel/RappelHS.java">
-<persistable path="/tp2/src/rappel/RappelHS.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Soustraction.java" tooltip="calculatrice/src/math/Soustraction.java">
+<persistable path="/calculatrice/src/math/Soustraction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Multiplication.java" tooltip="calculatrice/src/math/Multiplication.java">
+<persistable path="/calculatrice/src/math/Multiplication.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdditionTest.java" tooltip="calculatrice/src/math/AdditionTest.java">
+<persistable path="/calculatrice/src/math/AdditionTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Addition.java" tooltip="calculatrice/src/math/Addition.java">
+<persistable path="/calculatrice/src/math/Addition.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Addition.java" tooltip="test2/src/Addition.java">
+<persistable path="/test2/src/Addition.java"/>
 </file>
 </mruList>
 </workbench>

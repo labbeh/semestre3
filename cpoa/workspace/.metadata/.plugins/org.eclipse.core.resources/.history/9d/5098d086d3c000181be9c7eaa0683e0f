@@ -1,0 +1,30 @@
+package irb;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class ClassementIRBTest
+{
+	private ClassementIRB irbMoy78910;
+	
+	@Before
+	public void setUp() throws Exception
+	{
+		this.irbMoy78910 = new ClassementIRB(new ClassementIRB("irb2007"), "moy78910");
+	}
+
+	@After
+	public void tearDown() throws Exception
+	{
+	}
+
+	@Test
+	public void test()
+	{
+		fail("Not yet implemented");
+	}
+
+}

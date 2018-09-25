@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="390" key="DIALOG_X_ORIGIN"/>
-		<item value="122" key="DIALOG_Y_ORIGIN"/>
+		<item value="614" key="DIALOG_X_ORIGIN"/>
+		<item value="202" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.jdt.junit.wizards.NewTestSuiteCreationWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.junit"/>
 		</list>
+	</section>
+	<section name="InstallationDialogSettings">
+		<item value="692" key="DIALOG_WIDTH"/>
+		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="982" key="DIALOG_HEIGHT"/>
+		<item value="-37" key="DIALOG_X_ORIGIN"/>
+		<item value="-289" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="ImportExportAction">
 		<item value="org.eclipse.jdt.internal.ui.jarpackager.JarPackageWizard" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>

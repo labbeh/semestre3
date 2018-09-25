@@ -3,6 +3,7 @@ package irb;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -13,7 +14,40 @@ public class ClassementIRB {
 	
 	public ClassementIRB(ClassementIRB classementIRB, String anneeClassement)
 	{
+		this.alPays = new ArrayList<Pays>(classementIRB.alPays);
 		
+		for(Pays p: this.alPays)
+		{
+			p.setAnneeClassement(anneeClassement);
+			p.setRang(0);
+		}
+		
+		// on crééer des instance de classement des autres années
+		ClassementIRB irb2008 = new ClassementIRB("i2008.txt");
+		ClassementIRB irb2009 = new ClassementIRB("i2009.txt");
+		ClassementIRB irb2010 = new ClassementIRB("i2010.txt");
+		
+		// on calcul la moyenne sur les 4 ans
+		for(Pays p: this.alPays)
+		{
+			String codePays = p.getCodePays();
+			
+			double nbPts2007 = classementIRB.getPaysByCode(codePays).getNbPoint();
+			double nbPts2008 = irb2008.getPaysByCode(codePays).getNbPoint();
+			double nbPts2009 = irb2009.getPaysByCode(codePays).getNbPoint();
+			double nbPts2010 = irb2010.getPaysByCode(codePays).getNbPoint();
+			
+			double moy = (nbPts2007 + nbPts2008 + nbPts2009 + nbPts2010) / 4;
+			
+			p.setNbPoint(moy);
+		}
+		
+		// on tire la liste
+		this.majRang();
+		
+		// on affecte le nouveau rang à chaque pays
+		for(int cpt=0; cpt<this.alPays.size(); cpt++)
+			this.alPays.get(cpt).setRang(cpt+1);
 	}
 	
 	public ClassementIRB(String nomFich)
@@ -60,8 +94,13 @@ public class ClassementIRB {
 		}
 	}
 	
+	public void majRang()
+	{
+		Collections.sort(this.alPays);
+	}
+	
 	/* ACCESSEURS */
-	public int nbPays(){ return this.alS.size(); }
+	public int nbPays(){ return this.alPays.size(); }
 	
 	public Pays getPaysByCode(String code)
 	{
@@ -86,35 +125,6 @@ public class ClassementIRB {
 		for(Pays pays: this.alPays) sb.append(pays.toString() +"\n");
 		
 		return sb.toString();
-	}
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args)
-	{
-		ClassementIRB irb2007 = new ClassementIRB("i2007.txt");
-		ClassementIRB irb2008 = new ClassementIRB("i2008.txt");
-		ClassementIRB irb2009 = new ClassementIRB("i2009.txt");
-		ClassementIRB irb2010 = new ClassementIRB("i2010.txt");
-		ClassementIRB irb2011 = new ClassementIRB("i2011.txt");
-		
-		System.out.println(irb2007.getPaysByCode("LUX"));
-		System.out.println(irb2007.getEnsembleCodePays());
-		
-		/*System.out.println("2007 " + irb2007);
-		System.out.println("2008 " + irb2008);
-		System.out.println("2009 " + irb2009);
-		System.out.println("2010 " + irb2010);
-		System.out.println("2011 " + irb2011);
-		
-		System.out.println("nb pays 2007 " + irb2007.nbPays());
-		System.out.println("nb pays 2008 " + irb2008.nbPays());
-		System.out.println("nb pays 2009 " + irb2009.nbPays());
-		System.out.println("nb pays 2010 " + irb2010.nbPays());
-		System.out.println("nb pays 2011 " + irb2011.nbPays());*/
-		
-
 	}
 
 }

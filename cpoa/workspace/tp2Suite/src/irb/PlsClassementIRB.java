@@ -46,7 +46,16 @@ public class PlsClassementIRB
 		  System.out.println("Pays en 2007 qui ne sont pas en 2008 " + nAppartientPas(irb2007, irb2008));		
 		  System.out.println("Pays en 2008 qui ne sont pas en 2009 " + nAppartientPas(irb2008, irb2009));		
 		  System.out.println("Pays en 2009 qui ne sont pas en 2010 " + nAppartientPas(irb2009, irb2010));	
-		  System.out.println("Pays en 2010 qui ne sont pas en 2011 " + nAppartientPas(irb2010, irb2011));	
+		  System.out.println("Pays en 2010 qui ne sont pas en 2011 " + nAppartientPas(irb2010, irb2011));
+		  
+		  System.out.println(this.irbMoy78910);
+	}
+	
+
+	@Override
+	public String toString()
+	{
+		return "PlsClassementIRB [irbMoy78910=" + irbMoy78910 + "]";
 	}
 
 	/**
@@ -55,7 +64,9 @@ public class PlsClassementIRB
 	public static void main(String[] args)
 	{
 		PlsClassementIRB pls = new PlsClassementIRB();
-		pls.deltaPays();
+		//pls.deltaPays();
+		System.out.println(pls);
+		//System.out.println(pls.irbMoy78910.nbPays());
 
 	}
 

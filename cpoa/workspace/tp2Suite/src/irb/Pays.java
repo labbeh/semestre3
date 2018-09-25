@@ -1,6 +1,6 @@
 package irb;
 
-public class Pays
+public class Pays implements Comparable<Pays>
 {
 	private String nomPays;
 	private String anneeClassement;
@@ -10,11 +10,20 @@ public class Pays
 
 	public Pays(String nomPays, String anneeClassement, String codePays, int rang, double nbPoint)
 	{
-		this.nomPays = nomPays;
+		this.nomPays 		 = nomPays;
 		this.anneeClassement = anneeClassement;
-		this.codePays = codePays;
-		this.rang = rang;
-		this.nbPoint = nbPoint;
+		this.codePays 		 = codePays;
+		this.rang 			 = rang;
+		this.nbPoint 		 = nbPoint;
+	}
+	
+	public Pays(Pays pays)
+	{
+		this.nomPays		 = pays.nomPays;
+		this.anneeClassement = pays.anneeClassement;
+		this.codePays 		 = pays.codePays;
+		this.rang 			 = pays.rang;
+		this.nbPoint 		 = pays.nbPoint;
 	}
 
 	public String getNomPays()
@@ -102,6 +111,11 @@ public class Pays
 		else if (!nomPays.equals(other.nomPays)) return false;
 		if (rang != other.rang) return false;
 		return true;
+	}
+
+	public int compareTo(Pays p)
+	{
+		return Double.compare(p.nbPoint, this.nbPoint);
 	}
 
 }
