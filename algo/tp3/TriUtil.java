@@ -61,13 +61,34 @@ public class TriUtil
 
    	private static int partitionner( int[] tab, int deb, int fin )
    	{
-   		return 0;
+   		int indPivot, bInf, bSup;
+
+         indPivot = deb;
+         bInf = deb+1;
+         bSup = fin;
+
+         while(bSup - bInf > -1)
+         {
+            if(tab[bInf] <= tab[indPivot])
+            {
+               echanger(tab, bInf, indPivot);
+               bInf++;
+               indPivot++;
+            }
+            else
+            {
+               echanger(tab, bInf, bSup);
+               bSup--;
+            }
+         }
+
+         return indPivot;
    	}
 
    	public static void main(String[] args)
    	{
-   		int[] tab = new int[]{9,5,2,3,5,7,8,2,1,4};
-   		triSelection(tab);
+   		int[] tab = new int[]{9,5,2,3,5,7,8,6,2,1,4,0};
+   		triRapide(tab, 0, tab.length-1);
    		//triBulle(tab);
 
    		for(int cpt=0; cpt<tab.length; cpt++)
@@ -77,7 +98,7 @@ public class TriUtil
    	}
 
    	/**
-   	* @constructor: privé et ne fait rien car classe utilitaire non instnciable
+   	* @constructor: privé et ne fait rien car classe utilitaire non instanciable
    	*/
-	private TriUtil(){}
+	  private TriUtil(){}
 }
