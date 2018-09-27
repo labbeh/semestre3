@@ -1,0 +1,85 @@
+#white{
+	background-color: white;
+}
+
+#blue{
+	background-color: blue;
+}
+
+#navy{
+	background-color: navy;
+}
+
+#teal{
+	background-color: teal;
+}
+
+#aqua{
+	background-color: aqua;
+}
+
+#silver{
+	background-color: silver;
+}
+
+#gray{
+	background-color: gray;
+}
+
+#yellow{
+	background-color: yellow;
+}
+
+#maroon{
+	background-color: maroon;
+}
+
+#black{
+	background-color: black;
+}
+
+#fuchsia{
+	background-color: fuchsia;
+}
+
+#red{
+	background-color: red;
+}
+
+#green{
+	background-color: green;
+}
+
+#lime{
+	background-color: lime;
+}
+
+#olive{
+	background-color: olive;
+}
+
+#purple{
+	background-color: purple;
+}
+
+thead, tfoot{
+	background-color: silver;
+}
+
+td{
+	background-color: #C0C0FF;
+	border-color: white;
+	border: 1px;
+	width: 25%;
+}
+
+caption{
+	caption-side: bottom;
+
+}
+
+table{
+	border-width: 50%;
+	border-color: navy;
+	width: 50%;
+}
