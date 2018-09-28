@@ -1,0 +1,22 @@
+A- 5 propriétés d'un objet:
+	- Polymorphisme : capacité de différents objet de répondre à la même chose différement
+	- Héritage		: on sais ce que c'est !
+	- Instanciation : capacité d'avoir un modèle d'un certains nbr d'objets
+	- Identité		: capacité d'existance
+	- Encapsulation : avoir en interne et en propre des connaissances, propriétés
+
+B- Visiblité dans l'ordre:
+	- public
+	- protected
+	- package
+	- private
+
+C- Factory
+	- Sert à crééer des objets sans faire appel directement au constructeurs, pour décider ou nom de crééer l'objet en 
+	  fonction des paramètres, peut aussi décider de la classe à instancier ou réutiliser un objet déjà existant
+
+D- Définitions:
+	- Agrégation : caractérise une association, x ne peut pas exister sans y
+	- Composition: agrégation + unicité + dépendance d'existance
+
+unicité: un composant est lié à au plus un composé
