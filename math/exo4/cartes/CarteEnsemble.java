@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 /**
 * @author 	   : Hugo Labbé, groupe D2
-* @version	   : 1.1
-* @date	  	   : 2018-09-09
-* @description : Exercice 4 à rendre
+* @version	   : 1.2
+* @description : Exercice 7 à rendre, classe modifiée depuis l'exercice 4 pour avoir 52 cartes
+*			   : au lieux de 32
 */
 
 // pas de tabulation: 4
@@ -26,9 +26,9 @@ public class CarteEnsemble
 	*/
 	public CarteEnsemble(int n)
 	{
-		// le 32 en paramètre ne fige pas la taille de la liste mais permet de lui attribuer une taille
+		// le 52 en paramètre ne fige pas la taille de la liste mais permet de lui attribuer une taille
 		// de base
-		this.ensCarte = new ArrayList<>(32);
+		this.ensCarte = new ArrayList<>(52);
 
 		for(CarteEnseigne couleur: CarteEnseigne.values())
 			for(CarteValeur valeur: CarteValeur.values  ())
@@ -84,7 +84,7 @@ public class CarteEnsemble
 	* @param : indice dans l'ensemble
 	* @return: retourne la carte de l'ensemble à l'indice passé en paramètre
 	*/
-	private Carte get(int i){ return this.ensCarte.get(i); }
+	public Carte get(int i){ return this.ensCarte.get(i); }
 
 	/**
 	* @return: tire avec remise une carte de l'ensemble

@@ -6,14 +6,19 @@
 public enum CarteValeur
 {
 	// OBJETS
-	AS   ("as","valeur"),
-	SEPT ("7" ,"valeur"),
-	HUIT ("8" ,"valeur"),
-	NEUF ("9" ,"valeur"),
-	DIX  ("10","valeur"),
-	VALET("V" ,"figure"),
-	DAME ("D" ,"figure"),
-	ROI  ("R" ,"figure");
+	AS     ("as"	,"valeur" ),
+	DEUX   ("deux"  ,"valeur" ),
+	TROIS  ("trois" ,"valeur" ),
+	QUATRE ("quatre","valeur" ),
+	CINQ   ("cinq"  ,"valeur" ),
+	SIX    ("six"   ,"valeur" ),
+	SEPT   ("7" 	,"valeur" ),
+	HUIT   ("8" 	,"valeur" ),
+	NEUF   ("9" 	,"valeur" ),
+	DIX    ("10"	,"valeur" ),
+	VALET  ("V" 	,"figure" ),
+	DAME   ("D" 	,"figure" ),
+	ROI    ("R" 	,"figure" );
 
 	// ATTRIBUTS
 	private String nom ;
