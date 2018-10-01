@@ -17,14 +17,17 @@ void extractvaleur(char *dest[], char *from)
 	char * valeurs;
 	valeurs = getenv(from);
 
+	//printf("%s\n", getenv(from));
 	dest[0] = strtok(valeurs, ":");
+
 	int cpt;
 	for(cpt=1; valeurs != NULL; cpt++)
 	{
 		dest[cpt] = strtok(NULL, ":");
-		printf("%d\n", cpt);
+		printf("%d\n", cpt); // dépasse le nbr d'élément de la variable d'environnement
 	}
 	
+	printf("%s\n", dest);
 	dest[cpt] = NULL;
 }
 
@@ -36,9 +39,12 @@ int main(int argc, char * argv[])
 		aff_env();
 		return 0;
 	}
+
+	//char **dest;
 	if(argc > 2 && strcmp(argv[1], "-v") == 0)
 	{
-		char ** dest =(char**)malloc(sizeof(char*) * MAX_Valeur_Par_Variable);;
+		//char **dest =(char**)malloc(sizeof(char*) * MAX_Valeur_Par_Variable);
+		char *dest[MAX_Valeur_Par_Variable];
 
 		extractvaleur(dest, argv[2]);
 	}

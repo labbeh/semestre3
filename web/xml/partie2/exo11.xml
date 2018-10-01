@@ -24,7 +24,7 @@
          <!ATTLIST duree     minute CDATA #REQUIRED >
 ]>
 
-<?xml-stylesheet type="text/xsl" href="15-stock.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="17-stock.xsl" ?>
 
 <stock>
   <auteur nom="Rosenberg" prenom="Uwe" dte_naiss="27/03/1970" nationalite="Allemagne">
