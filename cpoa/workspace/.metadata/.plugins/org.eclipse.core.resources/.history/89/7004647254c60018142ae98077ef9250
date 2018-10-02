@@ -1,0 +1,30 @@
+package irb;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class PlsClassementIRBTest
+{
+	private PlsClassementIRB pls;
+
+	@Before
+	public void setUp() throws Exception
+	{
+		this.pls = new PlsClassementIRB();
+	}
+
+	@After
+	public void tearDown() throws Exception
+	{
+	}
+
+	@Test
+	public void testMoyPoints()
+	{
+		
+	}
+
+}
