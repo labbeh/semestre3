@@ -26,7 +26,7 @@ public class PlsClassementIRB
 		this.irb2010 = new ClassementIRB("i2010.txt");
 		this.irb2011 = new ClassementIRB("i2011.txt");
 		
-		this.irbMoy78910 = new ClassementIRB(this.irb2007, "moy78910");
+		this.irbMoy78910 = new ClassementIRB(new ClassementIRB("i2007.txt"), "moy78910");
 		
 		/* tp2 fin */
 		this.mapPays = new HashMap<String, ArrayList<Pays>>();
@@ -46,8 +46,8 @@ public class PlsClassementIRB
 			this.mapPays.put(pCourant.getNomPays(), instancesPaysParAn);
 		}
 		
-		//System.out.println(this.irbMoy78910.getPaysByCode("RSA").getNbPoint());
-		//System.out.println(this.moyPoints("RSA"));
+		System.out.println(this.irbMoy78910.getPaysByCode("RSA").getNbPoint());
+		System.out.println(this.moyPoints("RSA"));
 		
 		
 	}

@@ -14,10 +14,7 @@ public class ClassementIRB {
 	
 	public ClassementIRB(ClassementIRB classementIRB, String anneeClassement)
 	{
-		this.alPays = new ArrayList<>();
-		// on utilise le constructeur par recopie pour que l'alPays du classement courant et celle du classement
-		// en paramètre ne pointe pas sur les mêmes objets pays (problème constétés après tests)
-		for(Pays p: classementIRB.alPays) this.alPays.add( new Pays(p) );
+		this.alPays = new ArrayList<Pays>(classementIRB.alPays);
 		
 		for(Pays p: this.alPays)
 		{

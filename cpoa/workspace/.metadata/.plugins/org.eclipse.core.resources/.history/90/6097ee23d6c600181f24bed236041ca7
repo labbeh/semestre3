@@ -46,8 +46,8 @@ public class PlsClassementIRB
 			this.mapPays.put(pCourant.getNomPays(), instancesPaysParAn);
 		}
 		
-		//System.out.println(this.irbMoy78910.getPaysByCode("RSA").getNbPoint());
-		//System.out.println(this.moyPoints("RSA"));
+		System.out.println(this.irbMoy78910.getPaysByCode("RSA").getNbPoint());
+		System.out.println(this.moyPoints("RSA"));
 		
 		
 	}
@@ -113,7 +113,7 @@ public class PlsClassementIRB
 	{
 		PlsClassementIRB pls = new PlsClassementIRB();
 		//pls.deltaPays();
-		System.out.println(pls);
+		//System.out.println(pls);
 		
 		//System.out.println(pls.irbMoy78910.nbPays());
 
