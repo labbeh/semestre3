@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int MAX_Valeur_Par_Variable = 100;
 extern char ** environ;
@@ -14,39 +14,48 @@ void aff_env()
 
 void extractvaleur(char *dest[], char *from)
 {
-	char * valeurs;
+	char * valeurs; //= (char*) malloc (strlen(getenv(from))+1);
 	valeurs = getenv(from);
+	char * ligne;
 
-	//printf("%s\n", getenv(from));
-	dest[0] = strtok(valeurs, ":");
+	ligne = strtok(valeurs, ":");
+	dest[0] = ligne;
 
 	int cpt;
-	for(cpt=1; valeurs != NULL; cpt++)
+	for(cpt=1; ligne != NULL; cpt++)
 	{
-		dest[cpt] = strtok(NULL, ":");
-		printf("%d\n", cpt); // dépasse le nbr d'élément de la variable d'environnement
+		ligne = strtok(NULL, ":");
+		dest[cpt] = ligne;
 	}
 	
-	printf("%s\n", dest);
 	dest[cpt] = NULL;
 }
 
 int main(int argc, char * argv[])
 {
-	if(argc == 1) return 0;
+	if(argc < 2)
+	{
+		printf("%s", "Usage: ./a.out -a /-v nom varialbe ");
+		return -1;
+	}
+
 	if(argc == 2 && strcmp(argv[1], "-a") == 0)
 	{
 		aff_env();
 		return 0;
 	}
 
-	//char **dest;
 	if(argc > 2 && strcmp(argv[1], "-v") == 0)
 	{
-		//char **dest =(char**)malloc(sizeof(char*) * MAX_Valeur_Par_Variable);
 		char *dest[MAX_Valeur_Par_Variable];
-
 		extractvaleur(dest, argv[2]);
+
+		int cpt=0;
+		while(dest[cpt] != NULL)
+		{
+			printf("%s\n", dest[cpt]);
+			cpt++;
+		}
 	}
 
 	return 0;
