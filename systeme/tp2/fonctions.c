@@ -12,9 +12,23 @@ void aff_env()
 		printf("%s\n", environ[cpt]);
 }
 
+void extractvarname(char *dest[])
+{
+	char * ligne;
+
+	int cpt=0;
+	for(cpt=0; environ[cpt] != NULL; cpt++)
+	{
+		ligne = strtok(environ[cpt], "=");
+		dest[cpt] = ligne;
+	}
+	
+	dest[cpt] = NULL;
+}
+
 void extractvaleur(char *dest[], char *from)
 {
-	char * valeurs; //= (char*) malloc (strlen(getenv(from))+1);
+	char * valeurs;
 	valeurs = getenv(from);
 	char * ligne;
 
@@ -42,6 +56,18 @@ int main(int argc, char * argv[])
 	if(argc == 2 && strcmp(argv[1], "-a") == 0)
 	{
 		aff_env();
+		return 0;
+	}
+
+	if(argc == 2 && strcmp(argv[1], "-l") == 0)
+	{
+		char * dest[MAX_Valeur_Par_Variable];
+		extractvarname(dest);
+
+		int cpt=0;
+		for(cpt=0; dest[cpt] != NULL; cpt++)
+			printf("%s\n", dest[cpt]);
+
 		return 0;
 	}
 
