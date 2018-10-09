@@ -19,11 +19,12 @@ public class Pays implements Comparable<Pays>
 	
 	public Pays(Pays pays)
 	{
-		this.nomPays		 = pays.nomPays;
+		this(pays.nomPays, pays.anneeClassement, pays.codePays, pays.rang, pays.nbPoint);
+		/*this.nomPays		 = pays.nomPays;
 		this.anneeClassement = pays.anneeClassement;
 		this.codePays 		 = pays.codePays;
 		this.rang 			 = pays.rang;
-		this.nbPoint 		 = pays.nbPoint;
+		this.nbPoint 		 = pays.nbPoint;*/
 	}
 
 	public String getNomPays()
@@ -112,7 +113,8 @@ public class Pays implements Comparable<Pays>
 		if (rang != other.rang) return false;
 		return true;
 	}
-
+	
+	@Override
 	public int compareTo(Pays p)
 	{
 		return Double.compare(p.nbPoint, this.nbPoint);

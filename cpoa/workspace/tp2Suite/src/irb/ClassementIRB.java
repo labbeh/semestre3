@@ -121,6 +121,7 @@ public class ClassementIRB {
 		return hsRet;
 	}
 	
+	@Override
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder();

@@ -3,6 +3,7 @@ package irb;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class PlsClassementIRB
 {
@@ -17,6 +18,9 @@ public class PlsClassementIRB
 	
 	// associer le nom d'un pays avec toutes ses instances dans les alPays des différents classements
 	private HashMap<String, ArrayList<Pays>> mapPays;
+	
+	// liens entre l'écart max de rang et liste des codes pays ayant obtenu cet écart
+	private HashMap<Integer, ArrayList<String>> mapRang;
 
 	public PlsClassementIRB()
 	{
@@ -30,6 +34,7 @@ public class PlsClassementIRB
 		
 		/* tp2 fin */
 		this.mapPays = new HashMap<String, ArrayList<Pays>>();
+		this.mapRang = new HashMap<Integer, ArrayList<String>>();
 		
 		// classements de 2007 à 2010: les pays sont les mêmes donc on ne fait qu'une liste de code pays
 		for(String code: this.irb2007.getEnsembleCodePays())
@@ -46,12 +51,21 @@ public class PlsClassementIRB
 			this.mapPays.put(pCourant.getNomPays(), instancesPaysParAn);
 		}
 		
-		//System.out.println(this.irbMoy78910.getPaysByCode("RSA").getNbPoint());
-		//System.out.println(this.moyPoints("RSA"));
-		
-		
+		for(String code: this.irbMoy78910.getEnsembleCodePays())
+		{
+			int ecartMax = this.ecartMax(code);
+			
+			if(!this.mapRang.containsKey(ecartMax)) this.mapRang.put(ecartMax, new ArrayList<String>());
+			
+			this.mapRang.get(ecartMax).add(code);
+		}
 	}
 	
+	/**
+	 * *
+	 * @param: code d'un Pays en String
+	 * @return: moyenne de points d'un pays, renvoit la même chose que le nombre de point de moyIrb78910
+	 */
 	public double moyPoints(String codeP)
 	{
 		double moy 	    = 0.0;
@@ -71,7 +85,10 @@ public class PlsClassementIRB
 		return moy;
 	}
 	
-	// existe l'année 1 mais pas l'année 2
+	/**
+	 * @param : 2 ClassementsIRB pour comparer leurs Pays
+	 * @return: HashSet de Pays qui existent l'année 1 mais pas l'année 2
+	 * */
 	public HashSet <Pays> nAppartientPas(ClassementIRB an1, ClassementIRB an2)
 	{
 		HashSet<String> codesAn1 = an1.getEnsembleCodePays();
@@ -89,6 +106,44 @@ public class PlsClassementIRB
 		return hsRet;
 	}
 	
+	/**
+	 * @param: code d'un Pays en String
+	 * @return: l'écart maximal de rang d'un Pays entre une année de 2007 à 2010 et la moyenne de rang de moyIrb78910
+	 * */
+	public Integer ecartMax(String code)
+	{
+		int rangIrbMoy = this.irbMoy78910.getPaysByCode(code).getRang();
+		int[] tabRang = new int[4];
+		
+		tabRang[0] = this.irb2007.getPaysByCode(code).getRang();
+		tabRang[1] = this.irb2008.getPaysByCode(code).getRang();
+		tabRang[2] = this.irb2009.getPaysByCode(code).getRang();
+		tabRang[3] = this.irb2010.getPaysByCode(code).getRang();
+		
+		int ecartMax = rechercherMax(rangIrbMoy, tabRang);
+		
+		return ecartMax;
+	}
+	
+	/**
+	 * @return: méthode privée pour rechercher le plus grand écart, utilisée dans ecartMax(String code)
+	 **/
+	private int rechercherMax(int rangMoy, int[] tab)
+	{
+		int ecartRet = 0;
+		
+		for(int cpt=0; cpt<tab.length; cpt++)
+		{
+			int ecartTemp = tab[cpt] - rangMoy;
+			
+			if(ecartTemp > ecartRet) ecartRet = ecartTemp;
+		}
+		return ecartRet;
+	}
+	
+	/**
+	 * @description: affiche la liste des pays
+	 **/
 	public void deltaPays()
 	{
 		  System.out.println("Pays en 2007 qui ne sont pas en 2008 " + nAppartientPas(irb2007, irb2008));		
@@ -99,11 +154,27 @@ public class PlsClassementIRB
 		  System.out.println(this.irbMoy78910);
 	}
 	
+	public void afficheRangsMax()
+	{
+		StringBuilder result = new StringBuilder();
+		
+		for(Integer key: this.mapRang.keySet())
+		{	
+			result.append(key +": ");
+			
+			for(String values: this.mapRang.get(key)) result.append(values +" ");
+			
+			result.append("\n");
+		}
+		
+		System.out.println(result);
+	}
+	
 
 	@Override
 	public String toString()
 	{
-		return "PlsClassementIRB [irbMoy78910=" + irbMoy78910 + "]";
+		return "PlsClassementIRB [irbMoy78910= " + irbMoy78910 + "]";
 	}
 
 	/**
@@ -112,10 +183,8 @@ public class PlsClassementIRB
 	public static void main(String[] args)
 	{
 		PlsClassementIRB pls = new PlsClassementIRB();
-		//pls.deltaPays();
-		System.out.println(pls);
-		
-		//System.out.println(pls.irbMoy78910.nbPays());
+		pls.deltaPays();
+		pls.afficheRangsMax();
 
 	}
 
