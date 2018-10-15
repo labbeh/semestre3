@@ -1,0 +1,28 @@
+<!ELEMENT stock (editeur+, personne+, jeu+)>
+	<!ELEMENT editeur (#PCDATA)>
+	<!ATTLIST editeur id ID #REQUIRED>
+
+	<!ELEMENT personne (prenom?, nom, dte_naiss?, nationalite)>
+	<!ATTLIST personne id ID #REQUIRED>
+		<!ELEMENT prenom (#PCDATA)>
+		<!ELEMENT nom (#PCDATA)>
+		<!ELEMENT dte_naiss (#PCDATA)>
+		<!ELEMENT nationalite (#PCDATA)>
+
+	<!ELEMENT jeu (titre, annee, nb_joueur, age, duree, edite_par+, cree_par+)>
+	<!ATTLIST jeu couv CDATA #REQUIRED>
+		<!ELEMENT titre (#PCDATA)>
+		<!ELEMENT annee (#PCDATA)>
+		<!ELEMENT nb_joueur EMPTY>
+			<!ATTLIST nb_joueur mini CDATA #REQUIRED
+								maxi CDATA #REQUIRED>
+
+		<!ELEMENT age EMPTY>
+			<!ATTLIST age mini CDATA #REQUIRED>
+		<!ELEMENT duree EMPTY>
+			<!ATTLIST duree minute CDATA #REQUIRED>
+		<!ELEMENT edite_par EMPTY>
+			<!ATTLIST edite_par lien_editeur IDREF #REQUIRED>
+		<!ELEMENT cree_par EMPTY>
+		<!ATTLIST cree_par lien_personne IDREF #REQUIRED
+						   role (auteur | illustrateur) #REQUIRED>

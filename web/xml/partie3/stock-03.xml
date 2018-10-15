@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE stock SYSTEM "stock-03.dtd" >
+
+<?xml-stylesheet type="text/xsl" href="25-3-stock-css.xsl"?>
+
+<stock>
+
+	<!-- - - - - - - - - - - -->
+	<!-- Liste des Editeurs  -->
+	<!-- - - - - - - - - - - -->
+	
+	<editeur id="e001">Asmodée            </editeur>
+	<editeur id="e002">Bombyx             </editeur>
+	<editeur id="e003">Days of Wonder     </editeur>
+	<editeur id="e004">Edge               </editeur>
+	<editeur id="e005">Filosofia          </editeur>
+	<editeur id="e006">Funforge           </editeur>
+	<editeur id="e007">Gigamic            </editeur>
+	<editeur id="e008">Hurrican           </editeur>
+	<editeur id="e009">Iello              </editeur>
+	<editeur id="e010">Intrafin           </editeur>
+	<editeur id="e011">Jeux Descartes     </editeur>
+	<editeur id="e012">Ludodélire         </editeur>
+	<editeur id="e013">Matagot            </editeur>
+	<editeur id="e014">Repro production   </editeur>
+	<editeur id="e015">Ystari             </editeur>
+	<editeur id="e016">Blue Orange        </editeur>
+	<editeur id="e017">Huch &#38; Friends </editeur>
+	<editeur id="e018">Feurland Spiele    </editeur>
+	<editeur id="e019">Z-Man Games        </editeur>
+	<editeur id="e020">Lui-Même           </editeur>
+	<editeur id="e021">Stronghold games   </editeur>
+	<editeur id="e022">Pegasus Spiele     </editeur>
+	<editeur id="e023">EggertSpiele       </editeur>
+	
+	<!-- - - - - - - - - - - -->
+	<!-- Liste des personnes -->
+	<!-- - - - - - - - - - - -->
+	<personne id="p0001"><prenom>Uwe            </prenom> <nom>Rosenberg      </nom> <dte_naiss>27/03/1970</dte_naiss> <nationalite>Allemagne      </nationalite>   </personne>
+	<personne id="p0002"><prenom>Antoine        </prenom> <nom>Bauza          </nom> <dte_naiss>25/08/1978</dte_naiss> <nationalite>France         </nationalite>   </personne> 
+	<personne id="p0003"><prenom>Alan           </prenom> <nom>R. Moon        </nom> <dte_naiss>18/11/1951</dte_naiss> <nationalite>Angleterre     </nationalite>   </personne>
+	<personne id="p0004"><prenom>Philippe       </prenom> <nom>Keyaerts       </nom>                                   <nationalite>Belgique       </nationalite>   </personne>
+	<personne id="p0005"><prenom>Bruno          </prenom> <nom>Faidutti       </nom> <dte_naiss>23/10/1961</dte_naiss> <nationalite>France         </nationalite>   </personne>
+	<personne id="p0006"><prenom>Bruno          </prenom> <nom>Cathala        </nom> <dte_naiss>22/11/1963</dte_naiss> <nationalite>France         </nationalite>   </personne>
+	<personne id="p0007"><prenom>Alexander      </prenom> <nom>Pfister        </nom> <dte_naiss>18/10/1971</dte_naiss> <nationalite>Autriche       </nationalite>   </personne>
+	<personne id="p0008"><prenom>Inka           </prenom> <nom>Brand          </nom> <dte_naiss>19/03/1977</dte_naiss> <nationalite>Allemagne      </nationalite>   </personne>
+	<personne id="p0009"><prenom>Markus         </prenom> <nom>Brand          </nom> <dte_naiss>01/10/1975</dte_naiss> <nationalite>Allemagne      </nationalite>   </personne>
+	<personne id="p0010"><prenom>Dominique      </prenom> <nom>Ehrhard        </nom> <dte_naiss>05/03/1958</dte_naiss> <nationalite>France         </nationalite>   </personne>
+	<personne id="p0011"><prenom>Reiner         </prenom> <nom>Knizia         </nom> <dte_naiss>16/11/1957</dte_naiss> <nationalite>Allemage       </nationalite>   </personne>
+	<personne id="p0012"><prenom>Dennis         </prenom> <nom>Lohausen       </nom>                                   <nationalite>Allemagne      </nationalite>   </personne>
+	<personne id="p0013"><prenom>Klemens        </prenom> <nom>Franz          </nom> <dte_naiss>17/04/1979</dte_naiss> <nationalite>Autriche       </nationalite>   </personne>
+	<personne id="p0014"><prenom>Arnaud         </prenom> <nom>Demaegd        </nom>                                   <nationalite>France         </nationalite>   </personne>  
+	<personne id="p0015"><prenom>Cyril          </prenom> <nom>Demaegd        </nom>                                   <nationalite>France         </nationalite>   </personne>  
+	<personne id="p0016"><prenom>Michel         </prenom> <nom>Lalet          </nom> <dte_naiss>29/01/1953</dte_naiss> <nationalite>France         </nationalite>   </personne>  
+	<personne id="p0017"><prenom>Andreas        </prenom> <nom>Pelikan        </nom>                                   <nationalite>Autriche       </nationalite>   </personne>  
+	<personne id="p0018"><prenom>Andreas        </prenom> <nom>Resch          </nom>                                   <nationalite>Autriche       </nationalite>   </personne>  
+	<personne id="p0019"><prenom>Charles        </prenom> <nom>Chevalier      </nom> <dte_naiss>04/11/1966</dte_naiss> <nationalite>France         </nationalite>   </personne>  
+	<personne id="p0020"><prenom>Jade           </prenom> <nom>Mosch          </nom>                                   <nationalite>France         </nationalite>   </personne>  
+	<personne id="p0021"><prenom>Ludovic        </prenom> <nom>Maublanc       </nom> <dte_naiss>xx/xx/1975</dte_naiss> <nationalite>France         </nationalite>   </personne>
+	<personne id="p0022"><prenom>Julien         </prenom> <nom>Delval         </nom> <dte_naiss>xx/xx/1972</dte_naiss> <nationalite>France         </nationalite>   </personne>
+	<personne id="p0023"><prenom>Piérô          </prenom> <nom>La Lune        </nom>                                   <nationalite>France         </nationalite>   </personne>
+	<personne id="p0024"><prenom>Xavier         </prenom> <nom>Colette        </nom>                                   <nationalite>Belgique       </nationalite>   </personne>	
+	<personne id="p0025"><prenom>Cyril          </prenom> <nom>Bouquet        </nom>                                   <nationalite>France         </nationalite>   </personne>
+	<personne id="p0026"><prenom>Clément        </prenom> <nom>Masson         </nom>                                   <nationalite>France         </nationalite>   </personne>	
+   <personne id="p0027"><prenom>Cérard         </prenom> <nom>Mathieu        </nom> <dte_naiss>xx/xx/1949</dte_naiss> <nationalite>France         </nationalite>   </personne>		
+   <personne id="p0028"><prenom>Jeremy         </prenom> <nom>Masson         </nom>                                   <nationalite>France         </nationalite>   </personne>
+   <personne id="p0029"><prenom>Florence       </prenom> <nom>Magnin         </nom> <dte_naiss>07/03/1950</dte_naiss> <nationalite>France         </nationalite>   </personne>
+   <personne id="p0030"><prenom>Jean-Louis     </prenom> <nom>Mourier        </nom> <dte_naiss>06/11/1962</dte_naiss> <nationalite>France         </nationalite>   </personne>
+   <personne id="p0031"><prenom>Didier         </prenom> <nom>Graffet        </nom> <dte_naiss>09/04/1970</dte_naiss> <nationalite>France         </nationalite>   </personne>
+   <personne id="p0032"><prenom>Cyril          </prenom> <nom>Saint Blancat  </nom>                                   <nationalite>France         </nationalite>   </personne>
+   <personne id="p0033"><prenom>Miguel         </prenom> <nom>Coimbra        </nom> <dte_naiss>09/12/1977</dte_naiss> <nationalite>France         </nationalite>   </personne>
+   <personne id="p0034"><prenom>Joêl           </prenom> <nom>Picksel        </nom>                                   <nationalite>France         </nationalite>   </personne>
+   <personne id="p0035"><prenom>Nicolas        </prenom> <nom>Fructus        </nom> <dte_naiss>24/06/1970</dte_naiss> <nationalite>France         </nationalite>   </personne>
+   <personne id="p0036">                                 <nom>Yuio           </nom>                                   <nationalite>Belgique       </nationalite>   </personne>
+   <personne id="p0037"><prenom>Marie          </prenom> <nom>Cardouat       </nom>                                   <nationalite>France         </nationalite>   </personne>  
+	
+
+	
+	<!-- - - - - - - - - - - -->
+	<!-- Liste des jeux      -->
+	<!-- - - - - - - - - - - -->
+		<jeu couv="route_du_verre">
+			<titre>La route du verre     </titre>
+			<annee>2013                  </annee>
+			
+			<nb_joueur mini="1" maxi="4"/>
+			<age       mini="12"        />
+			<duree     minute="60"      />
+			
+			<edite_par lien_editeur="e005" />
+			<edite_par lien_editeur="e018" />
+			<edite_par lien_editeur="e019" />
+			
+			<cree_par lien_personne="p0001" role="auteur"       />
+			<cree_par lien_personne="p0012" role="illustrateur" />
+			
+		</jeu>
+
+		<jeu couv="agricola">
+			<titre>Agricola              </titre>
+			<annee>2008                  </annee>
+			
+			<nb_joueur mini="1" maxi="5" />
+			<age       mini="12"         />
+			<duree     minute="120"      />
+			
+			<edite_par lien_editeur="e015" />
+
+			<cree_par lien_personne="p0001" role="auteur"       />
+			<cree_par lien_personne="p0013" role="illustrateur" />			
+		</jeu>
+
+
+		<jeu couv="patchwork">
+			<titre>Patchwork              </titre>
+			<annee>2015                   </annee>
+			
+			<nb_joueur mini="2" maxi="2" />
+			<age       mini="7"          />
+			<duree     minute="30"       />
+			
+			<edite_par lien_editeur="e006" />
+			
+			<cree_par lien_personne="p0001" role="auteur"         />
+			<cree_par lien_personne="p0013" role="illustrateur"   />
+		</jeu>
+	
+		<jeu couv="le_havre">
+			<titre>Le Havre               </titre>
+			<annee>2009                   </annee>
+
+			<nb_joueur mini="1" maxi="5" />
+			<age       mini="12"         />
+			<duree     minute="180"      />
+			
+			<edite_par lien_editeur="e015" />
+			
+			<cree_par lien_personne="p0001" role="auteur"         />
+			<cree_par lien_personne="p0013" role="illustrateur"   />
+			
+		</jeu>
+		
+		<jeu couv="portes_loyang">
+			<titre>Aux portes de Loyang   </titre>
+			<annee>2010                   </annee>
+
+			<nb_joueur mini="1" maxi="4" />
+			<age       mini="10"         />
+			<duree     minute="120"      />
+			
+			<edite_par lien_editeur="e010" />
+			
+			<cree_par lien_personne="p0001" role="auteur"         />
+			<cree_par lien_personne="p0013" role="illustrateur"   />
+			
+		</jeu>
+
+	
+		<jeu couv="7_wonders_duel">
+			<titre>7 Wonders Duel         </titre>
+			<annee>2010                   </annee>
+			
+			<nb_joueur mini="2" maxi="2"  />
+			<age       mini="10"          />
+			<duree     minute="30"        />
+			
+			<edite_par lien_editeur="e014" />
+			
+			<cree_par lien_personne="p0002" role="auteur"       />
+			<cree_par lien_personne="p0006" role="auteur"       />
+			<cree_par lien_personne="p0033" role="illustrateur" />			
+		</jeu>
+
+		<jeu couv="7_wonders">
+			<titre>7 Wonders              </titre>
+			<annee>2010                   </annee>
+			
+			<nb_joueur mini="2" maxi="7"  />
+			<age       mini="10"          />
+			<duree     minute="45"        />
+			
+			<edite_par lien_editeur="e014" />
+
+			<cree_par lien_personne="p0002" role="auteur"       />
+			<cree_par lien_personne="p0033" role="illustrateur" />			
+			
+		</jeu>
+
+		<jeu couv="takenoko">
+			<titre>Takenoko               </titre>
+			<annee>2011                   </annee>
+			
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="8"          />
+			<duree     minute="45"       />
+			
+			<edite_par lien_editeur="e013" />
+			<edite_par lien_editeur="e002" />
+			
+			<cree_par lien_personne="p0002" role="auteur"       />
+			<cree_par lien_personne="p0034" role="illustrateur" />
+			<cree_par lien_personne="p0035" role="illustrateur" />
+			<cree_par lien_personne="p0036" role="illustrateur" />
+		</jeu>
+
+		<jeu couv="rail">
+			<titre>Les Aventuriers du Rail</titre>
+			<annee>2004                   </annee>
+						
+			<nb_joueur mini="2" maxi="5" />
+			<age       mini="8"          />
+			<duree     minute="45"       />
+			
+			<edite_par lien_editeur="e003" />
+			
+			<cree_par lien_personne="p0003" role="auteur"       />
+			<cree_par lien_personne="p0022" role="illustrateur" />			
+		</jeu>
+
+		<jeu couv="rail_europe">
+			<titre>Les Aventuriers du Rail : Europe</titre>
+			<annee>2005                             </annee>
+			
+			<nb_joueur mini="2" maxi="5" />
+			<age       mini="8"          />
+			<duree     minute="45"       />
+			
+			<edite_par lien_editeur="e003" />
+			
+			<cree_par lien_personne="p0003" role="auteur"       />
+			<cree_par lien_personne="p0022" role="illustrateur" />			
+		</jeu>
+	
+		<jeu couv="rail_uk">
+			<titre>Ticket to Ride: The United Kingdom</titre>
+			<annee>2015                              </annee>
+			
+			<nb_joueur mini="2" maxi="5" />
+			<age       mini="8"          />
+			<duree     minute="45"       />
+			
+			<edite_par lien_editeur="e003" />
+
+			<cree_par lien_personne="p0003" role="auteur"       />
+			<cree_par lien_personne="p0022" role="illustrateur" />			
+		</jeu>	
+	
+		<jeu couv="rail_monde">
+			<titre>Les Aventuriers du Rail : Autour du monde</titre>
+			<annee>2016                                     </annee>
+			
+			<nb_joueur mini="2" maxi="5" />
+			<age       mini="10"         />
+			<duree     minute="105"      />
+			
+			<edite_par lien_editeur="e003" />
+			
+			<cree_par lien_personne="p0003" role="auteur"       />
+			<cree_par lien_personne="p0022" role="illustrateur" />			
+		</jeu>
+
+	
+		<jeu couv="small_world">
+			<titre>Small World            </titre>
+			<annee>2009                   </annee>
+			
+			<nb_joueur mini="2" maxi="5" />
+			<age       mini="8"          />
+			<duree     minute="75"       />
+			
+			<edite_par lien_editeur="e003" />
+			
+			<cree_par lien_personne="p0004" role="auteur"       />
+			<cree_par lien_personne="p0033" role="illustrateur" />			
+		</jeu>
+
+
+		<jeu couv="olympos">
+			<titre>Olympos                </titre>
+			<annee>2011                   </annee>
+			
+			<nb_joueur mini="3" maxi="5"  />
+			<age       mini="10"          />
+			<duree     minute="75"        />
+			
+			<edite_par lien_editeur="e015" />
+			
+			<cree_par lien_personne="p0004" role="auteur"       />
+			<cree_par lien_personne="p0014" role="illustrateur" />			
+			
+		</jeu>
+
+		<jeu couv="evo">
+			<titre>Evo                    </titre>
+			<annee>2001                   </annee>
+			
+			<nb_joueur mini="3" maxi="5"  />
+			<age       mini="12"          />
+			<duree     minute="90"        />
+			
+			<edite_par lien_editeur="e011" />
+			<edite_par lien_editeur="e001" />
+			
+			<cree_par lien_personne="p0004" role="auteur"       />
+			<cree_par lien_personne="p0032" role="illustrateur" />
+		</jeu>
+		
+
+		<jeu couv="citadelles">
+			<titre>Citadelles : Troisième édition </titre>
+			<annee>2010                           </annee>
+			
+			<nb_joueur mini="2" maxi="8"  />
+			<age       mini="10"          />
+			<duree     minute="60"        />
+			
+			<edite_par lien_editeur="e004" />
+			
+			<cree_par lien_personne="p0005" role="auteur"       />
+			<cree_par lien_personne="p0029" role="illustrateur" />
+			<cree_par lien_personne="p0030" role="illustrateur" />
+			<cree_par lien_personne="p0031" role="illustrateur" />
+			
+		</jeu>	
+
+		<jeu couv="mascarade">
+			<titre>Mascarade          </titre>
+			<annee>2013               </annee>
+						
+			<nb_joueur mini="2" maxi="13" />
+			<age       mini="10"          />
+			<duree     minute="30"        />
+			
+			<edite_par lien_editeur="e014" />
+
+			<cree_par lien_personne="p0005" role="auteur"       />
+			<cree_par lien_personne="p0027" role="illustrateur" />			
+		</jeu>
+
+		<jeu couv="vallee_mamammouths">
+			<titre>La vallée des Mammouths    </titre>
+			<annee>1991                       </annee>
+						
+			<nb_joueur mini="2" maxi="6" />
+			<age       mini="12"         />
+			<duree     minute="120"      />
+			
+			<edite_par lien_editeur="e012" />
+			
+			<cree_par lien_personne="p0005" role="auteur"       />
+			<cree_par lien_personne="p0027" role="illustrateur" />			
+		</jeu>
+		
+
+		<jeu couv="5_tribes">
+			<titre>Five Tribes                </titre>
+			<annee>2014                       </annee>
+						
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="13"         />
+			<duree     minute="60"       />
+			
+			<edite_par lien_editeur="e003" />
+			
+			<cree_par lien_personne="p0006" role="auteur"       />
+			<cree_par lien_personne="p0026" role="illustrateur" />			
+		</jeu>		
+
+		<jeu couv="kingdomino">
+			<titre>Kingdomino                 </titre>
+			<annee>2016                       </annee>
+						
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="8"          />
+			<duree     minute="15"       />
+			
+			<edite_par lien_editeur="e016" />
+			
+			<cree_par lien_personne="p0006" role="auteur"       />
+			<cree_par lien_personne="p0025" role="illustrateur" />			
+			
+			
+		</jeu>
+		
+		<jeu couv="abyss">
+			<titre>Abyss                      </titre>
+			<annee>2014                       </annee>
+						
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="10"         />
+			<duree     minute="45"       />
+			
+			<edite_par lien_editeur="e002" />
+			
+			<cree_par lien_personne="p0006" role="auteur"       />
+			<cree_par lien_personne="p0019" role="auteur"       />
+			<cree_par lien_personne="p0024" role="illustrateur" />			
+		</jeu>
+
+		<jeu couv="mr_jack">
+			<titre>Mr Jack                    </titre>
+			<annee>2006                       </annee>
+						
+			<nb_joueur mini="2" maxi="2" />
+			<age       mini="9"          />
+			<duree     minute="30"       />
+			
+			<edite_par lien_editeur="e008" />
+			
+			<cree_par lien_personne="p0006" role="auteur"       />
+			<cree_par lien_personne="p0021" role="auteur"       />
+			<cree_par lien_personne="p0023" role="illustrateur" />			
+		</jeu>
+		
+		<jeu couv="cleopatre">
+			<titre>Cléopatre et la Société des Architectes </titre>
+			<annee>2006                                    </annee>
+			
+			<nb_joueur mini="3" maxi="5" />
+			<age       mini="10"         />
+			<duree     minute="60"       />
+			
+			<edite_par lien_editeur="e003" />
+			
+			<cree_par lien_personne="p0006" role="auteur"       />
+			<cree_par lien_personne="p0021" role="auteur"       />
+			<cree_par lien_personne="p0022" role="illustrateur" />			
+		</jeu>
+	
+		<jeu couv="kanagawa">
+			<titre>Kanagawa                   </titre>
+			<annee>2016                       </annee>
+						
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="10"         />
+			<duree     minute="45"       />
+			
+			<edite_par lien_editeur="e009" />
+			
+			<cree_par lien_personne="p0006" role="auteur"       />
+			<cree_par lien_personne="p0019" role="auteur"       />
+			<cree_par lien_personne="p0020" role="illustrateur" />
+		</jeu>	
+	
+
+	
+		<jeu couv="great_western">
+			<titre>Great Western              </titre>
+			<annee>2016                       </annee>
+			
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="12"         />
+			<duree     minute="120"      />
+			
+			<edite_par lien_editeur="e023" />
+			<edite_par lien_editeur="e007" />
+			<edite_par lien_editeur="e021" />
+			<edite_par lien_editeur="e022" />
+			
+			<cree_par lien_personne="p0007" role="auteur"       />
+			<cree_par lien_personne="p0018" role="illustrateur" />			
+		</jeu>
+
+		<jeu couv="isle_of_skye">
+			<titre>Isle of Skye               </titre>
+			<annee>2015                       </annee>
+			
+			<nb_joueur mini="2" maxi="5" />
+			<age       mini="8"          />
+			<duree     minute="60"       />
+			
+			<edite_par lien_editeur="e006" />
+			
+			<cree_par lien_personne="p0007" role="auteur"       />
+			<cree_par lien_personne="p0017" role="auteur"       />
+			<cree_par lien_personne="p0013" role="illustrateur" />			
+		</jeu>
+	
+	
+
+	
+		<jeu couv="descendance">
+			<titre>Descendance                </titre>
+			<annee>2012                       </annee>
+						
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="12"         />
+			<duree     minute="75"       />
+			
+			<edite_par lien_editeur="e007" />
+			
+			<cree_par lien_personne="p0008" role="auteur"       />
+			<cree_par lien_personne="p0009" role="auteur"       />
+			<cree_par lien_personne="p0012" role="illustrateur" />
+			
+		</jeu>	
+
+		<jeu couv="clochemerle">
+			<titre>ClocheMerle                </titre>
+			<annee>2015                       </annee>
+			
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="12"         />
+			<duree     minute="75"       />
+			
+			<edite_par lien_editeur="e007" />
+			
+			<cree_par lien_personne="p0008" role="auteur"       />
+			<cree_par lien_personne="p0009" role="auteur"       />
+			<cree_par lien_personne="p0012" role="illustrateur" />
+			
+		</jeu>
+
+		<jeu couv="rajas_ganges">
+			<titre>Rajas of the Ganges        </titre>
+			<annee>2017                       </annee>
+			
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="12"         />
+			<duree     minute="60"       />
+			
+			<edite_par lien_editeur="e017" />
+			
+			<cree_par lien_personne="p0008" role="auteur"       />
+			<cree_par lien_personne="p0009" role="auteur"       />
+			<cree_par lien_personne="p0012" role="illustrateur" />			
+		</jeu>
+	
+	
+		<jeu couv="marrakech">
+			<titre>Marrakech                  </titre>
+			<annee>2010                       </annee>
+						
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="6"          />
+			<duree     minute="15"       />
+			
+			<edite_par lien_editeur="e007" />
+			
+			<cree_par lien_personne="p0010" role="auteur"       />
+			<cree_par lien_personne="p0037" role="illustrateur" />
+		</jeu>	
+
+		<jeu couv="serenissima">
+			<titre>Serenissima             </titre>
+			<annee>2012                    </annee>
+						
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="13"         />
+			<duree     minute="90"       />
+			
+			<edite_par lien_editeur="e015" />
+			
+			<cree_par lien_personne="p0010" role="auteur"       />
+			<cree_par lien_personne="p0010" role="illustrateur" />
+			<cree_par lien_personne="p0014" role="illustrateur" />
+		</jeu>	
+
+		<jeu couv="boomerang">
+			<titre>Boomerang             </titre>
+			<annee>2010                  </annee>
+						
+			<nb_joueur mini="3" maxi="5" />
+			<age       mini="8"          />
+			<duree     minute="30"       />
+			
+			<edite_par lien_editeur="e020" />
+			
+			<cree_par lien_personne="p0010" role="auteur"       />
+			<cree_par lien_personne="p0016" role="auteur"       />
+			<cree_par lien_personne="p0010" role="illustrateur" />			
+		</jeu>
+	
+	
+		<jeu couv="medici">
+			<titre>Medici                     </titre>
+			<annee>2005                       </annee>
+						
+			<nb_joueur mini="3" maxi="6" />
+			<age       mini="10"         />
+			<duree     minute="45"       />
+
+			<edite_par lien_editeur="e020" />
+			
+			<cree_par lien_personne="p0011" role="auteur"       />
+			<cree_par lien_personne="p0010" role="illustrateur" />
+		</jeu>	
+
+		<jeu couv="sylla">
+			<titre>Sylla                   </titre>
+			<annee>2008                    </annee>
+						
+			<nb_joueur mini="2" maxi="4" />
+			<age       mini="12"         />
+			<duree     minute="60"       />
+			
+			<edite_par lien_editeur="e015" />
+			
+			<cree_par lien_personne="p0010" role="auteur"       />
+			<cree_par lien_personne="p0014" role="illustrateur" />
+		</jeu>	
+	
+	
+	
+		<jeu couv="ys">
+			<titre>Ys                         </titre>
+			<annee>2005                       </annee>
+						
+			<nb_joueur mini="3" maxi="4" />
+			<age       mini="12"         />
+			<duree     minute="75"       />
+			
+			<edite_par lien_editeur="e015" />
+			
+			<cree_par lien_personne="p0015" role="auteur"       />
+			<cree_par lien_personne="p0014" role="illustrateur" />			
+		</jeu>	
+
+	
+	
+	
+</stock>
+
