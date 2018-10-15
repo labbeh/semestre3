@@ -143,8 +143,8 @@ public class PlsClassementIRB
 	}
 	
 	/**
-	 * affiche la liste des pays
-	 * */
+	 * @description affiche la liste des pays
+	 **/
 	public void deltaPays()
 	{
 		  System.out.println("Pays en 2007 qui ne sont pas en 2008 " + nAppartientPas(irb2007, irb2008));		

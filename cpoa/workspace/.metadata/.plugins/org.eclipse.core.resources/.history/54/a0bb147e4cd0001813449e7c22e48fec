@@ -3,6 +3,7 @@ package irb;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class PlsClassementIRB
 {
@@ -50,13 +51,11 @@ public class PlsClassementIRB
 			this.mapPays.put(pCourant.getNomPays(), instancesPaysParAn);
 		}
 		
-		// Objectif 1 dernirèe partie
 		for(String code: this.irbMoy78910.getEnsembleCodePays())
 		{
 			int ecartMax = this.ecartMax(code);
 			
-			if(!this.mapRang.containsKey(ecartMax))
-				this.mapRang.put(ecartMax, new ArrayList<String>());
+			if(!this.mapRang.containsKey(ecartMax)) this.mapRang.put(ecartMax, new ArrayList<String>());
 			
 			this.mapRang.get(ecartMax).add(code);
 		}
@@ -128,7 +127,7 @@ public class PlsClassementIRB
 	
 	/**
 	 * @return méthode privée pour rechercher le plus grand écart, utilisée dans ecartMax(String code)
-	 * */
+	 **/
 	private int rechercherMax(int rangMoy, int[] tab)
 	{
 		int ecartRet = 0;
@@ -143,8 +142,8 @@ public class PlsClassementIRB
 	}
 	
 	/**
-	 * affiche la liste des pays
-	 * */
+	 * @description affiche la liste des pays
+	 **/
 	public void deltaPays()
 	{
 		  System.out.println("Pays en 2007 qui ne sont pas en 2008 " + nAppartientPas(irb2007, irb2008));		

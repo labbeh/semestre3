@@ -45,12 +45,12 @@ public class ClassementIRB {
 			p.setNbPoint(moy);
 		}
 		
-		// on tire la liste et màj du rang
+		// on tire la liste
 		this.majRang();
 		
 		// on affecte le nouveau rang à chaque pays
-		/*for(int cpt=0; cpt<this.alPays.size(); cpt++)
-			this.alPays.get(cpt).setRang(cpt+1);*/
+		for(int cpt=0; cpt<this.alPays.size(); cpt++)
+			this.alPays.get(cpt).setRang(cpt+1);
 	}
 	
 	public ClassementIRB(String nomFich)
@@ -97,16 +97,9 @@ public class ClassementIRB {
 		}
 	}
 	
-	/**
-	 * tire la liste de pays en fonction des points et met à jours le rang
-	 * */
 	public void majRang()
 	{
 		Collections.sort(this.alPays);
-		
-		// on affecte le nouveau rang à chaque pays
-		for(int cpt=0; cpt<this.alPays.size(); cpt++)
-			this.alPays.get(cpt).setRang(cpt+1);
 	}
 	
 	/* ACCESSEURS */

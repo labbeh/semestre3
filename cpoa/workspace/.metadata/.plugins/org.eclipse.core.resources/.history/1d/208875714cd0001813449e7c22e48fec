@@ -97,9 +97,6 @@ public class ClassementIRB {
 		}
 	}
 	
-	/**
-	 * tire la liste de pays en fonction des points et met à jours le rang
-	 * */
 	public void majRang()
 	{
 		Collections.sort(this.alPays);

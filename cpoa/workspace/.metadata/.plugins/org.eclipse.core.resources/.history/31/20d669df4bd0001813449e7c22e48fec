@@ -3,6 +3,7 @@ package irb;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class PlsClassementIRB
 {
@@ -50,13 +51,11 @@ public class PlsClassementIRB
 			this.mapPays.put(pCourant.getNomPays(), instancesPaysParAn);
 		}
 		
-		// Objectif 1 dernirèe partie
 		for(String code: this.irbMoy78910.getEnsembleCodePays())
 		{
 			int ecartMax = this.ecartMax(code);
 			
-			if(!this.mapRang.containsKey(ecartMax))
-				this.mapRang.put(ecartMax, new ArrayList<String>());
+			if(!this.mapRang.containsKey(ecartMax)) this.mapRang.put(ecartMax, new ArrayList<String>());
 			
 			this.mapRang.get(ecartMax).add(code);
 		}
@@ -64,8 +63,8 @@ public class PlsClassementIRB
 	
 	/**
 	 * *
-	 * @param code d'un Pays en String
-	 * @return moyenne de points d'un pays, renvoit la même chose que le nombre de point de moyIrb78910
+	 * @param: code d'un Pays en String
+	 * @return: moyenne de points d'un pays, renvoit la même chose que le nombre de point de moyIrb78910
 	 */
 	public double moyPoints(String codeP)
 	{
@@ -87,8 +86,8 @@ public class PlsClassementIRB
 	}
 	
 	/**
-	 * @param  2 ClassementsIRB pour comparer leurs Pays
-	 * @return HashSet de Pays qui existent l'année 1 mais pas l'année 2
+	 * @param : 2 ClassementsIRB pour comparer leurs Pays
+	 * @return: HashSet de Pays qui existent l'année 1 mais pas l'année 2
 	 * */
 	public HashSet <Pays> nAppartientPas(ClassementIRB an1, ClassementIRB an2)
 	{
@@ -108,8 +107,8 @@ public class PlsClassementIRB
 	}
 	
 	/**
-	 * @param  code d'un Pays en String
-	 * @return l'écart maximal de rang d'un Pays entre une année de 2007 à 2010 et la moyenne de rang de moyIrb78910
+	 * @param: code d'un Pays en String
+	 * @return: l'écart maximal de rang d'un Pays entre une année de 2007 à 2010 et la moyenne de rang de moyIrb78910
 	 * */
 	public Integer ecartMax(String code)
 	{
@@ -128,7 +127,7 @@ public class PlsClassementIRB
 	
 	/**
 	 * @return méthode privée pour rechercher le plus grand écart, utilisée dans ecartMax(String code)
-	 * */
+	 **/
 	private int rechercherMax(int rangMoy, int[] tab)
 	{
 		int ecartRet = 0;
@@ -143,8 +142,8 @@ public class PlsClassementIRB
 	}
 	
 	/**
-	 * affiche la liste des pays
-	 * */
+	 * @description affiche la liste des pays
+	 **/
 	public void deltaPays()
 	{
 		  System.out.println("Pays en 2007 qui ne sont pas en 2008 " + nAppartientPas(irb2007, irb2008));		

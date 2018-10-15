@@ -7,10 +7,7 @@ public class Pays implements Comparable<Pays>
 	private String codePays; // en 3 lettres
 	private int rang;
 	private double nbPoint;
-	
-	/**
-	 * Constructeur princpal de Pays
-	 * */
+
 	public Pays(String nomPays, String anneeClassement, String codePays, int rang, double nbPoint)
 	{
 		this.nomPays 		 = nomPays;
@@ -20,12 +17,14 @@ public class Pays implements Comparable<Pays>
 		this.nbPoint 		 = nbPoint;
 	}
 	
-	/**
-	 * Constructeur par recopie d'un Pays
-	 * */
 	public Pays(Pays pays)
 	{
 		this(pays.nomPays, pays.anneeClassement, pays.codePays, pays.rang, pays.nbPoint);
+		/*this.nomPays		 = pays.nomPays;
+		this.anneeClassement = pays.anneeClassement;
+		this.codePays 		 = pays.codePays;
+		this.rang 			 = pays.rang;
+		this.nbPoint 		 = pays.nbPoint;*/
 	}
 
 	public String getNomPays()
@@ -81,7 +80,6 @@ public class Pays implements Comparable<Pays>
 	@Override
 	public String toString()
 	{
-		// généré automatiquement par Eclipse
 		return "Pays [nomPays=" + nomPays + ", anneeClassement="
 				+ anneeClassement + ", codePays=" + codePays + ", rang=" + rang
 				+ ", nbPoint=" + nbPoint + "]";
@@ -90,7 +88,6 @@ public class Pays implements Comparable<Pays>
 	@Override
 	public boolean equals(Object obj)
 	{
-		// généré automatiquement par Eclipse
 		if (this == obj) return true;
 		if (obj == null) return false;
 		

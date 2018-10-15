@@ -45,7 +45,7 @@ public class ClassementIRB {
 			p.setNbPoint(moy);
 		}
 		
-		// on tire la liste et màj du rang
+		// on tire la liste
 		this.majRang();
 		
 		// on affecte le nouveau rang à chaque pays
@@ -97,9 +97,6 @@ public class ClassementIRB {
 		}
 	}
 	
-	/**
-	 * tire la liste de pays en fonction des points et met à jours le rang
-	 * */
 	public void majRang()
 	{
 		Collections.sort(this.alPays);

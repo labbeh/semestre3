@@ -7,10 +7,7 @@ public class Pays implements Comparable<Pays>
 	private String codePays; // en 3 lettres
 	private int rang;
 	private double nbPoint;
-	
-	/**
-	 * Constructeur princpal de Pays
-	 * */
+
 	public Pays(String nomPays, String anneeClassement, String codePays, int rang, double nbPoint)
 	{
 		this.nomPays 		 = nomPays;
@@ -20,9 +17,6 @@ public class Pays implements Comparable<Pays>
 		this.nbPoint 		 = nbPoint;
 	}
 	
-	/**
-	 * Constructeur par recopie d'un Pays
-	 * */
 	public Pays(Pays pays)
 	{
 		this(pays.nomPays, pays.anneeClassement, pays.codePays, pays.rang, pays.nbPoint);
