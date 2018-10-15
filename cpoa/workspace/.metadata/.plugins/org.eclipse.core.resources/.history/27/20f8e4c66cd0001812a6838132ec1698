@@ -167,9 +167,6 @@ public class PlsClassementIRB
 		  System.out.println(this.irbMoy78910);
 	}
 	
-	/**
-	 * affiche que le haut rang de chaques pays sur les années de 2007 à 2010
-	 * */
 	public void afficheRangsMax()
 	{
 		StringBuilder result = new StringBuilder();
@@ -233,6 +230,9 @@ public class PlsClassementIRB
 		PlsClassementIRB pls = new PlsClassementIRB();
 		pls.deltaPays();
 		pls.afficheRangsMax();
+		System.out.println("Année plus proche de la moyenne LUX: " +pls.anneeMoy("LUX"));
+		System.out.println("Année plus proche de la moyenne KOR: " +pls.anneeMoy("KOR"));
+
 	}
 
 }

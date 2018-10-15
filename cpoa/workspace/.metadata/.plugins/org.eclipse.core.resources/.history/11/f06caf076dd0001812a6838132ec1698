@@ -167,9 +167,6 @@ public class PlsClassementIRB
 		  System.out.println(this.irbMoy78910);
 	}
 	
-	/**
-	 * affiche que le haut rang de chaques pays sur les années de 2007 à 2010
-	 * */
 	public void afficheRangsMax()
 	{
 		StringBuilder result = new StringBuilder();

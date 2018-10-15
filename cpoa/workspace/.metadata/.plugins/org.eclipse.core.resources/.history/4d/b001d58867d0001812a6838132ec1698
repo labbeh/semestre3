@@ -3,6 +3,7 @@ package irb;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class PlsClassementIRB
 {
@@ -121,37 +122,37 @@ public class PlsClassementIRB
 		tabRang[2] = this.irb2009.getPaysByCode(code).getRang();
 		tabRang[3] = this.irb2010.getPaysByCode(code).getRang();
 		
-		int ecartMax = PlsClassementIRB.rechercherMax(rangIrbMoy, tabRang);
+		int ecartMax = rechercherMax(rangIrbMoy, tabRang);
 		
 		return ecartMax;
 	}
 	
 	/**
-	 * @param code d'un pays
-	 * @return année ou le nombre de points est le plus proche de la moyenne des scores du pays dont le code est passé en paramètres
+	 * @return année ou le nombre de points est le plus proche de la moyenne des scores
 	 * */
-	public String anneeMoy(String code)
+	public String anneeMoy()
 	{
-		double[] nbPts = new double[4];
+		Set<String> nomPays = this.mapPays.keySet();
+		System.out.println(nomPays.size());
+		System.out.println(this.irb2007.nbPays());
 		
-		double moy = this.irbMoy78910.getPaysByCode(code).getNbPoint();
-			
-		nbPts[0] = this.irb2007.getPaysByCode(code).getNbPoint();
-		nbPts[1] = this.irb2008.getPaysByCode(code).getNbPoint();
-		nbPts[2] = this.irb2009.getPaysByCode(code).getNbPoint();
-		nbPts[3] = this.irb2010.getPaysByCode(code).getNbPoint();
-			
-		int indProcheMoy = PlsClassementIRB.ecartMinAvecMoyenne(moy, nbPts);
+		return "result annee moy";
+	}
+	
+	/**
+	 * @return méthode privée pour rechercher le plus grand écart, utilisée dans ecartMax(String code)
+	 * */
+	private int rechercherMax(int rangMoy, int[] tab)
+	{
+		int ecartRet = 0;
 		
-		switch(indProcheMoy)
+		for(int cpt=0; cpt<tab.length; cpt++)
 		{
-			case 0: return "2007";
-			case 1: return "2008";
-			case 2: return "2009";
-			case 3: return "2010";
+			int ecartTemp = tab[cpt] - rangMoy;
+			
+			if(ecartTemp > ecartRet) ecartRet = ecartTemp;
 		}
-		
-		return "";
+		return ecartRet;
 	}
 	
 	/**
@@ -167,9 +168,6 @@ public class PlsClassementIRB
 		  System.out.println(this.irbMoy78910);
 	}
 	
-	/**
-	 * affiche que le haut rang de chaques pays sur les années de 2007 à 2010
-	 * */
 	public void afficheRangsMax()
 	{
 		StringBuilder result = new StringBuilder();
@@ -192,38 +190,6 @@ public class PlsClassementIRB
 	{
 		return "PlsClassementIRB [irbMoy78910= " + irbMoy78910 + "]";
 	}
-	
-	/* METHODES UTILITAIRE PRIVEES*/
-	/**
-	 * @param moyenne des points de 2007 à 2010 d'un pays, tableau du nombre de points d'un pays sur ces mêmes années
-	 * @return indice de l'élément du tableau contenant le nombre de points d'un pays de 2007 à 2010 le plus proche de la moyenne
-	 * */
-	private static int ecartMinAvecMoyenne(double moy, double[] nbPts)
-	{
-		int indice = 0;
-		
-		for(int cpt=0; cpt<nbPts.length; cpt++)
-			if((moy - nbPts[cpt]) < indice ) indice = cpt;
-
-		
-		return indice;
-	}
-
-	/**
-	 * @return le plus grand écart de rang d'un pays, utilisée dans ecartMax(String code)
-	 * */
-	private static int rechercherMax(int rangMoy, int[] tab)
-	{
-		int ecartRet = 0;
-		
-		for(int cpt=0; cpt<tab.length; cpt++)
-		{
-			int ecartTemp = tab[cpt] - rangMoy;
-			
-			if(ecartTemp > ecartRet) ecartRet = ecartTemp;
-		}
-		return ecartRet;
-	}
 
 	/**
 	 * @param args
@@ -233,6 +199,8 @@ public class PlsClassementIRB
 		PlsClassementIRB pls = new PlsClassementIRB();
 		pls.deltaPays();
 		pls.afficheRangsMax();
+		System.out.println(pls.anneeMoy());
+
 	}
 
 }

@@ -43,7 +43,7 @@ public class PlsClassementIRBTest
 	{
 		// test sur LUX et KOR
 		assertEquals(this.pls.anneeMoy("LUX"), new String("2008"));
-		assertEquals(this.pls.anneeMoy("KOR"), new String("2009"));
+		assertEquals(this.pls.anneeMoy("LUX"), new String("2008"));
 	}
 
 }
