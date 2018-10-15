@@ -117,11 +117,6 @@ public class Pays implements Comparable<Pays>
 		return true;
 	}
 	
-	/**
-	 * compare le pays courant avec un autre pays passer en paramètre: la comparaison se fait sur le nombre de points
-	 * @param pays sur lequel effectuer la comparaison
-	 * @return -1, 0 ou 1 
-	 * */
 	@Override
 	public int compareTo(Pays p)
 	{

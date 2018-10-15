@@ -21,6 +21,12 @@ public class PlsClassementIRB
 	// liens entre l'écart max de rang et liste des codes pays ayant obtenu cet écart
 	private HashMap<Integer, ArrayList<String>> mapRang;
 
+	/**
+	 * Constructeur de PlsClassementIRB, crééer des instances de ClassementsIRB de 2007 à 2011 ainsi qu'un classement moyen de 2007 à 2010
+	 * et deux Map une pour associer à une clef toutes les instances de pays des classements des différentes années, et une autre pour
+	 * faire le lien entre l'écart max de rang et les pays ayant obtenus cet écart
+	 * 
+	 * */
 	public PlsClassementIRB()
 	{
 		this.irb2007 = new ClassementIRB("i2007.txt");

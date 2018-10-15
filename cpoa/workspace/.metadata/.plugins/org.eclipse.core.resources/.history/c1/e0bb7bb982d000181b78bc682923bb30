@@ -12,9 +12,6 @@ public class ClassementIRB {
 	private ArrayList<String> alS	;
 	private ArrayList<Pays>   alPays;
 	
-	/**
-	 * constructeur pour irbmoy78910
-	 * */
 	public ClassementIRB(ClassementIRB classementIRB, String anneeClassement)
 	{
 		this.alPays = new ArrayList<>();
@@ -56,9 +53,6 @@ public class ClassementIRB {
 			this.alPays.get(cpt).setRang(cpt+1);*/
 	}
 	
-	/**
-	 * constructeur pour crééer un ClassementIRB à partir d'un fichier
-	 * */
 	public ClassementIRB(String nomFich)
 	{
 		this.alS 	= new ArrayList<String>();
@@ -130,9 +124,6 @@ public class ClassementIRB {
 		return null;
 	}
 	
-	/**
-	 * @return HashSet contenant l'ensemble des codes pays des pays présents dans ce classement
-	 * */
 	public HashSet <String> getEnsembleCodePays()
 	{
 		HashSet<String> hsRet = new HashSet<String>();
