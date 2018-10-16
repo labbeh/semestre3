@@ -1,0 +1,11 @@
+package gestionLog;
+
+public class UnLog
+{
+
+	public UnLog()
+	{
+		// TODO Auto-generated constructor stub
+	}
+
+}

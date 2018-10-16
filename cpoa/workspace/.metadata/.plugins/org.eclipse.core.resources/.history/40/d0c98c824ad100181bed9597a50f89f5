@@ -1,0 +1,11 @@
+package gestionLog;
+
+public class TraiteLog
+{
+
+	public TraiteLog()
+	{
+		// TODO Auto-generated constructor stub
+	}
+
+}

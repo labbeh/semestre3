@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;tp2variante/datas/log.txt&apos; to &apos;countModif.txt&apos;" description="Rename resource &apos;log.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="datas/log.txt" name="countModif.txt" stamp="1539698016550" updateReferences="true"/>
+</session>
