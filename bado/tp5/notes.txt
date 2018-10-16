@@ -1,0 +1,3 @@
+question 5 et 6: les données écrites au final sont celle du dernier qui à commit (si actions sur le même tuple)
+question 7 	   : ça bloque, au niveau du xterm 1 jusqu'à ce qu'on intervienne sur le 2 soit en commit, sois en situation d'étreinte fatale
+				 le commit du 2 fait un rollback, seul mes modif du 1 sont prises en compte
