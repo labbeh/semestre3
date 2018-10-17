@@ -6,7 +6,7 @@ public class Controleur
 
 	public Controleur()
 	{
-		this.gui = new Gui();
+		this.gui = new Gui(this);
 	}
 
 	public static void main(String[] args)

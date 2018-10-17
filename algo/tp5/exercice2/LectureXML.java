@@ -1,6 +1,6 @@
 import java.io.*;
-import org.jdom.*;
-import org.jdom.input.*;
+import org.jdom2.*;
+import org.jdom2.input.*;
 
 import java.util.List;
 import java.util.ArrayList;

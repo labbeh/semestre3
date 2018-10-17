@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="17" version="2.0">
+<workbenchAdvisor/>
+<window height="768" maximized="true" width="1024" x="0" y="27">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="150" y="36"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="162" y="36"/>
+<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="94" y="36"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="130" y="36"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="238" y="36"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1539758513785" focus="true" label="Workspace - Resource">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Controleur.java" partName="Controleur.java" path="/home/etudiant/lh150094/TP/semestre3/algo/tp5/exercice2/eclipse/AlgoZoneTerritoire/src/zoneTerritoire/Controleur.java" title="Controleur.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/Controleur.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AlgoZoneTerritoire/src/zoneTerritoire/Controleur.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="27" selectionOffset="180" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PanelImage.java" partName="PanelImage.java" path="/home/etudiant/lh150094/TP/semestre3/algo/tp5/exercice2/eclipse/AlgoZoneTerritoire/src/zoneTerritoire/ihm/PanelImage.java" title="PanelImage.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/ihm/PanelImage.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AlgoZoneTerritoire/src/zoneTerritoire/ihm/PanelImage.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1739" selectionTopPixel="484"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GestionTerritoire.java" partName="GestionTerritoire.java" path="/home/etudiant/lh150094/TP/semestre3/algo/tp5/exercice2/eclipse/AlgoZoneTerritoire/src/zoneTerritoire/metier/GestionTerritoire.java" title="GestionTerritoire.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/metier/GestionTerritoire.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AlgoZoneTerritoire/src/zoneTerritoire/metier/GestionTerritoire.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="188" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LectureXML.java" partName="LectureXML.java" path="/home/etudiant/lh150094/TP/semestre3/algo/tp5/exercice2/eclipse/AlgoZoneTerritoire/src/zoneTerritoire/metier/LectureXML.java" title="LectureXML.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/metier/LectureXML.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AlgoZoneTerritoire/src/zoneTerritoire/metier/LectureXML.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1072" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" partName="Gui.java" path="/home/etudiant/lh150094/TP/semestre3/algo/tp5/exercice2/eclipse/AlgoZoneTerritoire/src/zoneTerritoire/ihm/Gui.java" title="Gui.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/ihm/Gui.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AlgoZoneTerritoire/src/zoneTerritoire/ihm/Gui.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="250" selectionTopPixel="0"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.completionField" categoryGroup="none" markerContentGenerator="org.eclipse.ui.ide.tasksGenerator" partName="Tasks">
+<columnWidths org.eclipse.ui.ide.completionField="40" org.eclipse.ui.ide.descriptionField="300" org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="971" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.priorityField="30" org.eclipse.ui.ide.resourceField="90"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.completionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.priorityField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.descriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.ui.resourcePerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.team.cvs.ui.cvsPerspective"/>
+<perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@632aa1a3" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.25940594" ratioLeft="262" ratioRight="748" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomRight" ratio="0.65865386" ratioLeft="411" ratioRight="213" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottomLeft" ratio="0.5" ratioLeft="312" ratioRight="312" relationship="4" relative="topLeft">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AlgoZoneTerritoire/src/zoneTerritoire/Controleur.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AlgoZoneTerritoire/src/zoneTerritoire/metier/LectureXML.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AlgoZoneTerritoire/src/zoneTerritoire/ihm/PanelImage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AlgoZoneTerritoire/src/zoneTerritoire/metier/GestionTerritoire.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AlgoZoneTerritoire/src/zoneTerritoire/Controleur.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AlgoZoneTerritoire/src/zoneTerritoire/metier/GestionTerritoire.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AlgoZoneTerritoire/src/zoneTerritoire/ihm/Gui.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AlgoZoneTerritoire/src/zoneTerritoire/ihm/PanelImage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AlgoZoneTerritoire/src/zoneTerritoire/metier/GestionTerritoire.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AlgoZoneTerritoire/src/zoneTerritoire/Controleur.java"/>
+<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=AlgoZoneTerritoire/\/usr\/lib\/jvm\/java-8-openjdk-amd64\/jre\/lib\/rt.jar&lt;sun.awt(SunToolkit.class"/>
+</editors>
+<item historyLabel="PanelImage.java" index="2">
+<position info="not_deleted" x="8" y="18"/>
+</item>
+<item historyLabel="GestionTerritoire.java" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="LectureXML.java" index="1">
+<position info="not_deleted" x="6" y="0"/>
+</item>
+<item historyLabel="Controleur.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="LectureXML.java" index="1">
+<position info="not_deleted" x="6" y="0"/>
+</item>
+<item historyLabel="Controleur.java" index="4">
+<position info="not_deleted" x="109" y="0"/>
+</item>
+<item historyLabel="LectureXML.java" index="1">
+<position info="not_deleted" x="237" y="0"/>
+</item>
+<item historyLabel="GestionTerritoire.java" index="5">
+<position info="not_deleted" x="304" y="0"/>
+</item>
+<item historyLabel="LectureXML.java" index="1">
+<position info="not_deleted" x="237" y="0"/>
+</item>
+<item historyLabel="Gui.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Gui.java" index="6">
+<position info="not_deleted" x="478" y="0"/>
+</item>
+<item historyLabel="Gui.java" index="6">
+<position info="not_deleted" x="119" y="3"/>
+</item>
+<item historyLabel="Gui.java" index="6">
+<position info="not_deleted" x="149" y="10"/>
+</item>
+<item historyLabel="Gui.java" index="6">
+<position info="not_deleted" x="195" y="0"/>
+</item>
+<item historyLabel="Gui.java" index="6">
+<position info="not_deleted" x="149" y="10"/>
+</item>
+<item historyLabel="Gui.java" index="6">
+<position info="not_deleted" x="271" y="51"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="8" y="18"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="1747" y="0"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="391" y="10"/>
+</item>
+<item historyLabel="LectureXML.java" index="1">
+<position/>
+</item>
+<item historyLabel="LectureXML.java" index="1">
+<position info="not_deleted" x="1094" y="0"/>
+</item>
+<item historyLabel="LectureXML.java" index="1">
+<position/>
+</item>
+<item historyLabel="GestionTerritoire.java" index="8">
+<position info="not_deleted" x="304" y="0"/>
+</item>
+<item historyLabel="Controleur.java" index="9">
+<position info="not_deleted" x="274" y="0"/>
+</item>
+<item historyLabel="Gui.java" index="6">
+<position info="not_deleted" x="373" y="0"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="1745" y="0"/>
+</item>
+<item historyLabel="Controleur.java" index="9">
+<position info="not_deleted" x="210" y="0"/>
+</item>
+<item historyLabel="SunToolkit.class" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Controleur.java" index="9">
+<position info="not_deleted" x="210" y="0"/>
+</item>
+<item historyLabel="Controleur.java" index="9">
+<position info="not_deleted" x="255" y="19"/>
+</item>
+<item historyLabel="Controleur.java" index="9">
+<position info="not_deleted" x="180" y="27"/>
+</item>
+<item historyLabel="Gui.java" index="6">
+<position info="not_deleted" x="300" y="0"/>
+</item>
+<item historyLabel="Controleur.java" index="9">
+<position info="not_deleted" x="180" y="27"/>
+</item>
+<item historyLabel="GestionTerritoire.java" index="8">
+<position info="not_deleted" x="188" y="0"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="1745" y="0"/>
+</item>
+<item historyLabel="Controleur.java" index="9">
+<position info="not_deleted" x="180" y="27"/>
+</item>
+<item historyLabel="Gui.java" index="6">
+<position info="not_deleted" x="250" y="0"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="1745" y="0"/>
+</item>
+<item historyLabel="Controleur.java" index="9">
+<position info="not_deleted" x="180" y="27"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="1745" y="0"/>
+</item>
+<item historyLabel="LectureXML.java" index="1">
+<position info="not_deleted" x="501" y="110"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="1745" y="0"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="669" y="0"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="617" y="1"/>
+</item>
+<item historyLabel="LectureXML.java" index="1">
+<position info="not_deleted" x="1072" y="0"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="617" y="1"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="345" y="13"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="308" y="10"/>
+</item>
+<item historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="360" y="19"/>
+</item>
+<item active="true" historyLabel="PanelImage.java" index="7">
+<position info="not_deleted" x="308" y="10"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="SunToolkit.class" tooltip="sun.awt.SunToolkit">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=AlgoZoneTerritoire/\/usr\/lib\/jvm\/java-8-openjdk-amd64\/jre\/lib\/rt.jar&lt;sun.awt(SunToolkit.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/ihm/Gui.java">
+<persistable path="/AlgoZoneTerritoire/src/zoneTerritoire/ihm/Gui.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LectureXML.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/metier/LectureXML.java">
+<persistable path="/AlgoZoneTerritoire/src/zoneTerritoire/metier/LectureXML.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GestionTerritoire.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/metier/GestionTerritoire.java">
+<persistable path="/AlgoZoneTerritoire/src/zoneTerritoire/metier/GestionTerritoire.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PanelImage.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/PanelImage.java">
+<persistable path="/AlgoZoneTerritoire/src/zoneTerritoire/PanelImage.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/Gui.java">
+<persistable path="/AlgoZoneTerritoire/src/zoneTerritoire/Gui.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Territoire.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/Territoire.java">
+<persistable path="/AlgoZoneTerritoire/src/zoneTerritoire/Territoire.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LectureXML.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/LectureXML.java">
+<persistable path="/AlgoZoneTerritoire/src/zoneTerritoire/LectureXML.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GestionTerritoire.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/GestionTerritoire.java">
+<persistable path="/AlgoZoneTerritoire/src/zoneTerritoire/GestionTerritoire.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Controleur.java" tooltip="AlgoZoneTerritoire/src/zoneTerritoire/Controleur.java">
+<persistable path="/AlgoZoneTerritoire/src/zoneTerritoire/Controleur.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Controleur.java" tooltip="AlgoZoneTerritoire/src/Controleur.java">
+<persistable path="/AlgoZoneTerritoire/src/Controleur.java"/>
+</file>
+</mruList>
+</workbench>

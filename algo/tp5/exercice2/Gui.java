@@ -3,17 +3,23 @@ import java.awt.*;
 
 public class Gui extends JFrame
 {
+	private Controleur ctrl;
+
 	private JPanel panelImage;
 
-	public Gui()
+	public Gui( Controleur ctrl )
 	{
-		this.panelImage = new PanelImage("carte_zonee_risk.gif");
+		this.ctrl = ctrl;
+
+		this.panelImage = new PanelImage(this.ctrl, "carte_zonee_risk.gif");
 
 		this.setTitle("Carte zonee");
-		this.setSize(1024, 768);
+		//this.setSize(1024, 768);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		this.add(this.panelImage);
 
+		this.pack();
 		this.setVisible(true);
 	}
 }

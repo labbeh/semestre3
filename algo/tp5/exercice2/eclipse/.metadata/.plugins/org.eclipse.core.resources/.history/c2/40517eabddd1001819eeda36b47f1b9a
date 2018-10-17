@@ -1,0 +1,32 @@
+package zoneTerritoire.ihm;
+import javax.swing.*;
+
+import zoneTerritoire.Controleur;
+
+import java.awt.*;
+
+public class PanelImage extends JPanel
+{
+	private Controleur ctrl;
+
+	private String nomImage;
+	private JLabel image;
+
+	public PanelImage( Controleur ctrl, String nomImage )
+	{
+		this.ctrl = ctrl;
+		this.nomImage = nomImage;
+		//this.image = new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource(this.nomImage))));
+		this.image = new JLabel(new ImageIcon(this.nomImage));
+
+		this.add(this.image);
+	}
+
+	/*public void paintComponent(Graphics g)
+	{
+		super.paintComponent(g);
+
+		Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource(this.nomImage));
+		g.drawImage(img, 1024, 768, null);
+	}*/
+}
