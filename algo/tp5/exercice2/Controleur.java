@@ -9,6 +9,11 @@ public class Controleur
 		this.gui = new Gui(this);
 	}
 
+	public void selectTerritoire()
+	{
+		this.gui.selectTerritoire();
+	}
+
 	public static void main(String[] args)
 	{
 		new Controleur();

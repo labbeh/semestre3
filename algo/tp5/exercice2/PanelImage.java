@@ -51,12 +51,19 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 		if(this.x1 != null && this.y1 !=null && this.x2 != null && this.y2 !=null)
 		{
 			g.setColor(Color.BLUE);
+			System.out.println("ok");
 
-			if(this.x1 < this.x2 && this.y1 < this.y2)
-				g.drawRect(this.x1, this.y1, this.x2-this.x1, this.y2-this.y1);
+			if(this.x1 <= this.x2 && this.y1 <= this.y2)
+			{
+				System.out.println("rectangle 1");
+				g.drawRect(this.x1+5, this.y1+5, this.x2-this.x1, this.y2-this.y1);
+			}
 
-			else if(this.x1 > this.x2 && this.y1 < this.y2)
-					g.drawRect(this.x1, this.y1, this.x2-this.x1, this.y2+this.y1);
+			/*else if(this.x1 > this.x2 && this.y1 > this.y2)
+			{
+				System.out.println("rectangle 2");
+				g.drawRect(this.x1, this.y1, this.y1-this.y2, this.x1+this.x2);
+			}*/
 		}
 	}
 
@@ -66,6 +73,8 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 		this.y1 = null;
 		this.x2 = null;
 		this.y2 = null;
+
+		this.deuxiemeClick = false;
 	}
 
 	// gestion de la souris
@@ -86,12 +95,38 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 			this.deuxiemeClick = false;
 
 			System.out.println("x1: " +this.x1+ " y1: " +this.y1+ " x2: " +this.x2+ " y2: " +this.y2);
-			//this.repaint();
-			//this.reset();
+
+			this.traiterValeurs();
+			this.ctrl.selectTerritoire();
 		}
 		this.repaint();
 		//this.reset();
 		
+	}
+
+	private void traiterValeurs()
+	{
+		int temp = 0;
+
+		//if(this.y1 > this.x1 && this.y2 > this.x2) return;
+
+		if(this.x1 > this.x2 && this.y1 > this.y2)
+		{
+			temp = this.x1;
+			this.x1 = this.x2;
+			this.x2 = temp;
+
+			temp = this.y1;
+			this.y1 = this.y2;
+			this.y2 = temp;
+		}
+
+		/*if(this.y1 > this.y2)
+		{
+			temp = this.y1;
+			this.y1 = this.y2;
+			this.y2 = temp;
+		}*/
 	}
 
 	@Override
@@ -127,7 +162,7 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 
 	@Override
 	public void mouseMoved(MouseEvent evt) {
-		System.out.println("x= " +evt.getX()+ " y= " +evt.getY());
+		//System.out.println("x= " +evt.getX()+ " y= " +evt.getY());
 		
 	}
 }
