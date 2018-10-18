@@ -44,6 +44,28 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 
 		if(this.x1 != null && this.y1 !=null)
 			g.fillOval(this.x1, this.y1, 10,10);
+
+		if(this.x2 != null && this.y2 !=null)
+			g.fillOval(this.x2, this.y2, 10,10);
+
+		if(this.x1 != null && this.y1 !=null && this.x2 != null && this.y2 !=null)
+		{
+			g.setColor(Color.BLUE);
+
+			if(this.x1 < this.x2 && this.y1 < this.y2)
+				g.drawRect(this.x1, this.y1, this.x2-this.x1, this.y2-this.y1);
+
+			else if(this.x1 > this.x2 && this.y1 < this.y2)
+					g.drawRect(this.x1, this.y1, this.x2-this.x1, this.y2+this.y1);
+		}
+	}
+
+	public void reset()
+	{
+		this.x1 = null;
+		this.y1 = null;
+		this.x2 = null;
+		this.y2 = null;
 	}
 
 	// gestion de la souris
@@ -53,14 +75,22 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 		{
 			this.x1 = evt.getX();
 			this.y1 = evt.getY();
+			this.deuxiemeClick = true;
+			//this.repaint();
 		}
 
 		else
 		{
 			this.x2 = evt.getX();
 			this.y2 = evt.getY();
+			this.deuxiemeClick = false;
+
+			System.out.println("x1: " +this.x1+ " y1: " +this.y1+ " x2: " +this.x2+ " y2: " +this.y2);
+			//this.repaint();
+			//this.reset();
 		}
 		this.repaint();
+		//this.reset();
 		
 	}
 
@@ -90,7 +120,8 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+		this.reset();
+		this.repaint();
 		
 	}
 
