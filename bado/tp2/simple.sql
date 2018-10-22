@@ -36,7 +36,7 @@ create or replace function f_trig2bis() returns trigger as $$
 		end if;
 	return null;
 	end
-	$$language plpgsql
+	$$language plpgsql;
 
 create trigger trig2bis before insert on pac_achat for each statement execute procedure f_trig2bis();
 
@@ -49,6 +49,6 @@ create or replace function f_trig3() returns trigger as $$
 	end
 	$$language plpgsql;
 
-create trigger trig3 after insert or update or delete on produit for each instruction execute procedure f_trig3();
+create trigger trig3 after insert or update or delete on produit for each statement execute procedure f_trig3();
 
 /*  */
