@@ -36,7 +36,7 @@
 	
 	<!-- - - - - - - - - - - -->
 	<!-- Liste des personnes -->
-	<!-- - - - - - - - - - - -->
+	<!-- - - - - - - - - - - --> 
 	<personne id="p0001"><prenom>Uwe            </prenom> <nom>Rosenberg      </nom> <dte_naiss>27/03/1970</dte_naiss> <nationalite>Allemagne      </nationalite>   </personne>
 	<personne id="p0002"><prenom>Antoine        </prenom> <nom>Bauza          </nom> <dte_naiss>25/08/1978</dte_naiss> <nationalite>France         </nationalite>   </personne> 
 	<personne id="p0003"><prenom>Alan           </prenom> <nom>R. Moon        </nom> <dte_naiss>18/11/1951</dte_naiss> <nationalite>Angleterre     </nationalite>   </personne>
