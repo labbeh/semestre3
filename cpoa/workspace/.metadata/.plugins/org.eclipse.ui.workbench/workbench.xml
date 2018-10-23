@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="24" version="2.0">
+<workbench progressCount="18" version="2.0">
 <workbenchAdvisor/>
 <window height="776" maximized="true" width="1018" x="330" y="123">
 <fastViewData fastViewLocation="1024"/>
@@ -19,6 +19,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="238" y="36"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditorNoSource" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -36,34 +37,47 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
+<part id="5"/>
+<part id="6"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PlsClassementIRB.java" partName="PlsClassementIRB.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2Suite/src/irb/PlsClassementIRB.java" title="PlsClassementIRB.java" tooltip="tp2Suite/src/irb/PlsClassementIRB.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2Suite/src/irb/PlsClassementIRB.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="585" selectionTopPixel="3065"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Simbad.java" partName="Simbad.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/simbad/gui/Simbad.java" title="Simbad.java" tooltip="tp1Simbad/src/simbad/gui/Simbad.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/simbad/gui/Simbad.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1890" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PlsClassementIRBTest.java" partName="PlsClassementIRBTest.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2Suite/tests/irb/PlsClassementIRBTest.java" title="PlsClassementIRBTest.java" tooltip="tp2Suite/tests/irb/PlsClassementIRBTest.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2Suite/tests/irb/PlsClassementIRBTest.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1002" selectionTopPixel="220"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseDemo.java" partName="BaseDemo.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/simbad/demo/BaseDemo.java" title="BaseDemo.java" tooltip="tp1Simbad/src/simbad/demo/BaseDemo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/simbad/demo/BaseDemo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1812" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.ui.DefaultTextEditor" name="countModif.txt" partName="countModif.txt" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2variante/datas/countModif.txt" title="countModif.txt" tooltip="tp2variante/datas/countModif.txt" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2variante/datas/countModif.txt"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="359" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Exemple1.java" partName="Exemple1.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/ex1/Exemple1.java" title="Exemple1.java" tooltip="tp1Simbad/src/ex1/Exemple1.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/ex1/Exemple1.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="186" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UnLog.java" partName="UnLog.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2variante/src/gestionLog/UnLog.java" title="UnLog.java" tooltip="tp2variante/src/gestionLog/UnLog.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2variante/src/gestionLog/UnLog.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="701" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyEnv.java" partName="MyEnv.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/ex1/MyEnv.java" title="MyEnv.java" tooltip="tp1Simbad/src/ex1/MyEnv.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/ex1/MyEnv.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1955" selectionTopPixel="205"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TraiteLog.java" partName="TraiteLog.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp2variante/src/gestionLog/TraiteLog.java" title="TraiteLog.java" tooltip="tp2variante/src/gestionLog/TraiteLog.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp2variante/src/gestionLog/TraiteLog.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2621" selectionTopPixel="1248"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyRobot.java" partName="MyRobot.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/ex1/MyRobot.java" title="MyRobot.java" tooltip="tp1Simbad/src/ex1/MyRobot.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/ex1/MyRobot.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="88" selectionOffset="502" selectionTopPixel="57"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RobotSonars.java" partName="RobotSonars.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/ex1/RobotSonars.java" title="RobotSonars.java" tooltip="tp1Simbad/src/ex1/RobotSonars.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/ex1/RobotSonars.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1024" selectionTopPixel="115"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RobotBumpers.java" partName="RobotBumpers.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/ex1/RobotBumpers.java" title="RobotBumpers.java" tooltip="tp1Simbad/src/ex1/RobotBumpers.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/ex1/RobotBumpers.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="503" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
 <viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Type Hierarchy">
+<viewState hidefields="false" hidelocaltypes="false" hidenonpublic="false" hidestatic="false" input="=tp1Simbad/src&lt;simbad.sim{Agent.java[Agent" link_editors="0" mv_vertical_scroll="43" orientation="3" qualified_names="0" ratio="350" selection="=tp1Simbad/src&lt;simbad.sim{Agent.java[Agent" showinherited="false" sortbydefiningtype="false" vertical_scroll="0" view="2" workingSetName=""/>
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
@@ -98,7 +112,7 @@
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings (1 item)"/>
+<category IMemento.internal.id="Warnings (3 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="1099" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -136,7 +150,7 @@
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -252,6 +266,7 @@
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.jdt.junit.ResultView"/>
+<view id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
@@ -264,12 +279,13 @@
 <folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="JUnit"/>
-<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="Type Hierarchy"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
@@ -280,7 +296,7 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.1607565" ratioLeft="204" ratioRight="1065" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.15976952" ratioLeft="305" ratioRight="1604" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.54388136" ratioLeft="440" ratioRight="369" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
@@ -315,161 +331,165 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2Suite/src/irb/PlsClassementIRB.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2Suite/tests/irb/PlsClassementIRBTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2variante/src/gestionLog/UnLog.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp2variante/src/gestionLog/TraiteLog.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/tp2variante/datas/countModif.txt"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/ex1/MyEnv.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/ex1/MyRobot.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/sim/Agent.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/sim/SimpleAgent.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/ex1/RobotSonars.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/ex1/RobotBumpers.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/sim/RangeSensorBelt.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/sim/Box.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/ex1/Exemple1.java"/>
 </editors>
-<item historyLabel="TraiteLog.java" index="3">
+<item historyLabel="RobotBumpers.java" index="5">
+<position info="not_deleted" x="179" y="12"/>
+</item>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="333" y="703"/>
+</item>
+<item historyLabel="RobotBumpers.java" index="5">
+<position info="not_deleted" x="179" y="12"/>
+</item>
+<item historyLabel="RobotBumpers.java" index="5">
 <position/>
 </item>
-<item historyLabel="PlsClassementIRB.java" index="0">
-<position info="not_deleted" x="2128" y="0"/>
+<item historyLabel="SimpleAgent.java" index="3">
+<position info="not_deleted" x="12393" y="0"/>
 </item>
-<item historyLabel="PlsClassementIRBTest.java" index="1">
-<position info="not_deleted" x="1002" y="0"/>
+<item historyLabel="Agent.java" index="2">
+<position info="not_deleted" x="2048" y="0"/>
 </item>
-<item historyLabel="UnLog.java" index="2">
-<position info="not_deleted" x="681" y="0"/>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="524" y="0"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="929" y="0"/>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="333" y="703"/>
 </item>
-<item historyLabel="UnLog.java" index="2">
-<position info="not_deleted" x="681" y="0"/>
+<item historyLabel="SimpleAgent.java" index="3">
+<position info="not_deleted" x="12393" y="0"/>
 </item>
-<item historyLabel="countModif.txt" index="4">
-<position info="not_deleted" x="0" y="1218"/>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="333" y="703"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="955" y="0"/>
+<item historyLabel="Agent.java" index="2">
+<position info="not_deleted" x="2048" y="0"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="1136" y="0"/>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="333" y="703"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2773" y="9"/>
+<item historyLabel="MyRobot.java" index="1">
+<position info="not_deleted" x="433" y="30"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2960" y="0"/>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="524" y="0"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2997" y="10"/>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="940" y="0"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2672" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="1824" y="0"/>
-</item>
-<item historyLabel="UnLog.java" index="2">
-<position info="not_deleted" x="681" y="0"/>
-</item>
-<item historyLabel="countModif.txt" index="4">
-<position info="not_deleted" x="359" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="1824" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="0">
-<position info="not_deleted" x="2832" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="1824" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="1599" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="0">
-<position info="not_deleted" x="2754" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="1599" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="1560" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
+<item historyLabel="RobotBumpers.java" index="5">
 <position/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="1560" y="0"/>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="940" y="0"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="1553" y="0"/>
+<item historyLabel="MyRobot.java" index="1">
+<position info="not_deleted" x="502" y="88"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2672" y="0"/>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="504" y="0"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2631" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2631" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="0">
-<position info="not_deleted" x="1452" y="6"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2631" y="0"/>
-</item>
-<item historyLabel="PlsClassementIRB.java" index="0">
-<position info="not_deleted" x="4208" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2624" y="0"/>
-</item>
-<item historyLabel="UnLog.java" index="2">
-<position info="not_deleted" x="681" y="0"/>
-</item>
-<item historyLabel="countModif.txt" index="4">
-<position info="not_deleted" x="359" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2624" y="0"/>
-</item>
-<item historyLabel="UnLog.java" index="2">
-<position info="not_deleted" x="681" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2624" y="0"/>
-</item>
-<item historyLabel="TraiteLog.java" index="3">
+<item historyLabel="RobotBumpers.java" index="5">
 <position/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2240" y="4"/>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="504" y="0"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2506" y="0"/>
+<item historyLabel="RobotBumpers.java" index="5">
+<position info="not_deleted" x="497" y="0"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2357" y="0"/>
+<item historyLabel="MyRobot.java" index="1">
+<position info="not_deleted" x="502" y="88"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2530" y="0"/>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="504" y="0"/>
 </item>
-<item historyLabel="PlsClassementIRB.java" index="0">
-<position info="not_deleted" x="585" y="0"/>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="940" y="0"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2530" y="0"/>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="1024" y="0"/>
 </item>
-<item historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2621" y="0"/>
+<item historyLabel="RobotBumpers.java" index="5">
+<position info="not_deleted" x="503" y="0"/>
 </item>
-<item historyLabel="PlsClassementIRB.java" index="0">
-<position info="not_deleted" x="585" y="0"/>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="770" y="0"/>
 </item>
-<item historyLabel="countModif.txt" index="4">
-<position info="not_deleted" x="359" y="0"/>
+<item historyLabel="RangeSensorBelt.java" index="6">
+<position info="not_deleted" x="17492" y="6"/>
 </item>
-<item historyLabel="UnLog.java" index="2">
-<position info="not_deleted" x="701" y="0"/>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="770" y="0"/>
 </item>
-<item active="true" historyLabel="TraiteLog.java" index="3">
-<position info="not_deleted" x="2621" y="0"/>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="839" y="0"/>
+</item>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="837" y="0"/>
+</item>
+<item historyLabel="RobotSonars.java" index="4">
+<position info="not_deleted" x="1024" y="0"/>
+</item>
+<item historyLabel="RobotBumpers.java" index="5">
+<position info="not_deleted" x="503" y="0"/>
+</item>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="417" y="0"/>
+</item>
+<item historyLabel="MyRobot.java" index="1">
+<position info="not_deleted" x="502" y="88"/>
+</item>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="417" y="0"/>
+</item>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="344" y="0"/>
+</item>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="344" y="0"/>
+</item>
+<item historyLabel="Box.java" index="7">
+<position info="not_deleted" x="1572" y="31"/>
+</item>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="344" y="0"/>
+</item>
+<item historyLabel="Box.java" index="7">
+<position info="not_deleted" x="1572" y="31"/>
+</item>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="344" y="0"/>
+</item>
+<item historyLabel="Exemple1.java" index="8">
+<position info="not_deleted" x="186" y="0"/>
+</item>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="344" y="0"/>
+</item>
+<item historyLabel="Box.java" index="7">
+<position info="not_deleted" x="1572" y="31"/>
+</item>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="344" y="0"/>
+</item>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="414" y="0"/>
+</item>
+<item historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="322" y="8"/>
+</item>
+<item active="true" historyLabel="MyEnv.java" index="0">
+<position info="not_deleted" x="301" y="8"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -488,47 +508,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClassementIRB.java" tooltip="tp2Suite/src/irb/ClassementIRB.java">
-<persistable path="/tp2Suite/src/irb/ClassementIRB.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Box.java" tooltip="tp1Simbad/src/simbad/sim/Box.java">
+<persistable path="/tp1Simbad/src/simbad/sim/Box.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TraiteLog.java" tooltip="tp2variante/src/gestionLog/TraiteLog.java">
-<persistable path="/tp2variante/src/gestionLog/TraiteLog.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RangeSensorBelt.java" tooltip="tp1Simbad/src/simbad/sim/RangeSensorBelt.java">
+<persistable path="/tp1Simbad/src/simbad/sim/RangeSensorBelt.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UnLog.java" tooltip="tp2variante/src/gestionLog/UnLog.java">
-<persistable path="/tp2variante/src/gestionLog/UnLog.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RobotBumpers.java" tooltip="tp1Simbad/src/ex1/RobotBumpers.java">
+<persistable path="/tp1Simbad/src/ex1/RobotBumpers.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PlsClassementIRBTest.java" tooltip="tp2Suite/tests/irb/PlsClassementIRBTest.java">
-<persistable path="/tp2Suite/tests/irb/PlsClassementIRBTest.java"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditorNoSource" name="Vector3d.class" tooltip="javax.vecmath.Vector3d">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=tp1Simbad/\/home\/etudiant\/lh150094\/TP\/semestre3\/cpoa\/ressources_simbad\/j3d-1_6_0-pre1-1011070159-linux-amd64\/j3d-jre\/lib\/ext\/vecmath.jar&lt;javax.vecmath(Vector3d.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClassementIRBTest.java" tooltip="tp2Suite/tests/irb/ClassementIRBTest.java">
-<persistable path="/tp2Suite/tests/irb/ClassementIRBTest.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RobotFactory.java" tooltip="tp1Simbad/src/simbad/sim/RobotFactory.java">
+<persistable path="/tp1Simbad/src/simbad/sim/RobotFactory.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="i2009.txt" tooltip="tp2Suite/donnees/i2009.txt">
-<persistable path="/tp2Suite/donnees/i2009.txt"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RobotSonars.java" tooltip="tp1Simbad/src/ex1/RobotSonars.java">
+<persistable path="/tp1Simbad/src/ex1/RobotSonars.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="i2008.txt" tooltip="tp2Suite/donnees/i2008.txt">
-<persistable path="/tp2Suite/donnees/i2008.txt"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleAgent.java" tooltip="tp1Simbad/src/simbad/sim/SimpleAgent.java">
+<persistable path="/tp1Simbad/src/simbad/sim/SimpleAgent.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="i2007.txt" tooltip="tp2Suite/donnees/i2007.txt">
-<persistable path="/tp2Suite/donnees/i2007.txt"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KheperaRobot.java" tooltip="tp1Simbad/src/simbad/sim/KheperaRobot.java">
+<persistable path="/tp1Simbad/src/simbad/sim/KheperaRobot.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestIRB.java" tooltip="tp2Suite/src/irb/TestIRB.java">
-<persistable path="/tp2Suite/src/irb/TestIRB.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Agent.java" tooltip="tp1Simbad/src/simbad/sim/Agent.java">
+<persistable path="/tp1Simbad/src/simbad/sim/Agent.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pays.java" tooltip="tp2Suite/src/irb/Pays.java">
-<persistable path="/tp2Suite/src/irb/Pays.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyRobot.java" tooltip="tp1Simbad/src/ex1/MyRobot.java">
+<persistable path="/tp1Simbad/src/ex1/MyRobot.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PlsClassementIRB.java" tooltip="tp2Suite/src/irb/PlsClassementIRB.java">
-<persistable path="/tp2Suite/src/irb/PlsClassementIRB.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyEnv.java" tooltip="tp1Simbad/src/ex1/MyEnv.java">
+<persistable path="/tp1Simbad/src/ex1/MyEnv.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Calculatrice.java" tooltip="calculatrice/src/math/Calculatrice.java">
-<persistable path="/calculatrice/src/math/Calculatrice.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Exemple1.java" tooltip="tp1Simbad/src/ex1/Exemple1.java">
+<persistable path="/tp1Simbad/src/ex1/Exemple1.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AllTests.java" tooltip="calculatrice/tests/math/AllTests.java">
-<persistable path="/calculatrice/tests/math/AllTests.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseDemo.java" tooltip="tp1Simbad/src/simbad/demo/BaseDemo.java">
+<persistable path="/tp1Simbad/src/simbad/demo/BaseDemo.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SoustractionTest.java" tooltip="calculatrice/tests/math/SoustractionTest.java">
-<persistable path="/calculatrice/tests/math/SoustractionTest.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="._Util.java" tooltip="tp1Simbad/src/simbad/sim/._Util.java">
+<persistable path="/tp1Simbad/src/simbad/sim/._Util.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="._Device.java" tooltip="tp1Simbad/src/simbad/sim/._Device.java">
+<persistable path="/tp1Simbad/src/simbad/sim/._Device.java"/>
 </file>
 </mruList>
 </workbench>

@@ -1,0 +1,19 @@
+package ex1;
+
+import javax.vecmath.Vector3d;
+
+import simbad.sim.Agent;
+import simbad.sim.RangeSensorBelt;
+import simbad.sim.RobotFactory;
+
+public class RobotSonars extends Agent
+{
+	RangeSensorBelt sonars;
+
+	public RobotSonars(Vector3d pos, String name)
+	{
+		super(pos, name);
+		sonars = RobotFactory.addSonarBeltSensor(this,8);
+	}
+
+}

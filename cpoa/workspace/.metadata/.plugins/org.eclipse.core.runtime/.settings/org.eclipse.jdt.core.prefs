@@ -291,3 +291,4 @@ org.eclipse.jdt.core.formatter.use_tabs_only_for_leading_indentations=false
 org.eclipse.jdt.core.formatter.wrap_before_binary_operator=true
 org.eclipse.jdt.core.formatter.wrap_before_or_operator_multicatch=true
 org.eclipse.jdt.core.formatter.wrap_outer_expressions_when_nested=true
+org.eclipse.jdt.core.userLibrary.j3d_lib=<?xml version\="1.0" encoding\="UTF-8"?>\n<userlibrary systemlibrary\="false" version\="2">\n\t<archive path\="/home/etudiant/lh150094/TP/semestre3/cpoa/ressources_simbad/j3d-1_6_0-pre1-1011070159-linux-amd64/j3d-jre/lib/ext/j3dcore.jar"/>\n\t<archive path\="/home/etudiant/lh150094/TP/semestre3/cpoa/ressources_simbad/j3d-1_6_0-pre1-1011070159-linux-amd64/j3d-jre/lib/ext/j3dutils.jar"/>\n\t<archive path\="/home/etudiant/lh150094/TP/semestre3/cpoa/ressources_simbad/j3d-1_6_0-pre1-1011070159-linux-amd64/j3d-jre/lib/ext/vecmath.jar"/>\n</userlibrary>\n

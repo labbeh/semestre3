@@ -1,0 +1,15 @@
+package ex1;
+
+import javax.vecmath.Vector3d;
+
+import simbad.sim.Agent;
+
+public class RobotBumpers extends Agent
+{
+
+	public RobotBumpers(Vector3d pos, String name)
+	{
+		super(pos, name);
+	}
+
+}

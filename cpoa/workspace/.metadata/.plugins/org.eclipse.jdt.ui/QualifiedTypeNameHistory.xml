@@ -14,4 +14,12 @@
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="simbad.gui.Simbad"/>
+<fullyQualifiedTypeName name="javax.vecmath.Vector3d"/>
+<fullyQualifiedTypeName name="simbad.sim.Arch"/>
+<fullyQualifiedTypeName name="simbad.sim.RangeSensorBelt"/>
+<fullyQualifiedTypeName name="simbad.sim.RobotFactory"/>
+<fullyQualifiedTypeName name="simbad.sim.CameraSensor"/>
+<fullyQualifiedTypeName name="simbad.sim.Box"/>
+<fullyQualifiedTypeName name="javax.vecmath.Vector3f"/>
 </qualifiedTypeNameHistroy>
