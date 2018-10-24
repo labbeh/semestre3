@@ -36,6 +36,11 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 		this.add(this.image);
 	}
 
+	public Integer getX1() { return this.x1; }
+	public Integer getX2() { return this.x2; }
+	public Integer getY1() { return this.y1; }
+	public Integer getY2() { return this.y2; }
+
 	public void paintChildren(Graphics g)
 	{
 		super.paintChildren(g);
@@ -75,6 +80,8 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 		this.y2 = null;
 
 		this.deuxiemeClick = false;
+
+		this.repaint();
 	}
 
 	// gestion de la souris
@@ -155,14 +162,14 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
-		this.reset();
-		this.repaint();
+		//this.reset();
+		//this.repaint();
 		
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent evt) {
-		//System.out.println("x= " +evt.getX()+ " y= " +evt.getY());
+		this.ctrl.appartientA(evt.getX(), evt.getY());
 		
 	}
 }

@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 
+import java.util.List;
+import java.util.Vector;
+
 import java.awt.event.*;
 
 public class FrameChoixTerritoire extends JFrame implements ActionListener
@@ -19,7 +22,7 @@ public class FrameChoixTerritoire extends JFrame implements ActionListener
 	{
 		this.ctrl = ctrl;
 		this.setTitle("Choix du territoire...");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		this.liste = new JComboBox<>(listeTerritoires());
 
@@ -43,24 +46,31 @@ public class FrameChoixTerritoire extends JFrame implements ActionListener
 
 
 		this.pack();
-		//this.setVisible(false);
 	}
 
-	private String[] listeTerritoires()
+	private Vector<String> listeTerritoires()
 	{
-		String[] tab = new String[]{"Asie", "Europe", "Amérique", "Afrique"};
+		List<String> nomsTerritoires = this.ctrl.getListeNomTerritoires();
+		Vector<String> ret = new Vector<>();
+		
+		for(String elt: nomsTerritoires)
+			ret.add(new String(elt));
 
-		return tab;
+		return ret;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent evt)
 	{
-		System.out.println(this.liste.getSelectedItem());
+		if(evt.getSource() == this.btnOk)
+		{
+			this.setVisible(false);
+			this.ctrl.setZone(this.liste.getSelectedItem().toString());
+
+		}
+		else this.setVisible(false);
+
+		this.ctrl.reInitIhm();
 	}
 
-	public static void main(String[] args)
-	{
-		new FrameChoixTerritoire(null).setVisible(true);
-	}
 }

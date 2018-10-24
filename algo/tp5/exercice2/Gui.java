@@ -4,29 +4,52 @@ import java.awt.*;
 public class Gui extends JFrame
 {
 	private Controleur ctrl;
+
 	private JFrame choixTerr;
 
-	private JPanel panelImage;
+	private BarreMenu  barreMenu ;
+	private PanelImage panelImage;
+	private JLabel 	   labelZone ;
 
 	public Gui( Controleur ctrl )
 	{
 		this.ctrl = ctrl;
 		this.choixTerr = new FrameChoixTerritoire(ctrl);
 
+		this.barreMenu  = new BarreMenu();
 		this.panelImage = new PanelImage(this.ctrl, "carte_zonee_risk.gif");
+		this.labelZone  = new JLabel();
 
 		this.setTitle("Carte zonee");
 		//this.setSize(1024, 768);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		this.add(this.panelImage);
+		this.setJMenuBar(this.barreMenu);
+		this.add(this.panelImage, BorderLayout.NORTH);
+		this.add(this.labelZone, BorderLayout.SOUTH);
 
 		this.pack();
 		this.setVisible(true);
+	}
+
+	public void setZoneCurseur(String zone)
+	{
+		this.labelZone.setText(zone);
 	}
 
 	public void selectTerritoire()
 	{
 		this.choixTerr.setVisible(true);
 	}
+
+	public void reInitIhm()
+	{
+		this.panelImage.reset();
+	}
+
+	/* ACCESSEURS */
+	public Integer getX1() { return this.panelImage.getX1(); }
+	public Integer getX2() { return this.panelImage.getX2(); }
+	public Integer getY1() { return this.panelImage.getY1(); }
+	public Integer getY2() { return this.panelImage.getY2(); }
 }

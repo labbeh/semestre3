@@ -8,9 +8,6 @@ import java.util.Iterator;
 
 public class LectureXML
 {
-	//private static Document document;
-	//private static Element 	racine	;
-
 	public static List<Territoire> getListTerritoire(String nomFich)
 	{
 		Document document;
@@ -39,20 +36,4 @@ public class LectureXML
 
 		return lRet;
 	}
-
-	/*public static String afficher()
-	{
-		StringBuilder sRet = new StringBuilder();
-		List<Element> listContients = racine.getChildren("continent");
-
-		for(Element cont: listContients)
-		{
-			sRet.append(cont.getAttributeValue("nom") +": \n");
-			List<Element> listTerritoires = cont.getChildren("territoire");
-
-			for(Element terr: listTerritoires) sRet.append("\t" +terr.getText() +"\n");
-		}
-
-		return sRet.toString(); 
-	}*/
 }
