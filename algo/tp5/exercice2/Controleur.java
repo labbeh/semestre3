@@ -75,6 +75,11 @@ public class Controleur
 					
 	}
 
+	public void sauv()
+	{
+		String chemin = this.gui.sauv();
+	}
+
 	public static void main(String[] args)
 	{
 		new Controleur();

@@ -5,6 +5,8 @@ public class Gui extends JFrame
 {
 	private Controleur ctrl;
 
+	private JFileChooser selectFile;
+
 	private JFrame choixTerr;
 
 	private BarreMenu  barreMenu ;
@@ -16,7 +18,7 @@ public class Gui extends JFrame
 		this.ctrl = ctrl;
 		this.choixTerr = new FrameChoixTerritoire(ctrl);
 
-		this.barreMenu  = new BarreMenu();
+		this.barreMenu  = new BarreMenu(ctrl);
 		this.panelImage = new PanelImage(this.ctrl, "carte_zonee_risk.gif");
 		this.labelZone  = new JLabel();
 
@@ -52,4 +54,12 @@ public class Gui extends JFrame
 	public Integer getX2() { return this.panelImage.getX2(); }
 	public Integer getY1() { return this.panelImage.getY1(); }
 	public Integer getY2() { return this.panelImage.getY2(); }
+
+	public String sauv()
+	{
+		this.selectFile = new JFileChooser();
+		this.selectFile.showSaveDialog(null);
+
+		return null;
+	}
 }

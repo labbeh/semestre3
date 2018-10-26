@@ -1,6 +1,6 @@
 package pseudoCode.metier.vars;
 
-public enum TypeVarible
+public enum TypeVariable
 {
 	ENTIER,
 	REEL,

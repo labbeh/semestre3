@@ -3,6 +3,7 @@ package pseudoCode.metier;
 import pseudoCode.metier.vars.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,12 +11,12 @@ import pseudoCode.metier.vars.Variable;
 
 public class Code
 {
-	private List<Variable> variables;
+	private HashMap<String, Variable> variables;
 	private List<String> lignesCode;
 	
 	
 	
-	public Code(List<Variable> variables, List<String> lignesCode) {
+	public Code(HashMap<String, Variable> variables, List<String> lignesCode) {
 		super();
 		
 		this.variables = variables;
@@ -65,11 +66,7 @@ public class Code
 	
 	private Variable getVariableByName(String nom)
 	{
-		for(Variable v: this.variables)
-			if(v.getNom().equals(nom))
-				return v;
-		
-		return null;
+		return this.variables.get(nom);
 	}
 	
 	private void si(List<String> codeAtraite)
@@ -98,8 +95,8 @@ public class Code
 		List<Variable> lv = new ArrayList<>();
 		List<String> lc = new ArrayList<>();
 		
-		lv.add(new Variable(TypeVarible.ENTIER, "i1","4"));
-		lv.add(new Variable(TypeVarible.CHAINE, "chTest","j'aime bien ce chiffre"));
+		//lv.add(new Variable(TypeVarible.ENTIER, "i1","4"));
+		//lv.add(new Variable(TypeVarible.CHAINE, "chTest","j'aime bien ce chiffre"));
 		
 		lc.add("DEBUT");
 		
@@ -115,8 +112,17 @@ public class Code
 		
 		lc.add("FIN");
 		
-		Code c = new Code(lv, lc);
-		c.interpreter();
+		Tableau tab = new Tableau(TypeVariable.CARACTERE, 3);
+		
+		tab.ajouterElt(new Variable(TypeVariable.CARACTERE, "a"));
+		tab.ajouterElt(new Variable(TypeVariable.CARACTERE, "b"));
+		
+		System.out.println(tab);
+		ArrayList<String> al = new ArrayList<>();
+		System.out.println(al);
+		
+		//Code c = new Code(lv, lc);
+		//c.interpreter();
 		
 		//System.out.println(lc);
 
