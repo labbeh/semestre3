@@ -96,8 +96,8 @@ public class LoiProba
     public double probabilite(int valeur)
     {
         int ind = -1;
-        for(int i=0; i<this.xi.length; i++)
-            if(this.xi[i] == valeur) return pi[i];
+        for(int i=0; i<xi.length; i++)
+            if(xi[i] == valeur) return pi[i];
 
         // si le paramètre est invalide
         throw new IllegalArgumentException("Valeur X introuvable dans cette loi de proba");
@@ -111,7 +111,7 @@ public class LoiProba
     {
         double dRet = 0.0;
 
-        for(int i=0; i<this.xi.length; i++) dRet += this.xi[i] * this.pi[i];
+        for(int i=0; i<xi.length; i++) dRet += xi[i] * pi[i];
 
         return dRet;
     }
@@ -124,7 +124,7 @@ public class LoiProba
     {
         double dRet = 0.0;
 
-        for(int i=0; i<this.xi.length; i++) dRet += Math.pow(this.xi[i],2) * this.pi[i];
+        for(int i=0; i<xi.length; i++) dRet += Math.pow(xi[i],2) * pi[i];
 
         return dRet;
     }
@@ -138,7 +138,7 @@ public class LoiProba
         double dRet = 0.0;
         double esperance = esperance();
 
-        for(int i=0; i<this.xi.length; i++)
+        for(int i=0; i<xi.length; i++)
             dRet += Math.pow(xi[i]-esperance, 2) * pi[i];
 
         return dRet;
