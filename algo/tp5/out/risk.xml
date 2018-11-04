@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<risk>
+   <continent nom="Amerique du Nord">
+      <territoire>Alaska                  </territoire>
+      <territoire>Territoire du Nord-Ouest</territoire>
+      <territoire>Groënland               </territoire>
+      <territoire>Alberta                 </territoire>
+      <territoire>Ontario                 </territoire>
+      <territoire>Québec                  </territoire>
+      <territoire>Etat de l'ouest         </territoire>
+      <territoire>Etat de l'est           </territoire>
+      <territoire>Amérique Centrale       </territoire>
+   </continent>      
+   <continent nom="Amerique du sud">
+      <territoire>Vénézuela               </territoire>
+      <territoire>Pérou                   </territoire>
+      <territoire>Brésil                  </territoire>
+      <territoire>Argentine               </territoire>
+   </continent>      
+   <continent nom="Europe">
+      <territoire>Islande                 </territoire>
+      <territoire>Scandinavie             </territoire>
+      <territoire>Grande-Bretagne         </territoire>
+      <territoire>Europe du Nord          </territoire>
+      <territoire>Ukraine                 </territoire>
+      <territoire>Europe Occidentale      </territoire>
+      <territoire>Europe du Sud           </territoire>
+      <territoire>Kamchatka               </territoire>
+   </continent>
+   <continent nom="Afrique">
+      <territoire>Afrique du Nord         </territoire>
+      <territoire>Egypte                  </territoire>
+      <territoire>Afrique Orientale       </territoire>
+      <territoire>Congo                   </territoire>
+      <territoire>Moyen-Orient            </territoire>
+      <territoire>Afrique du Sud          </territoire>
+      <territoire>Madagascar              </territoire>
+   </continent>
+   <continent nom="Asie">
+      <territoire>Mongolie                </territoire>
+      <territoire>Japon                   </territoire>
+      <territoire>Inde                    </territoire>
+      <territoire>Chine                   </territoire>
+      <territoire>Siam                    </territoire>
+      <territoire>Sibérie                 </territoire>
+      <territoire>Yakoutie                </territoire>
+      <territoire>Afghanistan             </territoire>
+      <territoire>Tchita                  </territoire>
+      <territoire>Oural                   </territoire>
+   </continent>
+   <continent nom="Oceanie">
+      <territoire>Indonésie               </territoire>
+      <territoire>Nouvelle-Guinée         </territoire>
+      <territoire>Australie-Occidentale   </territoire>
+      <territoire>Australie-Orientale     </territoire>
+   </continent>
+</risk>  

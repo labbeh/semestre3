@@ -1,3 +1,7 @@
+package exercice2.ihm;
+
+import exercice2.Controleur;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -14,13 +18,11 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 	private Integer x2;
 	private Integer y2;
 
-	private boolean deuxiemeClick; //passe à true au deuxieme click
-
 	public PanelImage( Controleur ctrl, String nomImage )
 	{
 		this.ctrl = ctrl;
 		this.nomImage = nomImage;
-		this.deuxiemeClick = false;
+		//this.deuxiemeClick = false;
 
 		this.x1 = null;
 		this.y1 = null;
@@ -36,11 +38,13 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 		this.add(this.image);
 	}
 
+	/* ACESSEURS */
 	public Integer getX1() { return this.x1; }
 	public Integer getX2() { return this.x2; }
 	public Integer getY1() { return this.y1; }
 	public Integer getY2() { return this.y2; }
 
+	@Override
 	public void paintChildren(Graphics g)
 	{
 		super.paintChildren(g);
@@ -56,19 +60,18 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 		if(this.x1 != null && this.y1 !=null && this.x2 != null && this.y2 !=null)
 		{
 			g.setColor(Color.BLUE);
-			System.out.println("ok");
 
-			if(this.x1 <= this.x2 && this.y1 <= this.y2)
-			{
-				System.out.println("rectangle 1");
+			if(this.x1 < this.x2 && this.y1 < this.y2)
 				g.drawRect(this.x1+5, this.y1+5, this.x2-this.x1, this.y2-this.y1);
-			}
 
-			/*else if(this.x1 > this.x2 && this.y1 > this.y2)
-			{
-				System.out.println("rectangle 2");
-				g.drawRect(this.x1, this.y1, this.y1-this.y2, this.x1+this.x2);
-			}*/
+			else if(this.x1 > this.x2 && this.y1 > this.y2)
+				g.drawRect(this.x2+5, this.y2+5, this.x1-this.x2, this.y1-this.y2);
+
+			else if(this.x1 < this.x2 && this.y1 > this.y2)
+				g.drawRect(this.x1+5, this.y2+5, this.x2-this.x1, this.y1-this.y2);
+
+			else if(this.x1 > this.x2 && this.y1 < this.y2)
+				g.drawRect(this.x2+5, this.y1+5, this.x1-this.x2, this.y2-this.y1);
 		}
 	}
 
@@ -79,97 +82,74 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 		this.x2 = null;
 		this.y2 = null;
 
-		this.deuxiemeClick = false;
-
 		this.repaint();
 	}
 
 	// gestion de la souris
 	@Override
-	public void mouseClicked(MouseEvent evt) {
-		if(!deuxiemeClick)
-		{
-			this.x1 = evt.getX();
-			this.y1 = evt.getY();
-			this.deuxiemeClick = true;
-			//this.repaint();
-		}
+	public void mouseClicked(MouseEvent evt){
 
-		else
-		{
-			this.x2 = evt.getX();
-			this.y2 = evt.getY();
-			this.deuxiemeClick = false;
-
-			System.out.println("x1: " +this.x1+ " y1: " +this.y1+ " x2: " +this.x2+ " y2: " +this.y2);
-
-			this.traiterValeurs();
-			this.ctrl.selectTerritoire();
-		}
-		this.repaint();
-		//this.reset();
-		
 	}
 
 	private void traiterValeurs()
 	{
 		int temp = 0;
 
-		//if(this.y1 > this.x1 && this.y2 > this.x2) return;
-
-		if(this.x1 > this.x2 && this.y1 > this.y2)
+		if(this.x1 > this.x2)
 		{
-			temp = this.x1;
-			this.x1 = this.x2;
-			this.x2 = temp;
-
-			temp = this.y1;
-			this.y1 = this.y2;
-			this.y2 = temp;
+			temp = this.x2;
+			this.x2 = this.x1;
+			this.x1 = temp;
 		}
 
-		/*if(this.y1 > this.y2)
+		if(this.y1 > this.y2)
 		{
-			temp = this.y1;
-			this.y1 = this.y2;
-			this.y2 = temp;
-		}*/
+			temp = this.y2;
+			this.y2 = this.y1;
+			this.y1 = temp;
+		}
+
+
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		System.out.println("entre");
-		
+
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+		this.x1 = arg0.getX();
+		this.y1 = arg0.getY();
+
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseReleased(MouseEvent evt) {
+
+		this.traiterValeurs();
+		System.out.println("x1: " +this.x1+ " y1: " +this.y1+ " x2: " +this.x2+ " y2: " +this.y2);
+		this.ctrl.selectTerritoire();
+
+		//this.repaint();
 	}
 
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
-		//this.reset();
-		//this.repaint();
-		
+		this.x2 = arg0.getX();
+		this.y2 = arg0.getY();
+
+		repaint();
+
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent evt) {
 		this.ctrl.appartientA(evt.getX(), evt.getY());
-		
 	}
 }

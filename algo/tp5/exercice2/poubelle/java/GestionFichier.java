@@ -37,7 +37,7 @@ public class GestionFichier
 		return lRet;
 	}
 
-	public static void sauvegarderTerritoires(String nomFich, List<Territoire> aSauve)
+	public static boolean sauvegarderTerritoires(String nomFich, List<Territoire> aSauve)
 	{
 		try
 		{
@@ -45,9 +45,13 @@ public class GestionFichier
 
 			objOut.writeObject(aSauve);
 			objOut.close();
+
+			return true;
 		}
 		catch(FileNotFoundException evt){System.out.println("erreur de fichier");}
 		catch(IOException evt){System.out.println("erreur d'e/s");}
+
+		return false;
 	}
 
 	public List<Territoire> lireTerritoires(String nomFich)
@@ -58,7 +62,7 @@ public class GestionFichier
 			List<Territoire> territoires = (List<Territoire>) objIn.readObject();
 
 			objIn.close();
-			
+
 			return territoires;
 		}
 		catch(FileNotFoundException  evt) {System.out.println("erreur de fichier");}

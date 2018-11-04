@@ -1,8 +1,3 @@
-package exercice2;
-
-import exercice2.metier.*;
-import exercice2.ihm.*;
-
 import java.util.*;
 
 public class Controleur
@@ -56,7 +51,7 @@ public class Controleur
 
 	public List<String> getListeNomTerritoires()
 	{
-		List<Territoire> terrs = GestionFichier.getListTerritoire("risk.xml");
+		List<Territoire> terrs = LectureXML.getListTerritoire("risk.xml");
 		List<String> lRet = new ArrayList<>();
 
 		for(Territoire terr: terrs)
@@ -87,13 +82,14 @@ public class Controleur
 	public void sauv(String url)
 	{
 		if(GestionFichier.sauvegarderTerritoires(url, this.listTerritoires))
-		{
 			this.enregistre = true;
-			this.gui.setTitle(this.gui.getTitle() +" - "+ url);
-		}
 	}
 
 	public boolean estEnregistre(){ return this.enregistre; }
+	/*public void sauv()
+	{
+		String url = this.gui.sauv();
+	}*/
 
 	public static void main(String[] args)
 	{

@@ -55,11 +55,11 @@ public class Gui extends JFrame
 	public Integer getY1() { return this.panelImage.getY1(); }
 	public Integer getY2() { return this.panelImage.getY2(); }
 
-	public String sauv()
+	/*public void sauv()
 	{
 		this.selectFile = new JFileChooser();
 		this.selectFile.showSaveDialog(null);
 
-		return null;
-	}
+		this.ctrl.sauv(this.selectFile.getSelectedFile().getAbsolutePath());
+	}*/
 }
