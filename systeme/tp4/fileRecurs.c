@@ -7,34 +7,47 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+void creerProc(int nb, int num);
+
 int main()
 {
 	int nbProcess; // nombre de processus dans la file
 
-	/*pid_t pid;
-    pid;
-    fprintf(stdout,"Avant le fork, pid = %d\n",getpid());*/
+    do
+    {
+        printf("Combien de processus à crééer ?");
+        scanf("%d", &nbProcess);
+    }
+    while(nbProcess < 2);
 
-    printf("Combien de processus à crééer ?");
-    scanf("%d", &nbProcess);
+    printf("P%d\t pid = %d\n", 1, getpid());
 
-    creerProc(nbProcess, 1);
+    creerProc(nbProcess, 2);
     
 	return 0;
 }
 
 void creerProc(int nb, int num)
 {
-    if(nb != 0)
+
+    pid_t pid;
+
+    if(nb > 0)
     {
-        pid_t pid = fork();
-        printf("%d\n", pid);
+        pid = fork();
 
-        creerProc(--nb, ++num);
+        if(pid == -1)
+        {
+            perror("fils a echoue");
+            exit(1);
+        }
 
-        //if(pid == -1) {perror("fork a échoué"); exit(1);}
-        //if(pid ==  0) {printf("P%d\t de pid=%d\t de ppid=%d\n", num, getpid(), getppid());}
-        
-        wait(NULL);
+        if(pid == 0) // fils
+        {
+            printf("P%d\t pid = %d\t ppid = %d\n", num, getpid(), getppid());
+            creerProc(nb-1, num+1);
+        }
+
+        else wait(NULL);
     }
 }

@@ -1,0 +1,20 @@
+/* pour le cardre de chaque jeu */
+.cadre{
+	border: 1px solid;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.vatop{
+	vertical-align: top;
+}
+
+/* pour le dimensionnement des icones */
+.icone{
+	width: 30%;
+	height: 30%;
+}
+
+body{
+	background-color: #DDDDDD;
+}
