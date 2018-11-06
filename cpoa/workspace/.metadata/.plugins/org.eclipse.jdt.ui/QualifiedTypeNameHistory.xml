@@ -10,7 +10,6 @@
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -22,4 +21,7 @@
 <fullyQualifiedTypeName name="simbad.sim.CameraSensor"/>
 <fullyQualifiedTypeName name="simbad.sim.Box"/>
 <fullyQualifiedTypeName name="javax.vecmath.Vector3f"/>
+<fullyQualifiedTypeName name="simbad.sim.Wall"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.io.File"/>
 </qualifiedTypeNameHistroy>
