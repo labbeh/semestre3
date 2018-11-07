@@ -1,17 +1,18 @@
 package exercice2.ihm;
 
 import exercice2.Controleur;
+import superclasses.ihm.SuperPanelImage;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class PanelImage extends JPanel implements MouseListener, MouseMotionListener
+public class PanelImage extends SuperPanelImage implements MouseListener, MouseMotionListener
 {
 	private Controleur ctrl;
 
-	private String nomImage;
-	private JLabel image;
+	//private String nomImage;
+	//private JLabel image;
 
 	private Integer x1;
 	private Integer y1;
@@ -20,9 +21,9 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 
 	public PanelImage( Controleur ctrl, String nomImage )
 	{
+		super(nomImage);
 		this.ctrl = ctrl;
-		this.nomImage = nomImage;
-		//this.deuxiemeClick = false;
+		//this.nomImage = nomImage;
 
 		this.x1 = null;
 		this.y1 = null;
@@ -30,12 +31,12 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 		this.y2 = null;
 
 		//this.image = new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource(this.nomImage))));
-		this.image = new JLabel(new ImageIcon(this.nomImage));
+		//this.image = new JLabel(new ImageIcon(nomImage));
 
 		this.image.addMouseListener(this);
 		this.image.addMouseMotionListener(this);
 
-		this.add(this.image);
+		//this.add(this.image);
 	}
 
 	/* ACESSEURS */
@@ -150,6 +151,6 @@ public class PanelImage extends JPanel implements MouseListener, MouseMotionList
 
 	@Override
 	public void mouseMoved(MouseEvent evt) {
-		this.ctrl.appartientA(evt.getX(), evt.getY());
+		//this.ctrl.appartientA(evt.getX(), evt.getY());
 	}
 }

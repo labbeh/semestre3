@@ -1,37 +1,21 @@
 package exercice2.ihm;
 
 import exercice2.Controleur;
+import superclasses.ihm.SuperBarreMenu;
 
 import javax.swing.*;
 import java.awt.event.*;
 
-public class BarreMenu extends JMenuBar implements ActionListener
+public class BarreMenu extends SuperBarreMenu implements ActionListener
 {
 	private Controleur ctrl;
-
-	private JMenu fichier;
-
-	private JMenuItem enreg;
-	private JMenuItem enregSous;
-
-	private JFileChooser selectFile;
 
 	public BarreMenu( Controleur ctrl )
 	{
 		super();
 		this.ctrl = ctrl;
 
-		this.fichier = new JMenu("Fichier");
-
-		this.add(fichier);
-
-		this.enreg 	   = new JMenuItem("Enregistrer ...");
-		this.enregSous = new JMenuItem("Enregistrer Sous ...");
-
-		this.selectFile = new JFileChooser();
-
-		this.fichier.add(this.enreg);
-		this.fichier.add(this.enregSous);
+		this.ouvrir.setEnabled(false);
 
 		this.enreg.addActionListener(this);
 		this.enregSous.addActionListener(this);
@@ -41,7 +25,10 @@ public class BarreMenu extends JMenuBar implements ActionListener
 	{
 		if(!this.ctrl.estEnregistre()) this.selectFile.showSaveDialog(null);
 
-		this.ctrl.sauv(this.selectFile.getSelectedFile().getAbsolutePath());
+		try{
+			this.ctrl.sauv(this.selectFile.getSelectedFile().getAbsolutePath());
+		}
+		catch(Exception evt){}
 	}
 
 	@Override

@@ -1,13 +1,10 @@
-package exercice2.ihm;
-
-import exercice2.Controleur;
+package superclasses.ihm;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class Gui extends JFrame
+public class SuperFrame extends JFrame
 {
-	private Controleur ctrl;
 
 	private JFrame choixTerr;
 
@@ -15,9 +12,8 @@ public class Gui extends JFrame
 	private PanelImage panelImage;
 	private JLabel 	   labelZone ;
 
-	public Gui( Controleur ctrl )
+	public Gui()
 	{
-		this.ctrl = ctrl;
 		this.choixTerr = new FrameChoixTerritoire(ctrl);
 
 		this.barreMenu  = new BarreMenu(ctrl);
@@ -35,6 +31,8 @@ public class Gui extends JFrame
 		this.pack();
 		this.setVisible(true);
 	}
+
+
 
 	public void selectTerritoire()
 	{

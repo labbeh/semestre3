@@ -56,7 +56,7 @@ public class GestionFichier
 		return false;
 	}
 
-	public List<Territoire> lireTerritoires(String nomFich)
+	public static List<Territoire> lireTerritoires(String nomFich)
 	{
 		try
 		{

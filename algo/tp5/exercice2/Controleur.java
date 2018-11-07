@@ -49,10 +49,10 @@ public class Controleur
 		this.gui.reInitIhm();
 	}
 
-	public void setZoneCurseur(String zone)
+	/*public void setZoneCurseur(String zone)
 	{
 		this.gui.setZoneCurseur(zone);
-	}
+	}*/
 
 	public List<String> getListeNomTerritoires()
 	{
@@ -65,7 +65,7 @@ public class Controleur
 		return lRet;
 	}
 
-	public void appartientA(int x, int y)
+	/*public void appartientA(int x, int y)
 	{
 		if(this.listTerritoires.isEmpty()) return;
 
@@ -82,7 +82,7 @@ public class Controleur
 			catch(InterruptedException evt){}
 		}
 
-	}
+	}*/
 
 	public void sauv(String url)
 	{
