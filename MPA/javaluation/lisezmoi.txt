@@ -1,0 +1,145 @@
+Programme Javaluation
+=====================
+
+Auteur : Frédéric Serin, université du Havre, LITIS
+
+1. Présentation
+2. compilez les classes
+3. testez ce programme
+4. Différence entre javaluation et javannotation
+5 Rapport d'évolution
+6. Ce qu'est et n'est pas Javaluation 1.1
+7. règles de l'évaluation
+
+1. Présentation
+
+Le paquetage (répertoire) javaluation possède cinq fichiers :
+* javaluation.java : la classe principale ;
+* Javannotation.java : classe complétant (par héritage) la première et permettant des commentaires ;
+* Evaluatio.java : la classe permettant les évaluations des éléments ;
+* package.html : commentaires sur le paquetage ;
+* ce fichier lisezmoi.txt.
+
+2. compilez les classes
+
+Pour compiler le paquetage "javaluation" il faut s'assurer de deux choses :
+* que l'archive "tools.jar" se trouve dans le "classpath" de Java ;
+* se placer au niveau du répertoire javaluation.
+
+Appeler la commande :
+javac javaluation/*.java
+
+3. testez ce programme sur un paquetage pack1 :
+
+javadoc -private -docletpath lechemin -doclet javaluation.Javaluation pack1
+ou
+javadoc -private -docletpath lechemin -doclet javaluation.Javannotation pack1
+
+Note sur les attributs utilisés
+
+L'attribut docletpath indique le chemin (variable "lechemin" indiqué ici) pour atteindre le paquetage javaluation 
+
+L'attribut -private signale que vous évaluez tous les éléments (de public à private), vous pouvez limitez cette évaluation en précisant les autres options permises par javadoc: -public (uniquement les éléments publics), -protected ou -package.
+
+L'attribut -doclet précise le nom de la doclet utilisée (Javaluation ou Javannotation), n'oubliez pas en préfixe le paquetage javaluation.
+
+Les attributs -author et -version ne sont pas actifs, évalués par défaut. Les utiliser risque fort de déclencher un message d'erreur.
+
+La sortie standard est la fenêtre du terminal, vous pouvez réorienter cette dernière avec le chevron > de redirection suivi d'un fichier texte de réception.
+
+Autre essai
+
+Vous pouvez aussi faire l'évaluation  sur une classe maClasse.java :
+
+javadoc -private -docletpath lechemin -doclet javaluation.Javaluation maClasse.java
+ou
+javadoc -private -docletpath lechemin -doclet javaluation.Javannotation maClasse.java
+
+Remarque
+Vous pouvez testez ce programme sur lui-même :
+javadoc -private -docletpath . -doclet javaluation.Javaluation javaluation
+
+Attention ! Si votre paquetage ou votre classe ne sont pas situés au même endroit que le paquetage javaluation, ce qui est fort probable, il faut indiquer à javadoc le chemin pour accéder à la doclet :
+
+4. Différence entre javaluation et javannotation
+
+Les deux classes fournissent une note sur 20 pour chaque classe évaluée. Chaque élément (classe, attribut, méthode et constructeur) est évalué. La note est arrondie avec une décimale.
+
+Si aucun élément n'est à évaluer, la note retournée est égale à -1.
+
+La note globale est la somme de l'ensemble de touts les commentaires, elle n'est pas la moyenne équipondérée de toutes les classes.
+
+La seconde classe, Javannotation, hérite de la première et l'enrichie par des commentaires sur les points perfectibles :
+* liste les éléments absents dans les commentaires ;
+* indique des commentaires susceptibles d'être trop courts (attention, ceci n'est qu'une indication).
+
+5 Rapport d'évolution
+
+Ce projet est perfectible, n'hésitez pas à faire vos suggestions.
+
+le code est libre d'être utilisé et diffusé mais sans omettre de préserver l'identité de l'auteur.
+
+Rapport de bogue
+
+2016-02-05 Valentin Harang (InfoAS)
+Prise en compte du constructeur par défaut (non commenté donc) créé si aucun constructeur n'est spécifié explicitement dans le code. L'absence de commentaire n'est pas évaluée.
+
+2016-02-07 Frédéric Serin (auteur)
+la visibilité d'un élément peut être supérieure à la visibilité effective. par exemple, une méthode peut être publique dans une classe protected. Le compilateur n'indique pas d'erreur mais la méthode sera accessible uniquement en protégée.
+Dorénavant, la pondération est considérée comme protected et non public dans l'évaluation.
+
+2016-02-07 Frédéric Serin (auteur)
+Toutes les classes (méthode classes de RootDoc) sont listées y compris les classes encapsulées. Un test évite dorénavant que ces classes soient parcourues deux fois.
+Néanmoins, le nombre de classes indiqué dans un paquetage compte aussi les classes internes.
+
+6. Ce qu'est et n'est pas Javaluation 1.1
+
+Javaluation s'intéresse aux commentaires des éléments Java : classes, attributs, constructeurs et méthodes. Il évalue leur présence ou absence.
+
+Depuis la version 1.2, le programme évalue aussi les classes encapsulées (inner classes).
+
+Javannotation indique :
+* présence ou non du fichier package.html
+* rassemble les informations dans les diverses classes :
+    * des auteurs
+    * des versions
+* commentaires absents ou trop courts
+
+Le programme n'évalue pas :
+* package.html
+* les exceptions
+
+7. règles de l'évaluation
+
+Commentaires :
+* classe :
+    * 5 points pour la présence d'un commentaire,
+    * 2 point pour l'identification de l'auteur,
+    * 1 point pour la presence de la version ;
+* attribut :
+   * 2 points pour la présence de commentaire ;
+* constructeur :
+   * 2 points pour la présence de commentaire,
+    * 1 point (option) pour les paramètres;
+* méthode :
+   * 2 points pour la présence de commentaire,
+    * 1 point (option) pour les paramètres,
+    * 1 point (option) pour la valeur retournée.
+
+Le fait que ce soit une option signale, par exemple, que si aucune valeur n'est retournée (void d'une méthode), la balise @return n'a pas lieu d'être présente et donc le point n'est pas affecté.
+
+depuis la version 1.2, les classes encapsulées (inner classes) sont évaluées. Seul la présence du commentaire est évaluée (sur 5 points), l'auteur et la version étant réputés identiques à ceux de la classe englobante.
+
+Les points attachés sont pondérés par la visibilité par une progression géométrique de 1.5 c'est-à-dire que plus la visibilité est importante, plus il est considéré comme nécessaire de commenter. Cette pondération multiplicative est la suivante :
+* 1 pour private ;
+* 1.5 pour paquetage (package-private) ;
+* 2.25 pour protected ;
+* 3.375 pour public.
+
+Aussi, par exemple, le commentaire d'une méthode protégée vaudra 4.5 tandis que le commentaire d'un attribut privé vaudra 2.
+
+Le programme totalise les points obtenus et les points potentiels (ce qu'il aurait fallu obtenir si tout les éléments sont présents). Une note sur 20 est retournée pour chaque classe ainsi que pour l'ensemble.
+
+Notons que pour les paramètres (présents dans les constructeurs et les méthodes), le point alloué est équitablement réparti. Par exemple, si dans un constructeur il existe deux paramètres mais qu'un seul soit commenté, 0.5 est donné sur le point total.
+
+©2016, Frédéric Serin, université du havre, LITIS
