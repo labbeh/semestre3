@@ -1,0 +1,66 @@
+package tp2;
+
+import javax.vecmath.Vector3d;
+
+import simbad.sim.Agent;
+import simbad.sim.RangeSensorBelt;
+import simbad.sim.RobotFactory;
+
+public class MyRobot extends Agent
+{
+	private RangeSensorBelt sonars;
+	
+	public MyRobot(Vector3d pos, String name)
+	{
+		super(pos, name);
+		this.sonars = RobotFactory.addSonarBeltSensor(this,8);
+	}
+
+	@Override
+	protected void initBehavior()
+	{
+		// TODO Auto-generated method stub
+		//super.initBehavior();
+	}
+
+	@Override
+	protected void performBehavior()
+	{
+		// TODO Auto-generated method stub
+		//super.performBehavior();
+		
+		// avance à 0.5 m/s
+		setTranslationalVelocity(0.9);
+				
+		// changer l'angle fréquemment
+		if ((getCounter() % 100)==0) setRotationalVelocity(Math.PI/2 * (0.5 - Math.random()));
+		
+		if (sonars.oneHasHit())
+		{
+			double left = sonars.getFrontLeftQuadrantMeasurement();
+			double right = sonars.getFrontRightQuadrantMeasurement();
+			double front = sonars.getFrontQuadrantMeasurement();
+			
+				if ((front > 0.5)||(left > 0.5)||(right > 0.5))
+				{
+					if (left < right) setRotationalVelocity(-1);
+					else 			  setRotationalVelocity( 1);
+				}
+			}
+			if (this.collisionDetected())
+			{
+				setTranslationalVelocity(-1.0);
+				setRotationalVelocity(0.5) ;
+			}
+		
+		// avance à 0.5 m/s
+		//setTranslationalVelocity(0.9);
+		
+		// changer l'angle fréquemment
+		//if ((getCounter() % 100)==0)
+		//setRotationalVelocity(Math.PI/2 * (0.5 - Math.random()));
+	}
+	
+	
+
+}
