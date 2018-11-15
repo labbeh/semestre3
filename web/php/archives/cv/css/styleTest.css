@@ -1,0 +1,19 @@
+/* Code CSS type: 
+
+sélecteur {
+  propriété-1: valeur-1;
+  propriété-2: valeur-2;
+  propriété-n: valeur-n;
+}
+*/
+
+
+
+p > a {
+	color: green;
+}
+
+h1 + p{
+	background-color: red;
+}
+

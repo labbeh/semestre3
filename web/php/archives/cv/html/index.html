@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="author" content="Labbé Hugo groupe H1" />
+	<title>TP2: liens et images</title>
+	<link rel="stylesheet" type="text/css" href="../css/styleIndex.css" media="all" />
+
+</head>
+
+<body>
+
+	<header>Exercices de base html</header>
+
+	<h1>Fiche de présentation exercices TP2</h1>
+
+	<p>Fiche CV pour le TP2</p>
+	<p>Ci-dessous, les liens pour accéder aux différentes parties du CV via des ancres</p>
+
+	<h2>Sommaire: </h2>
+
+	<nav>
+		<ul>
+			<li id="sommaire"><a href="#identite" title="identité">Identité</a></li>
+			<li id="sommaire"><a href="#formations" title="formations">Foramtions</a></li>
+			<li id="sommaire"><a href="#experiences" title="expériences">Expériences</a></li>
+			<li id="sommaire"><a href="#divers" title="diverse">Eléments divers</a> (Pages <strong>loisirs et liens</strong> externes)</li>
+		</ul>
+	</nav>
+
+	<!--
+		<p id="sommaire"><a href="#identite" title="identité">Identité</a></p>
+		<p id="sommaire"><a href="#formations" title="formations">Foramtions</a></p>
+		<p id="sommaire"><a href="#experiences" title="expériences">Expériences</a></p>
+		<p id="sommaire"><a href="#divers" title="diverse">Eléments divers</a> (Pages <strong>loisirs et liens</strong> externes)</p>
+	-->
+
+	<h2>CV: </h2>
+
+	<!-- Fil d'ariane -->
+	<p>&gt&gt CV &gt</p>
+
+	<div>
+		<a href="http://www.google.fr">balise test dans un div et pas dans un p</a>
+	</div>
+
+	<div id="princ">
+	<h3 id="identite">Identité: </h3>
+
+	<ul>
+		<li>Nom: Labbé</li>
+		<li>Prénom: Hugo</li>
+		<li>Age: 19 ans</li>
+	</ul>
+
+	<h3 id="formations">Formations: </h3>
+
+	<ul>
+		<li>Brevet d'étude musicale de percussions (2014)</li>
+		<li>Bac STI2D spécialité énergie environnement (2015)</li>
+		<li>Permis B (2015)</li>
+	</ul>
+
+	<h3 id="experiences">Expériences: </h3>
+
+	<ul>
+		<li>Stage en entreprise de 3ème (2011)</li>
+		<li>Première <strong>année</strong> de licence Math-info université le havre (2015-2016)</li>
+	</ul>
+
+	<h3>Connaissances en languages informatiques: </h3>
+
+	<p>
+		<ul>
+			<li> <img src="../images/imagelogo.jpeg" alt="HTML5 et CSS3: " /> </li>
+			<li> <img src="../images/xhtmlLogo.png" alt="xHTML 1.0"> </li>
+			<li> <img src="../images/logo-java.jpg" alt="Java" /> </li>
+		</ul>
+	</p>
+
+	<h3 id="divers">Loisirs: </h3>
+
+	<p>
+		<a href="loisirs.html" title="liens vers la page loisirs du CV">Cliquez ici</a>
+		pour accéder a la page "loisirs" du CV
+	</p>
+	
+</div>
+
+	<h3>Premier exo html: </h3>
+	<p>
+		<a href="../tp1/exo1.html" title="liens vers le premier exercice html">Accès au premier exercice d'html
+		</a>
+	</p>
+
+	<h3>Liens externes: </h3>
+	<p>
+		<a href="https://di.iut.univ-lehavre.fr/pedago/info1/M1105_cdin/index.xml" title="liens vers la page d'acceuil du module cdin">
+			Cliquez ici
+		</a>
+		pour accéder à la page d'acceuil du module CDIN</p>
+	<p>
+		<a href="https://www.java.com/fr/" title="image liens vers le site de java"><img src="logo-java.jpg" alt="logo java cliquable ">
+		</a>
+		image cliquable vers le site officiel de java
+	</p>
+	<p>
+		<figure id="logohtml">
+
+  			 	<img src="../images/html5.png" alt="figure html5-1" title="html5-1" />
+   				<img src="../images/html5.png" alt="figure html5-2" title="html5-2" />
+   				<img src="../images/html5.png" alt="figure html5-3" title="html5-3" />
+   				<img src="../images/html5.png" alt="figure html5-4" title="html5-4" />
+  			 	<img src="../images/html5.png" alt="figure html5-5" title="html5-5" />
+
+   				<figcaption style="border:solid 1px black; font-style:italic;
+				background-color:#DEDEDE;text-align:center">Un des logos html5 (x5)</figcaption>
+
+		</figure>
+	</p>
+
+	<footer>&copy Labbeh 2016 <br />
+			Droits réservés
+	</footer>
+
+</body>
+</html>

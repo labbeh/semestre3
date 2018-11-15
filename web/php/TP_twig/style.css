@@ -1,0 +1,97 @@
+/* miseEnPage.css 
+octobre 2011 */
+
+/* AJOUT */
+table {border: solid 1px silver; 
+  border-collapse: collapse; 
+  font-size: medium;
+  empty-cells: show;
+}
+
+th, td {padding-left: 8px;
+padding-right: 8px;
+padding-top: 2px;
+padding-bottom: 2px;
+border: solid 1px silver;}
+
+.lignePaire {
+  background-color: #FFC; /* jaune */
+}
+/* FIN AJOUT */
+
+body {margin: 0px;
+font-family: sans-serif; 
+}
+
+div {padding: 8px;
+}
+
+.haut {/*color: blue;*/
+  /*border: 3px solid cyan;*/
+border-bottom: 2px solid silver;
+  padding: 0px;
+  height: 90px;
+}
+
+.milieu {display: table; /* AJOUT */
+  padding: 0px;
+
+  /*color: red;
+  border: 3px solid yellow;*/
+}
+
+/*.bas {color: green;
+  border: 3px solid magenta;
+}*/
+
+.hautCentre {/*border: 2px solid red;*/
+  padding: 0px;
+  text-align: center;
+  margin-left: 250px;
+  font-size: 46px;
+  padding-top: 20px;
+/*  height: 66px; */ /* + le padding-top (20) + border rouge deux fois (4) = 90 */
+  height: 70px; /* + le padding-top (20) + border rouge deux fois (4) = 90 */
+}
+
+.hautGauche {float: left;
+top: 0px;
+left: 0px;
+padding: 0px;
+}
+
+.menu {width: 200px;
+  display:table-cell;
+
+border-right: 2px solid silver;
+
+/*  color: #C90; *//* olive */
+/*  border: 2px solid #C90; */
+}
+
+.contenu {
+/*margin-left: 204px;*/
+margin-left: 200px;
+  display:table-cell;
+
+/*  color: #09C;*/ /* bleu */
+/*  border: 2px solid #09C;*/
+}
+
+ul {margin: 0px;
+}
+
+/* AJOUT */
+.menu a {text-decoration: none;
+  color: black;
+}
+
+.menu a:hover {color: red;
+  font-weight: bold;
+}
+
+.menu li {list-style-type: none;
+  padding: 6px;
+  background-color: #DDD; /* gris */
+  margin-bottom: 1px;
+}
