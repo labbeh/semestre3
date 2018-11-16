@@ -2,75 +2,11 @@ package statistiques;
 
 /**
 * @author frederic Serin, hugo labbé
-* @version 2018-9-11
+* @version 2018-11-16
 */
 
-public class FusionPoissonExpo
+public class Poisson
 {
-    /**
-     * Cette méthode exige un paramètre en argument qui représente
-     * la distance moyenne générée par la loi exponentielle.
-     * Si nous prenons 0.25, cela correspond à une loi de Poisson de paramètre lambda 4.
-     * On calcule le nombre de tirages nécessaires pour atteindre 1
-     * Ce qui fait un nombre de passages moyen de 4 sur l'intervalle.
-     * On compare alors le nombre de passages réellement obtenu
-     * par tirage au sort (random) avec
-     * le résultat théorique de la loi de
-     * Poisson de moyenne 4.
-    * On obtient évidemment des résultats comparables.
-     * @param args premier argument égal au pas (positif)
-     */
-    static public void main(String[] args)
-    {
-        try
-        {
-            double        longueur         = new Double(args[0]);
-            Exponentielle loiExponentielle = new Exponentielle(longueur);
-            Poisson       loi              = new Poisson(1/longueur);
-
-            int compteur;
-
-            // variable intermédiaire, distance franchie
-            double etape;
-            double distance;
-            boolean continuer;
-
-            // cette variable compte le nombre de franchissements par nombre d'étapes
-            int[] foisFranchis = new int[30];
-
-            // on teste notre programme 10000 fois
-            for (int i=0; i<10000; i++) {
-                // on compte le nombre d'évènements générés pendant l'intervalle de temps donné
-                compteur = 0;
-                // au début la distance est initialisée, puis incrémenté
-                distance = 0.0;
-                continuer = true;
-                // tant qu'on n'a pas dépassé le seuil de 1
-                while (continuer) {
-                    etape = loiExponentielle.next();
-                    // si on dépasse le seuil de 1, on arrête
-                    if ((distance+etape)>1) continuer=false;
-                    else {
-                        distance += etape;
-                        compteur++;
-                    }
-                } // fin tant qu'on a pas parcouru 1
-                foisFranchis[compteur]++; // c'est ici que on peut avoir un soucis si compteur trop grand
-            } // fin des essais
-            // affichage des résultats
-            double resultat = 0;
-
-            for (int k=0; k<20; k++) {
-                resultat = (long)Math.round(loi.p(k)*10000.0);
-                System.out.println("avec "+k+" on a "+foisFranchis[k]+" et on devrait avoir "+resultat);
-            } // fin affichage des 20 valeurs premières
-
-        }
-        catch (Exception e) {
-            System.out.println("Soucis lors de la construction de la loi de Poisson ou "+e);
-        }
-    } // fin méthode main
-
     /**
      * Paramètre de la loi de Poisson.
      * Si cette loi donne des résultats entiers, le paramètre peut être un réel
@@ -84,8 +20,8 @@ public class FusionPoissonExpo
      * @param lambda réel strictement positif
      * @return distribution de Poisson (ou null)
      */
-    public static FusionPoissonExpo create(double lambda) {
-        if (lambda>0) return new FusionPoissonExpo(lambda);
+    public static Poisson create(double lambda) {
+        if (lambda>0) return new Poisson(lambda);
 
         return null;
     }
@@ -95,7 +31,7 @@ public class FusionPoissonExpo
      * appelé via la fabrique create afin d'éviter tout soucis avec la valeur de lambda
      * @param lambda moyenne réelle strictement positive
      */
-    FusionPoissonExpo (double lambda) {
+    Poisson (double lambda) {
         // il faut que lambda soit supérieur à 0
         this.lambda = lambda;
     } // fin constructeur
@@ -120,6 +56,71 @@ public class FusionPoissonExpo
 
         return resultat;
     } // retourne la proba pour x
+
+    /* Methodes de classe */
+    /**
+     * Cette méthode exige un paramètre en argument qui représente
+     * la distance moyenne générée par la loi exponentielle.
+     * Si nous prenons 0.25, cela correspond à une loi de Poisson de paramètre lambda 4.
+     * On calcule le nombre de tirages nécessaires pour atteindre 1
+     * Ce qui fait un nombre de passages moyen de 4 sur l'intervalle.
+     * On compare alors le nombre de passages réellement obtenu
+     * par tirage au sort (random) avec
+     * le résultat théorique de la loi de
+     * Poisson de moyenne 4.
+    * On obtient évidemment des résultats comparables.
+     * @param args premier argument égal au pas (positif)
+     */
+    static public void main(String[] args)
+    {
+        try
+        {
+            Poisson loi = new Poisson(Double.parseDouble(args[0]));
+
+            int compteur;
+
+            // variable intermédiaire, distance franchie
+            double etape;
+            double distance;
+            boolean continuer;
+
+            // cette variable compte le nombre de franchissements par nombre d'étapes
+            int[] foisFranchis = new int[30];
+
+            // on teste notre programme 10000 fois
+            for (int i=0; i<10000; i++) {
+                // on compte le nombre d'évènements générés pendant l'intervalle de temps donné
+                compteur = 0;
+                // au début la distance est initialisée, puis incrémenté
+                distance = 0.0;
+                continuer = true;
+                // tant qu'on n'a pas dépassé le seuil de 1
+                while (continuer) {
+                    etape = loi.next();
+                    // si on dépasse le seuil de 1, on arrête
+                    if ((distance+etape)>1) continuer=false;
+                    else {
+                        distance += etape;
+                        compteur++;
+                    }
+                } // fin tant qu'on a pas parcouru 1
+                foisFranchis[compteur]++; // c'est ici que on peut avoir un soucis si compteur trop grand
+            } // fin des essais
+            // affichage des résultats
+            double resultat = 0;
+
+            for (int k=0; k<20; k++) {
+                resultat = (long)Math.round(loi.p(k)*10000.0);
+                System.out.println("avec "+k+" on a "+foisFranchis[k]+" et on devrait avoir "+resultat);
+            } // fin affichage des 20 valeurs premières
+
+        }
+        catch (Exception e) {
+            System.out.println("Soucis lors de la construction de la loi de Poisson ou "+e);
+        }
+    } // fin méthode main
+
+    /* Méthodes d'instance */
 
     /**
      * Valeur cumulée de la distribution de 0 à k.
@@ -150,6 +151,11 @@ public class FusionPoissonExpo
     }
 
     /* ACCESSEURS */
+
+    /**
+     * Moyenne de la distribution de Poisson.
+     * @return la moyenne égale à lambda
+     */
     public double getMean () {
         return lambda;
     } // moyenne

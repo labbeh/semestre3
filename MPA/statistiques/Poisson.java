@@ -1,4 +1,4 @@
-package statistiques;
+//package statistiques;
 
 /**
  * La distribution de Siméon Poisson est une
@@ -103,7 +103,7 @@ public class Poisson {
         for (long i=0; i<=trial; i++) {
             cumul += p(i);
         }
-        
+
         return cumul;
     } // fin méthode cumulative
 } // fin de la classe Poisson
