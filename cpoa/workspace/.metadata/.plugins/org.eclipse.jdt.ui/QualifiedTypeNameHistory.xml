@@ -25,4 +25,9 @@
 <fullyQualifiedTypeName name="simbad.sim.BlockWorldObject"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="simbad.sim.RobotFactory"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="simbad.sim.BallAgent"/>
+<fullyQualifiedTypeName name="javax.vecmath.Color3f"/>
+<fullyQualifiedTypeName name="simbad.sim.SimpleAgent"/>
+<fullyQualifiedTypeName name="simbad.sim.CherryAgent"/>
 </qualifiedTypeNameHistroy>
