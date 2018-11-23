@@ -1,0 +1,102 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+ width="11.67cm" height="6.7cm" viewBox="-50 -50 300 150" zoomAndPan="disable" 
+xmlns="http://www.w3.org/2000/svg" version="1.1">
+<defs>
+<!-- classe 60 sur 50 -->
+<g id="classe">
+<rect x="0" y="0" width="60" height="50" style="fill:white; stroke:black; stroke-width:0.8;"/>
+<line x1="0" y1="30" x2="60" y2="30" style="stroke: black; stroke-width: 0.4;" />
+<line x1="0" y1="40" x2="60" y2="40" style="stroke: black; stroke-width: 0.4;" />
+</g>
+
+<!-- activite 70 30 diagrammes d'activité -->
+<g id="activite">
+<rect x="0" y="0" width="70" height="30" rx="5" ry="5" style="fill:white; stroke:black; stroke-width:0.8mm;"/>
+</g>
+
+<!-- acteur 28 41 diagramme de séquence -->
+<g id="acteur">
+<circle cx="14" cy="4" r="4" fill="none"/>
+<line x1="14" y1="8" x2="14" y2="26" />
+<line x1="0" y1="12" x2="28" y2="12" />
+<line x1="14" y1="26" x2="6" y2="41" />
+<line x1="14" y1="26" x2="22" y2="41" />
+</g>
+
+<!-- objet 60 30 digramme de séquence -->
+<g id="objet">
+<rect x="0" y="0" width="60" height="30" style="fill:white; stroke:black; stroke-width:0.8;"/>
+</g>
+
+<!-- activitedebut 22 22 diagramme commence par une activité de début -->
+<g id="activitedebut">
+<circle cx="11" cy="11" r="11" style="fill:black; stroke:none; stroke-width:0.8mm;"/>
+</g>
+
+<!-- activitefin 24 24 Fin d'activité -->
+<g id="activitefin">
+<circle cx="12" cy="12" r="12" style="fill:white; stroke:black; stroke-width:0.3mm;"/>
+<circle cx="12" cy="12" r="10"  style="fill:black; stroke:none; stroke-width:0.8mm;"/>
+</g>
+
+
+<!-- Marqueurs -->
+
+<!-- agregation 16 10 -->
+<marker id="agregation" markerWidth="16" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto" refX="15" refY="5">
+<path d="M0,5 l8,-5 l8,5 l-8,5 l-8,-5" style="fill:white;fill-opacity:1.0;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- composition 16 10 -->
+<marker id="composition" markerWidth="16" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto" refX="15" refY="5">
+<path d="M0,5 l8,-5 l8,5 l-8,5 l-8,-5" style="fill:black;fill-opacity:1.0;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- heritage 16 16 représente une flèche fermée -->
+<marker id="heritage" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto" refX="16" refY="8">
+<path d="M1,0 l15,8 l-15,8 l0,-16 " style="fill:white;fill-opacity:1.0;stroke:black;stroke-width:0.6;stroke-dasharray:30,0;"/>
+</marker>
+
+
+<!-- transition 6 3 diag d'activité petite flèche ouverte -->
+<marker id="transition" markerWidth="6" markerHeight="6" markerUnits="userSpaceOnUse" orient="auto" refX="6" refY="3">
+<path d="M0,0 l6,3 l-6,3" style="fill:none;fill-opacity:0.5;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- message 12 6 diag de séquence flèche ouverte -->
+<marker id="message" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="12" refY="6">
+<path d="M0,0 l12,6 l-12,6" style="fill:none;fill-opacity:0;stroke:black;stroke-width:1;stroke-dasharray:30,0;"/>
+</marker>
+</defs>
+<g>
+<!-- Classe Train (0,0) -->
+<g aria-labelledby="Train">
+<use xlink:href="#classe" x="0" y="0" />
+<text x="30" y="12" text-anchor="middle" font-size="10" dominant-baseline="central">
+Train</text>
+<desc id="Train">Classe Train</desc>
+</g>
+
+<!-- Classe Module (140,0) -->
+<g aria-labelledby="Module">
+<use xlink:href="#classe" x="140" y="0" />
+<text x="170" y="12" text-anchor="middle" font-size="10" dominant-baseline="central">
+Module</text>
+<desc id="Module">Classe Module</desc>
+</g>
+
+<g aria-labelledby="monassociation">
+<line x1="140" y1="25" x2="60" y2="25" style="stroke: black; stroke-width: 0.6;marker-end:url(#agregation); " />
+<text x="70" y="15" text-anchor="middle" font-size="8" dominant-baseline="central">
+0..1</text>
+<text x="130" y="15" text-anchor="middle" font-size="8" dominant-baseline="central">
+1..*</text>
+<desc id="monassociation">Association entre Train et Module, un module peut être lié à un train, un train est lié à au moins un module</desc>
+</g>
+
+
+</g>
+</svg>

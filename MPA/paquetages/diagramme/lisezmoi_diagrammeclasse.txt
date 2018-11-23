@@ -1,0 +1,804 @@
+***Schémas***
+
+Avec Latitude, nous proposons de pouvoir réaliser des diagrammes UML. Couramment utilisé en développement logiciel, "Unified Modeling Language" a été créé en 1995. Ce langage unifié de modélisation objet est un langage graphique conçu pour visualiser la conception d'un système. Ce langage propose diverses vues pour définir un système, elles même exprimées par une bonne douzaine de diagrammes différents. Les diagrammes sont dépendants et se complètent, de façon à permettre la modélisation d'un projet tout au long de son cycle de vie.
+
+Les premières possibilités offertes concernent les vues d'implémentation. Elles définissent les dépendances entre les modules. Nous proposons de réaliser quelques uns des diagrammes de structure :
+* diagramme de classes : représentation des classes intervenant dans le système ;
+* diagramme d'objets : représentation des instances de classes utilisées dans le système avec leurs liens.
+
+Nous avons pour cela créé la classe DiagrammeStructure. Comme la classe DiagrammeClasse existait déjà, une question se pose : doit-on créer une surclasse et introduire un héritage ou doit-on transformer la classe existante pour lui permettre la modularité - adaptation - à divers diagrammes de structure ?
+
+
+Parmi les vues des processus pour une approche temporelle des interactions, nous proposons quelques représentations des comportements  :
+* diagramme d'activité : représentation du comportement sous forme de processus composé d'activités ;
+* diagramme de séquence : représentation de façon séquentielle du déroulement des traitements et des interactions entre les éléments du système ou de ses acteurs et représente des scénarios (instances des cas d'utilisations).
+
+__diagclasse premiers diagrammes réalisés
+* Graphique
+ * DiagClasse
+  * DiagActivité
+__findiagclasse
+
+la classe DiagrammeClasse a été la première implantée. Le besoin de diagrammes objet a conduit à généraliser aux diagramme de structure. Le second type de diagramme fut la représentation des processus sous forme de diagrammes d'activité. Les diagrammes de séquences, développés sous forme de maquettes, ont été différés dans leur réalisation pour la raison essentielle de la stratégie de développement : ils n'ont pas été nécessaires dans la création de documents de travail.
+
+Dans le projet Latitude, nous avons été confronté à la difficulté de créer des diagrammes de classe UML. Dessiner un diagramme sans utiliser un éditeur graphique (GUI) nécessite de placer les différents éléments avec des coordonnées, de les faire coïncider voire d'effectuer des calculs complexe comme pour réaliser un arbre d'héritage.
+
+Pour permettre la réalisation d'un tel diagramme;, nous avons élaboré une syntaxe simple qui permette de maitriser l'espace 2D et de proposer une aide pour palier divers soucis graphiques.
+
+le logiciel permet ainsi de tracer les éléments classiques et courants rencontrés dans les diagrammes de classe : classe et interface, liens d'héritage, associations avec leurs multiplicités.
+
+Dans la version actuelle, certaines fonctionnalités ne sont pas offertes : contraintes entre associations, présence des rôles, classe-association.
+
+Nous dissocions la génération du graphique de sa représentation formelle. Cette dernière fait appel à une syntaxe volontairement choisie sobre. Voici un exemple simple pour préciser ce que le logiciel permet. Nous avons deux classes Train et Module, chaque module est un composant (ou non) d'un train, un train est composé de un à plusieurs modules.
+
+__figure Train composé de modules
+schemas/train-module.svg
+
+Le code de ce schéma est assez sobre :
+
+__code
+Train
+Module
+
+Train 0..1<>-----1..* Module
+__fincode
+
+On voie qu'on déclare d'abord les classes puis l'association. La syntaxe est volontairement sobre mais peut être complétée pour donner des indications supplémentaires. Nous avons volontairement indiqué une agrégation pour illustrer la possibilité d'ajouter quelques signes pour compléter la précision d'un modèle.
+
+=====
+Éléments d'un diagramme UML
+
+Pour connaitre les éléments d'un diagramme UML, concevoir le métamodèle est une aide précieuse.
+
+__diagclasse métamodèle du diagramme de classe
+Classe
+* Association
+ * Composition
+ * Agrégation
+
+Classe 0..1 <<>>---- * Classe
+Classe 1..2 <>------ * Association
+__findiagclasse
+
+Dans ce premier modèle, nous avons simplifié les possibilités en ignorant les classes-associations et les contraintes. Parmi les associations, les agrégations et les compositions sont permises. Nous avons tenu aussi à réaliser un processus de confection de l'héritage simple pour optimiser automatiquement la répartition des subclasses par rapport à une racine. L'héritage multiple qui se rencontre avec les interfaces (en Java) à été réalisé par ajout et n'apparait pas dans ce premier métamodèle.
+
+====
+Classes
+
+Il est possible de représenter des classes mais aussi des interfaces (alias des protocoles selon la terminologie OMG). L'héritage est nécessairement simple, nous avons opté pour ce type d'héritage non parce qu'il est robuste mais parce que nous illustrons des développements effectués en Java. La résolution du tracé est autrement plus simple que s'il avait fallu gérer un héritage multiple, gestion qui, on le sait, peut apporter des soucis sans solution de chevauchement. l'h"L'héritage (ou implantation) multiple rencontrée avec l'usage des interfaces en Java nécessite une intervention humaine pour un positionnement judicieux de l'interface par rapport à ces classes implantantes.
+
+Les classes sont des dessins préétablis dans les définitions qui sont placées en entête d'un fichier SVG. La dimension choisie est issue de nombreux tests effectués sur des dizaines de maquettes. La représentation retenue est un rectangle de 60 de large et 50 de hauteur. Les deux zones secondaires, médiane et inférieure, d'une classe UML sont créées de telle sorte qu'elles ne devraient pas accueillir ni attribut (zone médiane), ni opération (zone inférieure) ; néanmoins, il est possible d'y faire figurer un élément.
+
+Si les proportions sont inspirées de ce qui se pratique couramment, l'unité de mesure a été choisie pour permettre une compréhension mentale lors de l'intervention directe et manuelle sur un diagramme. Des unités plus importantes sont plus difficiles à gérer mentalement.
+
+====
+Liens d'héritage
+
+Nous retrouvons ces liens dans l'héritage «normal» mais aussi dans celui de l'implémentation d'une interface. La seule différence étant alors le tracé de traits discontinus.
+
+Le triangle (ou plutôt la flèche fermée creuse) symbolisant l'héritage est une classe SVG définie dans les définitions en entête.
+
+====
+Associations
+
+La dernière catégorie actuellement implantée dans le prototype permet de tracer des associations. Nous avons créé un sous-type pour différencier plus clairement dans le code deux stratégies de tracé.
+
+Parmi les symboles possibles pour une association, nous n'avons retenu que l'agrégation et la composition.
+
+=====
+Description du diagramme
+
+Le graphique généré est en SVG et, avec les éléments proposés par ARIA, il est possible d'accéder à une description vocale du diagramme le rendant ainsi accessible.
+
+Un des soucis rencontrés fut de déterminer un identifiant unique pour chaque élément décrit. Nous avons conservé le nom des classes en les considérant comme des identifiants ce qui n'est pas garanti. En revanche, pour les associations, comme il pouvait en exister plusieurs entre deux mêmes classes, nous avons opté pour un compteur incrémenté automatiquement au niveau de la classe principale (DiagrammeClasse).
+
+Le but est de pouvoir générer un diagramme en maitrisant le positionnement des éléments sachant que ce dernier donne un sens à la conception.
+
+La classe DiagrammeClasse est uniquement visible, les classes métier qui permettent de générer le diagramme sont encapsulées.
+
+Cinq options sont possibles :
+* placer une classe ;
+* créer une association entre deux classes ;
+* créer une association sur le côté ;
+* créer un arbre d'héritage ;
+* créer un héritage à partir d'une interface.
+
+Pour les classes, il est possible d'utiliser un alias pour faciliter l'écriture et de donner des coordonnées pour forcer le positionnement.
+
+=====
+Accessibilité
+
+Pour l'accessibilité des diagrammes, nous nous orientons vers deux dimensions : la lisibilité et la visibilité d'une part, la description orale d'autre part.
+
+====
+Description orale de document
+
+La description de document est permise en SVG comme en HTML grâce à l'emploi de balises préconisées par la spécification ARIA du W3C (Accessible Rich Internet Applications, issu du Web Accessibility Initiative).
+
+====
+Description des multiplicités dans les associations
+
+Il existe deux extrémités et donc deux sens de lecture pour une association, y compris pour les associations réflexives. En revanche, il n'est pas prévu pour le moment d'étudier la description orale des classes-asociations. Nous proposons une nomenclature de phrases descriptives qui seront utiles à la fois dans la balise de description encapsulées dans le code SVG et dans le document de synthèse proposé en annexe du code généré.
+
+
+les multiplicités présentent un formalisme particulier avec, pour l'interprétation, quelques valeurs remarquables. Les valeurs 0 et * mais aussi 1 sont particulières. Le fait qu'il existe une ou deux valeurs selon qu'une seule possibilité soit possible ou que la solution soit présente dans un intervalle. Pour se conformer à la langue française, il sera aussi étudié la succession ou nom des valeurs de l'intervalle proposé, il faut savoir qu'il faut dire «2 ou 3» mais «de 2 à 4» par exemples.
+
+Dans le tableau ci-après nous proposons les phrases selon les configurations possibles, nous avons choisi des données réelles (2, 3 et 4 pour illustrer par un exemple mais ces valeurs sont bien entendu quelconques sauf à considérer les valeurs spécifiques susmentionnées 0, 1 et *. Nous avons défini huit configurations possibles.
+
+__tableau Vocalisation des multiplicités
+1	Une instance de A est liée à une et une seule instance de B
+2	Une instance de A est liée à exactement 2 instances de B
+*	Une instance de A peut être liée à un nombre quelconque d'instances de B
+0..1	Une instance de A est ou non liée à une seule instance de B
+0..2	Une instance de A peut être liée jusqu'à 2 instances de B
+1..2	Une instance de A est liée à 1 ou 2 instances de B
+1..5	Une instance de A est liée à 1 à 5 instances de B
+3..*	Une instance de A est liée à au moins 3 instances de B
+
+Nous pouvons factoriser certaines parties de la phrase avant que de la composer. Elles commencent toutes par : «Une instance de A» ou «Chaque instance de A» par exemple, sachant que A sera connu par la méthode toString qui est définie dans la classe Classe.
+
+1	Une instance de A est liée à une et une seule instance de B
+2	Une instance de A est liée à exactement 2 instances de B
+*	Une instance de A peut être liée à un nombre quelconque d'instances de B
+0..1	Une instance de A est ou non liée à une seule instance de B
+0..2	Une instance de A peut être liée jusqu'à 2 instances de B
+1..2	Une instance de A est liée à 1 ou 2 instances de B
+1..5	Une instance de A est liée à 1 à 5 instances de B
+3..*	Une instance de A est liée à au moins 3 instances de B
+
+
+Pour les associations réflexives, la phraséologie peut changer un peu.
+
+«Une instance de A est liée à une autre instance de A.»
+
+Nous extrayons trois cas particuliers :
+0..1	est ou non liée à une seule instance de B
+0..2	peut être liée jusqu'à 2 instances de B
+*	peut être liée à un nombre quelconque d'instances de B
+
+Sinon, toutes les phrases se poursuivent par :
+«est liée à»
+Ou :
+* est composée de
+* agrège
+* est agrégée par 
+
+La phrase "est composant de" est particulière entendu que cela ne s'applique que pour deux cas de multiplicités : 0..1 ou 1 dont on à vu que la transcription était spéciale.
+
+Ensuite, la phrase exprime la valeur des multiplicités. Puis chaque phrase se termine pas
+«instance de B» ou «instances de B»
+
+Nous prenons donc la multiplicité de l'association dont nous savons qu'elle est déjà bien formée. Sa forme est donc d'une seule valeur unique ou de deux valeurs qui forment un intervalle. Toutes les valeurs sont des entiers sauf à considérer l'astérisque.
+
+Nous avons donc prévu au sein de la classe Association une méthode qui va décrire les deux sens de l'association sachant que nous disposons des deux classes et des deux multiplicités.
+
+Il faut aussi décrire la présence d'une agrégation ou d'une composition. Une instance de A agrège (ou est composée de) instances de B
+Une instance de B est agrégée ou est un composant d'une instance de A.
+
+
+<defs>
+<!-- classe 60 sur 50 -->
+<g id="classe">
+<rect x="0" y="0" width="60" height="50" style="fill:white; stroke:black; stroke-width:0.8;"/>
+<line x1="0" y1="30" x2="60" y2="30" style="stroke: black; stroke-width: 0.4;" />
+<line x1="0" y1="40" x2="60" y2="40" style="stroke: black; stroke-width: 0.4;" />
+</g>
+</defs>
+<g>
+<!-- Classe Agent (0,0) -->
+<g aria-labelledby="Agent">
+<use xlink:href="#classe" x="0" y="0" />
+<text x="30" y="12" text-anchor="middle" font-size="10" dominant-baseline="central">
+Agent</text>
+<desc id="Agent">Classe Agent</desc>
+</g>
+</g>
+</svg>
+
+__tableau 
+Nom	Taille	Commentaire
+Task	10	1/3 de la largeur
+Agent	10	+ 1/3
+TaskProcess	10	largeur totale, avec marge satisfaisante
+Resource	10	+ 2/3
+ResourceProvider	7	reste lisible, marge 1-2 caractères
+MultiResourceController	5	trop petit et illisible
+
+
+J'ai ajouté une propriété à mon système : réviser la taille des noms de classes si la longueur risque d'excéder la largeur du cadre.
+
+Symbiose :
+Association  obligatoire de deux ou de plusieurs  organismes différents , les symbiotes , avec bénéfice réciproque et qui  leur permet  de  vivre.
+La  symbiose  est une association indissoluble et durable entre deux espèces dont chacune tire bénéfice. —  (Christian Lévêque,  La biodiversité au quotidien , 2008)
+
+Commensalisme
+Interaction biologique  facultatif entre deux êtres vivants dans laquelle l’hôte fournit une  partie  de sa propre  nourriture  au commensal qui ne lui nuit et ne le dérange pas. Il n’obtient en revanche aucune  contrepartie  évidente de ce dernier (le bénéfice de cette relation n’est pas réciproque) comme dans la symbiose.
+Le  commensalisme  est une relation entre deux espèces, dont l’une tire un bénéfice alors que l’autre ne subit aucun dommage et ne tire aucun avantage. —  (Pieter  van der Meer ,  Impacts écologiques potentiels à long terme des organismes génétiquement modifiés , 1993)
+Réciprocité :
+Se dit en parlant de  deux  personnes ou de deux choses dont  chacune exerce  sur l’autre une  action équivalente  à celle qu’elle en  reçoit. Davray  et B.  Kozakiewicz ,  Mercure de France , 1908)
+
+
+=====
+Coordonnées
+
+Les coordonnées en SVG sont en 2D, deux dimensions, à savoir abscisse et ordonnée. La question de la représentation est de savoir s'il vaut mieux préférer deux attributs x et Y ou un tableau coordonnées[] contenant deux valeurs aux indices 0 et 1.
+
+Une autre question est de savoir si nous optons pour des données entières e ou réelles. Et dans ce choix, si nous préférons un type primitif (de base, comme int) ou un type objet (comme Integer). La différence entre ces deux choix étant, hors un choix politique, de savoir si nous acceptons une valeur par défaut (0 pour int) ou pas (null pour Integer).
+
+Le processus d'analyse syntaxique de la description d'un processus est :
+* lire la déclaration des processus composites ;
+* parcourir toutes les déclarations pour extraire et identifier les processus unitaires, activités ;
+* décomposer dans l'ordre inverses les processus composites, en commençant par ceux qui sont uniquement composés de processus unitaires, etc.
+
+
+=====
+Présentation des diagrammes d'activité
+
+
+Un diagramme d'activité en UML permet de représenter un processus. Chaque processus est délimité par une activité de début et une ou plusieurs activités de fin. Entre deux, une série d'activités avec des transitions.
+
+Comme dans un processus, il est possible de faire des embranchements pour des activités parallèles et des débranchements (tests) pour des activités conditionnelles.
+
+====
+Maquette : approche graphique
+
+Graphiquement, nous pouvons énumérer six éléments :
+* activité (rectangle aux coins arrondis) ;
+* activité de début (disque plein) ;
+* activité de fin (disque plein cerclé) ;
+* transition (ligne avec flèche) ;
+*test ou débranchement ainsi que jonction (losange) ;
+* embranchement ainsi que fusion (la barre de synchronisation horizontale et épaisse).
+
+Une fois énoncés ces éléments, nous avons extrait des formes (patterns) courants :
+* test avec deux débranchement ;
+* embranchement avec plusieurs lots en parallèle d'activités ;
+* boucle (itérations) et
+* suite successive d'activités.
+
+Ces formes ont conduits à un modèle comprenant sept classes :
+* Processus qui représente toute catégorie possible de processus ;
+* Activité qui est le processus unitaire ;
+* Composite : processus composé d'autres processus ;
+* Test comprenant deux débranchements et un ou deux processus ;
+* Embranchement avec plusieurs processus parallèles ;
+* Boucle (itérations for et do…while) et
+* Linéaire : suite successive d'activités.
+
+Les quatre formes de processus composites peuvent s'expliquer ainsi :
+* avec choix (disposant d'un test - débranchement - et d'une jonction ;
+* parallèle encadré de  deux barres de synchronisation ;
+* boucle avec retour arrière de transition.
+* suite systématique.
+
+Chaque processus pouvant être composite peut ainsi se décomposé en de nouveaux processus composites et permettre ainsi de réaliser des processus fort complexes.
+
+====
+Hors objectif
+
+Nous avons écarté dans la première approche divers cas :
+* choix multiples ;
+* représentation (complexe) du "switch ;
+* possibilité d'échanges entre processus "cross over" ;
+* présence des couloirs d'activité reliant activités et objets chargés des actions.
+
+Le choix multiple est un test à partir duquel peuvent partir plus de deux possibilités. Généralement, dans les langages de programmation, ces choix sont de fait des successions de tests binaires sauf à utiliser le "switch" dont nous traitons juste après et qui est également exclus de notre première modélisation.
+
+Le "switch" ou "case of" est une opération dont on peut disposer dans nombre de langages. En Java il s'écrira :
+
+__code
+int variable;
+…
+switch(variable) {
+case 1 :
+opération1;
+break;
+case 2 :
+case 3 :
+opération2 ;
+opération3;
+break;
+case 4 :
+opération4;
+case 5 :
+opération5;
+break;
+default :
+opération6;
+}
+__fincode
+
+Dans cet exemple, la variable est un entier pour des raisons pratiques de simplicité. Selon sa valeur, différentes opérations peuvent être exécutées.
+
+Voici ce que nous pouvons dire en fonction des valeurs de "variable" :
+* 1 : exécution de opération1 ;
+* 2 : exécution de opération2 et de opération3 ;
+* 3 : exécution de opération2 et opération3 ;
+* 4 : exécution de opération4 et opération 5 ;
+* 5 : exécution de opération5 ;
+* tout autre cas : exécution de opération6.
+
+La représentation sous forme graphique est relativement complexe, nous avons différé la réalisation à une seconde phase d'enrichissement du modèle.
+
+Im est possible d'avoir des transitions croisées dans des processus complexes, nous différons cette étude qui nécessitera la mise en place de familles de "patterns".
+
+Les couloirs d'activité sont souvent présentés comme utiles dans les diagrammes d'activités car ils permettent de visualiser clairement les classes dans lesquelles doivent être implantées sous forme de méthodes les diverses activités. Si, dans les exemples fournis dans la littérature, on conçoit clairement l'intérêt d'une telle représentation, on s'aperçoit rapidement que la lisibilité devient très relative dès qu'il y a de nombreux couloirs d'activités. En effet, la largeur du diagramme, par la nécessité de réduire la police de caractères, perd notablement en visibilité et donc lisibilité. Or, c'est lorsqu'il y a de nombreux couloirs que la représentation répartie des activités peut avoir un grand intérêt. Ainsi, les couloirs d'activité, intéressants de façon théorique, s'avèrent contre-productifs dans les cas où leur intérêt est justement le plus prégnant. Aussi, et sauf à devoir les introduire dans un cas qui le justifierait clairement, nous n'avons pas envisagé d'implantation dans l'immédiat.
+
+Nous avons également exclus les sous-activités, des activités représentées graphiquement comme contenant un diagramme d'activité. Ces types d'activités sont des inclusions. Par conséquent, on exclus aussi la possible représentation d'un appel récursif : transition interne à une sous-activité qui revient sur l'activité principale (incluante).
+
+====
+première leçon
+
+Une activité possède une transition entrante et une transition sortante.
+Un test possède une transition entrante et deux transitions sortantes.
+Un embranchement possède une transition entrante et un nombre quelconque de transitions sortantes.
+Une jonction (inverse du test) possède deux transitions entrantes et une transition sortante
+Une fusion - alter ego de l'embranchement, possède une ou plusieurs transitions entrantes et une transition sortante.
+L'activité de début ne possède qu'une transition sortante
+Les activités de fin possèdent une transition entrante.
+
+Donc, pour synthétiser :
+* liens entrants et sortants
+* dimension
+* position
+* composition
+
+Types d'activités :
+* activité
+* début
+* fin
+* losange (test et jonction)
+* barre de synchronisation (embranchement et fusion)
+
+Voici les attributs déduits de ce qui précède :
+* coordonnées x et y ;
+* hauteur et largeur ;
+* transitions entrantes (coordonnées exprimées en points de contact) ;
+* transitions sortantes (coordonnées exprimées en points de contact) ;
+* type de forme (rectangle, losange, barre,etc.).
+
+Une transition peut revêtir trois formes :
+* en ligne droite ;
+* en L ;
+* en U.
+
+Sa forme peut être déterminée par défaut ou explicitement.
+
+Faudrait-il préciser un type "point de contact" ?
+
+Rappelons que pour décider de créer une classe vs quelques attributs, il faut déterminer la nécessité de propriétés, des comportements.
+
+
+====
+Prototype : processus
+
+La notion de processus est définie ainsi : tout processus est un ensemble d'activités regroupées afin de faire une série d'action successives, en parallèle ou conditionnées. Nous parlerons de processus linaire, d'embranchement et de test. Les processus suivent les formes déterminées lors du maquettage.
+
+
+Activité et Processus sont clairement identifiables comme de la même famille, reste à pratiquer la démarche habituelle pour déterminer un potentiel regroupement. Rappelons les quatre  hypothèses qui sont à faire entre deux classes A et B avec une surclasse X.
+* A et B uniques, parfois appelée AB ;
+* A hérite de B ou inversement ;
+* A et B héritent de X qui factorisent  les propriétés communes ;
+* A et B sont associées, potentiellement avec une composition.
+
+Un processus est, comme une activité, propriétaire de dimensions.
+Un processus rassemble des activités, des éléments tels que test ou embranchement. Nos processus, tels que définis de façon simplifiés, répondent à une des quatre catégories énoncées préalablement.
+
+====
+Seconde leçon
+
+Les processus définis ont une seule entrée, une seule sortie. Tous les diagrammes sont constitués de processus eux-même dessinés dans quatre catégories :
+* linéaire ;
+* test ;
+* boucle ;
+* embranchement.
+
+Il faut, au commencement, un processus principal qui sera le seul à dessiner l'activité de début identifiée graphiquement par un disque plein.
+
+Une activité, qui est la brique élémentaire indispensable au diagramme et aux processus peut être vue comme un processus à part entière, l'équivalent de l'individu dans le projet Latitude en complément aux divisions qui sont dans Latitude les subclasses de Bloc : Principal et Article.
+
+=====
+Modèle objet
+
+====
+Classe diagramme d'activité
+
+La classe DiagrammeActivite permet de réaliser en SVG un diagramme d'activité. À l'instar de la classe DiagrammeClasse, elle hérite de la classe Graphique et est placée dans le paquetage "diagramme".
+
+====
+Classe Graphique
+
+Les graphiques possèdent des informations communes :
+* chemin pour parvenir au fichier : chemin_fichier ;
+* nom du fichier (suffixé par svg) : identifiant_fichier ;
+* ensemble des lignes SVG : code_SVG ;
+* commentaires générés suite à l'analyse syntaxique : description ;
+* partie de l'analyse dédiée aux avertissements : avertissements ;
+
+Un constructeur initialise les attributs attachés à cette surclasse et un second permet de fixer les valeurs liées au fichier texte source.
+
+====
+Classe Processus
+
+Nous avons vu qu'un processus pouvait être décomposé en quatre subclasses qui sont autant de patrons de conception : Linéaire, Test, Boucle et Embranchement. Les deux éléments aux extrémités de la conception que sont le processus principal et l'activité sont aussi des processus particuliers.
+
+===
+Surclasse abstraite Processus
+
+Tous les processus décrits ont des dimensions. Celles-ci vont permettre de placer les éléments dans le schéma en les articulant de façon préétablie.
+
+La méthode "dimensionner" sera donc commune à tous les processus avec l'usage du polymorphisme et des appels récursifs.
+
+Quatre dimensions ou propriétés participent à l'état de chaque processus. Ces valeurs nécessaires sont :
+* la largeur ;
+* la hauteur ;
+* la position du point haut (point d'entrée de la transition amont) ;
+* la position du point bas (point de sortie de la transition aval).
+
+Entendu que nous avons constaté que les points sont placés sur les parties haute et basse du rectangle englobant le processus, nous avons opté pour un des deux choix équivalents pour réunir ces données avec cinq valeurs placées dans autant d'attributs. Ces attributs sont placés au niveau de la surclasse Processus. Notons que nous aurions pu ignorer le positionnement pour les deux individus que sont l'activité de début et l'activité "standard".
+
+Les signatures en UML de ces données sont :
+-haut:int[2]
+-bas:int[2]
+-hauteur:int
+
+Cela donne en Java :
+__code
+int[] haut;
+int[] bas;
+int hauteur;
+__fincode
+
+Les tableaux sont une façon de rappeler qu'en haut comme en bas, le point de contact est médian. Ainsi, la largeur totale du processus est :
+haut[0]+haut[1] = bas[0]+bas[1]
+
+En observateur attentif, vous aurez sans doute compris qu'il y a une légère redondance entendu que ces valeurs sont liées et donc que seules trois sont nécessaires pour déduire les quatre. Dans un programme, on peut remplacer les cinq attributs par seulement quatre et proposer cinq accesseurs.
+
+À partir de la dimension des processus inclus, on peut déterminer la dimension d'un processus composé. Une fois placé, chaque processus sera graphiquement identifié par des coordonnées de positionnement, coin supérieur gauche comme pratiqué par le SVG. La largeur et la hauteur permettrons de fournir les coordonnées des points de contact.
+
+====
+Activité élémentaire
+
+L'unité de base est l'activité que nous reconnaissons comme la brique élémentaire des diagrammes d'activité en UML. Nous l'avons inscrites dans l'arborescence des processus. En effet, une activité est un processus rudimentaire, "unaire", composé d'une seule unité. On peut décrire aussi un atome comme un processus primitif ne pouvant plus être divisé.
+
+Avec l'activité de début, l'activité unaire est un processus dont les dimensions sont préétablies et pourraient ne pas être dépendantes de valeurs d'attributs. Nous n'avons pas voulu introduire de surclasse supplémentaire pour ne pas alourdir le code Java et la structure du programme. Un choix critiquable du point de vue conceptuel mais qui s'entend du point de vue de la lisibilité du code et donc de sa réutilisabilité.
+
+====
+Processus linéaire
+
+Le processus linéaire est une suite ordonnée verticale de processus. Le constructeur d'un processus linéaire contient donc de un à plusieurs processus.
+
+Dans une première approche, on peut estimer que la hauteur est la somme des processus inclus augmentée des transitions intermédiaires. La largeur étant la largeur maximale des processus composants le processus composé. Mais on peut aussi se demander si on essaye d'aligner au mieux les points de contact (haut et bas) afin de représenter la ligne des transitions de telle sorte qu'elle soit une suite alignée de lignes. En règle générale, cela devrait être équivalent mais on voie que le processus en boucle ne présente pas d'alignement entre ses deux points. Une solution alternative est de modifier la forme du processus en boucle afin qu'il aligne ces points.
+
+====
+Processus en boucle
+
+le processus en boucle est constitué de un ou deux processus. Il se décompose linéairement de la façon suivante :
+* jonction
+* processus p1 ;
+* test ;
+* processus p2.
+
+Avec une transition remontant après le processus p2 vers la jonction et une transition de sortie partant du test.
+
+Nous avons esquissé une question en présentant les processus linéaires : est-il possible d'aligner les points haut et bas des processus en boucle ? Techniquement, c'est possible mais est-ce souhaitable ? En effet, si nous plaçons les activités (ou processus) constituants une boucle sur un des côtés d'une transition linéaire verticale qui aligne les deux points de contact, nous sommes alors obligé d'avoir une lecture ascendante de la suite d'activités. Cette lecture n'est pas naturelle et donc propice à des erreurs ou des difficultés de lecture et donc de lisibilité.
+
+Pour conserver l'ordre descendant de lecture, nous préférons conserver le décalage entre les points d'entrée et de sortie. La difficulté alors potentielle est que si nous avons une suite de boucles comme autant de processus successifs, un décalage va être introduit, augmentant la largeur du diagramme et, directement, augmentant cette dernière risque d'amener un redimensionnement de l'échelle et induire une diminution de la visibilité.
+
+Donc, nous pouvons, soit vérifier que le décalage n'est pas important parce qu'il n'y a pas une suite importante de boucles, soit alterner deux types de boucles, une à droite succédant à une à gauche permettant de corriger au fur et à mesure le décalage par un équilibrage. Dans ce cas, nous perdons aussi un peu de lisibilité dans la logique de la lecture des boucles.
+
+
+====
+Processus test
+
+Dans notre modèle nous nous sommes limités aux tests binaires, aussi un processus de test contiendra un ou deux processus. la forme dépendra évidemment du nombre de processus.
+
+En l'état, ce processus serait le seul à pouvoir, accessoirement, accueillir une activité de fin.
+
+====
+Processus d'embranchement
+
+L'embranchement est des processus proposés le moins fréquent. Il l'est d'autant moins que son implantation en langage informatique nécessite soit l'usage de "threads", soit un contournement du problème par une forme de linéarisation. C'est un processus composé d'autant de processus que l'on veut avec, pour avertissements qu'il en faut au moins deux (sinon ou serait le parallélisme ?) et qu'au delà d'un certain nombre on risque fort de perdre en visibilité.
+
+Sa largeur est la somme des largeurs des processus placés en parallèle. Nous pouvons nous poser la question s'il ne serait pas judicieux d'optimiser la largeur dans le cas de processus composites ayant des largeurs variables mais pouvant s'imbriquer. C'est une stratégie qui peut s'assimiler au choix de placer des subclasses dans l'arbre d'héritage afin de décaler le moins possible les surclasses. Si la stratégie ne peut sans doute pas être transposée facilement, il apparait déjà évident que l'optimisation se fait sur l'horizontalité et non la verticalité. Ce choix a, là encore, l'objectif de ne pas diminuer la visibilité du diagramme dans certaines configurations.
+
+=====
+Dimensions considérées
+
+Comme pour le diagramme de classe avec ses composants (classe, association, héritage), le diagramme d'activité est proposé avec des classes SVG prédéfinies et donc des dimensions fixées à l'avance. Ces dimensions ne sont pas arbitraires mais choisies de façon empirique à la fois pour correspondre à la représentation UML recommandée mais aussi pour permettre les meilleures lisibilité et visibilité.
+
+__tableau Dimensions des éléments
+nom	type largeur	hauteur
+activité	classe	70	25
+activitedebut	classe	22	22
+activitefin	classe	24	24
+flèche (transition)	marqueur	6	6
+test	dessin	20	14
+
+Les coordonnées de référence en SVG sont quelques peu différentes selon les classes définies. En haut à gauche pour l'activité, c'est centré en haut pour les disques des activités de début et de fin.
+
+La hauteur d'une transition est la séparation standard choisie entre deux activités, elle est de 25. C'est un compromis entre une assez bonne hauteur et la volonté de limiter la hauteur totale du diagramme. En effet, si un diagramme venait à être trop haut par rapport à la dimension d'une page A4, il faudrait appliquer une échelle qui diminuerait de facto la visibilité.
+
+De même, pour faciliter la perception d'un processus, on peut penser à la boucle mais aussi au test lorsqu'il n'y a qu'un seul processus sur une des deux branches, l'espacement horizontal est fixé à 10.
+
+La largeur des barres de synchronisation est calculée relativement à la largeur cumulée des processus internes, placés entre l'embranchement et la fusion. C'est la somme avec les espacement inter-processus.
+
+La hauteur des transitions avant et après les barres peut être diminuée, nous avons opté pour 20.
+
+L'épaisseur des barres est plus importante que celle d'un trait normal qui est fixée à 0,8. Après quelques tests de visibilité, nous avons opté pour la valeur 2.
+
+====
+Dessin
+
+Il ne faut pas perdre de vue que ce ne sont pas les processus que nous dessinons mais les éléments qui les constituent.
+
+Nous utilisons les classes définies dans le document SVG mais aussi des balises simples : line, polyline et polygon.
+
+Pour être tracée, la transition doit connaitre son élément de départ et son élément d'arrivée. La plupart du temps elle sera verticale de haut en bas et les exceptions courantes seront inscrites dans les formes de processus pré-établies. Néanmoins, nous devons considérer le possible «retour en arrière» d'une transition dans les tests sans que ce soit une boucle pour autant. À moins que ce soit assimilable à un «do…while».
+
+partant d'un élément, la transition va trouver seule l'endroit où accrocher l'élément suivant.
+
+====
+Début et fin, processus principal
+
+Le dimensionnement ainsi que la génération du code se font de manière récursive à partir du processus principal c'est-à-dire de l'ensemble du diagramme d'activité représenté. C'est donc un processus augmenté de l'activité de début. Sa présence est implicite. L'activité de fin pouvant être explicité pour apparaitre plusieurs fois, il faut prévoir deux configurations : soit elle sera toujours précisée par le concepteur du diagramme, soit il peut exister des cas où elle sera dessinée implicitement.
+
+Implicitement, le processus principal commence par l'activité de début. La ou les activités de fin sont signalées explicitement.
+
+La syntaxe pourrait utiliser des balises de type XML :
+<linéaire> ou <processus>
+<boucle>
+<test><gauche><droite>
+<embranchement><branche>
+
+Un des premiers modèles syntaxiques proposés est le suivant.
+
+__code
+<processus=name="référence" />
+Faisant référence à :
+<processus id="référence">
+…
+</processus>
+__fincode
+
+
+=====
+Transitions
+
+Chaque transition part d'un élément et va vers un second. Elle va en général du haut vers le bas mais il existe deux exceptions :
+* transition de boucle ;
+* une transition de test peut revenir sur une jonction placées plus haut.
+
+Sinon, les transitions sont :
+* verticales : de haut en bas, sans changement d'abscisse ;
+* en L, à gauche ou à droite, d'abord horizontale puis verticale ;
+* en L d'abord verticalement puis vers la droite ou la gauche.
+
+On pourrait avoir aussi une transition "shunt" qui irait en forme de C de haut en bas pour éviter un lot d'activités.
+
+la forme de la transition dépend du type d'élément de départ et d'arrivée. Cinq éléments identifiés :
+* activité
+* test
+* jonction
+* barre synchronisation, débranchement ;
+* barre fusion
+
+=====
+Dimensions mémorisées pour les processus
+la sortie d'un processus est une et une seule transition, celle-ci doit avoir une longueur qui dépend à la fois de sa position de sortie et le point d'arrivée qui dépend des processus parallèles sur le graphique. Il existe deux situations de parallélisme : les tests et les embranchements.
+
+La position de sortie est en général la position basse du processus sauf pour la boucle qui peut être placée plus haut.
+
+Coordonnées des processus
+La première coordonnée est (0,0), les dimensions du processus donnent les coordonnées des points d'entrée et de sortie qui serviront respectivement en interne au processus et pour le processus suivant.
+
+Comment décider d'ajouter l'activité de fin ? Il faut que ce soit explicite : il faut donc le mot clé "fin".
+
+Un alias est le nom identifiant d'un processus, si cet alias n'existe pas dans le dictionnaire, il est introduite automatiquement. S'il existe déjà, il ne peut être à nouveau créé. Il n'est pas possible qu'un processus soit référencé à deux endroits différents, si c'est le cas soit nous déclenchons une erreur, soit nous dupliquons le processus. Nous préconisons le déclenchement d'une erreur car cela peut être involontaire de la part de l'utilisateur.
+
+Pour les boucles et les tests, si le premier élément n'existe pas, il faut prévoir une ligne blanche (ou null ?).
+
+Exemple :
+<maBoucle> boucle x≤0
+
+ajouter 1
+
+On voie ici que :
+l'alias s'appelle maBoucle
+le sinon n'est pas renseigné (c'est une possibilité)
+un espace sépare boucle, si et sinon
+la ligne blanche indique qu'il n'y a pas de processus entre la jonction et le test
+une fois passé le test, l'activité possède un nom composé 'ajouter 1"
+la ligne blanche à la fin signale la réalisation du processus de test
+
+
+
+Activité :
+<alias> nom
+nom
+
+<alias> boucle si sinon
+alias1
+alias2
+
+<alias> embranchement
+alias1
+alias2
+alias3
+etc.
+
+<alias> Test si sinon
+alias1
+alias2
+
+<alias> linéaire
+alias1
+alias2
+alias3
+etc.
+
+
+Action  de  dissocier
+Résultat  de l’ action  de  dissocier
+
+ Psychologie ) Rupture  de l' unité psychique . groupe Liste du contenu  1 élément niveau 2 • Puce La dissociation […] désigne une suspension de l’articulation âme-corps, une dés-association de la pensée et des ressentis, souvent par anesthésie des sensations
+
+Dissociation entre le modèle théorique, élaboré conceptuellement et le modèle pratique implanté.
+
+Dissocier 
+Séparer  des  éléments  qui étaient  associés
+Dissocier  deux questions pour traiter chacune d’elles à part
+
+conceptuellement
+de façon conceptuelle
+relatif au concept, à l'abstraction
+
+__code
+Processus
+* Activité
+* Composite
+ * BiProcessus
+  * Test
+  * Boucle
+ * MultiProcessus
+  * Linéaire
+  * Embranchement
+
+c Composite 0..1<<>>-----1..* Processus
+
+__fincode
+
+On remarque deux absents de taille dans ce modèle objet : le processus principal qui encapsule l'ensemble du modèle, seul à posséder l'activité de début, et les activités de fin qui ne possèdent aucun processus suivant.
+
+Le processus principal ne possède pas de point d'entre, les deux processus principal et de fin ne possèdent pas de point de sortie.
+__code
+Processus(0,50)
+* Activité
+* Test
+* Boucle
+* Linéaire
+* Embranchement
+
+Processus 0..1<<>>-----* Processus
+__fincode
+
+Dans le modèle implanté, pas de classes Composite, BiProcessus et MultiProcessus. L'activité surcharge la méthode "dimensionner" en fixant les dimensions sans analyse récursive.
+
+le processus de création du diagramme d'activité se développe en trois étapes :
+1. dimensionner les processus
+2. positionner les processus
+3. relier les processus entre eux
+Mais, au préalable, il aura fallu décrire ces processus et dans une dernière étape les dessiner.
+
+__code
+Décrire les processus
+Créer les objets
+Dimensionner chaque processus
+Positionner chaque composant
+Relier (par des transitions) chaque processus
+Dessiner : générer le SVG
+__fincode
+
+
+Ce que ne sait pas faire le progiciel :
+* dessiner des activités composées
+* dessiner une récursivité
+
+Ces deux points demandent l'introduction de sous-activité, d'activité composite. Si le premier point pourrait être corrigé par une inclusion, le second nécessite une interaction.
+
+
+Action  de  dissocier
+Résultat  de l’ action  de  dissocier
+
+ Psychologie ) Rupture  de l' unité psychique . groupe Liste du contenu  1 élément niveau 2 • Puce La dissociation […] désigne une suspension de l’articulation âme-corps, une dés-association de la pensée et des ressentis, souvent par anesthésie des sensations
+
+Dissociation entre le modèle théorique, élaboré conceptuellement et le modèle pratique implanté.
+
+Dissocier 
+Séparer  des  éléments  qui étaient  associés
+Dissocier  deux questions pour traiter chacune d’elles à part
+
+niveau d’en-tête 1 conceptuellement
+de façon conceptuelle
+relatif au concept, à l'abstraction
+
+__code
+Processus
+* Activité
+* Composite
+ * BiProcessus
+  * Test
+  * Boucle
+ * MultiProcessus
+  * Linéaire
+  * Embranchement
+
+c Composite 0..1<<>>-----1..* Processus
+
+__fincode
+
+On remarque deux absents de taille dans ce modèle objet : le processus principal qui encapsule l'ensemble du modèle, seul à posséder l'activité de début, et les activités de fin qui ne possèdent aucun processus suivant.
+
+Le processus principal ne possède pas de point d'entre, les deux processus principal et de fin ne possèdent pas de point de sortie.
+__code
+Processus(0,50)
+* Activité
+* Test
+* Boucle
+* Linéaire
+* Embranchement
+
+Processus 0..1<<>>-----* Processus
+__fincode
+
+Dans le modèle implanté, pas de classes Composite, BiProcessus et MultiProcessus. L'activité surcharge la méthode "dimensionner" en fixant les dimensions sans analyse récursive.
+
+le processus de création du diagramme d'activité se développe en trois étapes :
+1. dimensionner les processus
+2. positionner les processus
+3. relier les processus entre eux
+Mais, au préalable, il aura fallu décrire ces processus et dans une dernière étape les dessiner.
+
+__code
+Décrire les processus
+Créer les objets
+Dimensionner chaque processus
+Positionner chaque composant
+Relier (par des transitions) chaque processus
+Dessiner : générer le SVG
+__fincode
+
+
+Ce que ne sait pas faire le progiciel :
+* dessiner des activités composées
+* dessiner une récursivité
+
+Ces deux points demandent l'introduction de sous-activité, d'activité composite. Si le premier point pourrait être corrigé par une inclusion, le second nécessite une interaction.
+
+=====
+Diagramme objet
+
+Le diagramme d'objet est une transformation du diagramme de classe fortement simplifié. Les seuls liens possibles sont des liens simples traits ou des liens orientés. Les objets sont des rectangles de taille limité 60 sur 25.
+
+Les liens sont placés de telle sorte qu'ils relient en ligne droite deux objets. la diagonale directe est calculée pour passer par le centre de chacun des deux rectangles symbolisants les deux objets. Un simple calcul de tangente permet de déterminer le point de contact avec les rectangles concernés.
+
+La sémantique reprend de façon très simplifiée celle décrivant les diagrammes de classe.
+
+__code
+unObjet
+<alias> unObjet
+unObjet(15,40)
+<alias(15,40)> unObjet
+
+A ---- B
+A -----> B
+__fincode
+
+Le nom de l'objet peut être utilisé comme identifiant, mais on peut aussi - comme pour les classes - utiliser un alias. Des coordonnées peuvent être indiquées pour préciser l'emplacement exact d'un objet.
+
+Les liens sont de deux types : non-orientés ou orientés. Dans ce second cas, un chevron placé du bon côté précise l'orientation de ce lien.
+
+Le nom de l'objet, dans l'exemple ci-dessus appelé "unObjet" devrait pouvoir être écrit avec la syntaxe UML c'est-à-dire avec une composition plus ou moins complète indiquant le nom de l'instance et son type. le tout devant être alors soulgné. Il nous a fallu déterminer une syntaxe simple pour préciser ce choix d'écriture.
+
+Comme, par uniformité d'un diagramme, le choix d'écriture doit être utilisé pour l'ensemble du diagramme, nous proposons de faire appel à une balise spécifique placée en début de description. Nous proposons @objet
+

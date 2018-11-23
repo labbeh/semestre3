@@ -1,0 +1,14 @@
+***PrototypeDiagramme***
+
+Diagramme d'activité avec prototypes.
+
+__figure Test avec partie déportée à droite
+testdroite.svg
+
+__figure Processus linéaire
+linéaire.svg
+
+__figure Représentation d'une boucle
+boucle.svg
+
+

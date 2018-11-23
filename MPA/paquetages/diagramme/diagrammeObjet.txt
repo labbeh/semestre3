@@ -1,0 +1,31 @@
+***Diagramme objet***
+
+la classe «diagramme objet» permet de réaliser des diagrammes objet UML mais aussi des graphes dont des diagrammes ontologiques.
+
+Pour qui ?
+Public dédié, mais aussi demande pour illustration du problème
+
+Pourquoi ?
+Le besoin de réaliser des graphes, avec des étiquettes
+Demande de voir la réalisation d'un graphe ontologique accessibl;e
+
+Pour quoi ?
+Exprimer une suite de relations de manière graphique
+
+la classe DiagrammeObjet
+* objets sous forme de rectangle 60x25
+* possibilité de représenter la signature UML d'un objet (terme souligné)
+* possibilité de placer une étiquette sur le lien
+
+La classe hérite de DiagrammeStructure qui réunie aussi la subclasse DiagrammeClasse. La classe DiagrammeObjet est une duplication de la précédente avec une grande simplification puisqu'il n'apparait plus les multiplicités et l'arrangement dans le cas d'un arbre d'héritage.
+
+les liens ne sont plus représentés sous forme de lignes brisées (angles droits, jonctions horizontales et verticales uniquement). De ce fait, les lignes sont directes, passant par le centre des objets liés. Il n'existe donc plus l'option de contournement proposée pour la représentation des diagrammes de classe UML.
+
+Les liens peuvent être proposés avec des flèches des deux côtés, sur chaque extrémité du segment.
+
+La maquette réalisée doit permettre de déterminer la façon de représenter les étiquettes. Deux options sont envisagées :
+* étiquette le long du segment, centrée, au dessus du trait ;
+* étiquette écrite horizontalement, barrant le lien en son milieu.
+
+Il est envisagé l'option de colorer les étiquettes, peut-être le lien. Cela demandera la mise en forme des flèches ce qui semble assez complexe en SVG.
+

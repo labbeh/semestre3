@@ -1,0 +1,23 @@
+
+Intervalle(20,100)
+
+*Classe(140,0)
+ * Surclasse
+ * Interface
+
+* Association
+ * C_Association
+
+Niveau(20,200)
+
+interface Groupe
+* Intervalle
+* Surclasse
+
+Classe 1..2----* Association
+c Groupe 1..*----1 Niveau
+
+Niveau 1----1..* Surclasse
+
+c Interface *-----1..* Classe
+

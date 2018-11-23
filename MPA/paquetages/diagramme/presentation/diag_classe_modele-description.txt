@@ -1,0 +1,77 @@
+
+=====
+Structure de l'arborescence
+
+====
+Ensemble des classes
+
+====
+Surclasse Classe
+
+Dans le niveau 0 avec pour abscisse 140
+
+Ensemble des subclasses :
+* Surclasse
+* Interface
+
+====
+Surclasse Surclasse
+
+Dans le niveau 1 avec pour abscisse 100
+
+Superclasse : Classe
+
+====
+Surclasse Interface
+
+Dans le niveau 1 avec pour abscisse 180
+
+Superclasse : Classe
+
+====
+Description des niveaux
+
+====
+Fiche du niveau 0
+
+Contient la classe Classe
+
+====
+Fiche du niveau 1
+
+Contient les classes suivantes :
+ * Surclasse
+ * Interface
+
+=====
+Structure de l'arborescence
+
+====
+Ensemble des classes
+
+====
+Surclasse Association
+
+Dans le niveau 0 avec pour abscisse 280
+
+Une subclasse :C_Association
+
+====
+Surclasse C_Association
+
+Dans le niveau 1 avec pour abscisse 280
+
+Superclasse : Association
+
+====
+Description des niveaux
+
+====
+Fiche du niveau 0
+
+Contient la classe Association
+
+====
+Fiche du niveau 1
+
+Contient la classe C_Association

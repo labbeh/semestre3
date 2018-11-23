@@ -1,0 +1,115 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+ width="10.67cm" height="5.0cm" viewBox="-50 -50 270 100" zoomAndPan="disable" 
+xmlns="http://www.w3.org/2000/svg" version="1.1">
+<defs>
+<!-- classe 60 sur 50 -->
+<g id="classe">
+<rect x="0" y="0" width="60" height="50" style="fill:white; stroke:black; stroke-width:0.8;"/>
+<line x1="0" y1="30" x2="60" y2="30" style="stroke: black; stroke-width: 0.4;" />
+<line x1="0" y1="40" x2="60" y2="40" style="stroke: black; stroke-width: 0.4;" />
+</g>
+
+<!-- activite 70 25 diagrammes d'activité -->
+<g id="activite">
+<rect x="0" y="0" width="70" height="25" rx="5" ry="5" style="fill:white; stroke:black; stroke-width:0.6;"/>
+</g>
+
+<!-- acteur 28 41 diagramme de séquence -->
+<g id="acteur">
+<circle cx="14" cy="4" r="4" fill="none"/>
+<line x1="14" y1="8" x2="14" y2="26" />
+<line x1="0" y1="12" x2="28" y2="12" />
+<line x1="14" y1="26" x2="6" y2="41" />
+<line x1="14" y1="26" x2="22" y2="41" />
+</g>
+
+<!-- objet 60 25 diagramme d'objet ou de séquence -->
+<g id="objet">
+<rect x="0" y="0" width="60" height="25" style="fill:white; stroke:black; stroke-width:0.8;"/>
+</g>
+
+<!-- activitedebut 22 22 diagramme commence par une activité de début -->
+<g id="activitedebut">
+<circle cx="5" cy="5" r="5" style="fill:black; stroke:none; stroke-width:0.8;"/>
+</g>
+
+<!-- activitefin 24 24 Fin d'activité -->
+<g id="activitefin">
+<circle cx="7" cy="7" r="7" style="fill:white; stroke:black; stroke-width:1;"/>
+<circle cx="7" cy="7" r="4"  style="fill:black; stroke:none; stroke-width:0.4;"/>
+</g>
+
+<!-- Marqueurs -->
+
+<!-- agregation 16 10 -->
+<marker id="agregation" markerWidth="16" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto" refX="15" refY="5">
+<path d="M0,5 l8,-5 l8,5 l-8,5 l-8,-5" style="fill:white;fill-opacity:1.0;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- composition 16 10 -->
+<marker id="composition" markerWidth="16" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto" refX="15" refY="5">
+<path d="M0,5 l8,-5 l8,5 l-8,5 l-8,-5" style="fill:black;fill-opacity:1.0;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- heritage 16 16 représente une flèche fermée -->
+<marker id="heritage" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto" refX="16" refY="8">
+<path d="M1,0 l15,8 l-15,8 l0,-16 " style="fill:white;fill-opacity:1.0;stroke:black;stroke-width:0.6;stroke-dasharray:30,0;"/>
+</marker>
+
+<!-- transition 6 2 diag d'activité et d'objet petite flèche ouverte -->
+<marker id="transition" markerWidth="6" markerHeight="4" markerUnits="userSpaceOnUse" orient="auto" refX="6" refY="2">
+<path d="M0,0 l6,2 l-6,2" style="fill:none;fill-opacity:0.5;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- anti-transition (placée au début) 6 2 diag d'objet petite flèche ouverte -->
+<marker id="antitransition" markerWidth="6" markerHeight="4" markerUnits="userSpaceOnUse" orient="auto" refX="0" refY="2">
+<path d="M6,0 l-6,2 l6,2" style="fill:none;fill-opacity:0.5;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- message 12 6 diag de séquence flèche ouverte -->
+<marker id="message" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="12" refY="6">
+<path d="M0,0 l12,6 l-12,6" style="fill:none;fill-opacity:0;stroke:black;stroke-width:1;stroke-dasharray:30,0;"/>
+</marker>
+</defs>
+<g>
+<!-- Classe Grille (0,0) -->
+<g aria-labelledby="Grille">
+<use xlink:href="#classe" x="0" y="0" />
+<text x="30" y="12" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Grille</text>
+<desc id="Grille">Classe Grille</desc>
+</g>
+
+<!-- Classe Cellule (140,0) -->
+<g aria-labelledby="Cellule">
+<use xlink:href="#classe" x="140" y="0" />
+<text x="170" y="12" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Cellule</text>
+<desc id="Cellule">Classe Cellule</desc>
+</g>
+
+<g aria-labelledby="1">
+<line x1="140" y1="25" x2="60" y2="25" style="stroke: black; stroke-width: 0.6;marker-end:url(#agregation); " />
+<text x="70" y="15" text-anchor="middle" font-size="8" fill="black" dominant-baseline="central">
+1</text>
+<text x="130" y="15" text-anchor="middle" font-size="8" fill="black" dominant-baseline="central">
+4..*</text>
+<desc id="1">Chaque instance de Cellule est agrégée par une instance de Grille. Chaque instance de Grille agrège 4 à -1 instances de Cellule</desc>
+</g>
+
+
+<g aria-labelledby="2">
+<polyline points="200,25 220,25 220,-20 170,-20 170,0" style="fill:none; stroke: black; stroke-width: 0.6; " />
+<text x="210" y="35" text-anchor="middle" font-size="8" fill="black" dominant-baseline="central">
+3..8</text>
+<text x="160" y="-10" text-anchor="middle" font-size="8" fill="black" dominant-baseline="central">
+3..8</text>
+<desc id="2">Association réflexive. Chaque instance de Cellule est liée à 3 à 8 instances de Cellule. Chaque instance de Celluleest liée à 3 à 8 instances de Cellule</desc>
+</g>
+
+
+</g>
+</svg>

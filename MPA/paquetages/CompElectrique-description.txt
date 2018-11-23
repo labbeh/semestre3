@@ -1,0 +1,44 @@
+
+=====
+Structure de l'arborescence
+
+====
+Ensemble des classes
+
+===
+Surclasse CompElectrique
+
+Dans le niveau 0 avec pour abscisse 40
+
+Ensemble des subclasses :
+* Interrupteur
+* Lampe
+
+===
+Surclasse Interrupteur
+
+Dans le niveau 1 avec pour abscisse 0
+
+Superclasse : CompElectrique
+
+===
+Surclasse Lampe
+
+Dans le niveau 1 avec pour abscisse 80
+
+Superclasse : CompElectrique
+
+====
+Description des niveaux
+
+===
+Fiche du niveau 0
+
+Contient la classe CompElectrique
+
+===
+Fiche du niveau 1
+
+Contient les classes suivantes :
+ * Interrupteur
+ * Lampe

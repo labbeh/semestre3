@@ -1,0 +1,11 @@
+Sommet
+
+* Processus
+ * Activite
+ * Composite
+  * Linéaire
+  * Embranchement
+  * Boucle
+  * Test
+Sommet 1 ---- 1 Processus
+c Composite 0..1 <<>>----- 1..* Processus

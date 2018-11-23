@@ -1,0 +1,4 @@
+<process> boucle condition1 condition2
+
+activité2
+

@@ -1,0 +1,86 @@
+
+=====
+Structure de l'arborescence
+
+====
+Ensemble des classes
+
+====
+Surclasse Processus
+
+Dans le niveau 0 avec pour abscisse 140
+
+Ensemble des subclasses :
+* Activite
+* Composite
+
+====
+Surclasse Activite
+
+Dans le niveau 1 avec pour abscisse 100
+
+Superclasse : Processus
+
+====
+Surclasse Composite
+
+Dans le niveau 1 avec pour abscisse 180
+
+Superclasse : Processus
+Ensemble des subclasses :
+* Linéaire
+* Embranchement
+* Boucle
+* Test
+
+====
+Surclasse Linéaire
+
+Dans le niveau 2 avec pour abscisse 60
+
+Superclasse : Composite
+
+====
+Surclasse Embranchement
+
+Dans le niveau 2 avec pour abscisse 140
+
+Superclasse : Composite
+
+====
+Surclasse Boucle
+
+Dans le niveau 2 avec pour abscisse 220
+
+Superclasse : Composite
+
+====
+Surclasse Test
+
+Dans le niveau 2 avec pour abscisse 300
+
+Superclasse : Composite
+
+====
+Description des niveaux
+
+====
+Fiche du niveau 0
+
+Contient la classe Processus
+
+====
+Fiche du niveau 1
+
+Contient les classes suivantes :
+ * Activite
+ * Composite
+
+====
+Fiche du niveau 2
+
+Contient les classes suivantes :
+ * Linéaire
+ * Embranchement
+ * Boucle
+ * Test

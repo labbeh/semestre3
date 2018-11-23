@@ -1,0 +1,79 @@
+***Miscellanée***
+
+Itératif = additif et correctif.
+
+Internet nous donne une bonne définition de ce qu'est une miscellané. C'est un genre littéraire composé de textes divers, « mélangés » avec une unité plus ou moins manifeste. C'est donc un genre hybride et morcelé.
+
+S'il fallait définir en un mot le projet Latitude, le terme de réflexivité serait sans doute un candidat sérieux. En effet, au delà de l'objectif de ce projet, la démarche méthodologique est clairement d'appliquer des  outils de l'analyse, de la conception et du développement issus des activités extérieures à ce projet mais aussi, inversement, à introduire dans les actes quotidiens les leçons issues de ce projet. La démarche est donc clairement et volontairement réflexive puisqu'elle engage à un retour de la pensée sur elle-même, à un mouvement pendulaire permanent entre le développement et son usage, avec en toile de fond la conception universelle placée dans l'acronyme Latitude.
+
+Le terme exaptation est un emprunt à l'anglais. Il qualifie une fonction issue d'une sélection qui existait préalablement mais pour un usage différent. L'exemple emblématique est le vol des oiseaux grâce aux plumes. Ces dernières démontrent une parfaite adaptation au vol mais leur fonction première était celle de la thermorégulation mais aussi conservé par un usage de la séduction entre genres d'une espèce. L'exaptation fait apparaitre une fonction seconde qui n'est pas une évolution mais une réutilisation d'une fonction première différente.
+
+Interaction positives : coopération ,  participation ,  adaptation ,  intégration ,  émulation et compétition .
+interactions ambivalentes :  compétition ,  concurrence
+La concourance est une coopération afin de concourir à un même objectif ou pour le moins à des actions communes (définition FS).
+
+=====
+Projet
+
+====
+Conseil, controle, correction
+
+le projet de diagramme consiste à réaliser un diagramme de classe UML. Ce type de diagramme n"nécessite de respecter des contraintes, à l fois des règles et des recommandations issues de la définition d'un tel diagramme mais aussi des contraintes issues du tracé en vue de respecter certaines règles de lisibilité et de visibilité.
+
+Il en vient qu'il faut se poser la question du positionnement du logiciel dans son interaction avec l'humain, le concepteur. Nous identifions trois niveaux d'intervention en commençant par celui de conseiller pour finir à celui de correcteur en passant par le contrôleur. Pour la correction, une autre question vient immédiatement : celle-ci doit-elle survenir automatiquement, sans autorisation, et doit-elle faire l'objet d'un signalement ?
+
+=====
+Nom des classes
+
+====
+Caractéristique des noms de classes en Java et UML
+
+Les classes sont écrites, par recommandation, selon le "camel case" c'est-à-dire qu'il faut écrire les noms en lettres minuscules sauf la première et avec la mise en majuscule de lettres qui permettent d'augmenter la lisibilité si le nom est composé. Cette écriture se pratique couramment en informatique où les espaces ne sont pas possibles et où les tirets bas (traits de soulignement) alourdissent la lecture autant que l'écriture.
+
+Nous proposons de placer une méthode lors de l'inscription du nom d'une classe pour générer un avertissement au concepteur.
+
+====
+Placement en SVG
+
+Le nom des classes est actuellement défini comme suit :
+
+__code
+lignes.add("<!-- Classe "+nom+" ("+x+","+y+") -->");
+lignes.add("<g aria-labelledby=\""+cle+"\">");
+lignes.add("<use xlink:href=\"#classe\" x=\""+x+"\" y=\""+y+"\" />");
+lignes.add("<text x=\""+(x+30)+"\" y=\""+(y+12)+"\" text-anchor=\"middle\" font-size=\"10\" dominant-baseline=\"central\">");
+lignes.add(nom+"</text>");
+lignes.add("<desc id=\""+cle+"\">Classe "+nom+"</desc>");
+lignes.add("</g>");
+lignes.add("");
+__fincode
+
+On y voit deux améliorations possibles :
+* réutiliser la méthode getDescription développée pour les associations afin de valoriser le polymorphisme ;
+* dimensionner le texte afin qu'il tienne correctement dans le cadre d'une classe.
+
+Le dimensionnement conduit à l'introduction d'une méthode getDimNom qui va retourner la taille optimale du nom de la classe pour qu'il soit contenu correctement dans le cadre dédié. L'observation nécessairement visuelle, permet de définir une longueur maximale d'un mot pour qu'il tienne dans une largeur de 60 avec la taille définie par défaut (font-size=10).
+
+Nous déduisons le code suivant :
+
+__code
+int getDimNom() {
+ int taille = nom.length();
+ if (taille<=12) taille = 10;
+ else taille = 120/taille;
+ return taille;
+}
+__fincode
+
+Nous voyons qu'il faudrait peut-être signaler par un avertissement les cas où la taille retournée serait inférieure à une limite de visibilité. En effet, la méthode retourne les valeurs suivantes :
+
+__tableau Taille de la police
+Longueur	Taille proposée
+≤12	10
+13	9
+14-15	8
+16-17	7
+18-20	6
+≥21	≤5
+
+Remarquons que dans le code proposé, nous avons réutilisé la variable "taille" qui désigne d'abord la longueur du mot puis la taille de la police. Si cet habitude est fréquente chez les programmeurs pour «économiser» les variables, elle est un risque sémantique et d'erreur dans un abus d'usage.

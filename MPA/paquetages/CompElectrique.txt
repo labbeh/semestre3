@@ -1,0 +1,4 @@
+*CompElectrique
+ *Interrupteur
+ *Lampe
+c CompElectrique 1..*----<<>> 1 Interrupteur

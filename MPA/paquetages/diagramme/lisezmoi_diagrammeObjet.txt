@@ -1,0 +1,20 @@
+Pour expliquer, transmettre une connaissance, à l'instar de Napoléon, nous savons qu'un croquis vaut un long discours. Il est donc intéressant de permettre d'augmenter un texte avec des figures qui permettront d'illustrer un discours, de faciliter la compréhension d'une présentation, de faciliter l'appropriation d'un concept, de convaincre de la pertinence d'un modèle.
+
+Un non-voyant, comme une tautologie, est une personne qui n'a pas une perception des informations visuelles qui lui parviennent de son environnement. Sans doute n'y fait-on pas attention, mais le terme d'imagination est lui aussi issu de cette perception visuelle si largement répandue.
+
+
+Diagramme d'objets (UML)
+
+Comme tous les diagrammes UML, celui-ci est visuel. Suivant des conventions d'écritures, il fourni une vue plus ou moins globale qui peut s'assimiler à une photographie à un instant donné. Autrement dit, un diagramme d'objets représente une instance spécifique d'un diagramme de classes à un moment précis.Il est constitué d'instances de classes et d'instances d'associations.
+
+Ces diagrammes sont donc utiles pour donner un exemple permettant la compréhension mais aussi étudier la pertinence et la robustesse du modèle dans quelques cas particuliers.
+
+Avec Latitude, les diagrammes objets sont décrits avec la balise __diagobjet. Ils vont contenir des objets et des liens. Les objets sont nommés en suivant le formalisme UML ; soulignés, ils contiennent l'identifiant et, séparé par deux-points, la classe dont l'objet est l'instance. le lien est potentiellement orienté.
+
+Les diagrammes ontologiques qu'il est possible de réaliser via la même classe DiagrammeObjet développée, sont constitués d'entités, on retrouvera visuellement, les mêmes rectangles mais l'identifiant interne ne sera pas souligné. En plus des liens qui peuvent être oriientés, on s'autorise les liens bidirectionnels. Enfin, sur ces liens, il est possible de faire figurer une étiquette. On parle aussi de concepts, de relations et de propriétés.
+
+Nous n'avons pas interdit la présence d'étiquettes sur les diagrammes objet afin de permettre cette augmentation pouvant préciser l'attribut ou la méthode qui met en relation deux objets.
+
+Aussi, nous avons introduit la notion de graphe simple. Rappelons la définition de tels graphes : «graphe dans lequel chaque paire de sommets est reliée par au plus une arête et aucun sommet ne possède de boucle.» Il est donc possible d'utiliser la balise __graphesimple
+
+

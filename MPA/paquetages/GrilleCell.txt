@@ -1,0 +1,4 @@
+Grille
+Cellule
+Grille 1<>----4..* Cellule
+Cellule 3..8 ---- 3..8 Cellule

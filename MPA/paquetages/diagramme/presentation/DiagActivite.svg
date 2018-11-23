@@ -1,0 +1,178 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+ width="17.0cm" height="13.3cm" viewBox="-50 -50 460 350" zoomAndPan="disable" 
+xmlns="http://www.w3.org/2000/svg" version="1.1">
+<defs>
+<!-- classe 60 sur 50 -->
+<g id="classe">
+<rect x="0" y="0" width="60" height="50" style="fill:white; stroke:black; stroke-width:0.8;"/>
+<line x1="0" y1="30" x2="60" y2="30" style="stroke: black; stroke-width: 0.4;" />
+<line x1="0" y1="40" x2="60" y2="40" style="stroke: black; stroke-width: 0.4;" />
+</g>
+
+<!-- activite 70 25 diagrammes d'activité -->
+<g id="activite">
+<rect x="0" y="0" width="70" height="25" rx="5" ry="5" style="fill:white; stroke:black; stroke-width:0.6;"/>
+</g>
+
+<!-- acteur 28 41 diagramme de séquence -->
+<g id="acteur">
+<circle cx="14" cy="4" r="4" fill="none"/>
+<line x1="14" y1="8" x2="14" y2="26" />
+<line x1="0" y1="12" x2="28" y2="12" />
+<line x1="14" y1="26" x2="6" y2="41" />
+<line x1="14" y1="26" x2="22" y2="41" />
+</g>
+
+<!-- objet 60 30 digramme de séquence -->
+<g id="objet">
+<rect x="0" y="0" width="60" height="30" style="fill:white; stroke:black; stroke-width:0.8;"/>
+</g>
+
+
+<!-- activitedebut 22 22 diagramme commence par une activité de début -->
+<g id="activitedebut">
+<circle cx="5" cy="5" r="5" style="fill:black; stroke:none; stroke-width:0.8;"/>
+</g>
+
+<!-- activitefin 24 24 Fin d'activité -->
+<g id="activitefin">
+<circle cx="7" cy="7" r="7" style="fill:white; stroke:black; stroke-width:1;"/>
+<circle cx="7" cy="7" r="4"  style="fill:black; stroke:none; stroke-width:0.4;"/>
+</g>
+
+
+<!-- Marqueurs -->
+
+<!-- agregation 16 10 -->
+<marker id="agregation" markerWidth="16" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto" refX="15" refY="5">
+<path d="M0,5 l8,-5 l8,5 l-8,5 l-8,-5" style="fill:white;fill-opacity:1.0;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- composition 16 10 -->
+<marker id="composition" markerWidth="16" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto" refX="15" refY="5">
+<path d="M0,5 l8,-5 l8,5 l-8,5 l-8,-5" style="fill:black;fill-opacity:1.0;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- heritage 16 16 représente une flèche fermée -->
+<marker id="heritage" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto" refX="16" refY="8">
+<path d="M1,0 l15,8 l-15,8 l0,-16 " style="fill:white;fill-opacity:1.0;stroke:black;stroke-width:0.6;stroke-dasharray:30,0;"/>
+</marker>
+
+
+<!-- transition 6 3 diag d'activité petite flèche ouverte -->
+<marker id="transition" markerWidth="6" markerHeight="6" markerUnits="userSpaceOnUse" orient="auto" refX="6" refY="3">
+<path d="M0,0 l6,3 l-6,3" style="fill:none;fill-opacity:0.5;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- message 12 6 diag de séquence flèche ouverte -->
+<marker id="message" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="12" refY="6">
+<path d="M0,0 l12,6 l-12,6" style="fill:none;fill-opacity:0;stroke:black;stroke-width:1;stroke-dasharray:30,0;"/>
+</marker>
+</defs>
+<g>
+<!-- Classe Sommet (0,0) -->
+<g aria-labelledby="Sommet">
+<use xlink:href="#classe" x="0" y="0" />
+<text x="30" y="12" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Sommet</text>
+<desc id="Sommet">Classe Sommet</desc>
+</g>
+
+<!-- Surclasse Processus (140,0) -->
+<g aria-labelledby="Processus">
+<use xlink:href="#classe" x="140" y="0" />
+<text x="170" y="12" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Processus</text>
+<desc id="Processus">Classe Processus</desc>
+</g>
+
+<g aria-labelledby="heritage-Processus">
+<line x1="170" y1="75" x2="170" y2="50" style="stroke: black; stroke-width: 0.6;marker-end:url(#heritage); " />
+<line x1="130" y1="75" x2="210" y2="75" style="stroke: black; stroke-width: 0.6; " />
+<line x1="130" y1="75" x2="130" y2="100" style="stroke: black; stroke-width: 0.6; " />
+<line x1="210" y1="75" x2="210" y2="100" style="stroke: black; stroke-width: 0.6; " />
+<text x="10" y="10" font-size="1" > </text>
+<desc id="heritage-Processus">Activite, Composite,  héritent de Processus</desc>
+</g>
+
+<!-- Surclasse Activite (100,100) -->
+<g aria-labelledby="Activite">
+<use xlink:href="#classe" x="100" y="100" />
+<text x="130" y="112" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Activite</text>
+<desc id="Activite">Classe Activite</desc>
+</g>
+
+<!-- Surclasse Composite (180,100) -->
+<g aria-labelledby="Composite">
+<use xlink:href="#classe" x="180" y="100" />
+<text x="210" y="112" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Composite</text>
+<desc id="Composite">Classe Composite</desc>
+</g>
+
+<g aria-labelledby="heritage-Composite">
+<line x1="210" y1="175" x2="210" y2="150" style="stroke: black; stroke-width: 0.6;marker-end:url(#heritage); " />
+<line x1="90" y1="175" x2="330" y2="175" style="stroke: black; stroke-width: 0.6; " />
+<line x1="90" y1="175" x2="90" y2="200" style="stroke: black; stroke-width: 0.6; " />
+<line x1="170" y1="175" x2="170" y2="200" style="stroke: black; stroke-width: 0.6; " />
+<line x1="250" y1="175" x2="250" y2="200" style="stroke: black; stroke-width: 0.6; " />
+<line x1="330" y1="175" x2="330" y2="200" style="stroke: black; stroke-width: 0.6; " />
+<text x="10" y="10" font-size="1" > </text>
+<desc id="heritage-Composite">Linéaire, Embranchement, Boucle, Test,  héritent de Composite</desc>
+</g>
+
+<!-- Surclasse Linéaire (60,200) -->
+<g aria-labelledby="Linéaire">
+<use xlink:href="#classe" x="60" y="200" />
+<text x="90" y="212" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Linéaire</text>
+<desc id="Linéaire">Classe Linéaire</desc>
+</g>
+
+<!-- Surclasse Embranchement (140,200) -->
+<g aria-labelledby="Embranchement">
+<use xlink:href="#classe" x="140" y="200" />
+<text x="170" y="212" text-anchor="middle" font-size="9" fill="black" dominant-baseline="central">
+Embranchement</text>
+<desc id="Embranchement">Classe Embranchement</desc>
+</g>
+
+<!-- Surclasse Boucle (220,200) -->
+<g aria-labelledby="Boucle">
+<use xlink:href="#classe" x="220" y="200" />
+<text x="250" y="212" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Boucle</text>
+<desc id="Boucle">Classe Boucle</desc>
+</g>
+
+<!-- Surclasse Test (300,200) -->
+<g aria-labelledby="Test">
+<use xlink:href="#classe" x="300" y="200" />
+<text x="330" y="212" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Test</text>
+<desc id="Test">Classe Test</desc>
+</g>
+
+<g aria-labelledby="1">
+<line x1="60" y1="25" x2="140" y2="25" style="stroke: black; stroke-width: 0.6; " />
+<text x="70" y="15" text-anchor="middle" font-size="8" fill="black" dominant-baseline="central">
+1</text>
+<text x="130" y="15" text-anchor="middle" font-size="8" fill="black" dominant-baseline="central">
+1</text>
+<desc id="1">Chaque instance de Processus est liée à une seule instance de Sommet. Chaque instance de Sommet est liée à une seule instance de Processus</desc>
+</g>
+
+
+<polyline points="200,25 260,25 260,125 240,125" style="fill:none; stroke: black; stroke-width: 0.6;marker-end:url(#composition); " />
+<text x="250" y="135" text-anchor="middle" font-size="8" fill="black" dominant-baseline="central">
+0..1</text>
+<text x="210" y="15" text-anchor="middle" font-size="8" fill="black" dominant-baseline="central">
+1..*</text>
+
+
+</g>
+</svg>

@@ -1,0 +1,108 @@
+Diagramme d'activité
+
+Ecriture de haut en bas.
+Peut-être  réalisation de bas en haut
+
+Entrée - activité de début une seule
+Sortie activité de sortie une ou plus
+
+Activité
+Sous-activité -> incluse dans une activité composite
+
+Barre de synchronisation --------- ou souligné
+Test <>
+
+Après une barre ou un test : liste des éléments sortants numérotés
+
+<>
+1 vrai
+2 faux
+
+1 vrai
+activité1
+activité2
+
+2 faux
+<>
+1 vrai
+2 faux
+
+1 vrai
+activité3
+activité4
+
+2 faux
+
+<> signale la fin du test 2
+
+activité5
+<> signale la fin du premier test
+
+activité5
+
+et voilà la fin du diagramme, du processus
+
+
+On pourrait ajouter <A> et <B> pour créer des couloirs d'activité, il faut alors en préambule déclarer les divers objets intervenants
+
+Les tirets ne sont pas signalés par leur nombre mais par un "ligne de tirets" moins parlant.
+Représenter
+* implicitement les transitions
+* prévoir l'absence de transition
+* comment traiter une transition ascendante ? À gauche ou à droite ?
+
+Préciser la position des branches après un test
+* gauche et droite
+* ou une centrée
+Lettres clés :
+g
+c
+d
+
+Les numéros 1 et 2 ou 0 et 1 ne précisent  pas assez bien la position
+
+Prévoir un test débranchement et un test jonction différencié surtout pour le retour ascendant
+L'embranchement (barre de synchronisation) est moins ambigu.
+
+
+activité1
+
+<> retour à droite
+c
+d
+
+<>  débranchement, test
+g -> g va vers la fin
+c
+
+c
+activité2
+transition remontante vers la jonction
+
+g
+fin
+
+
+
+activité fin pourrait être signalée si il y en a plusieurs (numéro par exemple)
+Symbole possible pour la jonction ><
+Branche : au moins huit signes égal
+
+=====
+Synchronisation d'activités
+
+Il est fondamental d'anticiper le délai de réalisation et de réaction si la tache est déléguée.
+
+Trois niveaux de délégation :
+A. le cours est fait par quelqu'un d'autre
+B l'évaluation est faite par un tiers
+C la correction est effectuée à partir d'une grille d'évaluation
+On peut ainsi parler de divers niveaux de sous-traitance, avec des points de contrôle ou au contraire une grande liberté et autonomie
+
+A totale autonomie
+B autonomie partielle, cahier des charges
+C aucune autonomie, procédure et jalons pré-établis
+
+Exemple : doit-on prévoir un ou deux processus ? Le sport le mardi, doit-on avoir deux processus ou un seul avec une disjonction ?
+
+

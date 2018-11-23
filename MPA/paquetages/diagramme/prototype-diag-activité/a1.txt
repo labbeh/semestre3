@@ -1,0 +1,8 @@
+<essai> boucle a ¬a
+gros
+activité3
+
+<gros> embranchement 
+activité1
+activité2
+

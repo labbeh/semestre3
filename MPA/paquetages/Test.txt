@@ -1,0 +1,3 @@
+Interrupteur
+Lampe
+Interrupteur 1 <<>>----* Lampe

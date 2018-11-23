@@ -1,0 +1,114 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+ width="17.0cm" height="19.8cm" viewBox="-50 -50 550 649" zoomAndPan="disable" 
+xmlns="http://www.w3.org/2000/svg" version="1.1">
+<defs>
+<!-- classe 60 sur 50 -->
+<g id="classe">
+<rect x="0" y="0" width="60" height="50" style="fill:white; stroke:black; stroke-width:0.8;"/>
+<line x1="0" y1="30" x2="60" y2="30" style="stroke: black; stroke-width: 0.4;" />
+<line x1="0" y1="40" x2="60" y2="40" style="stroke: black; stroke-width: 0.4;" />
+</g>
+
+<!-- activite 70 25 diagrammes d'activité -->
+<g id="activite">
+<rect x="0" y="0" width="70" height="25" rx="5" ry="5" style="fill:white; stroke:black; stroke-width:0.6;"/>
+</g>
+
+<!-- acteur 28 41 diagramme de séquence -->
+<g id="acteur">
+<circle cx="14" cy="4" r="4" fill="none"/>
+<line x1="14" y1="8" x2="14" y2="26" />
+<line x1="0" y1="12" x2="28" y2="12" />
+<line x1="14" y1="26" x2="6" y2="41" />
+<line x1="14" y1="26" x2="22" y2="41" />
+</g>
+
+<!-- objet 60 30 digramme de séquence -->
+<g id="objet">
+<rect x="0" y="0" width="60" height="30" style="fill:white; stroke:black; stroke-width:0.8;"/>
+</g>
+
+
+<!-- activitedebut 22 22 diagramme commence par une activité de début -->
+<g id="activitedebut">
+<circle cx="5" cy="5" r="5" style="fill:black; stroke:none; stroke-width:0.8;"/>
+</g>
+
+<!-- activitefin 24 24 Fin d'activité -->
+<g id="activitefin">
+<circle cx="7" cy="7" r="7" style="fill:white; stroke:black; stroke-width:1;"/>
+<circle cx="7" cy="7" r="4"  style="fill:black; stroke:none; stroke-width:0.4;"/>
+</g>
+
+
+<!-- Marqueurs -->
+
+<!-- agregation 16 10 -->
+<marker id="agregation" markerWidth="16" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto" refX="15" refY="5">
+<path d="M0,5 l8,-5 l8,5 l-8,5 l-8,-5" style="fill:white;fill-opacity:1.0;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- composition 16 10 -->
+<marker id="composition" markerWidth="16" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto" refX="15" refY="5">
+<path d="M0,5 l8,-5 l8,5 l-8,5 l-8,-5" style="fill:black;fill-opacity:1.0;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- heritage 16 16 représente une flèche fermée -->
+<marker id="heritage" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto" refX="16" refY="8">
+<path d="M1,0 l15,8 l-15,8 l0,-16 " style="fill:white;fill-opacity:1.0;stroke:black;stroke-width:0.6;stroke-dasharray:30,0;"/>
+</marker>
+
+
+<!-- transition 6 3 diag d'activité petite flèche ouverte -->
+<marker id="transition" markerWidth="6" markerHeight="6" markerUnits="userSpaceOnUse" orient="auto" refX="6" refY="3">
+<path d="M0,0 l6,3 l-6,3" style="fill:none;fill-opacity:0.5;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- message 12 6 diag de séquence flèche ouverte -->
+<marker id="message" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="12" refY="6">
+<path d="M0,0 l12,6 l-12,6" style="fill:none;fill-opacity:0;stroke:black;stroke-width:1;stroke-dasharray:30,0;"/>
+</marker>
+</defs>
+<g>
+<!-- Activité Entrée -->
+<use xlink:href="#activitedebut" x="85" y="12" />
+<line x1="90" y1="22" x2="90" y2="50" style="stroke: black; stroke-width: 0.6;marker-end:url(#transition); " />
+
+<polygon points="90,50 100,57 90,64 80,57" style="fill:white; stroke:black; stroke-width:0.6;" />
+<line x1="90" y1="64" x2="90" y2="84" style="stroke: black; stroke-width: 0.6;marker-end:url(#transition); " />
+<line x1="10" y1="84" x2="170" y2="84" style="stroke: black; stroke-width: 1.2; " />
+<line x1="45" y1="84" x2="45" y2="104" style="stroke: black; stroke-width: 0.6;marker-end:url(#transition); " />
+<use xlink:href="#activite" x="10" y="104" />
+<text x="45" y="116" text-anchor="middle" font-size="10" dominant-baseline="central" >
+activité1</text>
+
+<line x1="45" y1="129" x2="45" y2="149" style="stroke: black; stroke-width: 0.6;marker-end:url(#transition); " />
+<line x1="135" y1="84" x2="135" y2="104" style="stroke: black; stroke-width: 0.6;marker-end:url(#transition); " />
+<use xlink:href="#activite" x="100" y="104" />
+<text x="135" y="116" text-anchor="middle" font-size="10" dominant-baseline="central" >
+activité2</text>
+
+<line x1="135" y1="129" x2="135" y2="149" style="stroke: black; stroke-width: 0.6;marker-end:url(#transition); " />
+<line x1="10" y1="149" x2="170" y2="149" style="stroke: black; stroke-width: 1.2; " />
+<line x1="90" y1="149" x2="90" y2="169" style="stroke: black; stroke-width: 0.6;marker-end:url(#transition); " />
+<polygon points="90,169 100,176 90,183 80,176" style="fill:white; stroke:black; stroke-width:0.6;" />
+<text x="100" y="171" text-anchor="start" font-size="9" dominant-baseline="central" >
+¬a</text>
+<polyline points="100,176 135,176 135,238 " style="fill:none; stroke: black; stroke-width: 0.6; " />
+<text x="85" y="190" text-anchor="end" font-size="9" dominant-baseline="central" >
+a</text>
+<line x1="90" y1="183" x2="90" y2="203" style="stroke: black; stroke-width: 0.6;marker-end:url(#transition); " />
+<use xlink:href="#activite" x="55" y="203" />
+<text x="90" y="215" text-anchor="middle" font-size="10" dominant-baseline="central" >
+activité3</text>
+
+<polyline points="90,228 90,238 0,238 0,57 80,57" style="fill:none; stroke: black; stroke-width: 0.6;marker-end:url(#transition); " />
+
+<line x1="135" y1="238" x2="135" y2="263" style="stroke: black; stroke-width: 0.6;marker-end:url(#transition); " />
+<use xlink:href="#activitefin" x="128" y="263" />
+
+</g>
+</svg>

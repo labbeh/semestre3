@@ -1,0 +1,180 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+ width="17.0cm" height="12.8cm" viewBox="-50 -50 480 350" zoomAndPan="disable" 
+xmlns="http://www.w3.org/2000/svg" version="1.1">
+<defs>
+<!-- classe 60 sur 50 -->
+<g id="classe">
+<rect x="0" y="0" width="60" height="50" style="fill:white; stroke:black; stroke-width:0.8;"/>
+<line x1="0" y1="30" x2="60" y2="30" style="stroke: black; stroke-width: 0.4;" />
+<line x1="0" y1="40" x2="60" y2="40" style="stroke: black; stroke-width: 0.4;" />
+</g>
+
+<!-- activite 70 25 diagrammes d'activité -->
+<g id="activite">
+<rect x="0" y="0" width="70" height="25" rx="5" ry="5" style="fill:white; stroke:black; stroke-width:0.6;"/>
+</g>
+
+<!-- acteur 28 41 diagramme de séquence -->
+<g id="acteur">
+<circle cx="14" cy="4" r="4" fill="none"/>
+<line x1="14" y1="8" x2="14" y2="26" />
+<line x1="0" y1="12" x2="28" y2="12" />
+<line x1="14" y1="26" x2="6" y2="41" />
+<line x1="14" y1="26" x2="22" y2="41" />
+</g>
+
+<!-- objet 60 30 digramme de séquence -->
+<g id="objet">
+<rect x="0" y="0" width="60" height="30" style="fill:white; stroke:black; stroke-width:0.8;"/>
+</g>
+
+
+<!-- activitedebut 22 22 diagramme commence par une activité de début -->
+<g id="activitedebut">
+<circle cx="5" cy="5" r="5" style="fill:black; stroke:none; stroke-width:0.8;"/>
+</g>
+
+<!-- activitefin 24 24 Fin d'activité -->
+<g id="activitefin">
+<circle cx="7" cy="7" r="7" style="fill:white; stroke:black; stroke-width:1;"/>
+<circle cx="7" cy="7" r="4"  style="fill:black; stroke:none; stroke-width:0.4;"/>
+</g>
+
+
+<!-- Marqueurs -->
+
+<!-- agregation 16 10 -->
+<marker id="agregation" markerWidth="16" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto" refX="15" refY="5">
+<path d="M0,5 l8,-5 l8,5 l-8,5 l-8,-5" style="fill:white;fill-opacity:1.0;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- composition 16 10 -->
+<marker id="composition" markerWidth="16" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto" refX="15" refY="5">
+<path d="M0,5 l8,-5 l8,5 l-8,5 l-8,-5" style="fill:black;fill-opacity:1.0;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- heritage 16 16 représente une flèche fermée -->
+<marker id="heritage" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto" refX="16" refY="8">
+<path d="M1,0 l15,8 l-15,8 l0,-16 " style="fill:white;fill-opacity:1.0;stroke:black;stroke-width:0.6;stroke-dasharray:30,0;"/>
+</marker>
+
+
+<!-- transition 6 3 diag d'activité petite flèche ouverte -->
+<marker id="transition" markerWidth="6" markerHeight="6" markerUnits="userSpaceOnUse" orient="auto" refX="6" refY="3">
+<path d="M0,0 l6,3 l-6,3" style="fill:none;fill-opacity:0.5;stroke:black;stroke-width:0.6;"/>
+</marker>
+
+<!-- message 12 6 diag de séquence flèche ouverte -->
+<marker id="message" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="12" refY="6">
+<path d="M0,0 l12,6 l-12,6" style="fill:none;fill-opacity:0;stroke:black;stroke-width:1;stroke-dasharray:30,0;"/>
+</marker>
+</defs>
+<g>
+<!-- Classe Bloc (0,0) -->
+<g aria-labelledby="Bloc">
+<use xlink:href="#classe" x="0" y="0" />
+<text x="30" y="12" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Bloc</text>
+<desc id="Bloc">Classe Bloc</desc>
+</g>
+
+<!-- Surclasse Individu (160,0) -->
+<g aria-labelledby="Individu">
+<use xlink:href="#classe" x="160" y="0" />
+<text x="190" y="12" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Individu</text>
+<desc id="Individu">Classe Individu</desc>
+</g>
+
+<g aria-labelledby="heritage-Individu">
+<line x1="190" y1="75" x2="190" y2="50" style="stroke: black; stroke-width: 0.6;marker-end:url(#heritage); " />
+<line x1="30" y1="75" x2="350" y2="75" style="stroke: black; stroke-width: 0.6; " />
+<line x1="30" y1="75" x2="30" y2="100" style="stroke: black; stroke-width: 0.6; " />
+<line x1="110" y1="75" x2="110" y2="100" style="stroke: black; stroke-width: 0.6; " />
+<line x1="190" y1="75" x2="190" y2="100" style="stroke: black; stroke-width: 0.6; " />
+<line x1="270" y1="75" x2="270" y2="100" style="stroke: black; stroke-width: 0.6; " />
+<line x1="350" y1="75" x2="350" y2="100" style="stroke: black; stroke-width: 0.6; " />
+<text x="10" y="10" font-size="1" > </text>
+<desc id="heritage-Individu">Paragraphe, Table, Figure, Code, SautDePage,  héritent de Individu</desc>
+</g>
+
+<!-- Surclasse Paragraphe (0,100) -->
+<g aria-labelledby="Paragraphe">
+<use xlink:href="#classe" x="0" y="100" />
+<text x="30" y="112" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Paragraphe</text>
+<desc id="Paragraphe">Classe Paragraphe</desc>
+</g>
+
+<!-- Surclasse Table (80,100) -->
+<g aria-labelledby="Table">
+<use xlink:href="#classe" x="80" y="100" />
+<text x="110" y="112" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Table</text>
+<desc id="Table">Classe Table</desc>
+</g>
+
+<!-- Surclasse Figure (160,100) -->
+<g aria-labelledby="Figure">
+<use xlink:href="#classe" x="160" y="100" />
+<text x="190" y="112" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Figure</text>
+<desc id="Figure">Classe Figure</desc>
+</g>
+
+<g aria-labelledby="heritage-Figure">
+<line x1="190" y1="175" x2="190" y2="150" style="stroke: black; stroke-width: 0.6;marker-end:url(#heritage); " />
+<line x1="150" y1="175" x2="230" y2="175" style="stroke: black; stroke-width: 0.6; " />
+<line x1="150" y1="175" x2="150" y2="200" style="stroke: black; stroke-width: 0.6; " />
+<line x1="230" y1="175" x2="230" y2="200" style="stroke: black; stroke-width: 0.6; " />
+<text x="10" y="10" font-size="1" > </text>
+<desc id="heritage-Figure">Histogramme, Camembert,  héritent de Figure</desc>
+</g>
+
+<!-- Surclasse Histogramme (120,200) -->
+<g aria-labelledby="Histogramme">
+<use xlink:href="#classe" x="120" y="200" />
+<text x="150" y="212" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Histogramme</text>
+<desc id="Histogramme">Classe Histogramme</desc>
+</g>
+
+<!-- Surclasse Camembert (200,200) -->
+<g aria-labelledby="Camembert">
+<use xlink:href="#classe" x="200" y="200" />
+<text x="230" y="212" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Camembert</text>
+<desc id="Camembert">Classe Camembert</desc>
+</g>
+
+<!-- Surclasse Code (240,100) -->
+<g aria-labelledby="Code">
+<use xlink:href="#classe" x="240" y="100" />
+<text x="270" y="112" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+Code</text>
+<desc id="Code">Classe Code</desc>
+</g>
+
+<!-- Surclasse SautDePage (320,100) -->
+<g aria-labelledby="SautDePage">
+<use xlink:href="#classe" x="320" y="100" />
+<text x="350" y="112" text-anchor="middle" font-size="10" fill="black" dominant-baseline="central">
+SautDePage</text>
+<desc id="SautDePage">Classe SautDePage</desc>
+</g>
+
+<g aria-labelledby="1">
+<line x1="160" y1="25" x2="60" y2="25" style="stroke: black; stroke-width: 0.6;marker-end:url(#composition); " />
+<text x="70" y="15" text-anchor="middle" font-size="8" fill="black" dominant-baseline="central">
+1</text>
+<text x="150" y="15" text-anchor="middle" font-size="8" fill="black" dominant-baseline="central">
+*</text>
+<desc id="1">Chaque instance de Individu est composée d'une instance unique de Bloc. Chaque instance de Bloc peut être composant (par erreur fred3) d'un nombre quelconque  d'instances de  Individu</desc>
+</g>
+
+
+</g>
+</svg>

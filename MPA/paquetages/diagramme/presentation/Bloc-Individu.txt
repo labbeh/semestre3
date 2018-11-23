@@ -1,0 +1,11 @@
+
+* Bloc(60,0)
+ * Article
+ * Principal
+
+Individu
+
+Bloc 0..1 <<>>---- * Individu
+Principal 0..1 <<>>----- * Individu
+
+c Bloc 1 <<>>------ * Article

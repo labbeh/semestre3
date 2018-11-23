@@ -1,0 +1,14 @@
+
+Bloc
+
+*Individu
+ * Paragraphe
+ * Table
+ * Figure
+  * Histogramme
+  * Camembert
+ * Code
+ * SautDePage
+
+Bloc 1 <<>>---- * Individu
+
