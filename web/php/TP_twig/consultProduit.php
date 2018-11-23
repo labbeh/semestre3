@@ -14,16 +14,16 @@ Twig_Autoloader::register();
 $twig = new Twig_Environment( new Twig_Loader_Filesystem("./tpl"));
 
 // Chargement du template template.tpl
-$tpl = $twig->loadTemplate( "templateConsultAchats.tpl" );
+$tpl = $twig->loadTemplate( "templateConsultProduits.tpl" );
 $tplErr = $twig->loadTemplate("templateErreur.tpl");
 
 $db = DB::getInstance();
 
 try{
-	$tabAchats = $db->getAchats();
+	$tabProduits = $db->getProduits();
 	// génération d'une vue à partir du template
-	if($tabAchats == array()) echo $tplErr->render(array("msgerr" => "EREEUR: Il n'y a aucun tuple dans la base !"));
-	else 				   echo $tpl   ->render(array("titrecentre" => "Liste des achats", "items" => $tabAchats ));
+	if($tabProduits == array()) echo $tplErr->render(array("msgerr" => "EREEUR: Il n'y a aucun tuple dans la base !"));
+	else 				   echo $tpl   ->render(array("titrecentre" => "Liste des achats", "items" => $tabProduits ));
 }
 catch(PDOException $evt){
 	echo $tplErr->render(array("msgerr" => "EREEUR: Table introuvable dans la base !"));

@@ -20,18 +20,15 @@ function contenu()
 	print("\t\t". "<thead>" ."\n");
 
 	print("\t\t" ."<tr>". "\n");
-	print("\t\t". "<th>" ."Celsius". "</th>" ."\n");
-	print("\t\t". "<th>" ."Fahrenheit". "</th>" ."\n");
+		print("\t\t". "<th>" ."Celsius". "</th>" ."\n");
+		print("\t\t". "<th>" ."Fahrenheit". "</th>" ."\n");
 	print("\t\t" ."</tr>". "\n");
 
 	print("\t\t". "</thead>" ."\n");
 
 	for($cpt=0; $cpt<21; $cpt++)
 	{
-		if($cpt % 2 == 0)
-			print("\t\t". "<tr class=\"cell_turquoise\">" ."\n");
-		else
-			print("\t\t". "<tr class=\"cell_vert\">" ."\n");
+		print("\t\t". "<tr class=\"bleu_fonc\">" ."\n");
 
 		print("\t\t\t". "<td>");
 		print($cels);

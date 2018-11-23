@@ -17,17 +17,13 @@ $twig = new Twig_Environment( new Twig_Loader_Filesystem("./tpl"));
 $tpl = $twig->loadTemplate( "templateConsultClients.tpl" );
 $tplErr = $twig->loadTemplate("templateErreur.tpl");
 
-// création du tableau de client
 $db = DB::getInstance();
-//$connStr = 'pgsql:host=localhost port=5432 dbname=lh150094'; 
-//$pdo = new PDO($connStr, 'lh150094', 'phppasswd');
 
 try{
 	$tabCli = $db->getClients();
 	// génération d'une vue à partir du template
 	if($tabCli == array()) echo $tplErr->render(array("msgerr" => "EREEUR: Il n'y a aucun tuple dans la base !"));
 	else 				   echo $tpl   ->render(array("titrecentre" => "Liste des clients", "items" => $tabCli ));
-	//echo $tp1->render(array("items" => $tabCli));
 }
 catch(PDOException $evt){
 	echo $tplErr->render(array("msgerr" => "EREEUR: Table introuvable dans la base !"));
