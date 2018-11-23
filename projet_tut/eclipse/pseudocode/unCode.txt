@@ -1,0 +1,26 @@
+Variables :
+
+    nbEtage : entier
+    action : char
+	 
+DEBUT
+	écrire ( "nombre d’étages :" )
+	lire ( nbEtage )
+	
+    écrire ( "A quel étage la personne est-elle montée :" )
+    lire ( etageCourant )
+	
+	tq etageCourant ≠ 0 et etageCourant ≠ nbEtage faire
+		lire ( action )
+		si hasard (2) = 1 alors etageCourant ++
+		sinon etageCourant –-
+		fsi
+		
+	écrire ( etageCourant ) ftq
+
+	si ( etageCourant = 0 ) alors
+		écrire ( "sortie au rez-de-chaussée" )
+	sinon
+  		écrire ( "sortie au dernier étage" )
+	fsi
+FIN
