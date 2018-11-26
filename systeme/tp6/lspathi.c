@@ -34,7 +34,6 @@ int main()
 
 	for(int i=1; (elts[i] = strtok(NULL, ":")) != NULL; i++);
 
-	//afficher(elts);
 	for(int i=0; elts[i] != NULL; i++)
 	{
 		printf("Option: ");
