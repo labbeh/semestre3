@@ -43,7 +43,7 @@ public class MyEnv extends EnvironmentDescription
 		this.alBox  = new ArrayList<>();
 		this.alWall = new ArrayList<>();
 		
-		InputStream ips = this.getClass().getResourceAsStream("/myenv3.txt");
+		InputStream ips = this.getClass().getResourceAsStream("/myenvTest.txt");
 		InputStreamReader ipsr = new InputStreamReader(ips);
 		Scanner sc = new Scanner(ipsr);
 		

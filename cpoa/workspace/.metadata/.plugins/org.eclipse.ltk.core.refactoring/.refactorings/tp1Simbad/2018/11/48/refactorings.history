@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;myenv3.txt&apos; to &apos;tp1Simbad/src/tp3/donnees&apos;&#x0A;- Original project: &apos;tp1Simbad&apos;&#x0A;- Destination element: &apos;tp1Simbad/src/tp3/donnees&apos;&#x0A;- Original element: &apos;myenv3.txt&apos;" description="Copy file" destination="/src\/tp3\/donnees" element1="src/tp3/donnees/myenv3.txt" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1543332713007" units="0" version="1.0"/>
+</session>

@@ -15,6 +15,9 @@ public class MyRobot extends Agent
 	private static int nbInst = 0;
 	private int numRbt;
 	
+	private static double DEFAULT_SPEED = 0.5;
+	private double vitesse;
+	
 	public MyRobot(Vector3d pos, String name)
 	{
 		super(pos, name);
@@ -23,6 +26,8 @@ public class MyRobot extends Agent
 		
 		this.sonars = RobotFactory.addSonarBeltSensor(this,8);
 		this.numRbt = ++nbInst;
+		
+		this.vitesse = MyRobot.DEFAULT_SPEED; // 0.5 m/s par default
 	}
 
 	@Override
@@ -32,7 +37,7 @@ public class MyRobot extends Agent
 		//super.initBehavior();
 	}
 
-	@Override
+	/*@Override
 	protected void performBehavior()
 	{
 		// TODO Auto-generated method stub
@@ -74,7 +79,56 @@ public class MyRobot extends Agent
 		}
 		
 		
+	}*/
+	
+	@Override
+	protected void performBehavior()
+	{
+		super.performBehavior();
+		
+		// avance à 0.5 m/s de base en continu, vitesse peut être changée via modificateurs
+		setTranslationalVelocity(this.vitesse);
+				
+		
+		if (this.collisionDetected())
+		{
+			System.out.println("collision du robot " +this.numRbt);
+			//setTranslationalVelocity(-Math.PI / 4);
+			//setRotationalVelocity(Math.PI / 2) ;
+		}
+		
+		if (anOtherAgentIsVeryNear())
+		{
+			SimpleAgent agent = getVeryNearAgent();
+			if (agent instanceof CherryAgent)
+			{
+				agent.detach();
+				System.out.println("cerise cueillie !");
+			}
+		}
+		
+		
 	}
 	
+	/**
+	 * Incrémente la vitesse de +0.5 m/s (tp4)
+	 * */
+	public void incSpeed(){
+		this.vitesse += 0.5;
+	}
+	
+	/**
+	 * Diminue la vitesse de -0.5 m/s (tp4)
+	 * */
+	public void decSpeed(){
+		if(this.vitesse - DEFAULT_SPEED >= DEFAULT_SPEED) this.vitesse -= 0.5;
+	}
+	
+	/**
+	 * Remet la vitesse par défaut de 0.5 m/s (tp4)
+	 * */
+	public void resetSpeed(){
+		this.vitesse = DEFAULT_SPEED;
+	}
 
 }

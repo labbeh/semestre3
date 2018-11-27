@@ -30,4 +30,7 @@
 <fullyQualifiedTypeName name="javax.vecmath.Color3f"/>
 <fullyQualifiedTypeName name="simbad.sim.SimpleAgent"/>
 <fullyQualifiedTypeName name="simbad.sim.CherryAgent"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="simbad.sim.Agent"/>
+<fullyQualifiedTypeName name="ex1.MyRobot"/>
 </qualifiedTypeNameHistroy>

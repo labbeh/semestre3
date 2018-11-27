@@ -1,0 +1,64 @@
+package simbad.gui;
+
+import java.awt.Font;
+import java.awt.LayoutManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+import simbad.sim.SimpleAgent;
+import simbad.sim.Simulator;
+import simbad.sim.World;
+
+public class AgentControlGUI extends JPanel implements ActionListener
+{
+	private JButton left;
+	private JButton right;
+	private AgentFollower robotFollower;
+	private World world;
+	private Font smallFont;
+
+	public AgentControlGUI()
+	{
+		
+	}
+	
+	public AgentControlGUI(World world, Simulator simulator)
+	{
+        this.world = world;
+        this.smallFont = new Font("Arial",Font.PLAIN,11);
+        //createGUI();
+        this.robotFollower = new AgentFollower(world, (SimpleAgent) simulator.getAgentList().get(0));
+        
+        this.left  = new JButton("left" );
+		this.right = new JButton("right");
+    }
+
+	public AgentControlGUI(LayoutManager arg0)
+	{
+		super(arg0);
+		// TODO Auto-generated constructor stub
+	}
+
+	public AgentControlGUI(boolean arg0)
+	{
+		super(arg0);
+		// TODO Auto-generated constructor stub
+	}
+
+	public AgentControlGUI(LayoutManager arg0, boolean arg1)
+	{
+		super(arg0, arg1);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+}
