@@ -29,8 +29,8 @@
 		<item value="606" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="878" key="DIALOG_HEIGHT"/>
-		<item value="657" key="DIALOG_X_ORIGIN"/>
-		<item value="71" key="DIALOG_Y_ORIGIN"/>
+		<item value="337" key="DIALOG_X_ORIGIN"/>
+		<item value="43" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="SourceActionDialog.constructors">
 		<item value="false" key="SynchronizedModifier"/>
@@ -121,6 +121,7 @@
 		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
 		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/home/etudiant/lh150094/LabbeHugo.jar"/>
 			<item value="/home/etudiant/lh150094/TP/semestre3/cpoa/PlsClassement.jar"/>
 			<item value="/home/etudiant/lh150094/Bureau/PlsClassement.jar"/>
 			<item value="/home/etudiant/lh150094/Bureau/PlsClass.jar"/>
@@ -170,7 +171,7 @@
 		</section>
 	</section>
 	<section name="NewClassWizardPage">
-		<item value="true" key="create_constructor"/>
+		<item value="false" key="create_constructor"/>
 		<item value="false" key="create_main"/>
 		<item value="false" key="create_unimplemented"/>
 	</section>
@@ -195,8 +196,8 @@
 		<item value="622" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="902" key="DIALOG_HEIGHT"/>
-		<item value="649" key="DIALOG_X_ORIGIN"/>
-		<item value="59" key="DIALOG_Y_ORIGIN"/>
+		<item value="329" key="DIALOG_X_ORIGIN"/>
+		<item value="31" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
 		<item value="true" key="ShowStatusLine"/>
@@ -206,8 +207,8 @@
 		<item value="531" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="903" key="DIALOG_HEIGHT"/>
-		<item value="695" key="DIALOG_X_ORIGIN"/>
-		<item value="59" key="DIALOG_Y_ORIGIN"/>
+		<item value="375" key="DIALOG_X_ORIGIN"/>
+		<item value="31" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>
