@@ -15,7 +15,14 @@ public class MyRobot extends Agent
 	private static int nbInst = 0;
 	private int numRbt;
 	
-	private static double DEFAULT_SPEED = 0.5;
+	/**
+	 * Attribut de classe définissant la vitesse par défaut de ce type de robot soit 0.5
+	 * */
+	public static double DEFAULT_SPEED = 0.5;
+	
+	/**
+	 * Vitesse actuelle du robot
+	 * */
 	private double vitesse;
 	
 	public MyRobot(Vector3d pos, String name)

@@ -1,0 +1,16 @@
+package simbad.gui;
+
+import ex1.MyRobot;
+import simbad.sim.SimpleAgent;
+import simbad.sim.World;
+
+public class RobotFollower extends AgentFollower
+{
+	MyRobot robot;
+	public RobotFollower(World world, MyRobot robot)
+	{
+		super(world, (SimpleAgent)robot);
+		this.robot = robot;
+	}
+
+}

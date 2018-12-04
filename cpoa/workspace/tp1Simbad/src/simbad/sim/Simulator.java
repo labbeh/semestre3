@@ -65,7 +65,7 @@ public class Simulator {
     private ArrayList objects;
 
     /** The list of all agents.  */
-      private ArrayList agents;
+      private ArrayList<SimpleAgent> agents;
 
     /** number of frames per virtual seconds -  20 is a good value */
     private int framesPerSecond;
@@ -109,7 +109,7 @@ public class Simulator {
         setFramesPerSecond(20);
         setVirtualTimeFactor(1);
         fps = new FrameMeter();
-        agents = new ArrayList();
+        agents = new ArrayList<>();
         objects = new ArrayList();
         usePhysics =ed.usePhysics;
         physicalEngine = new PhysicalEngine();
@@ -154,7 +154,7 @@ public class Simulator {
                 agent.reset();
                 agents.add(agent);
                 world.addObjectToPickableSceneBranch(agent);           
-            }
+            }//else if (o instanceof My)
         }
     }
     /** Creates the UI that may be associated to each agent.
@@ -312,8 +312,10 @@ public class Simulator {
         simulateOneStep();
     }
 
-
-       public ArrayList getAgentList() {
+    	/**
+    	 * @return liste de SimpleAgent
+    	 * */
+       public ArrayList<SimpleAgent> getAgentList() {
         return agents;
     }
     /** Sets use physics indicator.*/

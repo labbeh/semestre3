@@ -1,0 +1,15 @@
+package simbad.gui;
+
+import simbad.sim.SimpleAgent;
+import simbad.sim.World;
+
+public class RobotFollower extends AgentFollower
+{
+
+	public RobotFollower(World world, SimpleAgent agent)
+	{
+		super(world, agent);
+		// TODO Auto-generated constructor stub
+	}
+
+}

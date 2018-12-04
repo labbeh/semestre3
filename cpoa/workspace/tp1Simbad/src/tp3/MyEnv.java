@@ -35,7 +35,7 @@ public class MyEnv extends EnvironmentDescription
 	private ArrayList<MyRobot> listeRobots;
 	
 
-	public MyEnv()
+	public MyEnv( String nomFichier )
 	{	
 		this.envConfig = new HashMap<>();
 		
@@ -43,7 +43,7 @@ public class MyEnv extends EnvironmentDescription
 		this.alBox  = new ArrayList<>();
 		this.alWall = new ArrayList<>();
 		
-		InputStream ips = this.getClass().getResourceAsStream("/myenvTest.txt");
+		InputStream ips = this.getClass().getResourceAsStream("/" +nomFichier);
 		InputStreamReader ipsr = new InputStreamReader(ips);
 		Scanner sc = new Scanner(ipsr);
 		

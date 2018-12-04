@@ -81,7 +81,7 @@ public class SimulatorControlGUI extends JPanel implements ActionListener {
         createButton(panel1, "step", "step1");
         add(panel1);
         // time factor buttons
-        JPanel panel2 = new JPanel();
+        /*JPanel panel2 = new JPanel();
         panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS));
         createLabel(panel2,"Time Factor");
         ButtonGroup bgroup = new ButtonGroup();
@@ -92,7 +92,7 @@ public class SimulatorControlGUI extends JPanel implements ActionListener {
         createRadioButton(panel2, bgroup, "10.0", "tf10.0",false);
         createRadioButton(panel2, bgroup, "20.0", "tf20.0",false);
      
-        add(panel2);
+        add(panel2);*/
    }
 
     /** helper function */

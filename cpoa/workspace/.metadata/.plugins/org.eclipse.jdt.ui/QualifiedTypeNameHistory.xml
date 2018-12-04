@@ -28,10 +28,13 @@
 <fullyQualifiedTypeName name="simbad.sim.CherryAgent"/>
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="simbad.sim.Agent"/>
-<fullyQualifiedTypeName name="ex1.MyRobot"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="twitter.AnalyseData"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="ex1.MyRobot"/>
+<fullyQualifiedTypeName name="javax.swing.JSlider"/>
+<fullyQualifiedTypeName name="java.awt.event.KeyListener"/>
+<fullyQualifiedTypeName name="javax.swing.event.ChangeListener"/>
 </qualifiedTypeNameHistroy>
