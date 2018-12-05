@@ -1,0 +1,13 @@
+package simbad.gui;
+
+import java.awt.event.KeyAdapter;
+
+public class KeyboardListener extends KeyAdapter
+{
+
+	public KeyboardListener()
+	{
+		// TODO Auto-generated constructor stub
+	}
+
+}

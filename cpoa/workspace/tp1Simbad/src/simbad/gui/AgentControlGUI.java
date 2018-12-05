@@ -35,9 +35,9 @@ public class AgentControlGUI extends JPanel implements ActionListener, KeyListen
 	private JButton left;
 	private JButton right;
 	
-	private JButton more;
+	/*private JButton more;
 	private JButton less;
-	private JButton def;
+	private JButton def;*/
 	
 	private RobotFollower robotFollower;
 	private World world;
@@ -62,9 +62,9 @@ public class AgentControlGUI extends JPanel implements ActionListener, KeyListen
 		//this.direction = new JSlider(1, 20, 10);
 		
 		// controle de la vitesse du robot
-		this.more = new JButton("more");
+		/*this.more = new JButton("more");
 		this.less = new JButton("less");
-		this.def  = new JButton("default");
+		this.def  = new JButton("default");*/
 		this.speed = new JSlider(0, 20, 0);
 		
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
@@ -104,9 +104,9 @@ public class AgentControlGUI extends JPanel implements ActionListener, KeyListen
 		this.right.addActionListener(this);
 		//this.direction.addChangeListener(this);
         
-		this.more.addActionListener(this);
+		/*this.more.addActionListener(this);
 		this.less.addActionListener(this);
-		this.def.addActionListener(this);
+		this.def.addActionListener(this);*/
 		speed.addChangeListener(this);
 		
 		left.addKeyListener(this);
@@ -115,28 +115,15 @@ public class AgentControlGUI extends JPanel implements ActionListener, KeyListen
         this.world = world;
         this.smallFont = new Font("Arial",Font.PLAIN,11);
     }
-	
-
-	/*public AgentControlGUI(boolean arg0)
-	{
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
-	public AgentControlGUI(LayoutManager arg0, boolean arg1)
-	{
-		super(arg0, arg1);
-		// TODO Auto-generated constructor stub
-	}*/
 
 	@Override
 	public void actionPerformed(ActionEvent evt)
 	{	
 		if	   (evt.getSource() == left ) this.robotFollower.robot.rotateY(Math.PI/8);
 		else if(evt.getSource() == right) this.robotFollower.robot.rotateY(-Math.PI/8);
-		else if(evt.getSource() == more ) this.robotFollower.robot.incSpeed();
+		/*else if(evt.getSource() == more ) this.robotFollower.robot.incSpeed();
 		else if(evt.getSource() == less ) this.robotFollower.robot.decSpeed();
-		else if(evt.getSource() == def  ) this.robotFollower.robot.resetSpeed();
+		else if(evt.getSource() == def  ) this.robotFollower.robot.resetSpeed();*/
 	}
 
 
@@ -167,20 +154,13 @@ public class AgentControlGUI extends JPanel implements ActionListener, KeyListen
 
 
 	@Override
-	public void stateChanged(ChangeEvent evt)
-	{
+	public void stateChanged(ChangeEvent evt){
 		if(evt.getSource() == speed){
 			if	   (oldSpeed < speed.getValue()) robotFollower.robot.incSpeed();
 			else if(oldSpeed > speed.getValue()) robotFollower.robot.decSpeed();
 			
 			oldSpeed = speed.getValue();
 		}
-		/*if(evt.getSource() == direction){
-			if(prevPosDirection >= direction.getValue()) this.robotFollower.robot.rotateY(Math.PI/8);
-			else 										this.robotFollower.robot.rotateY(-Math.PI/8);
-			
-			prevPosDirection = direction.getValue();
-		}*/
 		
 	}
 

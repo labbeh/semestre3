@@ -64,12 +64,15 @@ public class Arbre
 	   		sRet += n.getVal();
 	      
 	   else{
-	      for (int cpt=0; cpt<n.getNbFils(); cpt++)        // Parcours des fils
+	      for (int cpt=0; cpt<n.getNbFils(); cpt++){
+	      	// sRet += n.getVal();        // Parcours des fils
 	         sRet += parcourirBranches ( n.getFils ( cpt ) );
+	         //sRet += n.getVal();
+	         //sRet += "\n";
+	     }
 	      sRet += "\n";
 	     }
 
-	     //sRet += "\n";
 	   return sRet;
 	}
 

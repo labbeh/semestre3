@@ -193,7 +193,7 @@ public class Simbad extends JFrame implements ActionListener {
     }
     
     /** The simbad main. Process command line arguments and launch simbad.*/
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         // process options
         boolean backgroundMode = false;
         for (int i = 0; i < args.length;i++)
@@ -212,7 +212,7 @@ public class Simbad extends JFrame implements ActionListener {
         System.setProperty("j3d.implicitAntialiasing", "true");
 
         new Simbad(new simbad.demo.BaseDemo() ,backgroundMode);
-     }
+     }*/
 
 
     public JDesktopPane getDesktopPane() {

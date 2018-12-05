@@ -27,15 +27,19 @@ package simbad.gui;
 import java.awt.BorderLayout;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
+import javax.swing.event.InternalFrameEvent;
+import javax.swing.event.InternalFrameListener;
+
 import simbad.sim.World;
 
 /**
  * This window is used to visualise the 3D world.
  */
-public final class WorldWindow extends JInternalFrame {
+public final class WorldWindow extends JInternalFrame implements InternalFrameListener{
   
 	private static final long serialVersionUID = 1L;
 	World world;
+	JPanel panel;
  
     public WorldWindow(World world) {
         super("world");
@@ -44,11 +48,67 @@ public final class WorldWindow extends JInternalFrame {
     }
 
     private void initialize() {
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.setLayout(new BorderLayout());
         panel.add("Center",world.getCanvas3D());
          setContentPane(panel);
         setSize(400, 400);
         setResizable(true);
+        
+       panel.setFocusable(true);
+        addInternalFrameListener(this);
+       //nel.requestFocus();
+        panel.addKeyListener(new KeyboardListener());
+        setVisible(true);
+        
     }
+
+	@Override
+	public void internalFrameActivated(InternalFrameEvent arg0)
+	{
+		panel.requestFocus();
+		
+	}
+
+	@Override
+	public void internalFrameClosed(InternalFrameEvent arg0)
+	{
+		System.out.println("close");
+		
+	}
+
+	@Override
+	public void internalFrameClosing(InternalFrameEvent arg0)
+	{
+		System.out.println("closing");
+		
+	}
+
+	@Override
+	public void internalFrameDeactivated(InternalFrameEvent arg0)
+	{
+		System.out.println("desactived");
+		
+	}
+
+	@Override
+	public void internalFrameDeiconified(InternalFrameEvent arg0)
+	{
+		System.out.println("decon");
+		
+	}
+
+	@Override
+	public void internalFrameIconified(InternalFrameEvent arg0)
+	{
+		System.out.println("icon");
+		
+	}
+
+	@Override
+	public void internalFrameOpened(InternalFrameEvent arg0)
+	{
+		System.out.println("open");
+		
+	}
 }
