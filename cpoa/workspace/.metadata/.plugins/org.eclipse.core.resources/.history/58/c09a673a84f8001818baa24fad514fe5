@@ -68,16 +68,14 @@ public final class WorldWindow extends JInternalFrame implements InternalFrameLi
         //InputMap inputMap = getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
         //inputMap.
         this.addKeyListener(new KeyboardListener());
-        //this.getInputMap().put(KeyStroke.getKeyStroke("R"), "pressed");
-        //this.getActionMap().put("pressed", Action.)
-        requestFocusInWindow();
+        this.getInputMap().put(KeyStroke.getKeyStroke("R"), "pressed");
         
     }
 
 	@Override
 	public void internalFrameActivated(InternalFrameEvent arg0)
 	{
-		//requestFocus();
+		requestFocus();
 		//panel.requestFocus();
 		
 	}

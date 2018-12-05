@@ -30,6 +30,7 @@ import java.awt.event.KeyListener;
 
 import javax.swing.InputMap;
 import javax.swing.JComponent;
+import javax.swing.JDialog;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
@@ -41,13 +42,13 @@ import simbad.sim.World;
 /**
  * This window is used to visualise the 3D world.
  */
-public final class WorldWindow extends JInternalFrame implements InternalFrameListener{
+public final class WorldWindow extends JDialog implements InternalFrameListener{
   
 	private static final long serialVersionUID = 1L;
 	World world;
  
     public WorldWindow(World world) {
-        super("world");
+        //super("world");
         this.world = world;
         initialize();
     }
@@ -62,7 +63,7 @@ public final class WorldWindow extends JInternalFrame implements InternalFrameLi
         
        //panel.setFocusable(true);
        setFocusable(true);
-        addInternalFrameListener(this);
+        //addInternalFrameListener(this);
        //nel.requestFocus();
         //panel.addKeyListener(this);
         //InputMap inputMap = getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);

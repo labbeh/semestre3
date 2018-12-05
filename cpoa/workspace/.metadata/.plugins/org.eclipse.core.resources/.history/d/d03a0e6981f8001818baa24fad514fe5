@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 public class KeyboardListener extends KeyAdapter
 {
 
-	KeyboardListener()
+	public KeyboardListener()
 	{
 		// TODO Auto-generated constructor stub
 	}
@@ -20,13 +20,15 @@ public class KeyboardListener extends KeyAdapter
 	@Override
 	public void keyReleased(KeyEvent arg0)
 	{
-		System.out.println("ok");
+		// TODO Auto-generated method stub
+		//super.keyReleased(arg0);
 	}
 
 	@Override
 	public void keyTyped(KeyEvent arg0)
 	{
-		System.out.println("ok");
+		// TODO Auto-generated method stub
+		//super.keyTyped(arg0);
 	}
 	
 	

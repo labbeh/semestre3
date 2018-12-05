@@ -32,7 +32,6 @@ import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
-import javax.swing.KeyStroke;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
 
@@ -67,17 +66,14 @@ public final class WorldWindow extends JInternalFrame implements InternalFrameLi
         //panel.addKeyListener(this);
         //InputMap inputMap = getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
         //inputMap.
-        this.addKeyListener(new KeyboardListener());
-        //this.getInputMap().put(KeyStroke.getKeyStroke("R"), "pressed");
-        //this.getActionMap().put("pressed", Action.)
-        requestFocusInWindow();
+        this.getInputMap().put(JComponent.WHEN_FOCUSED, "pressed");
         
     }
 
 	@Override
 	public void internalFrameActivated(InternalFrameEvent arg0)
 	{
-		//requestFocus();
+		requestFocus();
 		//panel.requestFocus();
 		
 	}

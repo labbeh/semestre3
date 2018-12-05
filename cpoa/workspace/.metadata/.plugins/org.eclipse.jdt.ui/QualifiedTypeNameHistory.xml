@@ -38,4 +38,8 @@
 <fullyQualifiedTypeName name="java.awt.event.KeyListener"/>
 <fullyQualifiedTypeName name="javax.swing.event.ChangeListener"/>
 <fullyQualifiedTypeName name="javax.swing.event.InternalFrameListener"/>
+<fullyQualifiedTypeName name="javax.swing.InputMap"/>
+<fullyQualifiedTypeName name="javax.swing.JComponent"/>
+<fullyQualifiedTypeName name="javax.swing.KeyStroke"/>
+<fullyQualifiedTypeName name="javax.swing.JDialog"/>
 </qualifiedTypeNameHistroy>

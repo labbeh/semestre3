@@ -77,7 +77,7 @@ public final class WorldWindow extends JInternalFrame implements InternalFrameLi
 	@Override
 	public void internalFrameActivated(InternalFrameEvent arg0)
 	{
-		//requestFocus();
+		requestFocus();
 		//panel.requestFocus();
 		
 	}
