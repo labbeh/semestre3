@@ -1,0 +1,53 @@
+<arc>
+	<couleur nom="violet">
+		<longueur>400</longueur>
+		<rouge>128</rouge>
+		<vert>   0</vert>
+		<bleu> 128</bleu>
+	</couleur>
+
+	<couleur nom="cyan">
+		<longueur>500</longueur>
+		<rouge>  0</rouge>
+		<vert> 192</vert>
+		<bleu> 192</bleu>
+	</couleur>
+
+	<couleur nom="bleu">
+		<longueur>450</longueur>
+		<rouge>  0</rouge>
+		<vert>   0</vert>
+		<bleu> 192</bleu>
+	</couleur>
+
+	<couleur nom="rouge">
+		<longueur>750</longueur>
+		<rouge>192</rouge>
+		<vert>   0</vert>
+		<bleu>   0</bleu>
+	</couleur>
+	
+	<couleur nom="vert">
+		<longueur>550</longueur>
+		<rouge>  0</rouge>
+		<vert> 192</vert>
+		<bleu>   0</bleu>
+	</couleur>
+	
+	<couleur nom="jaune">
+		<longueur>600</longueur>
+		<rouge>255</rouge>
+		<vert> 242</vert>
+		<bleu>   0</bleu>
+	</couleur>
+	
+	<couleur nom="orange">
+		<longueur>700</longueur>
+		<rouge>255</rouge>
+		<vert> 128</vert>
+		<bleu>   0</bleu>
+	</couleur>
+	
+
+
+</arc>
