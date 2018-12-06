@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="20" version="2.0">
+<workbench progressCount="17" version="2.0">
 <workbenchAdvisor/>
 <window height="784" maximized="true" width="1012" x="113" y="27">
 <fastViewData fastViewLocation="1024"/>
@@ -15,7 +15,7 @@
 <coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="46" y="36"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="94" y="36"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="94" y="36"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="130" y="36"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="276" y="36"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="238" y="36"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
@@ -42,6 +42,8 @@
 <part id="7"/>
 <part id="8"/>
 <part id="9"/>
+<part id="10"/>
+<part id="11"/>
 </presentation>
 </folder>
 </info>
@@ -54,37 +56,45 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/simbad/gui/RobotFollower.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="238" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyEnv.java" partName="MyEnv.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/tp3/MyEnv.java" title="MyEnv.java" tooltip="tp1Simbad/src/tp3/MyEnv.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyEnv.java" partName="MyEnv.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/tp3/MyEnv.java" title="MyEnv.java" tooltip="tp1Simbad/src/tp3/MyEnv.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/tp3/MyEnv.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="877" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="50" selectionLength="0" selectionOffset="3678" selectionTopPixel="1613"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Exemple2.java" partName="Exemple2.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/tp3/Exemple2.java" title="Exemple2.java" tooltip="tp1Simbad/src/tp3/Exemple2.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/tp3/Exemple2.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="203" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="289" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AgentControlGUI.java" partName="AgentControlGUI.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/simbad/gui/AgentControlGUI.java" title="AgentControlGUI.java" tooltip="tp1Simbad/src/simbad/gui/AgentControlGUI.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/simbad/gui/AgentControlGUI.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="67" selectionOffset="1219" selectionTopPixel="244"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WorldWindow.java" partName="WorldWindow.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/simbad/gui/WorldWindow.java" title="WorldWindow.java" tooltip="tp1Simbad/src/simbad/gui/WorldWindow.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WorldWindow.java" partName="WorldWindow.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/simbad/gui/WorldWindow.java" title="WorldWindow.java" tooltip="tp1Simbad/src/simbad/gui/WorldWindow.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/simbad/gui/WorldWindow.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1138" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="442"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KeyboardListener.java" partName="KeyboardListener.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/simbad/gui/KeyboardListener.java" title="KeyboardListener.java" tooltip="tp1Simbad/src/simbad/gui/KeyboardListener.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/simbad/gui/KeyboardListener.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="638" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Simbad.java" partName="Simbad.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/simbad/gui/Simbad.java" title="Simbad.java" tooltip="tp1Simbad/src/simbad/gui/Simbad.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/simbad/gui/Simbad.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3622" selectionTopPixel="834"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ControlWindow.java" partName="ControlWindow.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/simbad/gui/ControlWindow.java" title="ControlWindow.java" tooltip="tp1Simbad/src/simbad/gui/ControlWindow.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/simbad/gui/ControlWindow.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1872" selectionTopPixel="0"/>
-</editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyRobot.java" partName="MyRobot.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/tp3/MyRobot.java" title="MyRobot.java" tooltip="tp1Simbad/src/tp3/MyRobot.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/tp3/MyRobot.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2385" selectionTopPixel="1154"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="232" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RobotEnnemi.java" partName="RobotEnnemi.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/tp3/RobotEnnemi.java" title="RobotEnnemi.java" tooltip="tp1Simbad/src/tp3/RobotEnnemi.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/tp3/RobotEnnemi.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="825" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Agent.java" partName="Agent.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/simbad/sim/Agent.java" title="Agent.java" tooltip="tp1Simbad/src/simbad/sim/Agent.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/simbad/sim/Agent.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5999" selectionTopPixel="1931"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleAgent.java" partName="SimpleAgent.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/simbad/sim/SimpleAgent.java" title="SimpleAgent.java" tooltip="tp1Simbad/src/simbad/sim/SimpleAgent.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/simbad/sim/SimpleAgent.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="1486" selectionTopPixel="1489"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseObject.java" partName="BaseObject.java" path="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace/tp1Simbad/src/simbad/sim/BaseObject.java" title="BaseObject.java" tooltip="tp1Simbad/src/simbad/sim/BaseObject.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tp1Simbad/src/simbad/sim/BaseObject.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7114" selectionTopPixel="2280"/>
 </editor>
 </editors>
 <views>
@@ -125,7 +135,7 @@
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.resourceField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings (75 items)"/>
+<category IMemento.internal.id="Warnings (71 items)"/>
 <category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="1099" org.eclipse.ui.ide.pathField="227" org.eclipse.ui.ide.resourceField="193" org.eclipse.ui.ide.severityAndDescriptionField="809"/>
@@ -315,7 +325,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.2821119" ratioLeft="358" ratioRight="911" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.6353523" ratioLeft="514" ratioRight="295" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.9052224" ratioLeft="468" ratioRight="49" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
@@ -350,162 +360,169 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/gui/WorldWindow.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/gui/AgentControlGUI.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/gui/KeyboardListener.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/gui/Simbad.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/gui/SimulatorControlGUI.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/gui/ControlWindow.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/gui/SimulatorControlGUI.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/gui/TestSimbatch.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/gui/AgentInspector.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/tp3/MyRobot.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/sim/Agent.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/tp3/RobotEnnemi.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/tp3/MyEnv.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/sim/SimpleAgent.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/simbad/sim/BaseObject.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/tp1Simbad/src/tp3/Exemple2.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/tp1Simbad/src/tp3/donnees/test_espace.txt"/>
 </editors>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="2030" y="0"/>
+<item historyLabel="Simbad.java" index="1">
+<position info="not_deleted" x="3624" y="0"/>
 </item>
-<item historyLabel="Simbad.java" index="3">
-<position info="not_deleted" x="4" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1656" y="0"/>
-</item>
-<item historyLabel="Simbad.java" index="3">
-<position info="not_deleted" x="4" y="0"/>
-</item>
-<item historyLabel="AgentControlGUI.java" index="1">
-<position info="not_deleted" x="938" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="2030" y="0"/>
-</item>
-<item historyLabel="KeyboardListener.java" index="2">
-<position info="not_deleted" x="461" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="2030" y="0"/>
-</item>
-<item historyLabel="Simbad.java" index="3">
-<position info="not_deleted" x="4" y="0"/>
-</item>
-<item historyLabel="SimulatorControlGUI.java" index="4">
+<item historyLabel="ControlWindow.java" index="2">
 <position info="not_deleted" x="3" y="0"/>
 </item>
-<item historyLabel="Simbad.java" index="3">
-<position info="not_deleted" x="4" y="0"/>
+<item historyLabel="Simbad.java" index="1">
+<position info="not_deleted" x="3624" y="0"/>
 </item>
-<item historyLabel="ControlWindow.java" index="5">
+<item historyLabel="SimulatorControlGUI.java" index="3">
 <position info="not_deleted" x="3" y="0"/>
 </item>
-<item historyLabel="AgentControlGUI.java" index="1">
-<position info="not_deleted" x="1219" y="67"/>
+<item historyLabel="Simbad.java" index="1">
+<position info="not_deleted" x="3624" y="0"/>
 </item>
-<item historyLabel="Simbad.java" index="3">
-<position info="not_deleted" x="4" y="0"/>
+<item historyLabel="TestSimbatch.java" index="4">
+<position info="not_deleted" x="1311" y="7"/>
 </item>
-<item historyLabel="ControlWindow.java" index="5">
-<position info="not_deleted" x="1872" y="0"/>
+<item historyLabel="Simbad.java" index="1">
+<position info="not_deleted" x="3624" y="0"/>
 </item>
-<item historyLabel="Simbad.java" index="3">
-<position info="not_deleted" x="3793" y="0"/>
+<item historyLabel="AgentInspector.java" index="5">
+<position info="not_deleted" x="3" y="0"/>
 </item>
-<item historyLabel="AgentControlGUI.java" index="1">
-<position info="not_deleted" x="1363" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="2030" y="0"/>
-</item>
-<item historyLabel="Simbad.java" index="3">
-<position info="not_deleted" x="3793" y="0"/>
+<item historyLabel="Simbad.java" index="1">
+<position info="not_deleted" x="5096" y="0"/>
 </item>
 <item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1504" y="0"/>
-</item>
-<item historyLabel="AgentControlGUI.java" index="1">
-<position info="not_deleted" x="1219" y="67"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1656" y="0"/>
-</item>
-<item historyLabel="AgentControlGUI.java" index="1">
-<position info="not_deleted" x="1219" y="67"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1656" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1504" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1485" y="9"/>
-</item>
-<item historyLabel="Simbad.java" index="3">
-<position info="not_deleted" x="3622" y="0"/>
-</item>
-<item historyLabel="KeyboardListener.java" index="2">
-<position info="not_deleted" x="461" y="0"/>
+<position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="MyRobot.java" index="6">
-<position info="not_deleted" x="433" y="0"/>
+<position info="not_deleted" x="232" y="0"/>
 </item>
-<item historyLabel="KeyboardListener.java" index="2">
-<position info="not_deleted" x="638" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1485" y="9"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1952" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1076" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1076" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1076" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1076" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1138" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1138" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1336" y="21"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1324" y="0"/>
-</item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="2572" y="0"/>
+<item historyLabel="Agent.java" index="7">
+<position info="not_deleted" x="2066" y="5"/>
 </item>
 <item historyLabel="MyRobot.java" index="6">
-<position info="not_deleted" x="2385" y="0"/>
+<position info="not_deleted" x="232" y="0"/>
 </item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="2572" y="0"/>
+<item historyLabel="RobotEnnemi.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="WorldWindow.java" index="0">
+<item historyLabel="MyEnv.java" index="9">
+<position info="not_deleted" x="1831" y="0"/>
+</item>
+<item historyLabel="MyRobot.java" index="6">
+<position info="not_deleted" x="232" y="0"/>
+</item>
+<item historyLabel="RobotEnnemi.java" index="8">
+<position info="not_deleted" x="532" y="0"/>
+</item>
+<item historyLabel="Agent.java" index="7">
+<position info="not_deleted" x="4029" y="1970"/>
+</item>
+<item historyLabel="RobotEnnemi.java" index="8">
+<position info="not_deleted" x="698" y="0"/>
+</item>
+<item historyLabel="Agent.java" index="7">
+<position info="not_deleted" x="2084" y="0"/>
+</item>
+<item historyLabel="SimpleAgent.java" index="10">
+<position info="not_deleted" x="1486" y="11"/>
+</item>
+<item historyLabel="Agent.java" index="7">
+<position info="not_deleted" x="4276" y="8"/>
+</item>
+<item historyLabel="SimpleAgent.java" index="10">
+<position info="not_deleted" x="1486" y="11"/>
+</item>
+<item historyLabel="Agent.java" index="7">
+<position info="not_deleted" x="4329" y="0"/>
+</item>
+<item historyLabel="BaseObject.java" index="11">
+<position info="not_deleted" x="1732" y="8"/>
+</item>
+<item historyLabel="Agent.java" index="7">
+<position info="not_deleted" x="5999" y="0"/>
+</item>
+<item historyLabel="BaseObject.java" index="11">
+<position info="not_deleted" x="1732" y="8"/>
+</item>
+<item historyLabel="Agent.java" index="7">
 <position/>
 </item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="3108" y="0"/>
+<item historyLabel="SimpleAgent.java" index="10">
+<position info="not_deleted" x="1486" y="11"/>
 </item>
-<item historyLabel="WorldWindow.java" index="0">
+<item historyLabel="BaseObject.java" index="11">
+<position info="not_deleted" x="1732" y="8"/>
+</item>
+<item historyLabel="Agent.java" index="7">
 <position/>
 </item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="2712" y="0"/>
+<item historyLabel="SimpleAgent.java" index="10">
+<position info="not_deleted" x="1486" y="11"/>
 </item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="2127" y="0"/>
+<item historyLabel="RobotEnnemi.java" index="8">
+<position info="not_deleted" x="2523" y="0"/>
 </item>
-<item historyLabel="WorldWindow.java" index="0">
-<position info="not_deleted" x="1138" y="0"/>
+<item historyLabel="BaseObject.java" index="11">
+<position info="not_deleted" x="1723" y="0"/>
 </item>
-<item active="true" historyLabel="WorldWindow.java" index="0">
-<position/>
+<item historyLabel="RobotEnnemi.java" index="8">
+<position info="not_deleted" x="532" y="0"/>
+</item>
+<item historyLabel="Agent.java" index="7">
+<position info="not_deleted" x="5999" y="0"/>
+</item>
+<item historyLabel="RobotEnnemi.java" index="8">
+<position info="not_deleted" x="532" y="0"/>
+</item>
+<item historyLabel="BaseObject.java" index="11">
+<position info="not_deleted" x="2597" y="0"/>
+</item>
+<item historyLabel="RobotEnnemi.java" index="8">
+<position info="not_deleted" x="2668" y="0"/>
+</item>
+<item historyLabel="BaseObject.java" index="11">
+<position info="not_deleted" x="7114" y="0"/>
+</item>
+<item historyLabel="RobotEnnemi.java" index="8">
+<position info="not_deleted" x="825" y="0"/>
+</item>
+<item historyLabel="MyEnv.java" index="9">
+<position info="not_deleted" x="1831" y="0"/>
+</item>
+<item historyLabel="Exemple2.java" index="12">
+<position info="not_deleted" x="289" y="0"/>
+</item>
+<item historyLabel="MyEnv.java" index="9">
+<position info="not_deleted" x="1418" y="0"/>
+</item>
+<item historyLabel="test_espace.txt" index="13">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MyEnv.java" index="9">
+<position info="not_deleted" x="1418" y="0"/>
+</item>
+<item historyLabel="MyEnv.java" index="9">
+<position info="not_deleted" x="3693" y="0"/>
+</item>
+<item historyLabel="MyEnv.java" index="9">
+<position info="not_deleted" x="3696" y="0"/>
+</item>
+<item historyLabel="RobotEnnemi.java" index="8">
+<position info="not_deleted" x="825" y="0"/>
+</item>
+<item active="true" historyLabel="MyEnv.java" index="9">
+<position info="not_deleted" x="3696" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -524,35 +541,32 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyRobot.java" tooltip="tp1Simbad/src/tp3/MyRobot.java">
-<persistable path="/tp1Simbad/src/tp3/MyRobot.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ControlWindow.java" tooltip="tp1Simbad/src/simbad/gui/ControlWindow.java">
-<persistable path="/tp1Simbad/src/simbad/gui/ControlWindow.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimulatorControlGUI.java" tooltip="tp1Simbad/src/simbad/gui/SimulatorControlGUI.java">
-<persistable path="/tp1Simbad/src/simbad/gui/SimulatorControlGUI.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Simbad.java" tooltip="tp1Simbad/src/simbad/gui/Simbad.java">
-<persistable path="/tp1Simbad/src/simbad/gui/Simbad.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="test_espace.txt" tooltip="tp1Simbad/src/tp3/donnees/test_espace.txt">
 <persistable path="/tp1Simbad/src/tp3/donnees/test_espace.txt"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KeyboardListener.java" tooltip="tp1Simbad/src/simbad/gui/KeyboardListener.java">
-<persistable path="/tp1Simbad/src/simbad/gui/KeyboardListener.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseObject.java" tooltip="tp1Simbad/src/simbad/sim/BaseObject.java">
+<persistable path="/tp1Simbad/src/simbad/sim/BaseObject.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="World.java" tooltip="tp1Simbad/src/simbad/sim/World.java">
-<persistable path="/tp1Simbad/src/simbad/sim/World.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleAgent.java" tooltip="tp1Simbad/src/simbad/sim/SimpleAgent.java">
+<persistable path="/tp1Simbad/src/simbad/sim/SimpleAgent.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Agent.java" tooltip="tp1Simbad/src/simbad/sim/Agent.java">
+<persistable path="/tp1Simbad/src/simbad/sim/Agent.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RobotEnnemi.java" tooltip="tp1Simbad/src/tp3/RobotEnnemi.java">
+<persistable path="/tp1Simbad/src/tp3/RobotEnnemi.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AgentInspector.java" tooltip="tp1Simbad/src/simbad/gui/AgentInspector.java">
 <persistable path="/tp1Simbad/src/simbad/gui/AgentInspector.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WorldWindow.java" tooltip="tp1Simbad/src/simbad/gui/WorldWindow.java">
-<persistable path="/tp1Simbad/src/simbad/gui/WorldWindow.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestSimbatch.java" tooltip="tp1Simbad/src/simbad/gui/TestSimbatch.java">
+<persistable path="/tp1Simbad/src/simbad/gui/TestSimbatch.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WorldControlGUI.java" tooltip="tp1Simbad/src/simbad/gui/WorldControlGUI.java">
-<persistable path="/tp1Simbad/src/simbad/gui/WorldControlGUI.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimulatorControlGUI.java" tooltip="tp1Simbad/src/simbad/gui/SimulatorControlGUI.java">
+<persistable path="/tp1Simbad/src/simbad/gui/SimulatorControlGUI.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ControlWindow.java" tooltip="tp1Simbad/src/simbad/gui/ControlWindow.java">
+<persistable path="/tp1Simbad/src/simbad/gui/ControlWindow.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Console.java" tooltip="tp1Simbad/src/simbad/gui/Console.java">
 <persistable path="/tp1Simbad/src/simbad/gui/Console.java"/>
@@ -560,14 +574,17 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Simbatch.java" tooltip="tp1Simbad/src/simbad/gui/Simbatch.java">
 <persistable path="/tp1Simbad/src/simbad/gui/Simbatch.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="test_map_pacman.txt" tooltip="tp1Simbad/src/tp3/donnees/test_map_pacman.txt">
-<persistable path="/tp1Simbad/src/tp3/donnees/test_map_pacman.txt"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyRobot.java" tooltip="tp1Simbad/src/tp3/MyRobot.java">
+<persistable path="/tp1Simbad/src/tp3/MyRobot.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EnvironmentDescription.java" tooltip="tp1Simbad/src/simbad/sim/EnvironmentDescription.java">
-<persistable path="/tp1Simbad/src/simbad/sim/EnvironmentDescription.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Simbad.java" tooltip="tp1Simbad/src/simbad/gui/Simbad.java">
+<persistable path="/tp1Simbad/src/simbad/gui/Simbad.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Simulator.java" tooltip="tp1Simbad/src/simbad/sim/Simulator.java">
-<persistable path="/tp1Simbad/src/simbad/sim/Simulator.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KeyboardListener.java" tooltip="tp1Simbad/src/simbad/gui/KeyboardListener.java">
+<persistable path="/tp1Simbad/src/simbad/gui/KeyboardListener.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="World.java" tooltip="tp1Simbad/src/simbad/sim/World.java">
+<persistable path="/tp1Simbad/src/simbad/sim/World.java"/>
 </file>
 </mruList>
 </workbench>

@@ -192,7 +192,7 @@ public  abstract class BaseObject {
     
     
     /** Sets the bounds object for collision/interaction detection */
-    protected void setBounds(Bounds bounds){
+    void setBounds(Bounds bounds){
         localBounds = bounds;
         group.setBounds(bounds);
     }

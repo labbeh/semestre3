@@ -143,7 +143,7 @@ public class MyEnv extends EnvironmentDescription
 		int z = (int)(Math.random()*10);
 		
 		add(new CherryAgent(new Vector3d(x, 0, z), "cherry", 0.15f));
-		add(new RobotEnnemi(new Vector3d(x+5, 0, z+5), "Ennemi "));
+		add(new RobotEnnemi(new Vector3d(10, 0, 10), "Ennemi "));
 		
 		//System.out.println(this.envConfig.keySet());
 	}

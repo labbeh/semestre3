@@ -146,7 +146,7 @@ public class Simbad extends JFrame implements ActionListener {
     /**
      * creates agent inspector window
      */
-    /*private AgentInspector createAgentInspector(Simulator simulator, int x,
+    private AgentInspector createAgentInspector(Simulator simulator, int x,
             int y) {
         ArrayList agents = simulator.getAgentList();
         SimpleAgent a = ((SimpleAgent) agents.get(0));
@@ -158,7 +158,7 @@ public class Simbad extends JFrame implements ActionListener {
             return ai;
         } else
             return null;
-    }*/
+    }
     
     public void actionPerformed(ActionEvent event) {
        if (event.getActionCommand()=="demo"){

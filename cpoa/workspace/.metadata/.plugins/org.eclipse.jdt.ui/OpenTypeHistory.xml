@@ -2,7 +2,8 @@
 <typeInfoHistroy>
 <typeInfo handle="=tp1Simbad/\/usr\/lib\/jvm\/java-8-openjdk-amd64\/jre\/lib\/rt.jar&lt;javax.swing(JPanel.class[JPanel" modifiers="33" timestamp="1540231523000"/>
 <typeInfo handle="=tp1Simbad/\/usr\/lib\/jvm\/java-8-openjdk-amd64\/jre\/lib\/rt.jar&lt;java.awt.event(ActionListener.class[ActionListener" modifiers="1537" timestamp="1540231523000"/>
-<typeInfo handle="=tp1Simbad/src&lt;simbad.gui{AgentFollower.java[AgentFollower" modifiers="0" timestamp="1543933447000"/>
+<typeInfo handle="=tp1Simbad/src&lt;simbad.gui{AgentFollower.java[AgentFollower" modifiers="0" timestamp="1543945098000"/>
 <typeInfo handle="=tp1Simbad/\/usr\/lib\/jvm\/java-8-openjdk-amd64\/jre\/lib\/rt.jar&lt;java.awt.event(KeyListener.class[KeyListener" modifiers="1537" timestamp="1540231523000"/>
 <typeInfo handle="=tp1Simbad/\/usr\/lib\/jvm\/java-8-openjdk-amd64\/jre\/lib\/rt.jar&lt;java.awt.event(KeyAdapter.class[KeyAdapter" modifiers="1057" timestamp="1540231523000"/>
+<typeInfo handle="=tp1Simbad/src&lt;simbad.sim{Agent.java[Agent" modifiers="1" timestamp="1543945098000"/>
 </typeInfoHistroy>

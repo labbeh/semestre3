@@ -47,7 +47,7 @@ import javax.vecmath.Vector3f;
 public  abstract class BaseObject {
 
     /** Material used for the object body.*/
-    protected Material material;
+    Material material;
     /** Branch group corresponding to this object */
     BranchGroup branchGroup;
     /** rotation applied to this object */
@@ -71,9 +71,9 @@ public  abstract class BaseObject {
     Transform3D translation;
     
     /** A prepared color */
-    protected static Color3f black = new Color3f(0.0f, 0.0f, 0.0f);
+    static Color3f black = new Color3f(0.0f, 0.0f, 0.0f);
     /** A prepared color */
-    protected static Color3f white = new Color3f(1.0f, 1.0f, 1.0f);
+    static Color3f white = new Color3f(1.0f, 1.0f, 1.0f);
 
     /** Indicates that the wall object branch can be compiled to optimize sceneGraph */ 
     boolean compilable;
@@ -192,7 +192,7 @@ public  abstract class BaseObject {
     
     
     /** Sets the bounds object for collision/interaction detection */
-    protected void setBounds(Bounds bounds){
+    void setBounds(Bounds bounds){
         localBounds = bounds;
         group.setBounds(bounds);
     }

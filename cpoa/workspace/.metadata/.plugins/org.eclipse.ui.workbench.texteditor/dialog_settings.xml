@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value=".add" key="selection"/>
+		<item value="SimpleAgent" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="material"/>
+			<item value="createAg"/>
 			<item value=".add"/>
 			<item value="add"/>
 			<item value="agents"/>
 			<item value="rotateY"/>
 			<item value="rotate"/>
 			<item value="sd"/>
-			<item value="rot"/>
-			<item value="getAg"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -24,7 +24,7 @@
 		<item value="327" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="486" key="DIALOG_HEIGHT"/>
-		<item value="953" key="DIALOG_X_ORIGIN"/>
+		<item value="697" key="DIALOG_X_ORIGIN"/>
 		<item value="168" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
