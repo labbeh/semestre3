@@ -97,12 +97,12 @@ public class MyRobot extends Agent
 		setTranslationalVelocity(this.vitesse);
 				
 		
-		if (this.collisionDetected())
+		/*if (this.collisionDetected())
 		{
 			System.out.println("collision du robot " +this.numRbt);
 			//setTranslationalVelocity(-Math.PI / 4);
 			//setRotationalVelocity(Math.PI / 2) ;
-		}
+		}*/
 		
 		if (anOtherAgentIsVeryNear())
 		{

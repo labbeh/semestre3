@@ -25,30 +25,26 @@
 package simbad.gui;
 
 import java.awt.BorderLayout;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
-import javax.swing.InputMap;
-import javax.swing.JComponent;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
-import javax.swing.KeyStroke;
-import javax.swing.event.InternalFrameEvent;
-import javax.swing.event.InternalFrameListener;
-
+import simbad.sim.Simulator;
 import simbad.sim.World;
+import tp3.MyRobot;
 
 /**
  * This window is used to visualise the 3D world.
  */
-public final class WorldWindow extends JInternalFrame implements InternalFrameListener{
+public final class WorldWindow extends JInternalFrame{
   
 	private static final long serialVersionUID = 1L;
 	World world;
+	RobotFollower robotFollower;
+	private Thread tFocus;
  
-    public WorldWindow(World world) {
+    public WorldWindow(World world, Simulator simulator) {
         super("world");
         this.world = world;
+        this.robotFollower = new RobotFollower(world, (MyRobot)simulator.getAgentList().get(0));
         initialize();
     }
 
@@ -56,71 +52,34 @@ public final class WorldWindow extends JInternalFrame implements InternalFrameLi
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
         panel.add("Center",world.getCanvas3D());
-         setContentPane(panel);
+        setContentPane(panel);
         setSize(400, 400);
         setResizable(true);
         
-       //panel.setFocusable(true);
-       setFocusable(true);
-        addInternalFrameListener(this);
-       //nel.requestFocus();
-        //panel.addKeyListener(this);
-        //InputMap inputMap = getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-        //inputMap.
-        this.addKeyListener(new KeyboardListener());
-        //this.getInputMap().put(KeyStroke.getKeyStroke("R"), "pressed");
-        //this.getActionMap().put("pressed", Action.)
-        requestFocusInWindow();
-        
+        setFocusable(true);
+
+        addKeyListener(new KeyboardListener(robotFollower));
+        tFocus = new Thread(new GestionRequest());
+        tFocus.start();
+        //tFocus.start();
     }
+    
+    /**
+     * Classe interne pour crééer un Thread qui va donner en permanence le focus sur la JInternalFrame pour
+     * pouvoir controler le robot au clavier juste en cliquant sur la JInternalFrame WorldWindow
+     * */
+    private class GestionRequest implements Runnable{
 
-	@Override
-	public void internalFrameActivated(InternalFrameEvent arg0)
-	{
-		//requestFocus();
-		//panel.requestFocus();
-		
-	}
-
-	@Override
-	public void internalFrameClosed(InternalFrameEvent arg0)
-	{
-		System.out.println("close");
-		
-	}
-
-	@Override
-	public void internalFrameClosing(InternalFrameEvent arg0)
-	{
-		System.out.println("closing");
-		
-	}
-
-	@Override
-	public void internalFrameDeactivated(InternalFrameEvent arg0)
-	{
-		System.out.println("desactived");
-		
-	}
-
-	@Override
-	public void internalFrameDeiconified(InternalFrameEvent arg0)
-	{
-		System.out.println("decon");
-		
-	}
-
-	@Override
-	public void internalFrameIconified(InternalFrameEvent arg0)
-	{
-		System.out.println("icon");
-		
-	}
-
-	@Override
-	public void internalFrameOpened(InternalFrameEvent arg0)
-	{
-		System.out.println("open");
-		
-	}
+		@Override
+		public void run(){
+			while(true){
+				requestFocus();
+				
+				try{
+					Thread.sleep(500);
+				}
+				catch(Exception evt){}
+			}
+		}
+    }
 }

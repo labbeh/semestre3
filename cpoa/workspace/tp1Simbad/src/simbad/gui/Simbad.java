@@ -119,16 +119,16 @@ public class Simbad extends JFrame implements ActionListener {
      * Creates the windows as Swing InternalFrames
      */
     private void createInternalFrames() {
-        worldWindow = new WorldWindow(world);
+        worldWindow = new WorldWindow(world, simulator);
         desktop.add(worldWindow);
         worldWindow.show();
         worldWindow.setLocation(300, 20);
         agentInspector = createAgentInspector(simulator, 20, 20);
         if (!backgroundMode){
-        controlWindow = new ControlWindow(world, simulator);
-        desktop.add(controlWindow);
-        controlWindow.show();
-        controlWindow.setLocation(300, 450);
+        	controlWindow = new ControlWindow(world, simulator);
+        	desktop.add(controlWindow);
+        	controlWindow.show();
+        	controlWindow.setLocation(300, 450);
         }
     }
     /**

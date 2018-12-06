@@ -39,7 +39,7 @@ public class AgentControlGUI extends JPanel implements ActionListener, KeyListen
 	private JButton less;
 	private JButton def;*/
 	
-	private RobotFollower robotFollower;
+	RobotFollower robotFollower;
 	private World world;
 	private Font smallFont;
 	
@@ -115,6 +115,7 @@ public class AgentControlGUI extends JPanel implements ActionListener, KeyListen
         this.world = world;
         this.smallFont = new Font("Arial",Font.PLAIN,11);
     }
+	
 
 	@Override
 	public void actionPerformed(ActionEvent evt)

@@ -1,0 +1,41 @@
+package simbad.gui;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+public class KeyboardListener extends KeyAdapter
+{
+	// attributs de classe
+	private static int LEFT_KEY  = 37;
+	private static int RIGHT_KEY = 39;
+	
+	// robot follower pour controler le robot au clavier
+	RobotFollower robotFollower;
+
+	KeyboardListener(RobotFollower robotFollower)
+	{
+		this.robotFollower = robotFollower;
+	}
+
+	@Override
+	public void keyPressed(KeyEvent arg0)
+	{
+		if	   (evt.getKeyCode() == LEFT_KEY )this.robotFollower.robot.rotateY(Math.PI/8);
+		else if(evt.getKeyCode() == RIGHT_KEY)this.robotFollower.robot.rotateY(-Math.PI/8);
+	}
+
+	/*@Override
+	public void keyReleased(KeyEvent arg0)
+	{
+		System.out.println("ok");
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0)
+	{
+		System.out.println("ok");
+	}*/
+	
+	
+
+}
