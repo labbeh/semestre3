@@ -54,7 +54,6 @@ public class MyEnv extends EnvironmentDescription
 			Scanner scLigne = new Scanner(sc.nextLine());
 			
 			char type = scLigne.next().charAt(0);
-			System.out.println(type);
 			
 			if(type == 'R' || type == 'E')
 			{
@@ -78,17 +77,14 @@ public class MyEnv extends EnvironmentDescription
 						this.ennemis.add(new RobotEnnemi(new Vector3d((int)(Math.random()*cpt), 0, (int)(Math.random()*cpt)), "Ennemi " +cpt));
 						add(this.ennemis.get(cpt));
 					}
-					System.out.println(ennemis);
 				}
 				
 				scLigne.close();
 				
 				//if(!sc.hasNextLine()) break;
 				
-				/*if(sc.hasNextLine()){
-					scLigne = new Scanner(sc.nextLine());
-					type = scLigne.next().charAt(0);
-				}*/
+				scLigne = new Scanner(sc.nextLine());
+				type = scLigne.next().charAt(0);
 			}
 			
 			else{

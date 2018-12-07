@@ -54,7 +54,6 @@ public class MyEnv extends EnvironmentDescription
 			Scanner scLigne = new Scanner(sc.nextLine());
 			
 			char type = scLigne.next().charAt(0);
-			System.out.println(type);
 			
 			if(type == 'R' || type == 'E')
 			{
@@ -70,76 +69,80 @@ public class MyEnv extends EnvironmentDescription
 					}
 				}
 				
-				if(type == 'E'){
-					this.ennemis = new ArrayList<>(nbRobots);
+				scLigne.close();
 				
-					for(int cpt=0; cpt<nbRobots; cpt++)
-					{
-						this.ennemis.add(new RobotEnnemi(new Vector3d((int)(Math.random()*cpt), 0, (int)(Math.random()*cpt)), "Ennemi " +cpt));
-						add(this.ennemis.get(cpt));
-					}
-					System.out.println(ennemis);
+				if(!sc.hasNextLine()) break;
+				
+				scLigne = new Scanner(sc.nextLine());
+				type = scLigne.next().charAt(0);
+			}
+			
+			/*else if(type == 'E')
+			{
+				int nbRobots = Integer.parseInt(scLigne.next());
+				
+				this.ennemis = new ArrayList<>(nbRobots);
+				
+				for(int cpt=0; cpt<nbRobots; cpt++)
+				{
+					this.ennemis.add(new RobotEnnemi(new Vector3d((int)(Math.random()*cpt), 0, (int)(Math.random()*cpt)), "Ennemi " +cpt));
+					add(this.ennemis.get(cpt));
 				}
 				
 				scLigne.close();
 				
-				//if(!sc.hasNextLine()) break;
+				if(!sc.hasNextLine()) break;
 				
-				/*if(sc.hasNextLine()){
-					scLigne = new Scanner(sc.nextLine());
-					type = scLigne.next().charAt(0);
-				}*/
+				scLigne = new Scanner(sc.nextLine());
+				type = scLigne.next().charAt(0);
+			}*/
+			
+			double x = Double.parseDouble(scLigne.next());
+			double y = Double.parseDouble(scLigne.next());
+			double z = Double.parseDouble(scLigne.next());
+			
+			if(type == 'W')
+			{
+				float length;
+				float height;
+				
+				Integer rotate = null;
+				
+				length = Float.parseFloat(scLigne.next());
+				height = Float.parseFloat(scLigne.next());
+				
+				if(scLigne.hasNext()) rotate = Integer.parseInt(scLigne.next());
+				
+				Wall w = new Wall(new Vector3d(x, y, z), length, height, this);
+				if(rotate != null) w.rotate90(rotate);
+				
+				this.envConfig.put("Wall", w);
+				this.alWall.add(w);
+				add(w);
+			}
+			else if(type == 'B')
+			{
+				float xf = Float.parseFloat(scLigne.next());
+				float yf = Float.parseFloat(scLigne.next());
+				float zf = Float.parseFloat(scLigne.next());
+				
+				Box b = new Box(new Vector3d(x, y, z), new Vector3f(xf, yf, zf),this);
+				
+				this.envConfig.put("Box", b);
+				this.alBox.add(b);
+				add(b);
 			}
 			
-			else{
+			else if(type == 'A')
+			{
+				Arch a = new Arch(new Vector3d(x, y, z), this);
+				//a.rotate90(5);
+				this.alArch.add(a);
+				this.envConfig.put("Arch", a);
+				//add(a); d'après les consignes les arch font planter le programme
+			}
 			
-    			double x = Double.parseDouble(scLigne.next());
-    			double y = Double.parseDouble(scLigne.next());
-    			double z = Double.parseDouble(scLigne.next());
-    			
-    			if(type == 'W')
-    			{
-    				float length;
-    				float height;
-    				
-    				Integer rotate = null;
-    				
-    				length = Float.parseFloat(scLigne.next());
-    				height = Float.parseFloat(scLigne.next());
-    				
-    				if(scLigne.hasNext()) rotate = Integer.parseInt(scLigne.next());
-    				
-    				Wall w = new Wall(new Vector3d(x, y, z), length, height, this);
-    				if(rotate != null) w.rotate90(rotate);
-    				
-    				this.envConfig.put("Wall", w);
-    				this.alWall.add(w);
-    				add(w);
-    			}
-    			else if(type == 'B')
-    			{
-    				float xf = Float.parseFloat(scLigne.next());
-    				float yf = Float.parseFloat(scLigne.next());
-    				float zf = Float.parseFloat(scLigne.next());
-    				
-    				Box b = new Box(new Vector3d(x, y, z), new Vector3f(xf, yf, zf),this);
-    				
-    				this.envConfig.put("Box", b);
-    				this.alBox.add(b);
-    				add(b);
-    			}
-    			
-    			else if(type == 'A')
-    			{
-    				Arch a = new Arch(new Vector3d(x, y, z), this);
-    				//a.rotate90(5);
-    				this.alArch.add(a);
-    				this.envConfig.put("Arch", a);
-    				//add(a); d'après les consignes les arch font planter le programme
-    			}
-    			
-    			scLigne.close();
-    		}
+			scLigne.close();
 		}
 		
 		sc.close();

@@ -85,10 +85,10 @@ public class MyEnv extends EnvironmentDescription
 				
 				//if(!sc.hasNextLine()) break;
 				
-				/*if(sc.hasNextLine()){
+				if(sc.hasNextLine()){
 					scLigne = new Scanner(sc.nextLine());
 					type = scLigne.next().charAt(0);
-				}*/
+				}
 			}
 			
 			else{
