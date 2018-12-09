@@ -34,7 +34,9 @@ public class ArbreBinaire{
 		this.etiquette = etiquette;
 	}
 
+	/**************/
 	/* ACCESSEURS */
+	/**************/
 
 	/**
 	* Retourne le fils gauche
@@ -73,7 +75,7 @@ public class ArbreBinaire{
 	* @return true si l'arbre est vide
 	* */
 	public boolean estVide(){
-		return false;
+		return droit == null && gauche == null;
 	}
 
 	/**
