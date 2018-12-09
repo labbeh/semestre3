@@ -17,20 +17,14 @@ import com.sun.j3d.utils.geometry.Primitive;
 
 import simbad.sim.Agent;
 import simbad.sim.CherryAgent;
-import simbad.sim.RangeSensorBelt;
-import simbad.sim.RobotFactory;
 import simbad.sim.SimpleAgent;
 
 public class RobotEnnemi extends Agent
 {
 
-	private RangeSensorBelt sonars;
-
 	public RobotEnnemi(Vector3d pos, String name)
 	{
 		super(pos, name);
-		
-		this.sonars = RobotFactory.addSonarBeltSensor(this,8);
 		
 	}
 	
@@ -99,18 +93,16 @@ public class RobotEnnemi extends Agent
 	@Override
 	protected void performBehavior()
 	{
-		super.performBehavior();
-		//setTranslationalVelocity(0.5);
 		// TODO Auto-generated method stub
 		//super.performBehavior();
 		
 		// avance à 0.5 m/s
-		setTranslationalVelocity(0.5);
+		setTranslationalVelocity(0.9);
 				
 		// changer l'angle fréquemment
-		//if ((getCounter() % 100)==0) setRotationalVelocity(Math.PI/2 * (0.5 - Math.random()));
+		if ((getCounter() % 100)==0) setRotationalVelocity(Math.PI/2 * (0.5 - Math.random()));
 		
-		/*if (sonars.oneHasHit())
+		if (sonars.oneHasHit())
 		{
 			double left  = sonars.getFrontLeftQuadrantMeasurement ();
 			double right = sonars.getFrontRightQuadrantMeasurement();
@@ -121,20 +113,17 @@ public class RobotEnnemi extends Agent
 					if (left < right) setRotationalVelocity(-1);
 					else 			  setRotationalVelocity( 1);
 				}
-		}*/
+		}
 		if (this.collisionDetected())
 		{
-			//System.out.println("collision du robot " +this.numRbt);
-			//setTranslationalVelocity(-Math.PI / 4);
-			//setRotationalVelocity(Math.PI / 2) ;
-			this.rotateY(Math.PI / 4);
+			System.out.println("collision du robot " +this.numRbt);
+			setTranslationalVelocity(-Math.PI / 4);
+			setRotationalVelocity(Math.PI / 2) ;
 		}
 		
 		if (anOtherAgentIsVeryNear())
 		{
-			//SimpleAgent agent = getVeryNearAgent();
-			if(this.getVeryNearAgent() instanceof Agent)
-				System.out.println("fin de partie");
+			SimpleAgent agent = getVeryNearAgent();
 			/*if (agent instanceof CherryAgent)
 			{
 				agent.detach();

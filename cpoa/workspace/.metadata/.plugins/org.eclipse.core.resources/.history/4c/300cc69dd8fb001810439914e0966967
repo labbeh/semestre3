@@ -17,20 +17,16 @@ import com.sun.j3d.utils.geometry.Primitive;
 
 import simbad.sim.Agent;
 import simbad.sim.CherryAgent;
-import simbad.sim.RangeSensorBelt;
-import simbad.sim.RobotFactory;
 import simbad.sim.SimpleAgent;
 
 public class RobotEnnemi extends Agent
 {
 
-	private RangeSensorBelt sonars;
-
 	public RobotEnnemi(Vector3d pos, String name)
 	{
 		super(pos, name);
 		
-		this.sonars = RobotFactory.addSonarBeltSensor(this,8);
+		
 		
 	}
 	

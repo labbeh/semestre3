@@ -24,8 +24,6 @@
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="simbad.sim.BallAgent"/>
 <fullyQualifiedTypeName name="javax.vecmath.Color3f"/>
-<fullyQualifiedTypeName name="simbad.sim.SimpleAgent"/>
-<fullyQualifiedTypeName name="simbad.sim.CherryAgent"/>
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="simbad.sim.Agent"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -43,4 +41,6 @@
 <fullyQualifiedTypeName name="javax.swing.JDialog"/>
 <fullyQualifiedTypeName name="simbad.sim.Simulator"/>
 <fullyQualifiedTypeName name="javax.swing.event.InternalFrameListener"/>
+<fullyQualifiedTypeName name="simbad.sim.SimpleAgent"/>
+<fullyQualifiedTypeName name="simbad.sim.CherryAgent"/>
 </qualifiedTypeNameHistroy>

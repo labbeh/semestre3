@@ -45,8 +45,6 @@ public class MyEnv extends EnvironmentDescription
 		this.alBox  = new ArrayList<>();
 		this.alWall = new ArrayList<>();
 		
-		this.ennemis = new ArrayList<>();
-		
 		InputStream ips = this.getClass().getResourceAsStream("/" +nomFichier);
 		InputStreamReader ipsr = new InputStreamReader(ips);
 		Scanner sc = new Scanner(ipsr);
@@ -58,7 +56,7 @@ public class MyEnv extends EnvironmentDescription
 			char type = scLigne.next().charAt(0);
 			System.out.println(type);
 			
-			if(type == 'R' /*|| type == 'E'*/)
+			if(type == 'R' || type == 'E')
 			{
 				int nbRobots = Integer.parseInt(scLigne.next());
 				
@@ -72,7 +70,7 @@ public class MyEnv extends EnvironmentDescription
 					}
 				}
 				
-				/*if(type == 'E'){
+				if(type == 'E'){
 					this.ennemis = new ArrayList<>(nbRobots);
 				
 					for(int cpt=0; cpt<nbRobots; cpt++)
@@ -81,7 +79,7 @@ public class MyEnv extends EnvironmentDescription
 						add(this.ennemis.get(cpt));
 					}
 					System.out.println(ennemis);
-				}*/
+				}
 				
 				scLigne.close();
 				
@@ -139,21 +137,6 @@ public class MyEnv extends EnvironmentDescription
     				this.envConfig.put("Arch", a);
     				//add(a); d'après les consignes les arch font planter le programme
     			}
-    			
-    			else if(type == 'E')
-    			{
-    				//int nbRobots = Integer.parseInt(scLigne.next());
-    				
-    				//this.ennemis = new ArrayList<>(nbRobots);
-    			
-    				//for(int cpt=0; cpt<nbRobots; cpt++)
-    				//{
-    				RobotEnnemi ennemi = new RobotEnnemi(new Vector3d(x, y, z), "Ennemi ");
-    				this.ennemis.add(ennemi);
-    				add(ennemi);
-    				//}
-    				//System.out.println(ennemis);
-				}
     			
     			scLigne.close();
     		}

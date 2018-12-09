@@ -45,8 +45,6 @@ public class MyEnv extends EnvironmentDescription
 		this.alBox  = new ArrayList<>();
 		this.alWall = new ArrayList<>();
 		
-		this.ennemis = new ArrayList<>();
-		
 		InputStream ips = this.getClass().getResourceAsStream("/" +nomFichier);
 		InputStreamReader ipsr = new InputStreamReader(ips);
 		Scanner sc = new Scanner(ipsr);
@@ -148,7 +146,7 @@ public class MyEnv extends EnvironmentDescription
     			
     				//for(int cpt=0; cpt<nbRobots; cpt++)
     				//{
-    				RobotEnnemi ennemi = new RobotEnnemi(new Vector3d(x, y, z), "Ennemi ");
+    				RobotEnnemi ennemi = new RobotEnnemi(x, 0, z, "Ennemi ");
     				this.ennemis.add(ennemi);
     				add(ennemi);
     				//}

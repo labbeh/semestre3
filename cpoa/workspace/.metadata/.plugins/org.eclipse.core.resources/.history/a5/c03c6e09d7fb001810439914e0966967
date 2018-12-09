@@ -17,20 +17,16 @@ import com.sun.j3d.utils.geometry.Primitive;
 
 import simbad.sim.Agent;
 import simbad.sim.CherryAgent;
-import simbad.sim.RangeSensorBelt;
-import simbad.sim.RobotFactory;
 import simbad.sim.SimpleAgent;
 
 public class RobotEnnemi extends Agent
 {
 
-	private RangeSensorBelt sonars;
-
 	public RobotEnnemi(Vector3d pos, String name)
 	{
 		super(pos, name);
 		
-		this.sonars = RobotFactory.addSonarBeltSensor(this,8);
+		
 		
 	}
 	
@@ -124,6 +120,8 @@ public class RobotEnnemi extends Agent
 		}*/
 		if (this.collisionDetected())
 		{
+			if(this.getVeryNearAgent() instanceof MyRobot)
+				System.out.println("fin de partie");
 			//System.out.println("collision du robot " +this.numRbt);
 			//setTranslationalVelocity(-Math.PI / 4);
 			//setRotationalVelocity(Math.PI / 2) ;
@@ -132,9 +130,7 @@ public class RobotEnnemi extends Agent
 		
 		if (anOtherAgentIsVeryNear())
 		{
-			//SimpleAgent agent = getVeryNearAgent();
-			if(this.getVeryNearAgent() instanceof Agent)
-				System.out.println("fin de partie");
+			SimpleAgent agent = getVeryNearAgent();
 			/*if (agent instanceof CherryAgent)
 			{
 				agent.detach();

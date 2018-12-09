@@ -45,8 +45,6 @@ public class MyEnv extends EnvironmentDescription
 		this.alBox  = new ArrayList<>();
 		this.alWall = new ArrayList<>();
 		
-		this.ennemis = new ArrayList<>();
-		
 		InputStream ips = this.getClass().getResourceAsStream("/" +nomFichier);
 		InputStreamReader ipsr = new InputStreamReader(ips);
 		Scanner sc = new Scanner(ipsr);
