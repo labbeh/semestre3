@@ -15,8 +15,12 @@ public class Exemple2
 			System.exit(0);
 		}
 		
-		System.out.println("Exemple 2");
-		Simbad frame = new Simbad(new MyEnv(argv[0]) ,false);
+		System.out.println("Lancement... ");
+		
+		MyEnv  env   = new MyEnv(argv[0]	);
+		Simbad frame = new Simbad(env ,false);
+		
+		env.setSimulator(frame.getSimulatorInstance());
 	}
 
 }

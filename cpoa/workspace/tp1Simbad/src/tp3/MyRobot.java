@@ -7,6 +7,7 @@ import simbad.sim.CherryAgent;
 import simbad.sim.RangeSensorBelt;
 import simbad.sim.RobotFactory;
 import simbad.sim.SimpleAgent;
+import simbad.sim.Simulator;
 
 public class MyRobot extends Agent
 {
@@ -25,9 +26,19 @@ public class MyRobot extends Agent
 	 * */
 	private double vitesse;
 	
-	public MyRobot(Vector3d pos, String name)
+	/**
+	 * Simulator sur lequel peut agir le robot
+	 * */
+	private Simulator simulator;
+	
+	private MyEnv env;
+	
+	public MyRobot(Vector3d pos, String name, Simulator simulator, MyEnv env)
 	{
 		super(pos, name);
+		
+		this.simulator = simulator;
+		this.env = env;
 		
 		this.setCanBeTraversed(false);
 		
@@ -107,10 +118,17 @@ public class MyRobot extends Agent
 		if (anOtherAgentIsVeryNear())
 		{
 			SimpleAgent agent = getVeryNearAgent();
+			
 			if (agent instanceof CherryAgent)
 			{
 				agent.detach();
 				System.out.println("cerise cueillie !");
+			}
+			
+			if(agent instanceof RobotEnnemi)
+			{
+				System.out.println("ennemi touché");
+				env.stopSimulation();
 			}
 		}
 		

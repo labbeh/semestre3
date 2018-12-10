@@ -43,6 +43,8 @@ public class AgentControlGUI extends JPanel implements ActionListener, KeyListen
 	private World world;
 	private Font smallFont;
 	
+	private Simulator simulator;
+	
 	// attributs de classe
 	private static int LEFT_KEY  = 37;
 	private static int RIGHT_KEY = 39;
@@ -51,6 +53,7 @@ public class AgentControlGUI extends JPanel implements ActionListener, KeyListen
 	public AgentControlGUI(World world, Simulator simulator)
 	{
 		// robot follower
+		this.simulator = simulator;
 		this.robotFollower = new RobotFollower(world, (MyRobot)simulator.getAgentList().get(0));
 		//this.prevPosDirection = 0;
 		//this.prevPosSpeed = 0;

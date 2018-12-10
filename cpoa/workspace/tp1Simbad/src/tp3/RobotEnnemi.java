@@ -124,23 +124,9 @@ public class RobotEnnemi extends Agent
 		}*/
 		if (this.collisionDetected())
 		{
-			//System.out.println("collision du robot " +this.numRbt);
-			//setTranslationalVelocity(-Math.PI / 4);
-			//setRotationalVelocity(Math.PI / 2) ;
 			this.rotateY(Math.PI / 4);
 		}
 		
-		if (anOtherAgentIsVeryNear())
-		{
-			//SimpleAgent agent = getVeryNearAgent();
-			if(this.getVeryNearAgent() instanceof Agent)
-				System.out.println("fin de partie");
-			/*if (agent instanceof CherryAgent)
-			{
-				agent.detach();
-				System.out.println("cerise cueillie !");
-			}*/
-		}
 		
 		
 	}

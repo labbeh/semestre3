@@ -224,6 +224,14 @@ public class Simbad extends JFrame implements ActionListener {
     public static Simbad getSimbadInstance() {
         return simbadInstance;
     }
+    
+    /*
+     * Permet d'obtenir l'instance de Simulator en cours pour y avoir accès sur les classes hors de ce package
+     * @return une instance de Simulator
+     * **/
+    public Simulator getSimulatorInstance(){
+    	return simulator;
+    }
 
 
 

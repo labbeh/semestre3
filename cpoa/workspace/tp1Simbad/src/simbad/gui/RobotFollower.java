@@ -11,5 +11,4 @@ public class RobotFollower extends AgentFollower
 		super(world, robot);
 		this.robot = robot;
 	}
-
 }

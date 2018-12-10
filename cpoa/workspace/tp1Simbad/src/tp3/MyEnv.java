@@ -17,6 +17,7 @@ import simbad.sim.BlockWorldObject;
 import simbad.sim.Box;
 import simbad.sim.CherryAgent;
 import simbad.sim.EnvironmentDescription;
+import simbad.sim.Simulator;
 import simbad.sim.Wall;
 
 public class MyEnv extends EnvironmentDescription
@@ -34,7 +35,15 @@ public class MyEnv extends EnvironmentDescription
 	 **/
 	private ArrayList<MyRobot> listeRobots;
 	
+	/**
+	 * Liste des robots ennemis
+	 * */
 	private ArrayList<RobotEnnemi> ennemis;
+		
+	/**
+	 * Instance de Simulator afin que les objets de l'environnement puisse intéragir avec le simulateur
+	 * */
+	private Simulator simulator;
 	
 
 	public MyEnv( String nomFichier )
@@ -56,7 +65,6 @@ public class MyEnv extends EnvironmentDescription
 			Scanner scLigne = new Scanner(sc.nextLine());
 			
 			char type = scLigne.next().charAt(0);
-			System.out.println(type);
 			
 			if(type == 'R' /*|| type == 'E'*/)
 			{
@@ -67,7 +75,7 @@ public class MyEnv extends EnvironmentDescription
 				
 					for(int cpt=0; cpt<nbRobots; cpt++)
 					{
-						this.listeRobots.add(new MyRobot(new Vector3d((int)(Math.random()*cpt), 0, (int)(Math.random()*cpt)), "MyRobot " +cpt));
+						this.listeRobots.add(new MyRobot(new Vector3d((int)(Math.random()*cpt), 0, (int)(Math.random()*cpt)), "MyRobot " +cpt, simulator, this));
 						add(this.listeRobots.get(cpt));
 					}
 				}
@@ -183,5 +191,22 @@ public class MyEnv extends EnvironmentDescription
 		
 		//System.out.println(this.envConfig.keySet());
 	}
-
+	
+	/**
+	 * Permet de définir le Simulator de l'environnement courant
+	 * */
+	public void setSimulator(Simulator simulator){
+		this.simulator = simulator;
+	}
+	
+	/**
+	 * Permet de stopper la simulation notament depuis un robot
+	 * */
+	public void stopSimulation(){
+		try{
+			Thread.sleep(500);
+		}
+		catch(InterruptedException evt){}
+		simulator.stopSimulation();
+	}
 }

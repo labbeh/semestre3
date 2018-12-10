@@ -39,8 +39,9 @@
 <fullyQualifiedTypeName name="javax.swing.JComponent"/>
 <fullyQualifiedTypeName name="javax.swing.KeyStroke"/>
 <fullyQualifiedTypeName name="javax.swing.JDialog"/>
-<fullyQualifiedTypeName name="simbad.sim.Simulator"/>
 <fullyQualifiedTypeName name="javax.swing.event.InternalFrameListener"/>
 <fullyQualifiedTypeName name="simbad.sim.SimpleAgent"/>
 <fullyQualifiedTypeName name="simbad.sim.CherryAgent"/>
+<fullyQualifiedTypeName name="simbad.sim.Simulator"/>
+<fullyQualifiedTypeName name="java.lang.InterruptedException"/>
 </qualifiedTypeNameHistroy>
