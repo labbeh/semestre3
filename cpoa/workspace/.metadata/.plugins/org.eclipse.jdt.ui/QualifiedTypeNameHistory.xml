@@ -43,5 +43,8 @@
 <fullyQualifiedTypeName name="simbad.sim.SimpleAgent"/>
 <fullyQualifiedTypeName name="simbad.sim.CherryAgent"/>
 <fullyQualifiedTypeName name="simbad.sim.Simulator"/>
+<fullyQualifiedTypeName name="java.awt.GridLayout"/>
 <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+<fullyQualifiedTypeName name="javax.swing.JInternalFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
 </qualifiedTypeNameHistroy>

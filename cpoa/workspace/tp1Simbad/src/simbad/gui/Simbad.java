@@ -25,6 +25,8 @@
 
 package simbad.gui;
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -82,6 +84,8 @@ public class Simbad extends JFrame implements ActionListener {
         createGUI();
         start(ed);
         setVisible(true);
+        
+        createRules();
        
           }
  
@@ -90,9 +94,9 @@ public class Simbad extends JFrame implements ActionListener {
     private void createGUI() {
         desktop.setFocusable(true);
         getContentPane().add(desktop);
-        menubar = new JMenuBar();
+        /*menubar = new JMenuBar();
         menubar.add(DemoManager.createMenu(this));
-        setJMenuBar(menubar);
+        setJMenuBar(menubar);*/
     }
     
     /** Starts (or Restarts after releaseRessources) the world and simulator.*/
@@ -142,11 +146,34 @@ public class Simbad extends JFrame implements ActionListener {
             controlWindow.dispose();
         }
     }
-  
+    
     /**
+     * Créer une fenetre affichant les règles du jeux
+     * */
+    private void createRules(){
+    	JInternalFrame iframe = new JInternalFrame("Règles");
+    	JLabel texte = new JLabel("<html>Règles du jeux: <br />" +
+    							  "Vous contrôlez le robot vert avec les flèches droite et gauche du clavier<br />" +
+    							  "Attrapez toutes les cerises rouges avant que les robots rouges ne vous attrape !<br />" +
+    							  "Appuyez sur le bouton run pour lancer la partie.</html>");
+    	JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+        panel.add("Center",texte);
+        iframe.setContentPane(panel);
+        iframe.setSize(300, 200);
+        iframe.setResizable(true);
+        
+        iframe.setFocusable(true);
+        iframe.show();
+        
+        desktop.add(iframe);
+    	
+    }
+  
+    /*
      * creates agent inspector window
-     */
-    /*private AgentInspector createAgentInspector(Simulator simulator, int x,
+     
+    private AgentInspector createAgentInspector(Simulator simulator, int x,
             int y) {
         ArrayList agents = simulator.getAgentList();
         SimpleAgent a = ((SimpleAgent) agents.get(0));
@@ -159,6 +186,7 @@ public class Simbad extends JFrame implements ActionListener {
         } else
             return null;
     }*/
+
     
     public void actionPerformed(ActionEvent event) {
        if (event.getActionCommand()=="demo"){

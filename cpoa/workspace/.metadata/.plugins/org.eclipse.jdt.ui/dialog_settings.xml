@@ -103,6 +103,20 @@
 			</section>
 		</section>
 	</section>
+	<section name="FatJarPackageWizard">
+		<item value="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
+		<item value="Exemple2 (1) - tp1Simbad" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="/home/etudiant/lh150094/temp/config_simbad_final/simbad.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
+		<item value="1" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
+		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/home/etudiant/lh150094/temp/config_simbad_final/simbad.jar"/>
+		</list>
+		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
+			<item value="/home/etudiant/lh150094/TP/semestre3/cpoa/workspace.xml"/>
+			<item value=".xml"/>
+		</list>
+	</section>
 	<section name="OverrideMethodDialog">
 		<item value="true" key="showtypes"/>
 	</section>

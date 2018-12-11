@@ -47,57 +47,6 @@ public class MyRobot extends Agent
 		
 		this.vitesse = MyRobot.DEFAULT_SPEED; // 0.5 m/s par default
 	}
-
-	@Override
-	protected void initBehavior()
-	{
-		// TODO Auto-generated method stub
-		//super.initBehavior();
-	}
-
-	/*@Override
-	protected void performBehavior()
-	{
-		// TODO Auto-generated method stub
-		//super.performBehavior();
-		
-		// avance à 0.5 m/s
-		setTranslationalVelocity(0.9);
-				
-		// changer l'angle fréquemment
-		if ((getCounter() % 100)==0) setRotationalVelocity(Math.PI/2 * (0.5 - Math.random()));
-		
-		if (sonars.oneHasHit())
-		{
-			double left  = sonars.getFrontLeftQuadrantMeasurement ();
-			double right = sonars.getFrontRightQuadrantMeasurement();
-			double front = sonars.getFrontQuadrantMeasurement	  ();
-			
-				if ((front > 0.5)||(left > 0.5)||(right > 0.5))
-				{
-					if (left < right) setRotationalVelocity(-1);
-					else 			  setRotationalVelocity( 1);
-				}
-		}
-		if (this.collisionDetected())
-		{
-			System.out.println("collision du robot " +this.numRbt);
-			setTranslationalVelocity(-Math.PI / 4);
-			setRotationalVelocity(Math.PI / 2) ;
-		}
-		
-		if (anOtherAgentIsVeryNear())
-		{
-			SimpleAgent agent = getVeryNearAgent();
-			if (agent instanceof CherryAgent)
-			{
-				agent.detach();
-				System.out.println("cerise cueillie !");
-			}
-		}
-		
-		
-	}*/
 	
 	@Override
 	protected void performBehavior()
@@ -106,30 +55,18 @@ public class MyRobot extends Agent
 		
 		// avance à 0.5 m/s de base en continu, vitesse peut être changée via modificateurs
 		setTranslationalVelocity(this.vitesse);
-				
-		
-		/*if (this.collisionDetected())
-		{
-			System.out.println("collision du robot " +this.numRbt);
-			//setTranslationalVelocity(-Math.PI / 4);
-			//setRotationalVelocity(Math.PI / 2) ;
-		}*/
 		
 		if (anOtherAgentIsVeryNear())
 		{
 			SimpleAgent agent = getVeryNearAgent();
 			
-			if (agent instanceof CherryAgent)
-			{
+			if (agent instanceof CherryAgent){
 				agent.detach();
-				System.out.println("cerise cueillie !");
+				env.attraperCerise();
 			}
 			
 			if(agent instanceof RobotEnnemi)
-			{
-				System.out.println("ennemi touché");
-				env.stopSimulation();
-			}
+				env.stopSimulation("Perdu!\nVous avez été touché par un robot ennemi");
 		}
 		
 		
@@ -154,6 +91,14 @@ public class MyRobot extends Agent
 	 * */
 	public void resetSpeed(){
 		this.vitesse = DEFAULT_SPEED;
+	}
+	
+	/**
+	 * Permet d'obtenir la vitesse actuelle du robot
+	 * @return vitesse en double
+	 * */
+	public double getVitesse(){
+		return vitesse;
 	}
 
 }

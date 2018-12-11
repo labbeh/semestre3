@@ -20,7 +20,7 @@ public class KeyboardListener extends KeyAdapter
 	@Override
 	public void keyPressed(KeyEvent evt)
 	{
-		if	   (evt.getKeyCode() == LEFT_KEY )this.robotFollower.robot.rotateY(Math.PI/8);
-		else if(evt.getKeyCode() == RIGHT_KEY)this.robotFollower.robot.rotateY(-Math.PI/8);
+		if	   (evt.getKeyCode() == LEFT_KEY )this.robotFollower.robot.rotateY(Math.PI/12);
+		else if(evt.getKeyCode() == RIGHT_KEY)this.robotFollower.robot.rotateY(-Math.PI/12);
 	}
 }

@@ -16,21 +16,20 @@ import com.sun.j3d.utils.geometry.Cylinder;
 import com.sun.j3d.utils.geometry.Primitive;
 
 import simbad.sim.Agent;
-import simbad.sim.CherryAgent;
-import simbad.sim.RangeSensorBelt;
-import simbad.sim.RobotFactory;
-import simbad.sim.SimpleAgent;
 
 public class RobotEnnemi extends Agent
 {
+	
+	/**
+	 * MyEnv pour donner accès au robot ennemi à son Environnement
+	 * */
+	private MyEnv env;
 
-	private RangeSensorBelt sonars;
-
-	public RobotEnnemi(Vector3d pos, String name)
+	public RobotEnnemi(Vector3d pos, String name, MyEnv env)
 	{
 		super(pos, name);
 		
-		this.sonars = RobotFactory.addSonarBeltSensor(this,8);
+		this.env = env;
 		
 	}
 	
@@ -100,35 +99,18 @@ public class RobotEnnemi extends Agent
 	protected void performBehavior()
 	{
 		super.performBehavior();
-		//setTranslationalVelocity(0.5);
-		// TODO Auto-generated method stub
-		//super.performBehavior();
 		
-		// avance à 0.5 m/s
-		setTranslationalVelocity(0.5);
-				
-		// changer l'angle fréquemment
-		//if ((getCounter() % 100)==0) setRotationalVelocity(Math.PI/2 * (0.5 - Math.random()));
+		// cale la vitesse du robot ennemi sur la même que le robot du joueur
+		setTranslationalVelocity(env.getRobot(0).getVitesse());
+		int changementDir = (int)(Math.random()*2);
 		
-		/*if (sonars.oneHasHit())
-		{
-			double left  = sonars.getFrontLeftQuadrantMeasurement ();
-			double right = sonars.getFrontRightQuadrantMeasurement();
-			double front = sonars.getFrontQuadrantMeasurement	  ();
+		if (this.collisionDetected()){
 			
-				if ((front > 0.5)||(left > 0.5)||(right > 0.5))
-				{
-					if (left < right) setRotationalVelocity(-1);
-					else 			  setRotationalVelocity( 1);
-				}
-		}*/
-		if (this.collisionDetected())
-		{
-			this.rotateY(Math.PI / 4);
+			// pour éviter qu'il reste coincer a tourner en boucle au même endroit
+			if(changementDir == 1) this.rotateY( Math.PI / 4);
+			else 				   this.rotateY(-Math.PI / 4);
+			
 		}
-		
-		
-		
 	}
 
 }
