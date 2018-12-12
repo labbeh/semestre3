@@ -7,6 +7,6 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="tp3.Exemple2"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="test_espace.txt test_simple.txt test_defaite.txt"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="test_espace.txt  test_defaite.txt test_simple.txt"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="tp1Simbad"/>
 </launchConfiguration>
