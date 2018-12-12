@@ -1,6 +1,7 @@
 /**
  * @author hugo labbé D2
  * @version 2018-12-06
+ * Classe simulant un arbre binaire
  * */
 
 public class ArbreBinaire{
@@ -16,11 +17,6 @@ public class ArbreBinaire{
 	private ArbreBinaire gauche;
 
 	/**
-	* Entier hauteur de l'arbre
-	* */
-	private int hauteur;
-
-	/**
 	* String étiquette de l'arbre
 	* */
 	private String etiquette;
@@ -30,8 +26,14 @@ public class ArbreBinaire{
 	* */
 	private double frequence;
 
+	/**
+	* Constructeur d'un ArbreBinaire, affecte son étiquette et calcul sa hauteur
+	* @param etiquette une chaine de caractère
+	* @return un ArbreBinaire
+	*/
 	public ArbreBinaire( String etiquette ){
 		this.etiquette = etiquette;
+		this.frequence = 0;
 	}
 
 	/**************/
@@ -106,7 +108,17 @@ public class ArbreBinaire{
 	* @return entier hauteur de l'arbre
 	* */
 	public int hauteur(){
-		return hauteur;
+		int hauteurGauche, hauteurDroit;
+
+		hauteurGauche = 0;
+		hauteurDroit  = 0;
+
+		if(gauche != null) hauteurGauche = gauche.hauteur();
+		if(droit  != null) hauteurDroit  = droit.hauteur() ;
+
+	    hauteur = 1 + Math.max(hauteurGauche, hauteurDroit);
+
+	    return hauteur;
 	}
 
 	/*****************/
@@ -154,7 +166,12 @@ public class ArbreBinaire{
 	* @return chaine du parcours préfixe
 	* */
 	public String parcoursPrefixe(){
-		return null;
+		String sRet = new String(etiquette +" ");
+
+		if (gauche != null) sRet += gauche.parcoursPrefixe();
+		if (droit  != null) sRet += droit.parcoursPrefixe ();
+
+		return sRet;
 	}
 
 	/**
@@ -162,7 +179,15 @@ public class ArbreBinaire{
 	* @return chaine du parcours infixe
 	* */
 	public String parcoursInfixe(){
-		return null;
+		String sRet = new String();
+
+		if (gauche != null) sRet += gauche.parcoursInfixe();
+
+		sRet += etiquette +" ";
+
+		if (droit != null) sRet += droit.parcoursInfixe();
+
+		return sRet;
 	}
 
 	/**
@@ -170,17 +195,23 @@ public class ArbreBinaire{
 	* @return chaine du parcours postfixe
 	* */
 	public String parcoursPostfixe(){
-		return null;
+		String sRet = new String();
+
+		if (gauche != null) sRet += gauche.parcoursPostfixe();
+		if (droit  != null) sRet += droit.parcoursPostfixe ();
+
+		sRet += etiquette +" ";
+
+		return sRet;
 	}
 
-	/********************/
-	/* MÉTHODES PRIVEES */
-	/********************/
-	private void calculerHauteur(){
+	/**
+	* main pour jeu de test des différentes méthodes sur un ArbreBinaire
+	* @param argv[] aucun paramètres pris en comptes dans ce programme
+	*/
+	public static void main(String[] argv){
 
-	}
-
-	public static void main(String[] args){
+		// création de l'arbre
 		ArbreBinaire a = new ArbreBinaire("+");
 
 		a.setSad(new ArbreBinaire("5"));
@@ -193,5 +224,11 @@ public class ArbreBinaire{
 		a.getSag().setSag(new ArbreBinaire("4"));
 
 		System.out.println(a.nbFeuille());
+
+		System.out.println("Parcours préfixe: "   +a.parcoursPrefixe ());
+		System.out.println("Parcours prostfixe: " +a.parcoursPostfixe());
+		System.out.println("Parcours infixe: " 	  +a.parcoursInfixe  ());
+
+		System.out.println("Hauteur: " +a.hauteur());
 	}
 }
