@@ -77,7 +77,7 @@ public class ArbreBinaire{
 	* @return true si l'arbre est vide
 	* */
 	public boolean estVide(){
-		return droit == null && gauche == null;
+		return etiquette == null;
 	}
 
 	/**
@@ -109,6 +109,7 @@ public class ArbreBinaire{
 	* */
 	public int hauteur(){
 		int hauteurGauche, hauteurDroit;
+		int hauteur;
 
 		hauteurGauche = 0;
 		hauteurDroit  = 0;
@@ -214,8 +215,9 @@ public class ArbreBinaire{
 		// création de l'arbre
 		ArbreBinaire a = new ArbreBinaire("+");
 
-		a.setSad(new ArbreBinaire("5"));
-		a.setSag(new ArbreBinaire("2"));
+		// construction de l'arbre
+		a.setSad(new ArbreBinaire("*"));
+		a.setSag(new ArbreBinaire("-"));
 
 		a.getSad().setSad(new ArbreBinaire("3"));
 		a.getSad().setSag(new ArbreBinaire("4"));
@@ -223,12 +225,12 @@ public class ArbreBinaire{
 		a.getSag().setSad(new ArbreBinaire("3"));
 		a.getSag().setSag(new ArbreBinaire("4"));
 
-		System.out.println(a.nbFeuille());
-
+		// affichage
 		System.out.println("Parcours préfixe: "   +a.parcoursPrefixe ());
 		System.out.println("Parcours prostfixe: " +a.parcoursPostfixe());
 		System.out.println("Parcours infixe: " 	  +a.parcoursInfixe  ());
 
-		System.out.println("Hauteur: " +a.hauteur());
+		System.out.println("Nombre de feuilles: " +a.nbFeuille());
+		System.out.println("Hauteur: " 			  +a.hauteur  ());
 	}
 }
