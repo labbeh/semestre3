@@ -1,0 +1,16 @@
+Algo Test
+variable:
+x : entier
+cptLig, cptCol: réel;
+ligne : chaine
+debut
+
+tab = new int[5]
+tab[0] = 6
+a = 5
+result = (a+tab[0])
+a
+result
+result = (7* (a+2)) > 2
+result
+FIN
