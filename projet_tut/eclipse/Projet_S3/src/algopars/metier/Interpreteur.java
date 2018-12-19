@@ -2,6 +2,7 @@ package algopars.metier;
 import java.util.List;
 import java.util.Scanner;
 
+import algopars.Controleur;
 import bsh.Interpreter;
 
 public class Interpreteur {
@@ -30,15 +31,21 @@ public class Interpreteur {
 	 * */
 	private int nbSi;
 	
+	/**
+	 * Accès au controleur
+	 * */
+	private Controleur ctrl;
+	
 	/* CONSTRUCTEUR */
 	
 	/**
 	 * Constructeur de l'interpréteur
 	 * @param code un Code
-	 * @return un Interpreteur
 	 * */
-	public Interpreteur(Code code){
+	public Interpreteur(Code code, Controleur ctrl){
 		this.code = code;
+		
+		this.ctrl = ctrl;
 		
 		this.inter = new Interpreter();
 		this.inter.setStrictJava(true);
@@ -62,6 +69,7 @@ public class Interpreteur {
 	}
 	
 	public void faireLigne(){
+		//System.out.println("INDEX: " +index);
 		List<String> lignesCode = code.code;
 		String ligne = lignesCode.get(index);
 		ligne = ligne.trim();
@@ -122,16 +130,13 @@ public class Interpreteur {
 			if(var.getType() == TypeVariable.CHAINE){
 				var.setValeur(var.getValeur() + aConcat);
 				return true;
-			}
-				
+			}	
 		}
 		return false;
 	}
 	
 	/**
 	 * Fonction si du pseudo-code
-	 * @param index indice de la ou on en est dans liste de lignes de codes
-	 * @return l'index ou on est arrivé
 	 * */
 	public void si(){
 		// on stock la ligne de la condition
@@ -153,8 +158,7 @@ public class Interpreteur {
 		
 		condition = condition.replaceAll("vrai", "true");
 		condition = condition.replaceAll("faux", "false");
-		
-		System.out.println("si: " +condition);
+
 		
 		if(expressionBooleenne(condition)){
 			nbSi++;
@@ -168,8 +172,11 @@ public class Interpreteur {
 				if(code.code.get(index).equalsIgnoreCase("si")) nbSi++;
 				if(code.code.get(index).equalsIgnoreCase("fsi")) nbSi--;
 				index++;
+				//ctrl.incNumLig();
 			}
 			while(nbSi > 0);
+			//ctrl.setNumLig(ctrl.getNumLigUtilAt(index));
+			//System.out.println("index: " +ctrl.getNumLigUtilAt(index));
 		}
 	}
 	
@@ -209,14 +216,14 @@ public class Interpreteur {
 	 * Fonction écrire du pseudo-code pour écrire la valeur d'une variable
 	 * */
 	public void ecrire(Variable var){
-		System.out.println(var.getValeur());
+		ctrl.afficher(var.getValeur());
 	}
 	
 	/**
 	 * Fonction ecrire du pseudo-code pour afficher une chaine en paramètre
 	 * */
 	public void ecrire(String texte){
-		if(texte.contains("\"")) System.out.println(traiterEcrire(texte));
+		if(texte.contains("\"")) ctrl.afficher(traiterEcrire(texte));
 		else 					 ecrire(code.variables.get(traiterEcrire(texte)));
 	}
 	
@@ -224,7 +231,7 @@ public class Interpreteur {
 	 * Fonction lire du pseudo-code
 	 * */
 	public void lire(){
-		// appel ihm
+		ctrl.lireClavier();
 	}
 	
 	/**
@@ -235,12 +242,8 @@ public class Interpreteur {
 	public boolean expressionBooleenne(String expression){
 		boolean bRet = false;
 		
-		// tests
-		//String exp = "b == 3 && a < 7 || c >= 10 || c > 9 | d == 5 && e == 6";
-		
 		// récupère le noms des variables en une ligne
 		String nomsVars = new String();
-		//String exp = "x == 4 && y == 7";
 		
 		// pour récupérer le nom des variables concernées par l'expression, on enlève
 		// tout les opérateurs logiques dans un premier temps...
@@ -265,7 +268,6 @@ public class Interpreteur {
 			// on rentre les variables dans l'interpreteur bsh
 			for(int i=0; i<tabVars.length; i++){
 				temp = code.variables.get(tabVars[i]);
-				//System.out.println("var :" +temp);
 				
 				if(temp.getType() == TypeVariable.ENTIER)
 					inter.eval("int " + tabVars[i] + " = " +temp.getValeur());
@@ -277,11 +279,16 @@ public class Interpreteur {
 					inter.eval("char " + tabVars[i] + " = '" +temp.getValeur() +"'");
 				
 			}
-			
-			System.out.println("exp " +inter.eval(expression));
 		}
-		catch(Exception e){/*System.out.println ( "expression invalide" );*/e.printStackTrace();}
+		catch(Exception e){e.printStackTrace();}
 		
 		return bRet;
+	}
+	
+	/**
+	 * Incrémente de 1 l'index
+	 * */
+	public void incIndex(){
+		index++;
 	}
 }

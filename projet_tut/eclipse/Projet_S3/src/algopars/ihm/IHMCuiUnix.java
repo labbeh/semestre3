@@ -10,7 +10,7 @@ public class IHMCuiUnix extends IHMCui {
 
 	@Override
 	public void print(String str) {
-		System.out.print(str);
+		stdout.print(str);
 
 	}
 

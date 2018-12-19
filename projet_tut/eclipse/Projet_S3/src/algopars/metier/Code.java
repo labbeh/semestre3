@@ -1,4 +1,5 @@
 package algopars.metier;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -7,7 +8,7 @@ import java.util.Set;
 
 import java.util.List;
 
-import bsh.Interpreter;
+import algopars.ihm.CouleursANSI;
 
 public final class Code {
 	/***********************/
@@ -28,86 +29,125 @@ public final class Code {
 	/**
 	 * Tableau associatif pour associer un objet Variable à son nom
 	 * */
-	protected HashMap<String, Variable> variables;
+	public HashMap<String, Variable> variables;
 
 	/**
 	 * Tableau associatif pour associer un objet Constante à som nom
 	 * */
-	protected HashMap<String, Constante> constantes;
+	public HashMap<String, Constante> constantes;
 
 	/**
 	 * Contenu complet du code ligne par ligne or données
 	 * */
 	protected List<String> code;
+	
+	/**
+	 * Permet de connaitre les lignes de codes que l'on doit mettre
+	 * en évidence dans la trace d'exécution (sans les lignes blanches ...)
+	 * */
+	private List<Integer> numsLigsUtils;
+	
+	/**
+	 * Indice de la ligne utile ou on est
+	 * */
+	private int iLigUtil;
+	
+	/**
+	 * Indice de la ligne du code ou on se trouve
+	 * */
+	private int numLig;
 
 	/**
 	 * Constructeur d'un Code à partir d'un fichier
 	 * 
-	 * @param nom du fichier en String           
-	 * @return un Code
+	 * @param fichier nom du fichier en String           
 	 */
 	public Code(String fichier) {
 		// initialisation des attributs
-		this.variables = new HashMap<>();
+		this.variables 	= new HashMap<>();
 		this.constantes = new HashMap<>();
 
 		// initialisation de la List qui contiendra les lignes du code
-		this.code = new LinkedList<>();
+		this.code = new ArrayList<>();
+		this.numsLigsUtils = new LinkedList<>();
+		
+		this.iLigUtil = 0;
 
 		LectureFichier.lire(fichier);
 		this.contenuFichier = LectureFichier.lire(fichier).split("\n");
 
-		//System.out.println(afficherPseudoCode(contenuFichier));
-		interpretation(contenuFichier);
+		interpretation();
+		
+		this.numLig = getNumSvt();
+		//System.out.println(numsLigsUtils);
 	}
 	
 	
-	
+	/**
+	 * Génère sous forme de String le code à afficher
+	 * @return un String
+	 * */
 	public String afficherPseudoCode() {
 		String r = new String();
 		for (int i = 0; i < contenuFichier.length; i++) {
+			if(i == numLig) r += CouleursANSI.VERT.getCouleurFond();
+			
 			r += String.format("|%2s %-50s|\n", Integer.toString(i), contenuFichier[i]);
+			r += CouleursANSI.NORMAL.getCouleurFond();
 		}
 
 		return r;
 	}
 	
+	/**
+	 * Génère le block "données" à afficher et ne met que les variables a tracer
+	 * @return un String 
+	 * */
 	public String afficherDonnees() {
 		String r = new String();
 		r += "|    NOM    |   TYPE    |  VALEUR   |\n";
-		for (Object v : variables.keySet()) {
-			r += String.format("| %-10s| %-10s| %-10s|\n", v,  variables.get(v).getType(), variables.get(v));
+		for (String v : variables.keySet()) {
+			if(variables.get(v).estAtracer())
+				r += String.format("| %-10s| %-10s| %-10s|\n", v, 
+									variables.get(v).getType(),
+									variables.get(v));
 		}
 		
 		return r;
 	}
-
-	private void interpretation(String[] tab) {
+	
+	/**
+	 * Lancer l'interprétation du code
+	 * */
+	private void interpretation() {
 		int i = 2; // on démarra ligne 2 car les 2 premières lignes sont la déclaration
 				   // de l'algo et du premier block
 		try {
-			while (!tab[i].equalsIgnoreCase("variable:")) {
-				if(!tab[i].equalsIgnoreCase(""))
-					this.creerConstantes(tab[i]);
+			while (!contenuFichier[i].equalsIgnoreCase("variable:")) {
+				if(!contenuFichier[i].equalsIgnoreCase("")){
+					this.creerConstantes(contenuFichier[i]);
+					numsLigsUtils.add(i);
+				}
 				i++;
 			}
 			
 			i ++;
-			while (!tab[i].equalsIgnoreCase("DEBUT")) {
-				if(!tab[i].equalsIgnoreCase(""))
-					this.creerVariable(tab[i]);
+			while (!contenuFichier[i].equalsIgnoreCase("DEBUT")) {
+				if(!contenuFichier[i].equalsIgnoreCase("")){
+					this.creerVariable(contenuFichier[i]);
+					numsLigsUtils.add(i);
+				}
 				i++;
 			}
 			
 			i++;
-			while(!tab[i].equalsIgnoreCase("FIN")){
-				if(!tab[i].matches("\\s+"))
-					this.code.add(tab[i].replaceAll("\\s+", " "));
+			while(!contenuFichier[i].equalsIgnoreCase("FIN")){
+				if(!contenuFichier[i].matches("\\s+")){
+					this.code.add(contenuFichier[i].replaceAll("\\s+", " "));
+					numsLigsUtils.add(i);
+				}
 				i++;
 			}
-			
-			/*for(String ligne: code)
-				System.out.println(ligne);*/
 
 		}
 		catch (Exception e) {
@@ -192,6 +232,57 @@ public final class Code {
 			constantes.put(nomCons, new Constante(TypeVariable.trouverType(type)));
 		
 		scLig.close();
+	}
+	/* MODIFICATEURS */
+	/**
+	 * Permet d'incrémenter le numéro de ligne courante
+	 * pour le surlignage
+	 * */
+	public void incNumLig(){
+		numLig++;
+	}
+	
+	/**
+	 * Défini le numéro de ligne courante
+	 * @param numLig numéro de la ligne à affecter
+	 * */
+	public void setNumLig(int numLig) {
+		this.numLig = numLig;
+		
+	}
+	
+	/* ACCESSEURS */
+	
+	/**
+	 * Retourne le numéro de la ligne en cours puis incrémente l'indice de 1
+	 * @return un entier
+	 * */
+	public int getNumSvt(){
+		return numLig = numsLigsUtils.get(iLigUtil++);
+	}
+	
+	
+	public int getIligUtil(){
+		return iLigUtil;
+	}
+	
+	/**
+	 * Retourne le nombre de ligne que contient le fichier pseudo-code
+	 * @return le nombre de lignes utiles en entier
+	 * */
+	public int getNbLig(){
+		//return contenuFichier.length;
+		return numsLigsUtils.size();
+	}
+	
+	/**
+	 * Retourne la valeur de la ligne utile à l'indice i dans la liste
+	 * de numéros de lignes utiles
+	 * @param index indice dans la liste entier
+	 * @return entier numéro de ligne utile à l'indice i
+	 * */
+	public int getNumLigUtilAt(int index){
+		return numsLigsUtils.get(index);
 	}
 
 }

@@ -1,5 +1,6 @@
 package algopars.ihm;
 
+import java.io.PrintStream;
 import java.util.Scanner;
 
 import algopars.Controleur;
@@ -22,11 +23,21 @@ public abstract class IHMCui {
 	 * */
 	private Scanner stdin;
 	
+	/**
+	 * Objet printstream pour la sortie standard
+	 * */
+	protected PrintStream stdout;
+	
 	public IHMCui(Controleur ctrl) {
 		this.ctrl  = ctrl;
-		this.stdin = new Scanner(System.in);
+		
+		this.stdin 	= new Scanner	 (System.in );
+		this.stdout = new PrintStream(System.out);
 	}
 	
+	/*-------------------------*/
+	/* LECTURE ENTREE STANDARD */
+	/*-------------------------*/
 	/**
 	 * Fonction lecture sur l'entrée standard
 	 * @return flux de l'entrée standard en String
@@ -34,6 +45,34 @@ public abstract class IHMCui {
 	public String lireClavier(){
 		return stdin.nextLine();
 	}
+	
+	/**
+	 * Permet de lire un booléen au clavier
+	 * Tourne jusqu'à ce que T/F ou O/N soit saisi
+	 * @return valeur booléenne saisie au clavier
+	 * */
+	public boolean lireBoolean(){
+		boolean bRet = false;
+		char saisie = ' ';
+		
+		while(saisie != 't' && saisie != 'f' && saisie != 'o' && saisie != 'n'){
+			try{
+				saisie = lireClavier().toLowerCase().charAt(0);
+			
+				if(saisie != 't' && saisie != 'f' && saisie != 'o' && saisie != 'n')
+					stdout.println("Erreur: saisir[T/F] [O/N]");
+			}catch(Exception e){stdout.println("Erreur: saisir[T/F] [O/N]");}
+		}
+		
+		if(saisie == 't' || saisie == 'o') bRet = true ;
+		else							   bRet = false;
+		
+		return bRet;
+	}
+	
+	/*----------------------------------*/
+	/* AFFICHAGE SUR LA SORTIE STANDARD */
+	/*----------------------------------*/
 	/**
 	* @param aAfficher chaine à afficher
 	* Méthode a définir dans les classes filles permettant l'affichage sans retour a la ligne
@@ -51,7 +90,7 @@ public abstract class IHMCui {
 	}
 	
 	/**
-	* @param un objet
+	* @param obj un objet
 	* Permet d'afficher le toString() d'un objet sans l'appelé explicitement
 	* */
 	public void print(Object obj){
@@ -130,6 +169,11 @@ public abstract class IHMCui {
 		print("\033[H\033[2J");
 	}
 	
-	
+	/**
+	 * Remet le jeu de couleurs de base de la console
+	 * */
+	public void normal(){
+		print("\033[0m");
+	}
 
 }
