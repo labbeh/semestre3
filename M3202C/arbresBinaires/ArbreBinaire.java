@@ -4,7 +4,7 @@
  * Classe simulant un arbre binaire
  * */
 
-public class ArbreBinaire{
+public class ArbreBinaire implements Comparable<ArbreBinaire>{
 
 	/**
 	* Arbre droit de l'arbre courant
@@ -204,6 +204,19 @@ public class ArbreBinaire{
 		sRet += etiquette +" ";
 
 		return sRet;
+	}
+
+	/*****************************/
+	/* METHODE COMPARABLE        */
+	/*****************************/
+	/**
+	* Méthode compareTo de la méthode Comparable pour les trier facilement
+	* avec Collections.sort() par taille de fréquence lorsque les arbres
+	* sont dans des collections d'objet 
+	* */
+	@Override
+	public int compareTo(ArbreBinaire autreArbre){
+		return Double.compare(frequence, autreArbre.frequence);
 	}
 
 	/**

@@ -43,9 +43,18 @@ public class Huffman{
 			arbres.add(temp);
 		}
 
-		// étape 2
+		Collections.sort(arbres);
+
+		// étape 2 et 3
+		arbre = arbres.get(0);
+		arbres.remove(0);
+
 		String etiquetteGauche, etiquetteDroite;
 		int iMin;
+
+		temp = arbre;
+		ArbreBinaire tempDroit = null;
+		ArbreBinaire tempGauche = null;
 
 		while(!arbres.isEmpty()){
 			iMin = min(arbres);
@@ -56,12 +65,13 @@ public class Huffman{
 			etiquetteDroite = arbres.get(iMin).getEtiquette();
 			arbres.remove(iMin);
 
-			temp = new ArbreBinaire("");
 			temp.setSag(new ArbreBinaire(etiquetteGauche));
 			temp.setSad(new ArbreBinaire(etiquetteDroite));
-		}
+			temp.setFrequence(temp.getSag().getFrequence() + temp.getSad().getFrequence());
 
-		// étape 3
+			tempDroit = temp.getSad();
+			tempGauche = temp.getSag();
+		}
 	}
 
 	/**
