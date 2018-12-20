@@ -70,8 +70,8 @@ public class Interpreteur {
 	
 	public void faireLigne(){
 		//System.out.println("INDEX: " +index);
-		List<String> lignesCode = code.code;
-		String ligne = lignesCode.get(index);
+		List<LigneCode> lignesCode = code.code;
+		String ligne = lignesCode.get(index).getContenu();
 		ligne = ligne.trim();
 		
 		if	   (ligne.contains("ecrire")) ecrire(ligne);
@@ -139,8 +139,9 @@ public class Interpreteur {
 	 * Fonction si du pseudo-code
 	 * */
 	public void si(){
+		int nbSi = 1;
 		// on stock la ligne de la condition
-		String condition = code.code.get(index);
+		String condition = code.code.get(index).getContenu();
 		
 		// puis on ne garde que la condition et on la traite
 		
@@ -159,25 +160,70 @@ public class Interpreteur {
 		condition = condition.replaceAll("vrai", "true");
 		condition = condition.replaceAll("faux", "false");
 
-		
 		if(expressionBooleenne(condition)){
-			nbSi++;
-			while(!code.code.get(index).equalsIgnoreCase("fsi") && index < code.code.size()-1){
+			index++;
+			
+			while(!code.code.get(index).getContenu().equals("fsi") &&
+				  !code.code.get(index).getContenu().equals("sinon")){
+				faireLigne();
 				index++;
+			}
+			
+			while(!code.code.get(index).getContenu().equals("fsi"))
+				index++;
+		}
+		else{
+			index++;
+			
+			while(!code.code.get(index).getContenu().equals("sinon") && nbSi != 1 || nbSi > 0){
+				
+				if(code.code.get(index).getContenu().equals("si")) nbSi++;
+				if(code.code.get(index).getContenu().equals("fsi")) nbSi--;
+				index++;
+			}
+			
+			if(code.code.get(index).equals("sinon")){
+				while(!code.code.get(index).equals("fsi")){
+					faireLigne();
+					index++;
+				}
+				
+			}
+		}
+		
+		/*if(expressionBooleenne(condition)){
+			while(!code.code.get(index).getContenu().equalsIgnoreCase("fsi") && index < code.code.size()-1){
+				index++;
+				
+				if(code.code.get(index).getContenu().equalsIgnoreCase("sinon"))
+					while(!code.code.get(index).getContenu().equalsIgnoreCase("fsi"))
+						index++;
+					
 				faireLigne();
 			}
 		}
 		else{
+			
 			do{
-				if(code.code.get(index).equalsIgnoreCase("si")) nbSi++;
-				if(code.code.get(index).equalsIgnoreCase("fsi")) nbSi--;
 				index++;
-				//ctrl.incNumLig();
+				if(code.code.get(index).getContenu().equals("si" )) nbSi++;
+				if(code.code.get(index).getContenu().equals("fsi")) nbSi--;
+					
+				
 			}
-			while(nbSi > 0);
-			//ctrl.setNumLig(ctrl.getNumLigUtilAt(index));
-			//System.out.println("index: " +ctrl.getNumLigUtilAt(index));
-		}
+			//while( nbSi > 0 );
+			while( nbSi > 1 || !(code.code.get(index).getContenu().equals("sinon" )) );
+			
+			if(code.code.get(index).getContenu().equals("sinon")){
+				
+				index++;
+				while(!code.code.get(index).getContenu().equals("fsi")){
+					faireLigne();
+					index++;
+					
+				}
+			}
+		}*/
 	}
 	
 	/**
@@ -240,7 +286,7 @@ public class Interpreteur {
 	 * @return vrai ou faux
 	 * */
 	public boolean expressionBooleenne(String expression){
-		boolean bRet = false;
+		Boolean bRet = false;
 		
 		// récupère le noms des variables en une ligne
 		String nomsVars = new String();
@@ -279,6 +325,8 @@ public class Interpreteur {
 					inter.eval("char " + tabVars[i] + " = '" +temp.getValeur() +"'");
 				
 			}
+			
+			bRet = (Boolean)inter.eval(expression);
 		}
 		catch(Exception e){e.printStackTrace();}
 		
@@ -290,5 +338,13 @@ public class Interpreteur {
 	 * */
 	public void incIndex(){
 		index++;
+	}
+	
+	/**
+	 * Retourne l'index de la ligne de code courante
+	 * @return un int
+	 * */
+	public int getIndex(){
+		return index;
 	}
 }

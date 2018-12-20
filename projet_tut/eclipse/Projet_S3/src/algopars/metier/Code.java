@@ -39,7 +39,8 @@ public final class Code {
 	/**
 	 * Contenu complet du code ligne par ligne or données
 	 * */
-	protected List<String> code;
+	protected List<LigneCode> code;
+	//protected List<String> code;
 	
 	/**
 	 * Permet de connaitre les lignes de codes que l'on doit mettre
@@ -78,8 +79,10 @@ public final class Code {
 
 		interpretation();
 		
-		this.numLig = getNumSvt();
-		//System.out.println(numsLigsUtils);
+		//this.numLig = getNumLig();
+		this.numLig = numsLigsUtils.get(0);
+		//System.out.println("TAILLE: " +code.get(0).getNumLig());
+		System.out.println(code);
 	}
 	
 	
@@ -120,9 +123,13 @@ public final class Code {
 	 * Lancer l'interprétation du code
 	 * */
 	private void interpretation() {
-		int i = 2; // on démarra ligne 2 car les 2 premières lignes sont la déclaration
+		int i = 2; // on démarre ligne 2 car les 2 premières lignes sont la déclaration
 				   // de l'algo et du premier block
+		
 		try {
+			numsLigsUtils.add(0);
+			
+			
 			while (!contenuFichier[i].equalsIgnoreCase("variable:")) {
 				if(!contenuFichier[i].equalsIgnoreCase("")){
 					this.creerConstantes(contenuFichier[i]);
@@ -143,7 +150,7 @@ public final class Code {
 			i++;
 			while(!contenuFichier[i].equalsIgnoreCase("FIN")){
 				if(!contenuFichier[i].matches("\\s+")){
-					this.code.add(contenuFichier[i].replaceAll("\\s+", " "));
+					this.code.add(new LigneCode(i, contenuFichier[i].replaceAll("\\s+", " ")));
 					numsLigsUtils.add(i);
 				}
 				i++;
@@ -160,7 +167,7 @@ public final class Code {
 	 * Méthode pour remplir la HashMap des variables
 	 * */
 	private void creerVariable(String ligne) {
-		// on stock le nom des varaibles dans un Set
+		// on stock le nom des variables dans un Set
 		// pour le cas ou il y a plusieurs variables sur une ligne
 		Set<String> nomsVars = new HashSet<>();
 
@@ -246,8 +253,8 @@ public final class Code {
 	 * Défini le numéro de ligne courante
 	 * @param numLig numéro de la ligne à affecter
 	 * */
-	public void setNumLig(int numLig) {
-		this.numLig = numLig;
+	public void setNumLig(int index) {
+		this.numLig = code.get(index).getNumLig();
 		
 	}
 	
@@ -257,22 +264,22 @@ public final class Code {
 	 * Retourne le numéro de la ligne en cours puis incrémente l'indice de 1
 	 * @return un entier
 	 * */
-	public int getNumSvt(){
-		return numLig = numsLigsUtils.get(iLigUtil++);
-	}
+	/*public int getNumLigUtil(int i){
+		iLigUtil = i;
+		return numLig = numsLigsUtils.get(i);
+	}*/
 	
 	
-	public int getIligUtil(){
+	/*public int getIligUtil(){
 		return iLigUtil;
-	}
+	}*/
 	
 	/**
 	 * Retourne le nombre de ligne que contient le fichier pseudo-code
 	 * @return le nombre de lignes utiles en entier
 	 * */
 	public int getNbLig(){
-		//return contenuFichier.length;
-		return numsLigsUtils.size();
+		return code.size();
 	}
 	
 	/**

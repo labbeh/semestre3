@@ -47,38 +47,41 @@ public class Controleur {
 		ihm.normal();
 		afficher(code.afficherPseudoCode());
 		
-		//this.inter.lireCode();
+		this.inter.lireCode();
 		
 		choixTracageVariables();
 		
 		afficher(code.afficherDonnees());
 		
 		// mode pas a pas
-		for(int i=0; i<code.getNbLig(); i++){
-			afficher(code.afficherPseudoCode());
+		/*while(inter.getIndex() < code.getNbLig()){
+			
+			
+			code.setNumLig(inter.getIndex());
+			
+			System.out.println("INDEX: " +inter.getIndex());
+			inter.faireLigne();
+			
+			
+			//afficher(code.afficherPseudoCode());
 			afficher(code.afficherDonnees());
 			
-			
-			
-			inter.faireLigne();
-			code.getNumSvt();
-			
-			
 			lireClavier();
-			
-			ihm.nettoyer();
 			inter.incIndex();
+			ihm.nettoyer();
 			
 			
 			
-			//i = code.getIligUtil();
-		}
+			//System.out.println(code.getIligUtil());
+		}*/
 		
 		ihm.normal();
-		
-		
 	}
 	
+	/**
+	 * Lance la possibilité a l'utilisateur de choisir les variables
+	 * à tracer
+	 * */
 	private void choixTracageVariables() {
 		afficher("Quelles variables souhaitez vous tracer ?");
 		
@@ -101,6 +104,10 @@ public class Controleur {
 		ihm.println(str);
 	}
 	
+	/**
+	 * Retourne la saisie au clavier depuis l'ihm
+	 * @return un String
+	 * */
 	public String lireClavier(){
 		return ihm.lireClavier();
 	}

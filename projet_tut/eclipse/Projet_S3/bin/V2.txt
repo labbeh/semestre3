@@ -17,8 +17,10 @@ DEBUT
         si y = 2 alors
             ecrire( "etape2" )
         fsi
-    
+        
+   
         ecrire ( "etape3" )
+  
     
         si y = 2 alors
             ecrire( "etape4" ) 
