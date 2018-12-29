@@ -5,8 +5,8 @@ variable:
     x, y, z : entier
 
 DEBUT
-    x<--4
-    y<--7
+    x<--5
+    y<--8
     z<--2
     
     si y = 8 alors
@@ -25,6 +25,7 @@ DEBUT
             si z = 2 alors
                 ecrire("reussi")
             fsi
+            ecrire("x=!4")
         fsi
     fsi
 FIN

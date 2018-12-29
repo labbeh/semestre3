@@ -78,6 +78,7 @@ public class Interpreteur {
 		if	   (ligne.contains("ecrire")) ecrire(ligne);
 		else if(ligne.contains("<--"   )) affecter(ligne);
 		else if(ligne.startsWith("si"   ) && ligne.endsWith("alors")) si();
+		else if(ligne.startsWith("sinon")) passerSinon();
 	}
 	
 	/**
@@ -167,7 +168,7 @@ public class Interpreteur {
 		boolean expression = expressionBooleenne(condition);
 		
 		int nbSi = 1;
-		if(!expressionBooleenne(condition)){
+		if(!expression){
 			//index++;
 			do{
 				index++;
@@ -182,29 +183,25 @@ public class Interpreteur {
 					//index++;
 				}
 				
-				//index++;
-				//System.out.println(!code.code.get(index).getContenu().startsWith("fsi") && nbSi > 0);
-				//System.out.println(code.code.get(index).getContenu() +" " +nbSi);
-			}
-			while(/*(!code.code.get(index).getContenu().startsWith("fsi") && nbSi > 0) ||*/ nbSi > 0 /*&& index < code.code.size()-1*/);
+				if(nbSi == 1 && code.code.get(index).getContenu().startsWith("sinon")){
+					nbSi = 0;
+					//System.out.println("avec nbSi = " +nbSi+ " et sur la ligne + " +code.code.get(index).getContenu());
+				}
 
+			}
+			while(nbSi > 0);
 		}
-		/*else{
-			index++;
-		}*/
-		//System.out.println("sort du si avec nbSi = " +nbSi+ " et sur la ligne + " +code.code.get(index).getContenu());
-		
 	}
 	
 	/**
-	 * Fonction permettant de passer des si sans effectuer le contenu en cas de condition fausse
-	 * @param sinon booléeen à true si on doit prendre en compte les sinons
+	 * Fonction permettant de passer des sinon si la condition d'un si est vérifiée
 	 * */
-	private void passerSi(boolean sinon){
-		while(!code.code.get(index).getContenu().equals("fsi")){
-			if(code.code.get(index).getContenu().startsWith("si")) passerSi(false);
+	private void passerSinon(){
+		//System.out.println(condition);
+		
+		while(!code.code.get(index).getContenu().startsWith("fsi"))
 			index++;
-		}
+
 	}
 	
 	
