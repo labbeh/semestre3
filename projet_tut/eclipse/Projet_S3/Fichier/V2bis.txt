@@ -23,17 +23,13 @@ DEBUT
   
     
         si y = 2 alors
-            ecrire( "etape4" ) 
-        sinon
-            ecrire( "etape5 super étape !")
+            ecrire( "etape4" )
         fsi
     
     fsi
     
     si y = 7 alors
         ecrire ("etape6")
-    sinon
-        ecrire ("etape7")
     fsi
     
     

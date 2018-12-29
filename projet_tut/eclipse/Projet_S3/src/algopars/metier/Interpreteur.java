@@ -53,6 +53,7 @@ public class Interpreteur {
 		this.index = 0;
 		
 		this.nbSi = 1;
+		//System.out.println(code.code);
 	}
 	
 	/* METHODES */
@@ -139,8 +140,9 @@ public class Interpreteur {
 	 * Fonction si du pseudo-code
 	 * */
 	public void si(){
+		//System.out.println("rentre dans si");
 		nbSi++;
-		System.out.println("nbSi: " +nbSi);
+		//System.out.println("nbSi: " +nbSi);
 		// on stock la ligne de la condition
 		String condition = code.code.get(index).getContenu();
 		//System.out.println(condition);
@@ -162,154 +164,49 @@ public class Interpreteur {
 		condition = condition.replaceAll("vrai", "true");
 		condition = condition.replaceAll("faux", "false");
 		
-		index++;
-		//System.out.println(condition + ": " +expressionBooleenne(condition));
+		boolean expression = expressionBooleenne(condition);
 		
-		//while(index < code.code.size() && !code.code.get(index).getContenu().startsWith("fsi")){
-
-			if(expressionBooleenne(condition)){				
-				System.out.println("condition vraie");
-
+		int nbSi = 1;
+		if(!expressionBooleenne(condition)){
+			//index++;
+			do{
+				index++;
 				
-				while(!code.code.get(index).getContenu().equals("fsi")&&
-					   !code.code.get(index).getContenu().equals("sinon")&& nbSi > 1){
-					
-					faireLigne();
-					index++;
+				if(code.code.get(index).getContenu().startsWith("si") && code.code.get(index).getContenu().endsWith("alors")){
+					//if(nbSi == -1) nbSi = 1;
+					/*else*/		   nbSi++;
+				}
+				if(code.code.get(index).getContenu().startsWith("fsi")){
+					//if(nbSi == -1) nbSi = 0;
+					/*else*/ nbSi--;
+					//index++;
 				}
 				
-				if(code.code.get(index).getContenu().equals("sinon")){
-					
-					int nbSinon = 1;
-					
-					while(!code.code.get(index).getContenu().equals("fsi") && nbSinon > 0){
-						
-						if(code.code.get(index).getContenu().startsWith("si") && 
-							code.code.get(index).getContenu().endsWith("alors")){
-								nbSinon++;
-						}
-						
-						if(code.code.get(index).getContenu().equals("fsi")){
-							nbSinon--;
-						}
-						
-						index++;
-					}
-				}
-				
+				//index++;
+				//System.out.println(!code.code.get(index).getContenu().startsWith("fsi") && nbSi > 0);
+				//System.out.println(code.code.get(index).getContenu() +" " +nbSi);
 			}
-			else{
-				System.out.println("condition fausse");
-				int nbSinon = 1;
-				
-				while(!code.code.get(index).getContenu().equals("sinon") &&  nbSinon == 0 ||
-						!code.code.get(index).getContenu().equals("fsi") && nbSinon == 0){
-						
-						if(code.code.get(index).getContenu().startsWith("si") && 
-							code.code.get(index).getContenu().endsWith("alors")){
-								nbSinon++;
-						}
-						//System.out.println(code.code.get(index).getContenu());
-						if(code.code.get(index).getContenu().contains("fsi")){
-							nbSinon--;
-							
-						}
-						
-						index++;
-						System.out.println(!code.code.get(index).getContenu().equals("sinon") && 
-						!code.code.get(index).getContenu().equals("fsi") && nbSinon != 0);
-						
-				}
-				if ( code.code.get(index).getContenu().equals("sinon")){
-					while(!code.code.get(index).getContenu().equals("fsi")
-							&& nbSi > 1){
-								faireLigne();
-							
-							index++;
-						}
-				}
-			}
+			while(/*(!code.code.get(index).getContenu().startsWith("fsi") && nbSi > 0) ||*/ nbSi > 0 /*&& index < code.code.size()-1*/);
+
+		}
+		/*else{
 			index++;
-			
-		
-
+		}*/
+		//System.out.println("sort du si avec nbSi = " +nbSi+ " et sur la ligne + " +code.code.get(index).getContenu());
 		
 	}
 	
-	/*public void si(){
-        nbSi ++ ;
-        // on stock la ligne de la condition
-        String condition = code.code.get(index).getContenu();
-        
-        // puis on ne garde que la condition et on la traite
-        
-        // on enlève les mots si et alors aux bouts des lignes
-        condition = condition.replaceAll("si ", "");
-        condition = condition.replaceAll("alors", "");
-        condition = condition.trim();
-        
-        // on remplace les mot conditionnels du pseudo-code
-        // par des expressions java pour utiliser l'interpéteur bsh
-        condition = condition.replaceAll("ET", "&&");
-        condition = condition.replaceAll("OU", "||");
-        condition = condition.replaceAll("XOU", "|");
-        condition = condition.replaceAll("=", "==");
-        
-        condition = condition.replaceAll("vrai", "true");
-        condition = condition.replaceAll("faux", "false");
-        
-        
-        if(expressionBooleenne(condition)){
-            index++;
-            //System.out.println(nbSi);
-            while(!code.code.get(index).getContenu().equals("fsi") &&
-                  !code.code.get(index).getContenu().equals("sinon") && nbSi > 1){
-                
-                if (code.code.get(index).getContenu().equals("fsi"))nbSi --;
-                
-                faireLigne();
-                index++;
-            
-                
-            }
-            
-            faireLigne();
-            if (code.code.get(index).getContenu().equals("sinon")){
-                while(!code.code.get(index).getContenu().equals("fsi") && nbSi > 1){
-                            
-                    if((code.code.get(index).getContenu().contains("si")) && 
-                       (code.code.get(index).getContenu().contains("alors"))) 
-                        
-                        nbSi++;
-                }
-                if(code.code.get(index).getContenu().equals("fsi")) 
-                        nbSi--;
-                    index++;
-                }
-            }
-
-
-        else{
-            
-            
-            while(!code.code.get(index).getContenu().equals("fsi") &&
-                  !code.code.get(index).getContenu().equals("sinon") && nbSi > 1){
-                        
-                if((code.code.get(index).getContenu().contains("si")) && 
-                   (code.code.get(index).getContenu().contains("alors"))) nbSi++;
-                if(code.code.get(index).getContenu().equals("fsi")) nbSi--;
-                    index++;
-            }
-            
-            if(code.code.get(index).equals("sinon")){
-                while(!code.code.get(index).equals("fsi")){
-                    faireLigne();
-                    index++;
-                }
-                
-            }
-        }
-	}*/
+	/**
+	 * Fonction permettant de passer des si sans effectuer le contenu en cas de condition fausse
+	 * @param sinon booléeen à true si on doit prendre en compte les sinons
+	 * */
+	private void passerSi(boolean sinon){
+		while(!code.code.get(index).getContenu().equals("fsi")){
+			if(code.code.get(index).getContenu().startsWith("si")) passerSi(false);
+			index++;
+		}
+	}
+	
 	
 	/**
 	 * Fonction écrire du pseudo-code pour écrire une chaine

@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="Fichier"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/etudiant/lh150094/TP/semestre3/projet_tut/bsh-2.0b4.jar"/>
-	<classpathentry kind="lib" path="/home/etudiant/lh150094/TP/semestre3/projet_tut/jansi-1.17.1.jar"/>
+	<classpathentry kind="lib" path="/home/etudiant/lh150094/semestre3/projet_tut/bsh-2.0b4.jar"/>
+	<classpathentry kind="lib" path="/home/etudiant/lh150094/semestre3/projet_tut/jansi-1.17.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

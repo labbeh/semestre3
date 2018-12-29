@@ -39,7 +39,7 @@ public class LigneCode {
 	
 	@Override
 	public String toString() {
-		return contenu;
+		return numLig +") " +contenu;
 	}
 
 	

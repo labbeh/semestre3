@@ -1,0 +1,36 @@
+ALGORTIHME NomAlgo
+constante:
+
+variable:
+    x, y, z : entier
+
+DEBUT
+    x<--4
+    y<--8
+    z<--2
+    
+    si y = 8 alors
+    
+        ecrire(y)
+        
+        si x = 4 alors
+            ecrire("salut")
+        fsi
+        
+        si x = 4 alors
+        
+            ecrire("ola")
+            
+            si z = 2 alors
+            	ecrire("z est 2")
+            fsi
+            
+        fsi
+    fsi
+    
+    ecrire("yolo")
+    
+    si z = 3 alors
+    	ecrire("pas la dedans")
+    fsi
+FIN

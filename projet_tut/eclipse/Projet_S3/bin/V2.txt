@@ -6,7 +6,7 @@ variable:
 
 DEBUT
     x<--5
-    y<--7
+    y<--2
     
     ecrire ( "etape0" )
     
