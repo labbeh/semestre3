@@ -1,6 +1,6 @@
 package algopars.metier;
 
-public class LigneCode {
+class LigneCode {
 	
 	/**
 	 * Numéro de la ligne de code dans le fichier

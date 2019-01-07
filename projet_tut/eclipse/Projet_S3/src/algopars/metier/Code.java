@@ -24,7 +24,7 @@ public final class Code {
 	 * Tableau contenant l'intégralité du fichier sans aucune modification,
 	 * Sans suppressions d'espaces ou autre ...
 	 * */
-	private String[] contenuFichier;
+	public final String[] contenuFichier;
 
 	/**
 	 * Tableau associatif pour associer un objet Variable à son nom
@@ -57,6 +57,12 @@ public final class Code {
 	 * Indice de la ligne du code ou on se trouve
 	 * */
 	private int numLig;
+	
+	/**
+	 * Couleur du surlignage de la ligne: change de couleur si on tombe sur une
+	 * expression booléenne
+	 * */
+	private CouleursANSI couleurLigne;
 
 	/**
 	 * Constructeur d'un Code à partir d'un fichier
@@ -82,7 +88,10 @@ public final class Code {
 		//this.numLig = getNumLig();
 		this.numLig = numsLigsUtils.get(0);
 		//System.out.println("TAILLE: " +code.get(0).getNumLig());
-		System.out.println(code);
+		//System.out.println(code.get(2).getContenu().substring(0,2));
+		//this.couleurLigne = CouleursANSI.BLEU;
+		
+		//for(LigneCode s: code) System.out.println(s);
 	}
 	
 	
@@ -90,17 +99,17 @@ public final class Code {
 	 * Génère sous forme de String le code à afficher
 	 * @return un String
 	 * */
-	public String afficherPseudoCode() {
+	/*public String afficherPseudoCode() {
 		String r = new String();
 		for (int i = 0; i < contenuFichier.length; i++) {
-			if(i == numLig) r += CouleursANSI.VERT.getCouleurFond();
+			if(i == numLig) r += CouleursANSI.BLEU.getCouleurFond();
 			
 			r += String.format("|%2s %-50s|\n", Integer.toString(i), contenuFichier[i]);
 			r += CouleursANSI.NORMAL.getCouleurFond();
 		}
 
 		return r;
-	}
+	}*/
 	
 	/**
 	 * Génère le block "données" à afficher et ne met que les variables a tracer
@@ -149,7 +158,7 @@ public final class Code {
 			
 			i++;
 			while(!contenuFichier[i].equalsIgnoreCase("FIN")){
-				if(!contenuFichier[i].matches("\\s+")){
+				if(!contenuFichier[i].matches("\\s+") && !contenuFichier[i].equalsIgnoreCase("")){
 					this.code.add(new LigneCode(i, contenuFichier[i].replaceAll("\\s+", " ")));
 					numsLigsUtils.add(i);
 				}
@@ -260,19 +269,6 @@ public final class Code {
 	
 	/* ACCESSEURS */
 	
-	/**
-	 * Retourne le numéro de la ligne en cours puis incrémente l'indice de 1
-	 * @return un entier
-	 * */
-	/*public int getNumLigUtil(int i){
-		iLigUtil = i;
-		return numLig = numsLigsUtils.get(i);
-	}*/
-	
-	
-	/*public int getIligUtil(){
-		return iLigUtil;
-	}*/
 	
 	/**
 	 * Retourne le nombre de ligne que contient le fichier pseudo-code
@@ -280,6 +276,14 @@ public final class Code {
 	 * */
 	public int getNbLig(){
 		return code.size();
+	}
+	
+	/**
+	 * Retourne le numéro de la ligne en cours
+	 * @return ligne en cours en entier
+	 * */
+	public int getNumLig(){
+		return numLig;
 	}
 	
 	/**

@@ -1,6 +1,7 @@
 package algopars.metier;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 import algopars.Controleur;
 import bsh.Interpreter;
@@ -27,14 +28,20 @@ public class Interpreteur {
 	private int index;
 	
 	/**
-	 * Nombre de "si" pour la gestion des "si" imbriqués
+	 * Permet de savoir si la ligne est une expression boléenne et si c'est le cas
+	 * sa valeur
 	 * */
-	private int nbSi;
+	private Boolean etatLigne;
 	
 	/**
 	 * Accès au controleur
 	 * */
 	private Controleur ctrl;
+	
+	/**
+	 * Empile les conditions des Tant-que
+	 * */
+	private Stack<Integer> conditionsTq ;
 	
 	/* CONSTRUCTEUR */
 	
@@ -52,7 +59,11 @@ public class Interpreteur {
 		
 		this.index = 0;
 		
-		this.nbSi = 1;
+		this.etatLigne = null;
+		
+		this.conditionsTq = new Stack<>();
+		
+		//this.nbSi = 1;
 		//System.out.println(code.code);
 	}
 	
@@ -70,15 +81,29 @@ public class Interpreteur {
 	}
 	
 	public void faireLigne(){
-		//System.out.println("INDEX: " +index);
+		etatLigne = null;
+		
 		List<LigneCode> lignesCode = code.code;
 		String ligne = lignesCode.get(index).getContenu();
 		ligne = ligne.trim();
 		
+		//System.out.println("LIGNE: " +ligne);
+		
 		if	   (ligne.contains("ecrire")) ecrire(ligne);
 		else if(ligne.contains("<--"   )) affecter(ligne);
-		else if(ligne.startsWith("si"   ) && ligne.endsWith("alors")) si();
+		else if(ligne.endsWith("++"	   )) incrementerVariable();
+		else if(ligne.substring(0,2).startsWith("si"   ) && ligne.endsWith("alors")) si();
 		else if(ligne.startsWith("sinon")) passerSinon();
+		else if(ligne.substring(0,2).startsWith("tq") && ligne.endsWith("faire")) tantQue();
+		else if(ligne.startsWith("ftq")) ftq();
+		else if(ligne.startsWith("fsi"));
+		
+		else{
+			System.err.println("Erreur: code illisible ligne " +code.code.get(index).getNumLig());
+			System.exit(1);
+		}
+		
+		//System.out.println(code.variables);
 	}
 	
 	/**
@@ -104,18 +129,59 @@ public class Interpreteur {
 		Scanner scLig = new Scanner(ligneAffectation);
 		scLig.useDelimiter("<--");
 		
+		// nom de la variable ou on doit faire l'affectation
 		String nomVar;
+		
+		// valeur à affecter: peut être une valeur unique ou une expression
 		String valeur;
+		
+		// éléments de la valeur à affecter en cas d'expression composée
+		//String[] eltsValeur;
 		
 		nomVar = scLig.next().replaceFirst("\\s+", "");
 		nomVar = nomVar.replaceAll("\\s$", "");
 		
+		//eltsValeur = valeur.split("")
+		
+		//if(eltsValeur.length == 0){
 		valeur = scLig.next().replaceFirst("\\s+", "");
 		valeur = valeur.replaceAll("\\s$", "");
+		//}
+		//if(valeur.endsWith("++")) valeur = incrementerVariable();
 		
 		scLig.close();
 		
 		return affecter(nomVar, valeur);
+		
+	}
+	
+	/**
+	 * Fonction pour incrémenter une variable entière avec ++
+	 * */
+	void incrementerVariable(){
+		String ligne = code.code.get(index).getContenu();
+		ligne = ligne.replaceAll("\\s+", "");
+		//System.out.println(ligne.replaceAll("\\s+", ""));
+		
+		Scanner scLig = new Scanner(ligne);
+		scLig.useDelimiter("\\+");
+		
+		Variable var = code.variables.get(scLig.next());
+		
+		scLig.close();
+		
+		// si on tente d'incrémenter une variable qui n'est pas un nombre
+		// on signal la ligne de l'érreur et on arrete le programme
+		if(var.getType() != TypeVariable.ENTIER && var.getType() != TypeVariable.REEL){
+			System.err.println("Erreur ligne " +index);
+			System.exit(1);
+		}
+		
+		int val = Integer.parseInt(var.getValeur());
+		val++;
+		
+		var.setValeur(Integer.toString(val));
+		//System.out.println("valeur : " +val);
 		
 	}
 	
@@ -142,15 +208,22 @@ public class Interpreteur {
 	 * */
 	public void si(){
 		//System.out.println("rentre dans si");
-		nbSi++;
+		//nbSi++;
 		//System.out.println("nbSi: " +nbSi);
 		// on stock la ligne de la condition
 		String condition = code.code.get(index).getContenu();
+		//System.out.println("CONDITION SI: " +condition);
 		//System.out.println(condition);
+		
+		
+		if(condition.substring(0,2).equalsIgnoreCase("si"))
+			condition = condition.substring(2, condition.length());
+		//System.out.println("COND: " +condition);
 		
 		// puis on ne garde que la condition et on la traite
 		
 		// on enlève les mots si et alors aux bouts des lignes
+		
 		condition = condition.replaceAll("si ", "");
 		condition = condition.replaceAll("alors", "");
 		condition = condition.trim();
@@ -191,6 +264,69 @@ public class Interpreteur {
 			}
 			while(nbSi > 0);
 		}
+	}
+	
+	/**
+	 * Fonction Tant-que du pseudo-code
+	 * */
+	public void tantQue(){
+		// on stock la ligne de la condition
+		String condition = code.code.get(index).getContenu();
+		//System.out.println(condition);
+		
+
+		
+		// on enlève les mots tq et faire aux bouts des lignes
+		condition = condition.replaceAll("tq","" );
+		condition = condition.replaceAll("faire", "");
+		
+		// on remplace les mot conditionnels du pseudo-code
+		// par des expressions java pour utiliser l'interpéteur bsh
+		condition = condition.replaceAll("ET", "&&");
+		condition = condition.replaceAll("OU", "||");
+		condition = condition.replaceAll("XOU", "|");
+		condition = condition.replaceAll("=", "==");
+		
+		condition = condition.replaceAll("vrai", "true");
+		condition = condition.replaceAll("faux", "false");
+		
+		//System.out.println("CONDITION: " +condition);
+		
+		boolean expression = expressionBooleenne(condition);
+		
+		if (expression){
+			conditionsTq.push(index);
+			System.out.println("OK: " +code.code.get(index));
+		}
+		
+		int nbTq = 1;
+		if (!expression){
+			do{
+				
+			index++;
+			
+			if(code.code.get(index).getContenu().startsWith("tq") && code.code.get(index).getContenu().endsWith("faire")){
+				nbTq++;
+			}
+			if(code.code.get(index).getContenu().startsWith("ftq")){
+				nbTq--;
+				
+			}
+			
+			}while(nbTq > 0);
+			
+		}
+		
+	}
+	
+	/**
+	 * Fonction qui vérifie que la condition d'un tant-que est toujours vraie 
+	 * */	
+	public void ftq(){
+	
+		index = conditionsTq.pop() - 1;
+		//System.out.println(code.code.get(index));
+	
 	}
 	
 	/**
@@ -273,7 +409,7 @@ public class Interpreteur {
 		// pour récupérer le nom des variables concernées par l'expression, on enlève
 		// tout les opérateurs logiques dans un premier temps...
 		Scanner sc = new Scanner(expression);
-		sc.useDelimiter("&& | \\|+ | == | < | > | <= | >=");
+		sc.useDelimiter("&& | \\+ | == | < | > | <= | >=");
 		
 		while(sc.hasNext()) nomsVars += sc.next().replaceAll("\\s+", "") +" ";
 		sc.close();
@@ -284,8 +420,11 @@ public class Interpreteur {
 		// ... et les autres types de caractères
 		nomsVars = nomsVars.replaceAll("\\'.\\'", "");
 		
+		
 		// on parcours la chaine pour obtenir les variables conernées
 		String[] tabVars = nomsVars.split("\\s+");
+		
+		//for(String s: tabVars) System.out.println("tabvar: " +s);
 		
 		// Début avec bsh
 		try{
@@ -309,6 +448,8 @@ public class Interpreteur {
 		}
 		catch(Exception e){e.printStackTrace();}
 		
+		this.etatLigne = bRet;
+		
 		return bRet;
 	}
 	
@@ -325,5 +466,13 @@ public class Interpreteur {
 	 * */
 	public int getIndex(){
 		return index;
+	}
+	
+	/**
+	 * Retourne l'état de la ligne
+	 * @return true, false ou null si la ligne n'est pas une expression booléenne
+	 * */
+	public Boolean getEtatLigne(){
+		return etatLigne;
 	}
 }

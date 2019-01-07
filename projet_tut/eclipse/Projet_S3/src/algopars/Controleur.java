@@ -28,6 +28,12 @@ public class Controleur {
 	private Interpreteur inter;
 	
 	/**
+	 * Couleur du surlignage de la ligne en cours
+	 * change en cas d'expression booléenne
+	 * */
+	private CouleursANSI couleurLigne;
+	
+	/**
 	 * Constructeur du controleur passerel avec l'ihm
 	 * @param code instance de Code
 	 * */
@@ -39,41 +45,39 @@ public class Controleur {
 		
 		this.code  = code ;
 		this.inter = new Interpreteur(code, this);
+		
+		this.couleurLigne = CouleursANSI.BLEU;
 	}
 	
 	
 	
 	public void lancer(){
 		ihm.normal();
-		afficher(code.afficherPseudoCode());
+		afficher(this.afficherPseudoCode());
 		
-		this.inter.lireCode();
+		//this.inter.lireCode();
 		
 		choixTracageVariables();
 		
 		afficher(code.afficherDonnees());
 		
 		// mode pas a pas
-		/*while(inter.getIndex() < code.getNbLig()){
-			
-			
+		while(inter.getIndex() < code.getNbLig()){
 			code.setNumLig(inter.getIndex());
 			
-			System.out.println("INDEX: " +inter.getIndex());
 			inter.faireLigne();
 			
+			afficher(this.afficherPseudoCode());
+			afficher(code.afficherDonnees()   );
 			
-			//afficher(code.afficherPseudoCode());
-			afficher(code.afficherDonnees());
-			
-			lireClavier();
-			inter.incIndex();
-			ihm.nettoyer();
-			
-			
-			
-			//System.out.println(code.getIligUtil());
-		}*/
+			inter.incIndex()  ;
+			ihm.lireClavier() ;
+			ihm.nettoyer()    ;
+		}
+		
+		code.setNumLig(inter.getIndex()-1);
+		afficher(this.afficherPseudoCode());
+		afficher(code.afficherDonnees()   );
 		
 		ihm.normal();
 	}
@@ -101,7 +105,7 @@ public class Controleur {
 	 * avec retour ligne
 	 * */
 	public void afficher(String str){
-		ihm.println(str);
+		ihm.println(CouleursANSI.BLANC.getCouleurTexte()+ str);
 	}
 	
 	/**
@@ -134,6 +138,58 @@ public class Controleur {
 	 * */
 	public int getNumLigUtilAt(int index){
 		return code.getNumLigUtilAt(index);
+	}
+	
+	/**
+	 * Génère sous forme de String le code à afficher
+	 * @return un String
+	 * */
+	public String afficherPseudoCode() {
+		String r = new String();
+		modifierCouleur();
+		for (int i = 0; i < code.contenuFichier.length; i++) {
+			//r += CouleursANSI.NORMAL.getCouleurTexte();
+			if(i == code.getNumLig()) r += couleurLigne.getCouleurFond();
+			else r += CouleursANSI.NOIR.getCouleurFond();
+			
+			
+			//if(i == code.getNumLig()) r += couleurLigne.getCouleurFond();
+			r += String.format("|%2s %-50s|\n", Integer.toString(i), code.contenuFichier[i]);
+			//r = r.replaceAll("ftq", CouleursANSI.BLEU.getCouleurTexte() + "ftq" + CouleursANSI.NORMAL.getCouleurTexte());
+			//if(i == code.getNumLig()) r += couleurLigne.getCouleurFond();
+			//r = r.replaceAll("tq", CouleursANSI.BLEU.getCouleurTexte() + "tq" +CouleursANSI.NORMAL.getCouleurTexte());
+			
+			//if(i == code.getNumLig()) r += CouleursANSI.NORMAL.getCouleurFond() + couleurLigne.getCouleurFond();
+			r = r.replaceAll("ftq", CouleursANSI.BLEU.getCouleurTexte()    + "ftq" + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("sinon", CouleursANSI.BLEU.getCouleurTexte()  + "sinon" + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("fsi", CouleursANSI.BLEU.getCouleurTexte()    + "fsi" + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("si ", CouleursANSI.BLEU.getCouleurTexte()    + "si " + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("tq", CouleursANSI.BLEU.getCouleurTexte() 	   + "tq" + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("ecrire", CouleursANSI.BLEU.getCouleurTexte() + "ecrire" + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("lire", CouleursANSI.BLEU.getCouleurTexte()   + "lire" + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("faire", CouleursANSI.BLEU.getCouleurTexte()  + "faire" + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("alors", CouleursANSI.BLEU.getCouleurTexte()  + "alors" + CouleursANSI.BLANC.getCouleurTexte() );
+			
+			r = r.replaceAll("entier", CouleursANSI.VERT.getCouleurTexte() 	  + "entier" + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("reel", CouleursANSI.VERT.getCouleurTexte()   	  + "reel" + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("chaine", CouleursANSI.VERT.getCouleurTexte() 	  + "chaine" + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("booleen", CouleursANSI.VERT.getCouleurTexte()   + "booleen" + CouleursANSI.BLANC.getCouleurTexte() );
+			r = r.replaceAll("caractere", CouleursANSI.VERT.getCouleurTexte() + "caractere" + CouleursANSI.BLANC.getCouleurTexte() );
+			//if(i == code.getNumLig()) r += couleurLigne.getCouleurFond();
+			//r += String.format("|%2s %-50s|\n", Integer.toString(i), code.contenuFichier[i]);
+			
+			//r += CouleursANSI.NORMAL.getCouleurTexte();
+			r += CouleursANSI.NOIR.getCouleurFond();
+			
+		}
+
+		return r;
+	}
+	
+	private void modifierCouleur(){
+		if	   (inter.getEtatLigne() == null ) couleurLigne = CouleursANSI.JAUNE;
+		else if(inter.getEtatLigne() == true ) couleurLigne = CouleursANSI.VERT;
+		else if(inter.getEtatLigne() == false) couleurLigne = CouleursANSI.ROUGE;
 	}
 
 }

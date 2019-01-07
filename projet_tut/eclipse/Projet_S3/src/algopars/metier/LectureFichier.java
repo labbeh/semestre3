@@ -3,7 +3,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class LectureFichier {
+class LectureFichier {
     
     public static String lire(String lien){
         StringBuilder sRep = new StringBuilder();

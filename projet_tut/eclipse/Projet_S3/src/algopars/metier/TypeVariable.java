@@ -1,6 +1,6 @@
 package algopars.metier;
 
-public enum TypeVariable{
+enum TypeVariable{
 	ENTIER,
 	REEL,
 	CHAINE,
