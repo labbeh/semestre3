@@ -1,5 +1,5 @@
 package algopars.metier;
-//package pseudoCode.metier.vars;
+
 /**
  * Crée une classe Variable qui permet de stocker 
  * une variable à partir de son type et sa valeur
@@ -49,8 +49,9 @@ public class Variable{
 		return valeur;
 	}
 	
+	/*---------------*/
 	/* MODIFICATEURS */
-	
+	/*---------------*/
 	/**
 	 * Permet de définir le type de la variable
 	 * @param type TypeVariable
@@ -74,6 +75,10 @@ public class Variable{
 	public void setTracage(boolean aTracer){
 		this.aTracer = aTracer;
 	}
+	
+	/*------------*/
+	/* ACCESSEURS */
+	/*------------*/
 	
 	/**
 	 * Retourne la valeur du type

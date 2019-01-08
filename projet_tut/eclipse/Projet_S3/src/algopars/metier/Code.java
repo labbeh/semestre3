@@ -8,18 +8,16 @@ import java.util.Set;
 
 import java.util.List;
 
-import algopars.ihm.CouleursANSI;
+/**
+ * @author lh150094
+ * @version 2019-01-07, 1.0
+ * */
 
 public final class Code {
-	/***********************/
-	/* ATTRIBUTS DE CLASSE */
-	/***********************/
-	//static Interpreter interpreter = new Interpreter();
 
-	/************************/
+	/*----------------------*/
 	/* ATTRIBUTS D'INSTANCE */
-	/************************/
-	
+	/*----------------------*/
 	/**
 	 * Tableau contenant l'intégralité du fichier sans aucune modification,
 	 * Sans suppressions d'espaces ou autre ...
@@ -37,36 +35,25 @@ public final class Code {
 	public HashMap<String, Constante> constantes;
 
 	/**
-	 * Contenu complet du code ligne par ligne or données
+	 * Contenu complet du code ligne par ligne ou données
 	 * */
 	protected List<LigneCode> code;
-	//protected List<String> code;
 	
 	/**
 	 * Permet de connaitre les lignes de codes que l'on doit mettre
 	 * en évidence dans la trace d'exécution (sans les lignes blanches ...)
 	 * */
-	private List<Integer> numsLigsUtils;
+	protected List<Integer> numsLigsUtils;
 	
-	/**
-	 * Indice de la ligne utile ou on est
-	 * */
-	private int iLigUtil;
 	
 	/**
 	 * Indice de la ligne du code ou on se trouve
 	 * */
 	private int numLig;
 	
-	/**
-	 * Couleur du surlignage de la ligne: change de couleur si on tombe sur une
-	 * expression booléenne
-	 * */
-	private CouleursANSI couleurLigne;
 
 	/**
 	 * Constructeur d'un Code à partir d'un fichier
-	 * 
 	 * @param fichier nom du fichier en String           
 	 */
 	public Code(String fichier) {
@@ -78,54 +65,13 @@ public final class Code {
 		this.code = new ArrayList<>();
 		this.numsLigsUtils = new LinkedList<>();
 		
-		this.iLigUtil = 0;
 
 		LectureFichier.lire(fichier);
 		this.contenuFichier = LectureFichier.lire(fichier).split("\n");
 
 		interpretation();
 		
-		//this.numLig = getNumLig();
 		this.numLig = numsLigsUtils.get(0);
-		//System.out.println("TAILLE: " +code.get(0).getNumLig());
-		//System.out.println(code.get(2).getContenu().substring(0,2));
-		//this.couleurLigne = CouleursANSI.BLEU;
-		
-		//for(LigneCode s: code) System.out.println(s);
-	}
-	
-	
-	/**
-	 * Génère sous forme de String le code à afficher
-	 * @return un String
-	 * */
-	/*public String afficherPseudoCode() {
-		String r = new String();
-		for (int i = 0; i < contenuFichier.length; i++) {
-			if(i == numLig) r += CouleursANSI.BLEU.getCouleurFond();
-			
-			r += String.format("|%2s %-50s|\n", Integer.toString(i), contenuFichier[i]);
-			r += CouleursANSI.NORMAL.getCouleurFond();
-		}
-
-		return r;
-	}*/
-	
-	/**
-	 * Génère le block "données" à afficher et ne met que les variables a tracer
-	 * @return un String 
-	 * */
-	public String afficherDonnees() {
-		String r = new String();
-		r += "|    NOM    |   TYPE    |  VALEUR   |\n";
-		for (String v : variables.keySet()) {
-			if(variables.get(v).estAtracer())
-				r += String.format("| %-10s| %-10s| %-10s|\n", v, 
-									variables.get(v).getType(),
-									variables.get(v));
-		}
-		
-		return r;
 	}
 	
 	/**
@@ -157,7 +103,7 @@ public final class Code {
 			}
 			
 			i++;
-			while(!contenuFichier[i].equalsIgnoreCase("FIN")){
+			while (!contenuFichier[i].equalsIgnoreCase("FIN")){
 				if(!contenuFichier[i].matches("\\s+") && !contenuFichier[i].equalsIgnoreCase("")){
 					this.code.add(new LigneCode(i, contenuFichier[i].replaceAll("\\s+", " ")));
 					numsLigsUtils.add(i);
@@ -199,7 +145,7 @@ public final class Code {
 			
 			sc.close();
 		} else
-			nomsVars.add(scLig.next());
+			nomsVars.add(scLig.next().replaceAll("\\s+", ""));
 
 		// on récupère le type de la variable
 		type = scLig.next().replaceAll("\\s+", "");
@@ -249,7 +195,10 @@ public final class Code {
 		
 		scLig.close();
 	}
+	
+	/*---------------*/
 	/* MODIFICATEURS */
+	/*---------------*/
 	/**
 	 * Permet d'incrémenter le numéro de ligne courante
 	 * pour le surlignage
@@ -266,8 +215,9 @@ public final class Code {
 		this.numLig = code.get(index).getNumLig();
 		
 	}
-	
+	/*------------*/
 	/* ACCESSEURS */
+	/*------------*/
 	
 	
 	/**
@@ -284,6 +234,13 @@ public final class Code {
 	 * */
 	public int getNumLig(){
 		return numLig;
+	}
+	/**
+	 * Retourne la liste de code
+	 * @return Liste
+	 * */
+	public List<LigneCode> getCode(){
+		return code ;
 	}
 	
 	/**

@@ -3,8 +3,6 @@ package algopars.ihm;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-import algopars.Controleur;
-
 /**
  * Classe abstraite permettant de concevoir des IHM console pour windows et unix/linux
  * @author hugo labbé
@@ -12,11 +10,6 @@ import algopars.Controleur;
  * */
 
 public abstract class IHMCui {
-	
-	/**
-	 * Controleur pour l'intercation entre ihm et métier
-	 * */
-	private Controleur ctrl;
 	
 	/**
 	 * Instance de Scanner pour lire sur l'entrée standard
@@ -28,9 +21,7 @@ public abstract class IHMCui {
 	 * */
 	protected PrintStream stdout;
 	
-	public IHMCui(Controleur ctrl) {
-		this.ctrl  = ctrl;
-		
+	public IHMCui() {
 		this.stdin 	= new Scanner	 (System.in );
 		this.stdout = new PrintStream(System.out);
 	}
@@ -45,6 +36,52 @@ public abstract class IHMCui {
 	public String lireClavier(){
 		return stdin.nextLine();
 	}
+	
+	/**
+	 * Fonction pour lire un entier au clavier redemande la saisie
+	 * en cas de saisie invalide
+	 * @return l'entier saisi au clavier
+	 * */
+	public int lireEntier()
+    {
+        int     iRet = 0    ;
+        boolean bOk  = false;
+        
+        while(!bOk)
+        {
+            try{
+                iRet = Integer.parseInt(lireClavier());
+                bOk = true;
+            }
+            catch(NumberFormatException evt){
+                System.out.println("Erreur: saisir un nombre entier");
+            }
+        }
+        return iRet;
+    }
+	
+	/**
+	 * Fonction pour lire un réel au clavier redemande la saisie
+	 * en cas de saisie invalide
+	 * @return le réel saisi au clavier
+	 * */
+	public double lireReel()
+    {
+        double  dRet = 0    ;
+        boolean bOk  = false;
+        
+        while(!bOk)
+        {
+            try{
+                dRet = Double.parseDouble(lireClavier());
+                bOk = true;
+            }
+            catch(NumberFormatException evt){
+                System.out.println("Erreur: saisir un réel");
+            }
+        }
+        return dRet;
+    }
 	
 	/**
 	 * Permet de lire un booléen au clavier

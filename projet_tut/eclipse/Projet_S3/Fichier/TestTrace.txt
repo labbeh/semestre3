@@ -1,0 +1,20 @@
+ALGORTIHME NomAlgo
+constante:
+
+variable:
+    x, y, z : entier
+
+DEBUT
+    x<--5
+    y<--8
+    z<--2
+    
+    ecrire("ligne 1")
+    ecrire("ligne 2")
+    ecrire("ligne 3")
+    ecrire("ligne 4")
+    ecrire("ligne 5")
+    ecrire("ligne 6")
+    ecrire("ligne 7")
+    ecrire("ligne 8")
+FIN

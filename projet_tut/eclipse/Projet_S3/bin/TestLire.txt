@@ -1,0 +1,13 @@
+ALGORTIHME TestLire
+constante:
+
+variable:
+    x: entier
+
+DEBUT
+x<--5
+    
+    ecrire("ligne 1")
+    lire(x)
+    ecrire(x)
+FIN

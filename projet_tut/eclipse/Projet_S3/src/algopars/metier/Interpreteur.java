@@ -1,4 +1,6 @@
 package algopars.metier;
+import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
@@ -6,9 +8,16 @@ import java.util.Stack;
 import algopars.Controleur;
 import bsh.Interpreter;
 
+/**
+ * @author lh150094
+ * @version 2018-01-07, 1.0
+ * */
+
 public class Interpreteur {
 	
-	/* ATTRIBUTS */
+	/*----------------------*/
+	/* ATTRIBUTS D'INSTANCE */
+	/*----------------------*/
 	
 	/**
 	 * instance de Code sur laquelle l'interpéteur doit opéré
@@ -41,10 +50,16 @@ public class Interpreteur {
 	/**
 	 * Empile les conditions des Tant-que
 	 * */
-	private Stack<Integer> conditionsTq ;
+	private Stack<Integer> conditionsTq;
 	
+	/**
+	 * File de stockage de la trace d'exécution
+	 * */
+	private List<String> trace;
+	
+	/*--------------*/
 	/* CONSTRUCTEUR */
-	
+	/*--------------*/
 	/**
 	 * Constructeur de l'interpréteur
 	 * @param code un Code
@@ -63,11 +78,12 @@ public class Interpreteur {
 		
 		this.conditionsTq = new Stack<>();
 		
-		//this.nbSi = 1;
-		//System.out.println(code.code);
+		this.trace = new ArrayList<>();
 	}
 	
+	/*----------*/
 	/* METHODES */
+	/*----------*/
 	
 	/**
 	 * Méthode qui lit l'intégralité du code hors données
@@ -77,6 +93,57 @@ public class Interpreteur {
 		while(index<code.code.size()){
 			faireLigne();
 			index++;
+		}
+	}
+	
+	/**
+	 * Lance le programme jusqu'a la ligne saisie en paramètres
+	 * Si le numéro de la ligne est inférieur à la ligne en cours l'exécution
+	 * est relancée jusqu'à cette ligne
+	 * @param sun String qui débute par l suivi du numéro de la ligne
+	 * @return vrai si le programme a pu atteindre la ligne saisie
+	 * */
+	public boolean allerLigne(String position){
+		position = position.replaceAll("l", "");
+		
+		int numLig = 0;
+		
+		try{
+			numLig = Integer.parseInt(position);
+		}
+		catch(NumberFormatException evt){
+			erreur();
+		}
+		
+		// on ne peux pas aller avant la première ligne du block DEBU
+		if(numLig < code.code.get(0).getNumLig() || !code.numsLigsUtils.contains(numLig)){
+			ctrl.afficher("Numéro de ligne invalide");
+			//index--;
+			return false;
+		}
+		
+		index = 0;
+		
+		while(numLig > code.code.get(index).getNumLig()){
+			faireLigne();
+			index++;
+		}
+		
+		return true;
+	}
+	
+	/**
+	 * Permet de revenir en arrière dans le code
+	 * */
+	public void retourArriere(){
+		if(index > 0){
+			int ancienIndex = index;
+			index = 0;
+			
+			while(index<ancienIndex-1){
+				faireLigne();
+				index++;
+			}
 		}
 	}
 	
@@ -90,20 +157,18 @@ public class Interpreteur {
 		//System.out.println("LIGNE: " +ligne);
 		
 		if	   (ligne.contains("ecrire")) ecrire(ligne);
+		else if(ligne.startsWith("lire") && ligne.endsWith(")")) lire(ligne);
 		else if(ligne.contains("<--"   )) affecter(ligne);
 		else if(ligne.endsWith("++"	   )) incrementerVariable();
+		
 		else if(ligne.substring(0,2).startsWith("si"   ) && ligne.endsWith("alors")) si();
 		else if(ligne.startsWith("sinon")) passerSinon();
 		else if(ligne.substring(0,2).startsWith("tq") && ligne.endsWith("faire")) tantQue();
+		
 		else if(ligne.startsWith("ftq")) ftq();
 		else if(ligne.startsWith("fsi"));
 		
-		else{
-			System.err.println("Erreur: code illisible ligne " +code.code.get(index).getNumLig());
-			System.exit(1);
-		}
-		
-		//System.out.println(code.variables);
+		else erreur();
 	}
 	
 	/**
@@ -136,7 +201,6 @@ public class Interpreteur {
 		String valeur;
 		
 		// éléments de la valeur à affecter en cas d'expression composée
-		//String[] eltsValeur;
 		
 		nomVar = scLig.next().replaceFirst("\\s+", "");
 		nomVar = nomVar.replaceAll("\\s$", "");
@@ -181,7 +245,6 @@ public class Interpreteur {
 		val++;
 		
 		var.setValeur(Integer.toString(val));
-		//System.out.println("valeur : " +val);
 		
 	}
 	
@@ -207,23 +270,15 @@ public class Interpreteur {
 	 * Fonction si du pseudo-code
 	 * */
 	public void si(){
-		//System.out.println("rentre dans si");
-		//nbSi++;
-		//System.out.println("nbSi: " +nbSi);
 		// on stock la ligne de la condition
 		String condition = code.code.get(index).getContenu();
-		//System.out.println("CONDITION SI: " +condition);
-		//System.out.println(condition);
 		
 		
 		if(condition.substring(0,2).equalsIgnoreCase("si"))
 			condition = condition.substring(2, condition.length());
-		//System.out.println("COND: " +condition);
 		
 		// puis on ne garde que la condition et on la traite
-		
 		// on enlève les mots si et alors aux bouts des lignes
-		
 		condition = condition.replaceAll("si ", "");
 		condition = condition.replaceAll("alors", "");
 		condition = condition.trim();
@@ -296,7 +351,7 @@ public class Interpreteur {
 		
 		if (expression){
 			conditionsTq.push(index);
-			System.out.println("OK: " +code.code.get(index));
+			//System.out.println("OK: " +code.code.get(index));
 		}
 		
 		int nbTq = 1;
@@ -329,6 +384,29 @@ public class Interpreteur {
 	
 	}
 	
+	/*-----------------*/
+	/* METHODES PRIVEES*/
+	/*-----------------*/
+	
+	/**
+	 * Foncntion lancée en cas de ligne illisible par l'interpréteur
+	 * Affiche la ligne de l'érreur et ferme le programme avec le code 
+	 * de status 1
+	 * */
+	private void erreur(){
+		System.err.println("Erreur: code illisible ligne " +
+						    code.code.get(index).getNumLig()
+						  );
+		System.exit(1);
+	}
+	
+	/**
+	 * Fonction lancée en cas d'erreur lors de l'interprétation
+	 * avec un message personnalisé et ferme le programme avec
+	 * le code status 1
+	 * */
+	//private void erreur(String )
+	
 	/**
 	 * Fonction permettant de passer des sinon si la condition d'un si est vérifiée
 	 * */
@@ -342,10 +420,9 @@ public class Interpreteur {
 	
 	
 	/**
-	 * Fonction écrire du pseudo-code pour écrire une chaine
+	 * Traitement avant affichage d'une chaine dans la fonction écrire
 	 * */
 	private String traiterEcrire(String texte){
-		// remplacer les sysout par des appls ihm
 		
 		// récupération du contenu à afficher entre les parenthèses
 		// de la fonction écrire avec un Scanner
@@ -363,7 +440,7 @@ public class Interpreteur {
 		ligne = scLig.next();
 		
 		// ... et on la traite
-		ligne = ligne.replaceFirst(" ", "");
+		//ligne = ligne.replaceFirst(" ", "");
 		ligne = ligne.replaceAll("\\s$", "");
 		ligne = ligne.replaceAll("\\)", "");
 		ligne = ligne.replaceAll("\\\"", "");
@@ -377,22 +454,40 @@ public class Interpreteur {
 	 * Fonction écrire du pseudo-code pour écrire la valeur d'une variable
 	 * */
 	public void ecrire(Variable var){
-		ctrl.afficher(var.getValeur());
+		trace.add(var.getValeur());
 	}
 	
 	/**
 	 * Fonction ecrire du pseudo-code pour afficher une chaine en paramètre
 	 * */
 	public void ecrire(String texte){
-		if(texte.contains("\"")) ctrl.afficher(traiterEcrire(texte));
-		else 					 ecrire(code.variables.get(traiterEcrire(texte)));
+		if(texte.contains("\"")){
+			trace.add(traiterEcrire(texte));
+		}
+		else ecrire(code.variables.get(traiterEcrire(texte)));
 	}
 	
 	/**
 	 * Fonction lire du pseudo-code
 	 * */
-	public void lire(){
-		ctrl.lireClavier();
+	public void lire(String ligne){
+		ligne = ligne.replaceAll("lire", "");
+		ligne = ligne.replaceAll("\\(" , "");
+		ligne = ligne.replaceAll("\\)" , "");
+		
+		Variable var = code.variables.get(ligne);
+		
+		ctrl.afficher(ctrl.afficherPseudoCode());
+		ctrl.afficher(ctrl.afficherDonnees()   );
+		ctrl.afficherTrace();
+		
+		if(var == null) erreur();
+		
+		if(var.getType() == TypeVariable.CHAINE) var.setValeur(ctrl.lireClavier());
+		if(var.getType() == TypeVariable.ENTIER) var.setValeur("" +ctrl.lireEntier ());
+		if(var.getType() == TypeVariable.REEL  ) var.setValeur("" +ctrl.lireReel   ());
+		
+		ctrl.netoyer();
 	}
 	
 	/**
@@ -460,6 +555,7 @@ public class Interpreteur {
 		index++;
 	}
 	
+	/* ACCESSEURS */
 	/**
 	 * Retourne l'index de la ligne de code courante
 	 * @return un int
@@ -474,5 +570,13 @@ public class Interpreteur {
 	 * */
 	public Boolean getEtatLigne(){
 		return etatLigne;
+	}
+	
+	/**
+	 * Retourne la trace d'execution
+	 * @return une List de String
+	 * */
+	public List<String> getTrace(){
+		return trace;
 	}
 }

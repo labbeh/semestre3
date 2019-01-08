@@ -37,11 +37,11 @@ public class Controleur {
 	 * Constructeur du controleur passerel avec l'ihm
 	 * @param code instance de Code
 	 * */
-	public Controleur( Code code ) {
-		if(System.getProperty("os.name").equalsIgnoreCase("Windows"))
-			this.ihm = new IHMCuiWindows(this);
+	public Controleur( Code code, char os ) {
+		if(os == 'w')
+			this.ihm = new IHMCuiWindows();
 		else
-			this.ihm = new IHMCuiUnix(this);
+			this.ihm = new IHMCuiUnix();
 		
 		this.code  = code ;
 		this.inter = new Interpreteur(code, this);
@@ -50,16 +50,113 @@ public class Controleur {
 	}
 	
 	
-	
-	public void lancer(){
+	/**
+	 * Lancer le programme en mode pas à pas
+	 * */
+	public void lancerPasAPas(){
+		String saisi;
+		boolean saisiReussi = false;
+		
+		ihm.nettoyer();
 		ihm.normal();
 		afficher(this.afficherPseudoCode());
 		
-		//this.inter.lireCode();
+		choixTracageVariables();
+		
+		afficher(this.afficherDonnees());
+		afficherTrace();
+		
+		ihm.nettoyer();
+		// mode pas a pas
+		while(inter.getIndex() < code.getNbLig()){
+			saisiReussi = false;
+			
+			code.setNumLig(inter.getIndex());
+			
+			inter.faireLigne();
+			
+			afficher(this.afficherPseudoCode());
+			afficher(this.afficherDonnees()   );
+			afficherTrace();
+			
+			inter.incIndex()  ;
+			saisi = ihm.lireClavier().toLowerCase();
+			
+			if(saisi.startsWith("l")){
+				
+				inter.getTrace().clear();
+				saisiReussi = inter.allerLigne(saisi);
+				
+				while(!saisiReussi){
+					saisi 		= ihm.lireClavier();
+					saisiReussi = inter.allerLigne(saisi);
+				}
+			}
+			else if(saisi.startsWith("b")) inter.retourArriere();
+			
+			ihm.nettoyer();
+		}
+		
+		code.setNumLig(inter.getIndex()-1);
+		
+		afficher(this.afficherPseudoCode());
+		afficher(this.afficherDonnees()   );
+		afficherTrace();
+		
+		ihm.normal();
+	}
+	
+	/*public void lancerPasAPas(){
+		ihm.nettoyer();
+		ihm.normal();
+		afficher(this.afficherPseudoCode());
 		
 		choixTracageVariables();
 		
-		afficher(code.afficherDonnees());
+		afficher(this.afficherDonnees());
+		afficherTrace();
+		
+		ihm.nettoyer();
+		// mode pas a pas
+		while(inter.getIndex() < code.getNbLig()){
+			code.setNumLig(inter.getIndex());
+			
+			inter.faireLigne();
+			
+			afficher(this.afficherPseudoCode());
+			afficher(this.afficherDonnees()   );
+			afficherTrace();
+			
+			inter.incIndex()  ;
+			ihm.lireClavier() ;
+			ihm.nettoyer()    ;
+		}
+		
+		code.setNumLig(inter.getIndex()-1);
+		
+		afficher(this.afficherPseudoCode());
+		afficher(this.afficherDonnees()   );
+		afficherTrace();
+		
+		ihm.normal();
+	}*/
+	
+	/**
+	 * Lance le programme en mode automatique
+	 * @param delai temps en secondes entre chaque lignes
+	 * */
+	public void lancerAuto(long delai){
+		ihm.nettoyer();
+		ihm.normal();
+		
+		afficher(this.afficherPseudoCode());
+		
+		choixTracageVariables();
+		
+		afficher(this.afficherDonnees());
+		afficherTrace();
+		
+		ihm.nettoyer();
 		
 		// mode pas a pas
 		while(inter.getIndex() < code.getNbLig()){
@@ -68,18 +165,30 @@ public class Controleur {
 			inter.faireLigne();
 			
 			afficher(this.afficherPseudoCode());
-			afficher(code.afficherDonnees()   );
+			afficher(this.afficherDonnees()   );
+			afficherTrace();
 			
-			inter.incIndex()  ;
-			ihm.lireClavier() ;
-			ihm.nettoyer()    ;
+			inter.incIndex();
+			pause(delai);
+			ihm.nettoyer();
 		}
 		
 		code.setNumLig(inter.getIndex()-1);
+		
 		afficher(this.afficherPseudoCode());
-		afficher(code.afficherDonnees()   );
+		afficher(this.afficherDonnees()   );
+		afficherTrace();
 		
 		ihm.normal();
+	}
+	
+	private void pause(long delai){
+		try{
+			Thread.sleep(delai * 1000);
+		}
+		catch(InterruptedException evt){
+			System.err.println(evt);
+		}
 	}
 	
 	/**
@@ -105,7 +214,20 @@ public class Controleur {
 	 * avec retour ligne
 	 * */
 	public void afficher(String str){
-		ihm.println(CouleursANSI.BLANC.getCouleurTexte()+ str);
+		ihm.println(CouleursANSI.NOIR.getCouleurFond() +
+					CouleursANSI.BLANC.getCouleurTexte()+
+					str + CouleursANSI.NORMAL.getCouleurFond());
+	}
+	
+	/**
+	 * Permet d'afficher la trace d'execution
+	 * Affiche les 5 dernières lignes
+	 * */
+	public void afficherTrace(){
+		if(inter.getTrace().size() > 5 ) inter.getTrace().remove(0);
+		
+		afficher("TRACE:");
+		for(String s: inter.getTrace()) afficher(s);
 	}
 	
 	/**
@@ -114,6 +236,29 @@ public class Controleur {
 	 * */
 	public String lireClavier(){
 		return ihm.lireClavier();
+	}
+	
+	/**
+	 * Retourne l'entier saisi au clavier depuis l'ihm
+	 * @return un entier
+	 * */
+	public int lireEntier(){
+		return ihm.lireEntier();
+	}
+	
+	/**
+	 * Retourne le réel saisi au clavier depuis l'ihm
+	 * @return un réel
+	 * */
+	public double lireReel(){
+		return ihm.lireReel();
+	}
+	
+	/**
+	 * Permet de lancer le nettoyage de la console
+	 * */
+	public void netoyer(){
+		ihm.nettoyer();
 	}
 	
 	/**
@@ -141,18 +286,71 @@ public class Controleur {
 	}
 	
 	/**
+	 * Génère le block "données" à afficher et ne met que les variables a tracer
+	 * @return un String 
+	 * */
+	public String afficherDonnees() {
+		String r = new String();
+		r += CouleursANSI.NOIR.getCouleurFond();
+		r += CouleursANSI.BLANC.getCouleurTexte();
+		r += "|    NOM    |   TYPE    |  VALEUR   |\n";
+		for (String v : code.variables.keySet()) {
+			if(code.variables.get(v).estAtracer())
+				r += String.format("| %-10s| %-10s| %-10s|\n", v, 
+									code.variables.get(v).getType(),
+									code.variables.get(v));
+		}
+		
+		return r;
+	}
+	
+	/**
 	 * Génère sous forme de String le code à afficher
 	 * @return un String
 	 * */
 	public String afficherPseudoCode() {
 		String r = new String();
+		//ArrayList<String> codeAfficher =  new ArrayList<String>();
 		modifierCouleur();
-		for (int i = 0; i < code.contenuFichier.length; i++) {
+		
+		/*if (code.getCode().size() > 30 && code.getNumLig() > 15 && code.getNumLig() < code.contenuFichier.length - 15 )
+			for (int i = 0; i < 30 ; i ++)
+				codeAfficher.add(code.contenuFichier[code.getNumLig()-15 + i]);
+		else if (code.getCode().size() > 30 && code.getNumLig() <= 15)
+			for (int i = 0; i < 30 ; i ++)
+				codeAfficher.add(code.contenuFichier[code.getNumLig()+ i]);
+		else if (code.getCode().size() > 30 && code.getNumLig() >= 30 )
+			for (int i = 0; i < 30 ; i ++)
+				codeAfficher.add(code.contenuFichier[30 - code.contenuFichier.length + code.getNumLig() + i]);
+		
+		else 
+			for (int i = 0 ; i < code.contenuFichier.length ; i++)
+				codeAfficher.add(code.contenuFichier[i]);
+		*/
+		int i = 0 ;
+		int max = 0 ;
+		if (code.getCode().size() > 30 && code.getNumLig() > 15 && code.getNumLig() < code.contenuFichier.length - 15 ){
+			i = code.getNumLig()-16 ;
+			max = code.getNumLig() + 15 ;
+		}
+		if (code.getCode().size() > 30 && code.getNumLig() <= 15){
+			i = 0 ;
+			max = 31 ;
+		}
+		if (code.getCode().size() > 30 && code.getNumLig() >= 30 ){
+			i =  code.contenuFichier.length  - 31 ;
+			max = code.contenuFichier.length;
+		}
+		if (code.getCode().size() <= 30)
+			max = code.contenuFichier.length ;
+		
+		
+		while ( i < max)  {
 			//r += CouleursANSI.NORMAL.getCouleurTexte();
 			if(i == code.getNumLig()) r += couleurLigne.getCouleurFond();
-			else r += CouleursANSI.NOIR.getCouleurFond();
+			else 					  r += CouleursANSI.NOIR.getCouleurFond();
 			
-			
+			r += CouleursANSI.BLANC.getCouleurTexte();
 			//if(i == code.getNumLig()) r += couleurLigne.getCouleurFond();
 			r += String.format("|%2s %-50s|\n", Integer.toString(i), code.contenuFichier[i]);
 			//r = r.replaceAll("ftq", CouleursANSI.BLEU.getCouleurTexte() + "ftq" + CouleursANSI.NORMAL.getCouleurTexte());
@@ -175,17 +373,18 @@ public class Controleur {
 			r = r.replaceAll("chaine", CouleursANSI.VERT.getCouleurTexte() 	  + "chaine" + CouleursANSI.BLANC.getCouleurTexte() );
 			r = r.replaceAll("booleen", CouleursANSI.VERT.getCouleurTexte()   + "booleen" + CouleursANSI.BLANC.getCouleurTexte() );
 			r = r.replaceAll("caractere", CouleursANSI.VERT.getCouleurTexte() + "caractere" + CouleursANSI.BLANC.getCouleurTexte() );
-			//if(i == code.getNumLig()) r += couleurLigne.getCouleurFond();
-			//r += String.format("|%2s %-50s|\n", Integer.toString(i), code.contenuFichier[i]);
-			
-			//r += CouleursANSI.NORMAL.getCouleurTexte();
-			r += CouleursANSI.NOIR.getCouleurFond();
-			
-		}
 
+			r += CouleursANSI.NOIR.getCouleurFond();
+			i++ ;
+		}
 		return r;
 	}
 	
+	/**
+	 * Changer l'état d'une ligne pour sa coloration dans la console.
+	 * Vert si c'est une expression boléenne vrai, rouge si c'est faux
+	 * Jaune si c'est une ligne quelconque
+	 * */
 	private void modifierCouleur(){
 		if	   (inter.getEtatLigne() == null ) couleurLigne = CouleursANSI.JAUNE;
 		else if(inter.getEtatLigne() == true ) couleurLigne = CouleursANSI.VERT;

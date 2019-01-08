@@ -2,12 +2,16 @@ package algopars.ihm;
 
 import org.fusesource.jansi.*;
 
-import algopars.Controleur;
+/**
+ * Classe fille de IHMCui pour les sytèmes Windows
+ * @author hugo labbé
+ * @version 1.0, 2018-12-18
+ * */
 
 public class IHMCuiWindows extends IHMCui {
 	
-	public IHMCuiWindows(Controleur ctrl) {
-		super(ctrl);
+	public IHMCuiWindows() {
+		super();
 		AnsiConsole.systemInstall();
 	}
 

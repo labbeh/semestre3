@@ -3,8 +3,19 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-class LectureFichier {
+/**
+ * Classe permettant de charger en mémoire un fichier pseudo-code
+ * @author lh150094
+ * @version 2018-12-17, 1.0
+ * */
+
+final class LectureFichier {
     
+	/**
+	 * Lit le fichier dont le nom est passé en paramètre
+	 * @param lien lien vers le fichier à charger
+	 * @return un String avec le contenu du fichier
+	 * */
     public static String lire(String lien){
         StringBuilder sRep = new StringBuilder();
         
@@ -19,10 +30,17 @@ class LectureFichier {
             
             scFile.close();
         }
-        catch(Exception e){e.printStackTrace();}
+        catch(Exception e){
+        	System.err.println("Fichier " + lien + 
+        					   " introuvable ou inaccessible en lecture");
+        	System.exit(1);
+        }
         
         return sRep.toString();
     }
     
+    /**
+     * Pour que cette classe utilitaire ne puisse pas être instanciée
+     * */
     private LectureFichier(){}
 }

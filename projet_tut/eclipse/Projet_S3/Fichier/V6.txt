@@ -1,0 +1,59 @@
+ALGORITHME machin
+constante:
+
+variable:
+x, cpt : entier
+b, y , z : entier
+
+DEBUT
+
+x <-- 5
+cpt <-- 0
+b<--5
+y<--8
+z<--2
+
+tq cpt < x faire
+    cpt++
+ftq
+
+
+si cpt = 6 alors
+    ecrire("etape 1")
+sinon
+    tq cpt < x + 1 faire
+    cpt++
+    ftq
+fsi
+
+si cpt = 6 alors
+    ecrire("etape 2")
+fsi
+
+ecrire("un truc au mileu")
+   
+si y = 8 alors
+
+    ecrire(y)
+    
+    si x = 4 alors
+        ecrire("salut")
+    sinon
+        ecrire(x)
+    fsi
+    
+    si x = 4 alors
+        ecrire("ola")
+    sinon
+        si z = 2 alors
+            ecrire("reussi")
+        fsi
+        ecrire("x=!4")
+    fsi
+fsi
+
+ ecrire("deux mot")
+ ecrire("et une ligne inutile pour voir")
+
+
+FIN
