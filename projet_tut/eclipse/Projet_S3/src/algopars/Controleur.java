@@ -322,19 +322,19 @@ public class Controleur {
 		
 		int i = 0 ;
 		int max = 0 ;
-		if (code.getCode().size() > 30 && code.getNumLig() > 15 && code.getNumLig() < code.contenuFichier.length - 15 ){
+		if (code.contenuFichier.length > 30 && code.getNumLig() > 15 && code.getNumLig() < code.contenuFichier.length - 15 ){
 			i = code.getNumLig()-16 ;
 			max = code.getNumLig() + 15 ;
 		}
-		if (code.getCode().size() > 30 && code.getNumLig() <= 15){
+		if (code.contenuFichier.length > 30 && code.getNumLig() <= 15){
 			i = 0 ;
 			max = 31 ;
 		}
-		if (code.getCode().size() > 30 && code.getNumLig() >= code.contenuFichier.length - 15 ){
+		if (code.contenuFichier.length > 30 && code.getNumLig() >= code.contenuFichier.length - 15 ){
 			i =  code.contenuFichier.length  - 31 ;
 			max = code.contenuFichier.length;
 		}
-		if (code.getCode().size() <= 30)
+		if (code.contenuFichier.length <= 30)
 			max = code.contenuFichier.length ;
 		
 		

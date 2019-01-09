@@ -110,12 +110,10 @@ public final class Code {
 				}
 				i++;
 			}
-
 		}
 		catch (Exception e) {
 			System.out.println("Problème ligne " +i);
 		}
-		
 	}
 
 	/**

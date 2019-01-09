@@ -30,7 +30,7 @@ si cpt = 6 alors
     ecrire("etape 2")
 fsi
 
-ecrire("un truc au mileu")
+ ecrire("un truc au mileu")
    
 si y = 8 alors
 

@@ -312,25 +312,19 @@ public class Interpreteur {
 		
 		int nbSi = 1;
 		if(!expression){
-			//index++;
 			do{
 				index++;
 				
 				if(code.code.get(index).getContenu().startsWith("si") && code.code.get(index).getContenu().endsWith("alors")){
-					//if(nbSi == -1) nbSi = 1;
-					/*else*/		   nbSi++;
+					nbSi++;
 				}
 				if(code.code.get(index).getContenu().startsWith("fsi")){
-					//if(nbSi == -1) nbSi = 0;
-					/*else*/ nbSi--;
-					//index++;
+					nbSi--;
 				}
 				
 				if(nbSi == 1 && code.code.get(index).getContenu().startsWith("sinon")){
 					nbSi = 0;
-					//System.out.println("avec nbSi = " +nbSi+ " et sur la ligne + " +code.code.get(index).getContenu());
 				}
-
 			}
 			while(nbSi > 0);
 		}
@@ -393,10 +387,7 @@ public class Interpreteur {
 	 * Fonction qui vérifie que la condition d'un tant-que est toujours vraie 
 	 * */	
 	public void ftq(){
-	
 		index = conditionsTq.pop() - 1;
-		//System.out.println(code.code.get(index));
-	
 	}
 	
 	/*-----------------*/
@@ -430,7 +421,6 @@ public class Interpreteur {
 		
 		while(!code.code.get(index).getContenu().startsWith("fsi"))
 			index++;
-
 	}
 	
 	
@@ -533,8 +523,6 @@ public class Interpreteur {
 		
 		// on parcours la chaine pour obtenir les variables conernées
 		String[] tabVars = nomsVars.split("\\s+");
-		
-		//for(String s: tabVars) System.out.println("tabvar: " +s);
 		
 		// Début avec bsh
 		try{

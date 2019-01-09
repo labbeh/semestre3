@@ -61,8 +61,7 @@ public class AlgoPars {
 	 * La méthode détecte s'il s'agit de windows ou non, s'il ne s'agit pas de windows
 	 * on considère qu'il s'agit d'un système UNiX/Linux
 	 * 
-	 * @return un caractère qui aura pour valeur 'w' si windows et détecté, 'u' dans
-	 * le cas contraire
+	 * @return un caractère qui aura pour valeur 'w' si windows et détecté, 'u' dans le cas contraire
 	 * */
 	private static char detecterOs(){
 		char os;
