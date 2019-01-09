@@ -36,6 +36,7 @@ public class Controleur {
 	/**
 	 * Constructeur du controleur passerel avec l'ihm
 	 * @param code instance de Code
+	 * @param os caractère ayant pour valeur 'w' ou 'u' permettant au controleur d'instancier la bonne version de l'ihmcui
 	 * */
 	public Controleur( Code code, char os ) {
 		if(os == 'w')
@@ -80,6 +81,9 @@ public class Controleur {
 			afficherTrace();
 			
 			inter.incIndex()  ;
+		
+			inter.incCptIndex();
+		
 			saisi = ihm.lireClavier().toLowerCase();
 			
 			if(saisi.startsWith("l")){
@@ -92,7 +96,11 @@ public class Controleur {
 					saisiReussi = inter.allerLigne(saisi);
 				}
 			}
-			else if(saisi.startsWith("b")) inter.retourArriere();
+			else if(saisi.startsWith("b")) {
+				inter.getTrace().clear();
+				code.reinitVars();
+				inter.retourArriere();
+			}
 			
 			ihm.nettoyer();
 		}
@@ -310,23 +318,8 @@ public class Controleur {
 	 * */
 	public String afficherPseudoCode() {
 		String r = new String();
-		//ArrayList<String> codeAfficher =  new ArrayList<String>();
 		modifierCouleur();
 		
-		/*if (code.getCode().size() > 30 && code.getNumLig() > 15 && code.getNumLig() < code.contenuFichier.length - 15 )
-			for (int i = 0; i < 30 ; i ++)
-				codeAfficher.add(code.contenuFichier[code.getNumLig()-15 + i]);
-		else if (code.getCode().size() > 30 && code.getNumLig() <= 15)
-			for (int i = 0; i < 30 ; i ++)
-				codeAfficher.add(code.contenuFichier[code.getNumLig()+ i]);
-		else if (code.getCode().size() > 30 && code.getNumLig() >= 30 )
-			for (int i = 0; i < 30 ; i ++)
-				codeAfficher.add(code.contenuFichier[30 - code.contenuFichier.length + code.getNumLig() + i]);
-		
-		else 
-			for (int i = 0 ; i < code.contenuFichier.length ; i++)
-				codeAfficher.add(code.contenuFichier[i]);
-		*/
 		int i = 0 ;
 		int max = 0 ;
 		if (code.getCode().size() > 30 && code.getNumLig() > 15 && code.getNumLig() < code.contenuFichier.length - 15 ){
@@ -337,7 +330,7 @@ public class Controleur {
 			i = 0 ;
 			max = 31 ;
 		}
-		if (code.getCode().size() > 30 && code.getNumLig() >= 30 ){
+		if (code.getCode().size() > 30 && code.getNumLig() >= code.contenuFichier.length - 15 ){
 			i =  code.contenuFichier.length  - 31 ;
 			max = code.contenuFichier.length;
 		}

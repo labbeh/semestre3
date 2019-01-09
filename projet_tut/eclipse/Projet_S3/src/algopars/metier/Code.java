@@ -196,6 +196,16 @@ public final class Code {
 		scLig.close();
 	}
 	
+	/**
+	 * remettre les variables a pas de valeur
+	 * */
+	public void reinitVars(){
+		Set<String> clefs = variables.keySet();
+		
+		for(String clef: clefs)
+			variables.get(clef).setValeur(null);
+	}
+	
 	/*---------------*/
 	/* MODIFICATEURS */
 	/*---------------*/

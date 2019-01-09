@@ -37,6 +37,11 @@ public class Interpreteur {
 	private int index;
 	
 	/**
+	 * Compteur d'index 
+	 * */
+	private int cptIndex ;
+	
+	/**
 	 * Permet de savoir si la ligne est une expression boléenne et si c'est le cas
 	 * sa valeur
 	 * */
@@ -72,7 +77,8 @@ public class Interpreteur {
 		this.inter = new Interpreter();
 		this.inter.setStrictJava(true);
 		
-		this.index = 0;
+		this.index 	  = 0;
+		this.cptIndex = 0;
 		
 		this.etatLigne = null;
 		
@@ -93,6 +99,7 @@ public class Interpreteur {
 		while(index<code.code.size()){
 			faireLigne();
 			index++;
+			cptIndex++;
 		}
 	}
 	
@@ -122,11 +129,14 @@ public class Interpreteur {
 			return false;
 		}
 		
-		index = 0;
+		index    = 0 ;
+		cptIndex = 0 ;
 		
 		while(numLig > code.code.get(index).getNumLig()){
 			faireLigne();
-			index++;
+			index++ ;
+			cptIndex++ ;
+			//System.out.println(getCptIndex());
 		}
 		
 		return true;
@@ -136,15 +146,20 @@ public class Interpreteur {
 	 * Permet de revenir en arrière dans le code
 	 * */
 	public void retourArriere(){
-		if(index > 0){
-			int ancienIndex = index;
-			index = 0;
 			
-			while(index<ancienIndex-1){
-				faireLigne();
-				index++;
+			//int ancienCptIndex ;
+			//ancienCptIndex = cptIndex ;
+			if(index > 0 ){
+				index = 0 ;
+				
+				cptIndex -=  2;
+				System.out.println(cptIndex);
+					
+				for(int i = 0 ; i < cptIndex ; i ++){	
+					faireLigne();
+					index++;	
+				}
 			}
-		}
 	}
 	
 	public void faireLigne(){
@@ -548,6 +563,21 @@ public class Interpreteur {
 		return bRet;
 	}
 	
+	
+	/**
+	 * décrémente le compteur d'Index
+	 * */
+	public void decreCptIndex(){
+		index--;
+	}
+	
+	/**
+	 * Incremente le compteur d'index
+	 * */
+	public void incCptIndex(){
+		cptIndex++;
+	}
+	
 	/**
 	 * Incrémente de 1 l'index
 	 * */
@@ -555,13 +585,23 @@ public class Interpreteur {
 		index++;
 	}
 	
+	/*------------*/
 	/* ACCESSEURS */
+	/*------------*/
 	/**
 	 * Retourne l'index de la ligne de code courante
 	 * @return un int
 	 * */
 	public int getIndex(){
 		return index;
+	}
+	
+	/**
+	 * Retourne le compteur d'index
+	 * @return un int 
+	 * */
+	public int getCptIndex(){
+		return cptIndex;
 	}
 	
 	/**

@@ -212,5 +212,4 @@ public abstract class IHMCui {
 	public void normal(){
 		print("\033[0m");
 	}
-
 }
