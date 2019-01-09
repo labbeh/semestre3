@@ -4,16 +4,16 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
- * Classe permettant de charger en mémoire un fichier pseudo-code
- * @author lh150094
+ * Classe permettant de charger en memoire un fichier pseudo-code
+ * @author Hugo Labbe, Titouan Cornilleau, Clement Baron, Sebastien Mande,Loan Cadorel 
  * @version 2018-12-17, 1.0
  * */
 
 final class LectureFichier {
     
 	/**
-	 * Lit le fichier dont le nom est passé en paramètre
-	 * @param lien lien vers le fichier à charger
+	 * Lit le fichier dont le nom est passe en parametre
+	 * @param lien lien vers le fichier a charger
 	 * @return un String avec le contenu du fichier
 	 * */
     public static String lire(String lien){
@@ -40,7 +40,7 @@ final class LectureFichier {
     }
     
     /**
-     * Pour que cette classe utilitaire ne puisse pas être instanciée
+     * Pour que cette classe utilitaire ne puisse pas etre instanciee
      * */
     private LectureFichier(){}
 }

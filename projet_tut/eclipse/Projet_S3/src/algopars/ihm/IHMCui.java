@@ -5,14 +5,14 @@ import java.util.Scanner;
 
 /**
  * Classe abstraite permettant de concevoir des IHM console pour windows et unix/linux
- * @author hugo labbé
+ * @author Hugo Labbe, Titouan Cornilleau, Clement Baron, Sebastien Mande,Loan Cadorel 
  * @version 1.0, 2018-12-18
  * */
 
 public abstract class IHMCui {
 	
 	/**
-	 * Instance de Scanner pour lire sur l'entrée standard
+	 * Instance de Scanner pour lire sur l'entree standard
 	 * */
 	private Scanner stdin;
 	
@@ -20,7 +20,10 @@ public abstract class IHMCui {
 	 * Objet printstream pour la sortie standard
 	 * */
 	protected PrintStream stdout;
-	
+	/**
+	 * Constructeur initialise le necessaire pour lire et ecrire sur l'entree 
+	 * et la sortie standard 
+	 * */
 	public IHMCui() {
 		this.stdin 	= new Scanner	 (System.in );
 		this.stdout = new PrintStream(System.out);
@@ -30,15 +33,15 @@ public abstract class IHMCui {
 	/* LECTURE ENTREE STANDARD */
 	/*-------------------------*/
 	/**
-	 * Fonction lecture sur l'entrée standard
-	 * @return flux de l'entrée standard en String
+	 * Fonction lecture sur l'entree standard
+	 * @return flux de l'entree standard en String
 	 * */
 	public String lireClavier(){
 		return stdin.nextLine();
 	}
 	
 	/**
-	 * Fonction pour lire un entier au clavier redemande la saisie
+	 * Fonction pour lire un entier au clavier qui redemande la saisie
 	 * en cas de saisie invalide
 	 * @return l'entier saisi au clavier
 	 * */
@@ -61,9 +64,9 @@ public abstract class IHMCui {
     }
 	
 	/**
-	 * Fonction pour lire un réel au clavier redemande la saisie
+	 * Fonction pour lire un reel au clavier qui redemande la saisie
 	 * en cas de saisie invalide
-	 * @return le réel saisi au clavier
+	 * @return le reel saisi au clavier
 	 * */
 	public double lireReel()
     {
@@ -84,9 +87,9 @@ public abstract class IHMCui {
     }
 	
 	/**
-	 * Permet de lire un booléen au clavier
-	 * Tourne jusqu'à ce que T/F ou O/N soit saisi
-	 * @return valeur booléenne saisie au clavier
+	 * Permet de lire un booleen au clavier
+	 * Tourne jusqu'a ce que T/F ou O/N soit saisi
+	 * @return valeur booleenne saisie au clavier
 	 * */
 	public boolean lireBoolean(){
 		boolean bRet = false;
@@ -111,15 +114,15 @@ public abstract class IHMCui {
 	/* AFFICHAGE SUR LA SORTIE STANDARD */
 	/*----------------------------------*/
 	/**
-	* @param aAfficher chaine à afficher
-	* Méthode a définir dans les classes filles permettant l'affichage sans retour a la ligne
-	* Le but étant de définir une classe fille pour les sytèmes UNIX/Linux et une autre pour Windows
+	* Methode a definir dans les classes filles permettant l'affichage sans retour a la ligne
+	* Le but etant de definir une classe fille pour les sytemes UNIX/Linux et une autre pour Windows
+	* @param aAfficher chaine a afficher
 	* */
 	public abstract void print(String aAfficher);
 	
 	/**
-	* @param aAfficher chaine à afficher
-	* utilise la méthode print pour afficher la chaine et ajoute un retour ligne
+	* @param aAfficher chaine a afficher
+	* utilise la methode print pour afficher la chaine et ajoute un retour ligne
 	* */
 	public void println(String aAfficher){
 		print(aAfficher);
@@ -128,7 +131,7 @@ public abstract class IHMCui {
 	
 	/**
 	* @param obj un objet
-	* Permet d'afficher le toString() d'un objet sans l'appelé explicitement
+	* Permet d'afficher le toString() d'un objet sans l'appeler explicitement
 	* */
 	public void print(Object obj){
 		print(obj.toString());
@@ -136,16 +139,16 @@ public abstract class IHMCui {
 	
 	/**
 	* @param obj un objet
-	* Permet d'afficher le toString() d'un objet sans l'appelé explicitement en ajoutant un retour
-	* ligne à la fin
+	* Permet d'afficher le toString() d'un objet sans l'appeler explicitement en ajoutant un retour
+	* ligne a la fin
 	* */
 	public void println(Object obj){
 		println(obj.toString());
 	}
 	
 	/**
-	* @param carac un caractère
-	* Affiche le caractère passé en paramètre sans retour ligne
+	* @param carac un caractere
+	* Affiche le caractere passe en parametre sans retour ligne
 	*/
 	public void print(char carac){
 		print(Character.toString(carac));
@@ -153,7 +156,7 @@ public abstract class IHMCui {
 	
 	/**
 	* @param i un entier
-	* Affiche l'entier' passé en paramètre sans retour ligne
+	* Affiche l'entier passe en parametre sans retour ligne
 	*/
 	public void print(int i){
 		print(Integer.toString(i));
@@ -161,15 +164,15 @@ public abstract class IHMCui {
 	
 	/**
 	* @param d un double
-	* Affiche le double passé en paramètre sans retour ligne
+	* Affiche le double passe en parametre sans retour ligne
 	*/
 	public void print(double d){
 		print(Double.toString(d));
 	}
 	
 	/**
-	* @param b un booléen
-	* Affiche la valeur du booléen passé en paramètre
+	* @param b un booleen
+	* Affiche la valeur du booleen passee en parametre
 	*/
 	public void print(boolean b){
 		Boolean.toString(b);
@@ -177,7 +180,7 @@ public abstract class IHMCui {
 	
 	/**
 	* @param f un float
-	* Affiche le float passé en paramètre sans retour ligne
+	* Affiche le float passe en parametre sans retour ligne
 	*/
 	public void print(float f){
 		print(Float.toString(f));
@@ -185,7 +188,7 @@ public abstract class IHMCui {
 	
 	/**
 	* @param l un long
-	* Affiche le long passé en paramètre sans retour ligne
+	* Affiche le long passe en parametre sans retour ligne
 	*/
 	public void print(long l){
 		print(Long.toString(l));
@@ -193,14 +196,14 @@ public abstract class IHMCui {
 	
 	/**
 	* @param sht un short
-	* Affiche le short passé en paramètre sans retour ligne
+	* Affiche le short passe en parametre sans retour ligne
 	*/
 	public void print(short sht){
 		Short.toString(sht);
 	}
 	
 	/**
-	* Efface le contenu de l'écran
+	* Efface le contenu de l'ecran
 	*/
 	public void nettoyer(){
 		print("\033[H\033[2J");

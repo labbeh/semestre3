@@ -1,9 +1,9 @@
 package algopars.metier;
 
 /**
- * Crée une classe Variable qui permet de stocker 
- * une variable à partir de son type et sa valeur
- * @author Baron Clement, Cornilleau Titouan, Cadorel Loan, Labbé Hugo, Mandé Sébastien
+ * Cree une classe Variable qui permet de stocker 
+ * une variable a partir de son type et sa valeur
+ * @author Baron Clement, Cornilleau Titouan, Cadorel Loan, Labbe Hugo, Mande Sebastien
  * @version 1.0, 2018-12-17
  * */
 public class Variable{
@@ -23,7 +23,7 @@ public class Variable{
 	private boolean aTracer;
 	
 	/**
-	 * Permet de créer une variable avec un type et une valeur
+	 * Permet de creer une variable avec un type et une valeur
 	 * @param type un TypeVariable
 	 * @param valeur un String
 	 * */
@@ -35,7 +35,7 @@ public class Variable{
 	}
 	
 	/**
-	 * Permet de créer une variable d'un certains type
+	 * Permet de creer une variable d'un certains type
 	 * en initialisant sa valeur à null
 	 * @param type un TypeVariable
 	 * */
@@ -53,7 +53,7 @@ public class Variable{
 	/* MODIFICATEURS */
 	/*---------------*/
 	/**
-	 * Permet de définir le type de la variable
+	 * Permet de definir le type de la variable
 	 * @param type TypeVariable
 	 * */
 	public void setType(TypeVariable type){
@@ -61,7 +61,7 @@ public class Variable{
 	}
 	
 	/**
-	 * Permet de définir la valeur de la variable
+	 * Permet de definir la valeur de la variable
 	 * @param valeur String
 	 * */
 	public void setValeur(String valeur){
@@ -69,8 +69,8 @@ public class Variable{
 	}
 	
 	/**
-	 * Permet de définir si la variable est à tracer ou non.
-	 * @param aTracer un booléeen
+	 * Permet de definir si la variable est à tracer ou non.
+	 * @param aTracer un booleen
 	 * */
 	public void setTracage(boolean aTracer){
 		this.aTracer = aTracer;
@@ -97,11 +97,9 @@ public class Variable{
 	}
 	
 	/**
-	 * Retourne si la variable est à tracer ou non
+	 * Retourne si la variable est a tracer ou non
 	 * */
 	public boolean estAtracer(){
 		return aTracer;
-	}
-	
-	
+	}	
 }

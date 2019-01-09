@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.List;
 
 /**
- * @author lh150094
+ * @author Hugo Labbe, Titouan Cornilleau, Clement Baron, Sebastien Mande,Loan Cadorel 
  * @version 2019-01-07, 1.0
  * */
 
@@ -19,41 +19,41 @@ public final class Code {
 	/* ATTRIBUTS D'INSTANCE */
 	/*----------------------*/
 	/**
-	 * Tableau contenant l'intégralité du fichier sans aucune modification,
+	 * Tableau contenant l'integralite du fichier sans aucune modification,
 	 * Sans suppressions d'espaces ou autre ...
 	 * */
 	public final String[] contenuFichier;
 
 	/**
-	 * Tableau associatif pour associer un objet Variable à son nom
+	 * Tableau associatif pour associer un objet Variable a son nom
 	 * */
 	public HashMap<String, Variable> variables;
 
 	/**
-	 * Tableau associatif pour associer un objet Constante à som nom
+	 * Tableau associatif pour associer un objet Constante a son nom
 	 * */
 	public HashMap<String, Constante> constantes;
 
 	/**
-	 * Contenu complet du code ligne par ligne ou données
+	 * Contenu complet du code ligne par ligne ou donnees
 	 * */
 	protected List<LigneCode> code;
 	
 	/**
 	 * Permet de connaitre les lignes de codes que l'on doit mettre
-	 * en évidence dans la trace d'exécution (sans les lignes blanches ...)
+	 * en evidence dans la trace d'execution (sans les lignes blanches ...)
 	 * */
 	protected List<Integer> numsLigsUtils;
 	
 	
 	/**
-	 * Indice de la ligne du code ou on se trouve
+	 * Indice de la ligne du code ou l'on se trouve
 	 * */
 	private int numLig;
 	
 
 	/**
-	 * Constructeur d'un Code à partir d'un fichier
+	 * Constructeur d'un Code a partir d'un fichier
 	 * @param fichier nom du fichier en String           
 	 */
 	public Code(String fichier) {
@@ -75,10 +75,10 @@ public final class Code {
 	}
 	
 	/**
-	 * Lancer l'interprétation du code
+	 * Lancer l'interpretation du code
 	 * */
 	private void interpretation() {
-		int i = 2; // on démarre ligne 2 car les 2 premières lignes sont la déclaration
+		int i = 2; // on démarre ligne 2 car les 2 premieres lignes sont la declaration
 				   // de l'algo et du premier block
 		
 		try {
@@ -117,7 +117,7 @@ public final class Code {
 	}
 
 	/**
-	 * Méthode pour remplir la HashMap des variables
+	 * Methode pour remplir la HashMap des variables
 	 * */
 	private void creerVariable(String ligne) {
 		// on stock le nom des variables dans un Set
@@ -127,14 +127,14 @@ public final class Code {
 		// pour stocker le type de la variable
 		String type = new String();
 
-		// Scanner pour traiter la ligne en paramètre
+		// Scanner pour traiter la ligne en parametre
 		Scanner scLig = new Scanner(ligne);
 		scLig.useDelimiter(":");
 
-		// on gère le cas de plusieurs variables sur la même ligne
-		// séparés par des virgules
+		// on gere le cas de plusieurs variables sur la meme ligne
+		// separes par des virgules
 		if (ligne.contains(",")) {
-			// deuxième scanner pour les variables sur la même ligne
+			// deuxieme scanner pour les variables sur la meme ligne
 			Scanner sc = new Scanner(scLig.next());
 			sc.useDelimiter(",");
 
@@ -145,7 +145,7 @@ public final class Code {
 		} else
 			nomsVars.add(scLig.next().replaceAll("\\s+", ""));
 
-		// on récupère le type de la variable
+		// on récupere le type de la variable
 		type = scLig.next().replaceAll("\\s+", "");
 
 		// on ajoute la variable (sans valeur) à la HashMap
@@ -156,7 +156,7 @@ public final class Code {
 	}
 
 	/**
-	 * Méthode pour remplir la HashMap des constantes
+	 * Methode pour remplir la HashMap des constantes
 	 * */
 	private void creerConstantes(String ligne) {
 		// on stock le nom des constantes dans un Set
@@ -166,14 +166,14 @@ public final class Code {
 		// pour stocker le type de la constante
 		String type = new String();
 
-		// Scanner pour traiter la ligne en paramètre
+		// Scanner pour traiter la ligne en parametre
 		Scanner scLig = new Scanner(ligne);
 		scLig.useDelimiter(":");
 
-		// on gère le cas de plusieurs constantes sur la même ligne
-		// séparés par des virgules
+		// on gere le cas de plusieurs constantes sur la meme ligne
+		// sépares par des virgules
 		if (ligne.contains(",")) {
-			// deuxième scanner pour les constantes sur la même ligne
+			// deuxieme scanner pour les constantes sur la meme ligne
 			Scanner sc = new Scanner(scLig.next());
 			sc.useDelimiter(",");
 
@@ -184,10 +184,10 @@ public final class Code {
 		} else
 			nomsConsts.add(scLig.next());
 
-		// on récupère le type de la constante
+		// on recupere le type de la constante
 		type = scLig.next();
 
-		// on ajoute la constante (sans valeur) à la HashMap
+		// on ajoute la constante (sans valeur) a la HashMap
 		for (String nomCons : nomsConsts)
 			constantes.put(nomCons, new Constante(TypeVariable.trouverType(type)));
 		
@@ -204,11 +204,26 @@ public final class Code {
 			variables.get(clef).setValeur(null);
 	}
 	
+	/**
+	 * Permet de modifier si oui ou non on trace une variable
+	 * @param nomVar nom de la variable dont on doit changer l'option de tracage
+	 * @param vrai pour tracer la variable nomVar
+	 * @return vrai si la variable a ete trouvee
+	 * */
+	public boolean tracerVariable(String nomVar, boolean aTracer){
+		Variable var = variables.get(nomVar);
+		
+		if(var == null) return false;
+		
+		var.setTracage(aTracer);
+		return true;
+	}
+	
 	/*---------------*/
 	/* MODIFICATEURS */
 	/*---------------*/
 	/**
-	 * Permet d'incrémenter le numéro de ligne courante
+	 * Permet d'incrementer le numero de ligne courante
 	 * pour le surlignage
 	 * */
 	public void incNumLig(){
@@ -216,8 +231,8 @@ public final class Code {
 	}
 	
 	/**
-	 * Défini le numéro de ligne courante
-	 * @param numLig numéro de la ligne à affecter
+	 * Defini le numero de ligne courante
+	 * @param numLig numero de la ligne a affecter
 	 * */
 	public void setNumLig(int index) {
 		this.numLig = code.get(index).getNumLig();
@@ -229,7 +244,7 @@ public final class Code {
 	
 	
 	/**
-	 * Retourne le nombre de ligne que contient le fichier pseudo-code
+	 * Retourne le nombre de lignes que contient le fichier pseudo-code
 	 * @return le nombre de lignes utiles en entier
 	 * */
 	public int getNbLig(){
@@ -237,7 +252,7 @@ public final class Code {
 	}
 	
 	/**
-	 * Retourne le numéro de la ligne en cours
+	 * Retourne le numero de la ligne en cours
 	 * @return ligne en cours en entier
 	 * */
 	public int getNumLig(){
@@ -252,10 +267,10 @@ public final class Code {
 	}
 	
 	/**
-	 * Retourne la valeur de la ligne utile à l'indice i dans la liste
-	 * de numéros de lignes utiles
+	 * Retourne la valeur de la ligne utile a l'indice i dans la liste
+	 * de numeros de lignes utiles
 	 * @param index indice dans la liste entier
-	 * @return entier numéro de ligne utile à l'indice i
+	 * @return entier numero de ligne utile a l'indice i
 	 * */
 	public int getNumLigUtilAt(int index){
 		return numsLigsUtils.get(index);

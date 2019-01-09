@@ -3,22 +3,22 @@ package algopars;
 import algopars.metier.Code;
 
 /**
- * @author lh150094
+ * @author Hugo Labbe, Titouan Cornilleau, Clement Baron, Sebastien Mande,Loan Cadorel 
  * @version 2019-01-08, 2.0
  * */
 
 public class AlgoPars {
 	
 	/**
-	 * Constante chaine de caractère qui sera afficher en cas de saisie incorrect
-	 * des paramètres au lancement d'AlgoPars
+	 * Constante chaine de caractere qui sera affichee en cas de saisie incorrect
+	 * des parametres au lancement d'AlgoPars
 	 * */
 	static final String MSG_ERREUR = "Usage: java -jar AlgoPars.jar fichierPscode manuel|auto " +
 			   						 "[--force-windows | --force-unix]";
 	
 	/**
-	 * @param args doit être au minimum le nom du fichier à utiliser
-	 * et "auto" ou "manuel" selon le mode voulut
+	 * @param args doit etre au minimum le nom du fichier a utiliser
+	 * et "auto" ou "manuel" selon le mode voulu
 	 */
 	public static void main(String[] argv) {
 		Code code;
@@ -54,14 +54,14 @@ public class AlgoPars {
 	}
 	
 	/**
-	 * Méthode de classe détectant le système d'exploitation de la machine sur laquelle
+	 * Methode de classe detectant le systeme d'exploitation de la machine sur laquelle
 	 * on lance AlgoPars
 	 * Cela permettra au controleur d'instancier la bonne ihm console pour la prise en
-	 * charge des séquences ANSI sous windows
-	 * La méthode détecte s'il s'agit de windows ou non, s'il ne s'agit pas de windows
-	 * on considère qu'il s'agit d'un système UNiX/Linux
+	 * charge des sequences ANSI sous windows
+	 * La methode detecte s'il s'agit de windows ou non, s'il ne s'agit pas de windows
+	 * on considere qu'il s'agit d'un systeme UNiX/Linux
 	 * 
-	 * @return un caractère qui aura pour valeur 'w' si windows et détecté, 'u' dans le cas contraire
+	 * @return un caractere qui aura pour valeur 'w' si windows est detecte, 'u' dans le cas contraire
 	 * */
 	private static char detecterOs(){
 		char os;
@@ -75,12 +75,11 @@ public class AlgoPars {
 	}
 	
 	/**
-	 * Afficher un message d'erreur et ferme le programe avec le code
+	 * Afficher un message d'erreur et ferme le programme avec le code
 	 * de status 1
 	 * */
 	private static void erreur(){
 		System.out.println(MSG_ERREUR);
 		System.exit(1);
 	}
-	
 }

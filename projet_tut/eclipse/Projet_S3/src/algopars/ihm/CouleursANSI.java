@@ -1,5 +1,10 @@
 package algopars.ihm;
 
+/**
+ * @author Hugo Labbe, Titouan Cornilleau, Clement Baron, Sebastien Mande,Loan Cadorel 
+ * @version 2019-01-08, 2.0
+ * */
+
 public enum CouleursANSI {
 	
 	NOIR("\033[30m", "\033[40m"), 
@@ -14,16 +19,28 @@ public enum CouleursANSI {
 	  
 	String couleurTexte;
 	String couleurFond;
-	  
+	 
+	/**
+	 * Constructeur pour initialiser la sequence ANSI du texte et du fond
+	 * @param couleurTexte sequence ANSI pour la couleur du texte
+	 * @param couleurFond sequence ANSI pour la couleur de fond
+	 * */
 	private CouleursANSI(String couleurTexte, String couleurFond) {
 		this.couleurTexte = couleurTexte;
 	    this.couleurFond  = couleurFond;
 	}
-	  
+  
+	/**
+	 * permet d'obtenir la couleur du texte
+	 * @return String couleurTexte
+	 * */
 	public String getCouleurTexte() {
 		return couleurTexte;
 	}
-	  
+	  /**
+	   * permet d'obtenir la couleur du fond
+	   * @return String couleurFond
+	   * */
 	public String getCouleurFond(){
 		return couleurFond;
 	}

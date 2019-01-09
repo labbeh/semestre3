@@ -1,9 +1,15 @@
 package algopars.metier;
 
+/**
+ * Classe permettant creer une instance de ligne de code contenant 
+ * son numero et son contenu
+ * @author Hugo Labbe, Titouan Cornilleau, Clement Baron, Sebastien Mande,Loan Cadorel 
+ * @version 2018-1-7, 1.0
+ * */
 class LigneCode {
 	
 	/**
-	 * Numéro de la ligne de code dans le fichier
+	 * Numero de la ligne de code dans le fichier
 	 * */
 	private int numLig;
 	
@@ -22,7 +28,7 @@ class LigneCode {
 	/*------------*/
 	
 	/**
-	 * Retourne le numéro de la ligne de code
+	 * Retourne le numero de la ligne de code
 	 * @return un int
 	 * */
 	public int getNumLig() {
@@ -47,20 +53,18 @@ class LigneCode {
 	/* MODIFICATEURS */
 	/*---------------*/
 	/**
-	 * Permet de définir le numéro de la ligne de code
-	 * @param numLig numéro de la ligne en int
+	 * Permet de dfinir le numero de la ligne de code
+	 * @param numLig numero de la ligne en int
 	 * */
 	public void setNumLig(int numLig) {
 		this.numLig = numLig;
 	}
 	
 	/**
-	 * Permet de définir le contenu de la ligne de code
+	 * Permet de definir le contenu de la ligne de code
 	 * @param contenu String contenant la ligne de code
 	 * */
 	public void setContenu(String contenu) {
 		this.contenu = contenu;
 	}
-	
-	
 }

@@ -1,22 +1,22 @@
 package algopars.ihm;
 
 /**
- * Classe fille de IHMCui pour les sytèmes UNiX/Linux
- * @author hugo labbé
+ * Classe fille de IHMCui pour les sytemes UNiX/Linux
+ * @author Hugo Labbe, Titouan Cornilleau, Clement Baron, Sebastien Mande,Loan Cadorel 
  * @version 1.0, 2018-12-18
  * */
 
 public class IHMCuiUnix extends IHMCui {
 	
 	/**
-	 * Constructeur par défaut, appel celui de la classe mère
+	 * Constructeur par defaut, appel celui de la classe mere
 	 * */
 	public IHMCuiUnix() {
 		super();
 	}
 	
 	/**
-	 * Définit la méthode abstraite print pour l'affichage d'un String
+	 * Définit la methode abstraite print pour l'affichage d'un String
 	 * sur la sortie standart
 	 * */
 	@Override

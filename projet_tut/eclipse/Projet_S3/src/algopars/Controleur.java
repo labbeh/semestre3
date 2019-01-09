@@ -5,8 +5,8 @@ import algopars.ihm.*;
 import algopars.metier.*;
 
 /**
- * Classe controleur faisant la passerelle enre la partie métier et l'ihm
- * @author hugo labbé
+ * Classe controleur faisant la passerelle enre la partie metier et l'ihm
+ * @author Hugo Labbe, Titouan Cornilleau, Clement Baron, Sebastien Mande,Loan Cadorel 
  * @version 1.0, 2018-12-18
  * */
 
@@ -29,14 +29,14 @@ public class Controleur {
 	
 	/**
 	 * Couleur du surlignage de la ligne en cours
-	 * change en cas d'expression booléenne
+	 * change en cas d'expression booleenne
 	 * */
 	private CouleursANSI couleurLigne;
 	
 	/**
-	 * Constructeur du controleur passerel avec l'ihm
+	 * Constructeur du controleur passerelle avec l'ihm
 	 * @param code instance de Code
-	 * @param os caractère ayant pour valeur 'w' ou 'u' permettant au controleur d'instancier la bonne version de l'ihmcui
+	 * @param os caractere ayant pour valeur 'w' ou 'u' permettant au controleur d'instancier la bonne version de l'ihmcui
 	 * */
 	public Controleur( Code code, char os ) {
 		if(os == 'w')
@@ -52,7 +52,7 @@ public class Controleur {
 	
 	
 	/**
-	 * Lancer le programme en mode pas à pas
+	 * Lancer le programme en mode pas a pas
 	 * */
 	public void lancerPasAPas(){
 		String saisi;
@@ -101,6 +101,22 @@ public class Controleur {
 				code.reinitVars();
 				inter.retourArriere();
 			}
+			else if(saisi.startsWith("+ var")){
+				saisiReussi = changerTracage(saisi, true);
+				
+				while(!saisiReussi){
+					saisi 		= ihm.lireClavier();
+					saisiReussi = changerTracage(saisi, true);
+				}
+			}
+			else if(saisi.startsWith("- var")){
+				saisiReussi = changerTracage(saisi, false);
+				
+				while(!saisiReussi){
+					saisi 		= ihm.lireClavier();
+					saisiReussi = changerTracage(saisi, false);
+				}
+			}
 			
 			ihm.nettoyer();
 		}
@@ -113,41 +129,6 @@ public class Controleur {
 		
 		ihm.normal();
 	}
-	
-	/*public void lancerPasAPas(){
-		ihm.nettoyer();
-		ihm.normal();
-		afficher(this.afficherPseudoCode());
-		
-		choixTracageVariables();
-		
-		afficher(this.afficherDonnees());
-		afficherTrace();
-		
-		ihm.nettoyer();
-		// mode pas a pas
-		while(inter.getIndex() < code.getNbLig()){
-			code.setNumLig(inter.getIndex());
-			
-			inter.faireLigne();
-			
-			afficher(this.afficherPseudoCode());
-			afficher(this.afficherDonnees()   );
-			afficherTrace();
-			
-			inter.incIndex()  ;
-			ihm.lireClavier() ;
-			ihm.nettoyer()    ;
-		}
-		
-		code.setNumLig(inter.getIndex()-1);
-		
-		afficher(this.afficherPseudoCode());
-		afficher(this.afficherDonnees()   );
-		afficherTrace();
-		
-		ihm.normal();
-	}*/
 	
 	/**
 	 * Lance le programme en mode automatique
@@ -190,6 +171,28 @@ public class Controleur {
 		ihm.normal();
 	}
 	
+	/**
+	 * Permet de changer les variables a tracer pendant l'utilisation
+	 * en mode manuel
+	 * @param saisi la ligne saisie au clavier
+	 * @param aTracer vrai si la variable est a tracer
+	 * */
+	public boolean changerTracage(String saisi, boolean aTracer){
+		String[] splitSaisi = saisi.split(" ");
+		
+		if(splitSaisi.length != 3){
+			afficher("Erreur de saisie");
+			return false;
+		}
+		
+		return code.tracerVariable(splitSaisi[2], aTracer);
+	}
+	
+	/**
+	 * Permet de choisir le temp de temporistation pour passer d'une ligne a l'autre
+	 * en mode auto
+	 * @param delai temporisation en secondes
+	 * */
 	private void pause(long delai){
 		try{
 			Thread.sleep(delai * 1000);
@@ -200,8 +203,8 @@ public class Controleur {
 	}
 	
 	/**
-	 * Lance la possibilité a l'utilisateur de choisir les variables
-	 * à tracer
+	 * Lance la possibilite a l'utilisateur de choisir les variables
+	 * a tracer
 	 * */
 	private void choixTracageVariables() {
 		afficher("Quelles variables souhaitez vous tracer ?");
@@ -218,7 +221,7 @@ public class Controleur {
 	}
 
 	/**
-	 * Envoie sur l'ihm console une chaine de caractère à afficher
+	 * Envoie sur l'ihm console une chaine de caractere a afficher
 	 * avec retour ligne
 	 * */
 	public void afficher(String str){
@@ -229,7 +232,7 @@ public class Controleur {
 	
 	/**
 	 * Permet d'afficher la trace d'execution
-	 * Affiche les 5 dernières lignes
+	 * Affiche les 5 dernieres lignes
 	 * */
 	public void afficherTrace(){
 		if(inter.getTrace().size() > 5 ) inter.getTrace().remove(0);
@@ -255,8 +258,8 @@ public class Controleur {
 	}
 	
 	/**
-	 * Retourne le réel saisi au clavier depuis l'ihm
-	 * @return un réel
+	 * Retourne le reel saisi au clavier depuis l'ihm
+	 * @return un reel
 	 * */
 	public double lireReel(){
 		return ihm.lireReel();
@@ -270,31 +273,31 @@ public class Controleur {
 	}
 	
 	/**
-	 * Incrémente le numéro de ligne en cours dans l'instance de Code
+	 * Incremente le numero de ligne en cours dans l'instance de Code
 	 * */
 	public void incNumLig(){
 		code.incNumLig();
 	}
 	
 	/**
-	 * Défini le numéro de ligne courante dans l'instance de Code
+	 * Defini le numero de la ligne courante dans l'instance de Code
 	 * */
 	public void setNumLig(int numLig){
 		code.setNumLig(numLig);
 	}
 	
 	/**
-	 * Retourne la valeur de la ligne utile à l'indice i dans la liste
-	 * de numéros de lignes utiles
+	 * Retourne la valeur de la ligne utile a l'indice i dans la liste
+	 * de numeros de lignes utiles
 	 * @param index indice dans la liste entier
-	 * @return entier numéro de ligne utile à l'indice i
+	 * @return entier numero de ligne utile a l'indice i
 	 * */
 	public int getNumLigUtilAt(int index){
 		return code.getNumLigUtilAt(index);
 	}
 	
 	/**
-	 * Génère le block "données" à afficher et ne met que les variables a tracer
+	 * Genere le block "donnees" a afficher et ne met que les variables a tracer
 	 * @return un String 
 	 * */
 	public String afficherDonnees() {
@@ -313,7 +316,7 @@ public class Controleur {
 	}
 	
 	/**
-	 * Génère sous forme de String le code à afficher
+	 * Genere sous forme de String le code a afficher
 	 * @return un String
 	 * */
 	public String afficherPseudoCode() {
@@ -339,18 +342,12 @@ public class Controleur {
 		
 		
 		while ( i < max)  {
-			//r += CouleursANSI.NORMAL.getCouleurTexte();
 			if(i == code.getNumLig()) r += couleurLigne.getCouleurFond();
 			else 					  r += CouleursANSI.NOIR.getCouleurFond();
 			
 			r += CouleursANSI.BLANC.getCouleurTexte();
-			//if(i == code.getNumLig()) r += couleurLigne.getCouleurFond();
 			r += String.format("|%2s %-50s|\n", Integer.toString(i), code.contenuFichier[i]);
-			//r = r.replaceAll("ftq", CouleursANSI.BLEU.getCouleurTexte() + "ftq" + CouleursANSI.NORMAL.getCouleurTexte());
-			//if(i == code.getNumLig()) r += couleurLigne.getCouleurFond();
-			//r = r.replaceAll("tq", CouleursANSI.BLEU.getCouleurTexte() + "tq" +CouleursANSI.NORMAL.getCouleurTexte());
-			
-			//if(i == code.getNumLig()) r += CouleursANSI.NORMAL.getCouleurFond() + couleurLigne.getCouleurFond();
+		
 			r = r.replaceAll("ftq", CouleursANSI.BLEU.getCouleurTexte()    + "ftq" + CouleursANSI.BLANC.getCouleurTexte() );
 			r = r.replaceAll("sinon", CouleursANSI.BLEU.getCouleurTexte()  + "sinon" + CouleursANSI.BLANC.getCouleurTexte() );
 			r = r.replaceAll("fsi", CouleursANSI.BLEU.getCouleurTexte()    + "fsi" + CouleursANSI.BLANC.getCouleurTexte() );
@@ -374,8 +371,8 @@ public class Controleur {
 	}
 	
 	/**
-	 * Changer l'état d'une ligne pour sa coloration dans la console.
-	 * Vert si c'est une expression boléenne vrai, rouge si c'est faux
+	 * Changer l'etat d'une ligne pour sa coloration dans la console.
+	 * Vert si c'est une expression boleenne vrai, rouge si c'est faux
 	 * Jaune si c'est une ligne quelconque
 	 * */
 	private void modifierCouleur(){
@@ -383,5 +380,4 @@ public class Controleur {
 		else if(inter.getEtatLigne() == true ) couleurLigne = CouleursANSI.VERT;
 		else if(inter.getEtatLigne() == false) couleurLigne = CouleursANSI.ROUGE;
 	}
-
 }

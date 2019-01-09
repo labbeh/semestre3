@@ -1,8 +1,8 @@
 package algopars.metier;
 
 /**
- * @author lh150094
- * Enum énumérant tout les types de bases possibles dans le pseudo-code
+ * @author Hugo Labbe, Titouan Cornilleau, Clement Baron, Sebastien Mande,Loan Cadorel 
+ * Enum enumerant tous les types de bases possibles dans le pseudo-code
  * */
 
 enum TypeVariable{
