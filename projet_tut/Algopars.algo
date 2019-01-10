@@ -1,0 +1,81 @@
+ALGORITHME machin
+constante:
+
+variable:
+x, cpt, nb : entier
+b, y , z : entier
+a , d, c : réel
+f : chaine
+
+DEBUT
+
+x <-- 5
+cpt <-- 0
+nb <-- 0
+b<--5
+a<--6.2
+c<--4.2
+d<--6.2
+y<--8
+z<--2
+f<--bonsoir
+
+ecrire(f)
+tq cpt < x faire
+    cpt++
+    nb <--0
+    
+ftq
+cpt <--6
+
+
+si cpt = 6 ET b = 5 alors
+    ecrire("etape 1")
+sinon
+    tq cpt < x + 1 faire
+    cpt++
+    ftq
+fsi
+
+si cpt = 6 alors
+    ecrire("etape 2")
+fsi
+
+ ecrire("etape 3")
+   
+si y = 8 alors
+
+    ecrire(y)
+    
+    si x = 4 alors
+        ecrire("etape 4")
+    sinon
+        ecrire(x)
+    fsi
+    
+    si x = 4 alors
+        ecrire("etape 5")
+    sinon
+        si z = 2 alors
+            ecrire("etape 6")
+        fsi
+        ecrire("x=!4")
+    fsi
+fsi
+
+ecrire ( "etape0" )
+ecrire (plancher(12.8))
+ecrire (plafond(12.2))
+ecrire (arrondi(13.4))
+ecrire (aujourd'hui())
+
+plancher(a)
+plafond(d)
+arrondi(c)
+
+ecrire (hasard(10))
+lire(x)
+ecrire(x)
+
+
+FIN
