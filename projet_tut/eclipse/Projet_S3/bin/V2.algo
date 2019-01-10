@@ -1,0 +1,44 @@
+ALGORTIHME NomAlgo
+constante:
+
+variable:
+    x, y : entier
+
+DEBUT
+    x<--4
+    y<--8
+    
+    ecrire ( "etape0" )
+    
+    si x = 5 alors
+    
+        ecrire( "etape1" )
+    
+        si y = 2 alors
+            ecrire( "etape2" )
+        fsi
+        
+   
+        ecrire ( "etape3" )
+  
+    
+        si y = 2 alors
+            ecrire( "etape4" ) 
+        sinon
+            ecrire( "etape5 super étape !")
+        fsi
+    
+    fsi
+    
+    si y = 7 alors
+        ecrire ("etape6")
+    sinon
+        ecrire ("etape7")
+    fsi
+    
+    
+    ecrire ("etape8")
+    ecrire (x)
+    ecrire (y)
+
+FIN

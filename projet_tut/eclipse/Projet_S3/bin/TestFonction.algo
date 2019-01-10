@@ -1,0 +1,34 @@
+ALGORTIHME NomAlgo
+constante:
+
+variable:
+    x, y : entier
+    a, b, c: réel
+
+DEBUT
+    x<--4
+    y<--8
+    
+    a<--4.5
+    b<--5.4
+    c<--6.4
+    
+    ecrire ( "etape0" )
+    ecrire (plancher(12.8))
+    ecrire (plafond(12.2))
+    ecrire (arrondi(13.4))
+    ecrire (hasard(10))
+    ecrire (aujourd'hui())
+    
+    plancher(4.5)
+    plafond(4.5)
+    arrondi(5.5)
+    
+    plancher(a)
+    plafond(b)
+    arrondi(c)
+    
+    ecrire (x)
+    ecrire (y)
+
+FIN

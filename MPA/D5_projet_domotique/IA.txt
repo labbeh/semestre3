@@ -1,0 +1,16 @@
+Emotion
+EmotionData
+Server(400,0)
+Human(0,150)
+Machine(400,300)
+HMInterface(140,150)
+Human 1..* ---- 1..* Emotion
+HMInterface 1..* ---- 1..* Human
+Human 1..* ---- 1..* HMInterface
+Machine 1..* ---- 1..* HMInterface
+HMInterface 1..* ---- 1..* Machine
+Machine 1..* ---- 1..* Server
+Server 1..* ---- 1..* Machine
+Server * ---- * EmotionData
+Machine 1..* ---- 1..* EmotionData
+HMInterface 1..* ---- 1..* EmotionData

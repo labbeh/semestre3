@@ -159,15 +159,18 @@ public class Interpreteur {
 			}
 	}
 	
+	/**
+	 * Methode lancee a chaque ligne du code du pseudo-code
+	 * */
 	public void faireLigne(){
 		etatLigne = null;
 		
 		List<LigneCode> lignesCode = code.code;
 		String ligne = lignesCode.get(index).getContenu();
 		ligne = ligne.trim();
-		
-		
-		if	   (ligne.contains("ecrire")) ecrire(ligne);
+				
+		if	   (ligne.contains("ecrire") && contientFonction(ligne)) ecrire(ligne, false);
+		else if(ligne.contains("ecrire")) ecrire(ligne);
 		else if(ligne.startsWith("lire") && ligne.endsWith(")")) lire(ligne);
 		else if(ligne.contains("<--"   )) affecter(ligne);
 		else if(ligne.endsWith("++"	   )) incrementerVariable();
@@ -178,8 +181,23 @@ public class Interpreteur {
 		
 		else if(ligne.startsWith("ftq")) ftq();
 		else if(ligne.startsWith("fsi"));
-		
+		else if(ligne.contains("plancher"))plancher();
+		else if(ligne.contains("plafond"))plafond();
+		else if(ligne.contains("arrondi"))arrondi();
+		else if(ligne.contains("hasard"))hasard();
+		else if(ligne.contains("aujourd'hui"))aujourdhui();
 		else erreur();
+	}
+	
+	/**
+	 * Sert pour ecrire le resultat d'une fonction
+	 * Defini si le ecrire contient une fonction
+	 * */
+	private boolean contientFonction(String ligne){
+		return ligne.contains("plafond") || ligne.contains("plancher" ) 
+										 || ligne.contains("arrondi") 
+										 || ligne.contains("hasard") 
+										 || ligne.contains("aujourd'hui");
 	}
 	
 	/**
@@ -270,6 +288,184 @@ public class Interpreteur {
 			}	
 		}
 		return false;
+	}
+	
+	/**
+	 * Fonction Plancher du pseudo code
+	 * */
+	public int plancher(){
+		String pl = code.code.get(index).getContenu();
+		pl.trim();
+		pl = pl.replaceAll("plancher", "");
+		pl = pl.replaceAll("\\(", "");
+		pl = pl.replaceAll("\\)", "");
+		pl = pl.trim();
+		pl = pl.trim();
+		if (code.variables.containsKey(pl)) 
+		{
+			Variable var = code.variables.get(pl);
+			
+			if(var.getType() == TypeVariable.REEL)
+				var.setValeur((int) Double.parseDouble(var.getValeur())+"");
+			else 
+				erreur();
+			return  (int)Double.parseDouble(var.getValeur());
+		}
+		return (int)Double.parseDouble(pl);
+	}
+	/**
+	 * Fonction plancher du pseudo code
+	 * @param String chaine
+	 */
+	public int plancher(String chaine){
+
+		chaine.trim();
+		chaine = chaine.replaceAll("plancher", "");
+		chaine = chaine.trim();
+		if (code.variables.containsKey(chaine)) 
+		{
+			Variable var = code.variables.get(chaine);
+			
+			if(var.getType() == TypeVariable.REEL)
+				var.setValeur((int) Double.parseDouble(var.getValeur())+"");
+			else 
+				erreur();
+			return  (int)Double.parseDouble(var.getValeur());
+		}
+		return (int)Double.parseDouble(chaine);
+
+		
+	}
+	
+	/**
+	 * Fonction plafond du pseudo code
+	 */
+	public int plafond(){
+		String pl = code.code.get(index).getContenu();
+		pl.trim();
+		pl = pl.replaceAll("plafond", "");
+		pl = pl.replaceAll("\\(", "");
+		pl = pl.replaceAll("\\)", "");
+		pl = pl.trim();
+		if (code.variables.containsKey(pl)) 
+		{
+			Variable var = code.variables.get(pl);
+			
+			if(var.getType() == TypeVariable.REEL)
+				var.setValeur( 1+(int)Double.parseDouble(var.getValeur())+"");
+			else 
+				erreur();
+			return 1+ (int)Double.parseDouble(var.getValeur());
+		}
+		return 1+(int)Double.parseDouble(pl);
+		
+	}
+	/**
+	 * Fonction plafond du pseudo code
+	 * @param String chaine
+	 */
+	public int plafond(String chaine){
+		
+		chaine = chaine.replaceAll("plafond", "");
+		chaine.trim();
+
+		if (code.variables.containsKey(chaine)) 
+		{
+			Variable var = code.variables.get(chaine);
+			
+			if(var.getType() == TypeVariable.REEL)
+				var.setValeur( 1+(int)Double.parseDouble(var.getValeur())+"");
+			else 
+				erreur();
+				
+			return 1+ (int)Double.parseDouble(var.getValeur());
+			
+		}
+		return 1+(int) Double.parseDouble(chaine);
+		
+	}
+	/**
+	 * Fonction arrondi du pseudo code
+	 * */
+	public int arrondi(){
+		String pl = code.code.get(index).getContenu();
+		pl.trim();
+		pl = pl.replaceAll("arrondi", "");
+		pl = pl.replaceAll("\\(", "");
+		pl = pl.replaceAll("\\)", "");
+		pl = pl.trim();
+		if (code.variables.containsKey(pl)) 
+		{
+			Variable var = code.variables.get(pl);
+			
+			if(var.getType() == TypeVariable.REEL)
+				var.setValeur((int) Double.parseDouble(var.getValeur())+"");
+			else 
+				erreur();
+			return (int) Math.round(Double.parseDouble(var.getValeur()));
+		}
+		return (int) Math.round(Double.parseDouble(pl));
+		
+		
+		
+	}
+	/**
+	 * Fonction arrondi du pseudo code
+	 * */
+	public int arrondi(String arr){
+		arr.trim();
+		arr = arr.replaceAll("arrondi", "");
+		arr = arr.trim();
+		if (code.variables.containsKey(arr)) 
+		{
+			Variable var = code.variables.get(arr);
+			
+			if(var.getType() == TypeVariable.REEL)
+				var.setValeur((int) Math.round(Double.parseDouble(var.getValeur()))+"");
+			else 
+				erreur();
+			return (int) Math.round(Double.parseDouble(var.getValeur()));
+		}
+		return (int) Math.round(Double.parseDouble(arr));
+	}
+	/**
+	 * Fonction hasard du pseudo code
+	 * */
+	public int hasard(){
+		String pl = code.code.get(index).getContenu() ;
+		int num ;
+		
+		pl = pl.replaceAll("hasard", "");
+		pl = pl.replaceAll("\\(", "");
+		pl = pl.replaceAll("\\)", "");
+		num = Integer.parseInt(pl) ;
+		
+		return (int) (Math.random()*num) ;
+		
+	}
+	/**
+	 * Fonction hasard du pseudo code
+	 * */
+	public int hasard(String has){	
+		
+		has = has.replaceAll("hasard", "");	
+		has = has.trim();
+		return(int)  (Math.random() * Integer.parseInt(has) );
+		
+	}
+	/**
+	 * Fonction aujourd'hui du pseudo code
+	 * */
+	public String aujourdhui(){
+
+		return (new java.util.Date().toString());
+	}	
+	/**
+	 * Fonction aujourd'hui du pseudo code
+	 * */
+	public String aujourdhui(String auj){
+
+		return (new java.util.Date().toString());
 	}
 	
 	/**
@@ -449,6 +645,28 @@ public class Interpreteur {
 			trace.add(traiterEcrire(texte));
 		}
 		else ecrire(code.variables.get(traiterEcrire(texte)));
+	}
+	
+	/**
+	 * Fonction pour ecrire le resultat d'une fonction primitive
+	 * @param textFct texte de la fonction
+	 * @param b ne sert qu'à differencier cette fonction ecrire des celle
+	 * pour ecrire un texte
+	 * */
+	public void ecrire(String texteFct, boolean b){
+		texteFct = texteFct.replaceAll("ecrire", "");
+		texteFct = texteFct.replaceAll("\\(", "");
+		texteFct = texteFct.replaceAll("\\)", "");
+		
+		
+		if(texteFct.contains("plafond")) texteFct = plafond(texteFct) +"";
+		else if(texteFct.contains("plancher")) texteFct = plancher(texteFct) +"";
+		else if(texteFct.contains("hasard")) texteFct = hasard(texteFct) +"";
+		else if(texteFct.contains("arrondi")) texteFct = arrondi(texteFct) +"";
+		else if(texteFct.contains("aujourd'hui")) texteFct = aujourdhui(texteFct) +"";
+		// . . .
+		
+		trace.add(texteFct);
 	}
 	
 	/**
