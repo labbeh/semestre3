@@ -80,7 +80,7 @@ public class AgentControlGUI extends JPanel implements ActionListener, ChangeLis
 	@Override
 	public void actionPerformed(ActionEvent evt)
 	{	
-		if	   (evt.getSource() == left ) this.robotFollower.robot.rotateY(Math.PI/8);
+		if	   (evt.getSource() == left ) this.robotFollower.robot.rotateY( Math.PI/8);
 		else if(evt.getSource() == right) this.robotFollower.robot.rotateY(-Math.PI/8);
 	}
 
